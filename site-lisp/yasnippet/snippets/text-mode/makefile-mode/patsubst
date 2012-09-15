@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : $(patsubst search-string,replace-string,text)
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+$(patsubst ${1:search-string},${2:replace-string},${3:text})

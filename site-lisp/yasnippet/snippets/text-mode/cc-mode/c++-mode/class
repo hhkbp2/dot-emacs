@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : class ... { ... }
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+class ${1:Name} {
+    public:
+        ${1:$(yas/substr text "[^: ]*")}($2);
+        virtual ~${1:$(yas/substr text "[^: ]*")}();
+};

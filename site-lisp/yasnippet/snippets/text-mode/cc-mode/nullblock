@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : null block { } // ...
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+{ } // null block

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : if (...) { ... } else { ... }
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+if (${1:condition}) {
+	$2
+}
+else {
+	$0
+}

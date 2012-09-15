@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : ifndef ... endif
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+ifndef ${1:variable}
+ $0
+endif

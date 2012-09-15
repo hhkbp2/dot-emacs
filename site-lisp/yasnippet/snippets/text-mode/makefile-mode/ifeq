@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : ifeq ... endif
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+ifeq "${1:variable}" "${2:value}"
+    $0
+endif

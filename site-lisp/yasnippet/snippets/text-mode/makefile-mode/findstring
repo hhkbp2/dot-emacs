@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : $(findstring string,text)
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+$(findstring ${1:string},${2:text})

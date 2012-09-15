@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : block comment /* ... */
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+/*
+ * ${1:comment}
+ */

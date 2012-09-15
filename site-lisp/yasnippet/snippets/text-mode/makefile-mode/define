@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : define ... endef
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+define ${1:macro}
+ $0
+endef

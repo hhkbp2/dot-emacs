@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : struct servent *getservbyname(const char *servname, const char *protoname);
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+getservbynamne(${1:const char *servname}, ${2:const char *protoname});

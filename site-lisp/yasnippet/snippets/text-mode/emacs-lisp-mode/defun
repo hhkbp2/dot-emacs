@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : (defun ...)
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+(defun ${1:func} ()
+  "${2:doc}"
+   $0)

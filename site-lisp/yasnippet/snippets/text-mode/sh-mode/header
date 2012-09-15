@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : header for shell script
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+##################################################
+# ${1:a simple description with a single sentence}
+#
+# Copyright (C) 2011 Dylan.Wen
+# Author: Dylan.Wen <dylan.wen.dw@gmail.com>
+# Time-stamp: <>
+#
+# This file is free software under GPLv3.
+# For a copy of it, see <http://www.gnu.org/licenses/>.
+#
+# Usage:
+#     ${2:simple description about its usage}
+##################################################
+

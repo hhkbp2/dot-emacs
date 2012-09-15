@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : for (... in ...) { ... }
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+for (${1:key} in ${2:array}) {
+    $0
+}

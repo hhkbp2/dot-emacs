@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : catch (...) { ... }
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+catch (${1:exception}) {
+    ${0:catch-statement}
+}

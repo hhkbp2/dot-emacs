@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : while ...; do ... done
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+while ${1:action}; do
+    ${0:statement}
+done

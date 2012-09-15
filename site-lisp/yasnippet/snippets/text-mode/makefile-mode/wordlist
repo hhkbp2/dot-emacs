@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : $(wordlist start,end,text)
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+$(wordlist ${1:start},${2:end},${3:text})

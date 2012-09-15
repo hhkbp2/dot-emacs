@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : struct hostent *gethostbyname(const char *hostname);
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+gethostbyname(${1:const char *hostname});

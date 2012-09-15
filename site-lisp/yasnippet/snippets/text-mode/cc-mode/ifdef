@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : #ifdef ... #endif
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+#ifdef ${1:macro}
+    ${2:statements}
+#endif

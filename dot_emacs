@@ -1,0 +1,135 @@
+;; -*- Emacs-Lisp -*-
+;; Dot Emacs file of Dylan.Wen
+
+;; Copyright (C) 2008,2009,2010,2011 Dylan.Wen
+
+;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
+;; Time-stamp: <2012-09-15 16:06>
+
+;; This file is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This file is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this file.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Code:
+
+
+;; 每节(section)开始于以3个分号开始的行
+
+
+;; path utils
+
+(defun file-directory (file-name)
+  "Return the directory of file, following symlink."
+  (let ((symlink-target (file-symlink-p file-name)))
+    (cond ((null symlink-target)
+           (file-name-directory file-name))
+          ((stringp symlink-target)
+           (file-name-directory
+            (expand-file-name symlink-target (file-name-directory file-name))))
+          (t
+           (error "corrupted symlink. %S" file-name)))))
+
+(defun current-directory ()
+  "Return current directory."
+  (file-directory (or buffer-file-name load-file-name)))
+
+
+;;; adding load path
+
+(defconst import-path
+  (concat (current-directory) "import/") "另外导入的emacs lisp包的路径")
+(defconst site-lisp-path
+  (concat (current-directory) "site-lisp/") "自己写的emacs lisp配置/增强包路径")
+
+;; 加载`my-subdirs'库
+(load (concat site-lisp-path "my-subdirs"))
+;; 把`import-path'与`site-lisp-path'的所有子目录都加到`load-path'
+(my-add-subdirs-to-load-path import-path)
+(my-add-subdirs-to-load-path site-lisp-path)
+
+
+;; 一些基本的小函数
+(require 'ahei-misc)
+
+;; 利用`eval-after-load'加快启动速度的库
+(require 'eval-after-load)
+
+(require 'util)
+
+
+;;; load settings for extensions
+
+(require 'misc-settings)
+(require 'redo+-settings)
+
+(require 'isearch-settings)
+(require 'linum-settings)
+
+(require 'mode-line-settings)
+
+(require 'minibuffer-settings)
+
+(require 'ibuffer-settings)
+
+;; 为重名的buffer在前面加上其父目录的名字，让buffer的名字区分开来
+;; 而不是单纯的加一个没有太多意义的序号
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
+(require 'dired-settings)
+
+(require 'ido-settings)
+
+(require 'session-settings)
+
+(require 'desktop-settings)
+
+(require 'saveplace-settings)
+
+(require 'time-stamp-settings)
+
+;;(require 'tabbar-settings)
+
+;; load settings for abbrev-mode
+(require 'abbrev-settings)
+
+(require 'dict-settings)
+(require 'spell-checking-settings)
+
+(require 'calendar-settings)
+
+(require 'emms-settings)
+
+(require 'erc-settings)
+
+
+;;; load software development settings
+(require 'dev-settings)
+
+(require 'appearance-settings)
+
+(require 'keybinding-settings)
+
+
+;;; additional emacs lisp
+
+;; load elisp of Learning GNU Emacs, 2rd
+;; Debra Cameron, Bill Rosenblatt & Eric Raymond, Chinese translation, 2003
+(require 'learning-gnu-emacs)
+
+;; load elisp of Programming in Emacs Lisp: An Introduction, 2rd
+;; Robert J. Chassell, Chinese translation, 2001
+(require 'elisp-intro)
+
+;; load elisp of Writing GNU Emacs Extensions, 1st
+;; Bob Glickstein 1997
+(require 'writing-emacs-extensions)

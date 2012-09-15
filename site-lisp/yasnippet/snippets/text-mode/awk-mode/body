@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#name : BEGIN { ... } { ... } END { ... }
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+BEGIN {
+    ${1:begin_statement}
+}
+
+{
+    ${2:body_statement}
+}
+
+END {
+    ${0:end_statement}
+}

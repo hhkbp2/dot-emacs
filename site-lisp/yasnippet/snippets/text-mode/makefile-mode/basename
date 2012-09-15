@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : $(basename name...)
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+$(basename ${1:name...})

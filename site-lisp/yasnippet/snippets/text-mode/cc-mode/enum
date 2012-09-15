@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : enum ... { ... }
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+enum ${1:name} {
+    $0
+};

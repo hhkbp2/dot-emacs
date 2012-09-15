@@ -1,0 +1,88 @@
+;; -*- Emacs-Lisp -*-
+;; Settings for key binding.
+
+;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
+
+;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
+;; Time-stamp: <2012-06-22 12:46>
+
+;; This file is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This file is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this file.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+;;
+;; Key binding 设置键帮定
+;; 尽量放在.emacs文件的最后，以免被绑定的键不小心被后面的配置文件覆盖
+
+;;; Code:
+
+
+(defun keybinding-settings ()
+  "Settings for keybinding."
+
+  ;; 常用习惯，`F1'打开帮助，常用帮助有info和woman（就是在emacs中看man）
+  ;;(global-set-key [f1] 'info)
+  (global-unset-key [(f1)])
+
+  ;; 撤消，常用键
+  (global-set-key [f2] 'undo)
+
+  ;; 关闭当前buffer
+  (global-set-key [f10] 'kill-this-buffer)
+
+  ;; switch to previous buffer
+  ;;(global-set-key [f11] 'previous-buffer)
+  (global-set-key [(control x)(meta p)] 'previous-buffer)
+  ;; switch to next buffer
+  ;;(global-set-key [f12] 'next-buffer)
+  (global-set-key [(control x)(meta n)] 'next-buffer)
+
+  ;; Home键 光标跳到文件开头
+  (global-set-key [(home)] 'beginning-of-buffer)
+  ;; End键 光标跳到文件结尾
+  (global-set-key [(end)] 'end-of-buffer)
+
+
+  ;; window之间的移动很常用，默认的绑定太繁琐，添加一个快捷键
+  (global-set-key [(control o)] 'other-window)
+
+  ;; 把默认的windows move键modifier由`shift'换成`meta'
+  ;; 用 `modifier-{left,right,up,down}'可以在打开的窗口中的跳转
+  (windmove-default-keybindings 'meta)
+
+  ;; 用`ibuffer'代替默认的`buffer-menu'
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+  ;; 很少需要挂起emacs，取消`suspend-frame'的默认键绑定
+  ;; 键序列`C-z'容易与键序列`C-x'混淆
+  (global-unset-key "\C-z")
+
+  ;; 很少手动改`fill-column'的值，取消其默认键绑定
+  ;; 键序列`C-x f'容易和键序列`C-x C-f'混淆
+  (global-unset-key [(control x) (f)])
+  (global-set-key [(control x) (f)] 'find-file)
+
+  ;; 更改退出emacs的默认键绑定
+  ;; 键序列`C-x C-c'容易与键序列`C-x C-x'混淆
+  ;; `C-x' `C-c'也是很多快捷键的前缀，容易误按
+  (global-unset-key [(control x) (control c)])
+  (global-set-key [(control x) (meta q)] 'save-buffers-kill-terminal)
+
+  ;; 取消不常用的键绑定
+  (global-unset-key [(f4)])
+  )
+
+(keybinding-settings)
+
+
+(provide 'keybinding-settings)

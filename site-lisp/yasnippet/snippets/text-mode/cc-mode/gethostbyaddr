@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : struct hostent *gethostbyaddr(const char *addr, socklent_t len, int familly);
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+gethostbyaddr(${1:const char *addr}, ${2:socklen_t len}, ${3:int family});

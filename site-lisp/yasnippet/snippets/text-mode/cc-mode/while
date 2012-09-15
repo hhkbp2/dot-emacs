@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : while ( ... ) { ... }
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+while (${1:condition}) {
+	$0
+}

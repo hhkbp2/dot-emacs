@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : /* FALL THROUGH */
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+/* FALL THROUGH */

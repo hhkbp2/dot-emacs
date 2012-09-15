@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : void freeaddrinfo(struct addrinfo *ai);
+#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+# --
+freeaddrinfo(${1:struct addrinfo *ai});
