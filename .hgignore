@@ -1,0 +1,9 @@
+
+syntax: regexp
+
+^import/auto-complete.*
+^import/cedet.*
+^import/color-theme.*
+^import/ecb.*
+^import/jdee.*
+

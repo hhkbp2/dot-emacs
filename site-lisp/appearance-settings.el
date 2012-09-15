@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-15 00:52>
+;; Time-stamp: <2012-09-16 00:24>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,12 +24,6 @@
 ;;; Code:
 
 
-(defun visible-bell-settings ()
-  (setq visible-bell
-        (if (equal window-system nil)
-            nil
-          t)))
-
 (defun appearance-settings ()
   "Settings for appearance."
 
@@ -37,7 +31,6 @@
   (setq inhibit-startup-message t)
 
   ;; disable visible bell (and the noisy warning bell)
-  ;;(visible-bell-settings)
   (setq visible-bell nil)
 
   ;; hide menu-bar under terminal
