@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-17 11:49>
+;; Time-stamp: <2012-09-17 18:40>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -241,7 +241,7 @@ Optional `dir' specifies the directory where the file locates."
 (defun dw-on-office-machine ()
   (multiple-value-bind (dist-name dist-verison) (system-distribution)
     (cond
-     ((and (equal dist-name "Ubuntu") (equal dist-verison "9.04")) t)
+     ((and (equal dist-name "Ubuntu")) t)
      (t nil))))
 
 

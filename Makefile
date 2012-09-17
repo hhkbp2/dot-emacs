@@ -5,8 +5,8 @@
 # Time-stamp: <2012-09-15 18:13>
 #
 
-#QUIET     := @
-QUIET      := $(empty) $(empty)
+QUIET     := @
+#QUIET      := $(empty) $(empty)
 
 RM        := rm -rf
 
