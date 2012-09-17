@@ -44,7 +44,8 @@
                         (statement-cont . +)
                         (case-label . +)
                         (statement-case-intro . +)
-                        (arglist-intro . ++))))
+                        (arglist-intro . ++)
+                        (arglist-cont-nonempty . +))))
     "Dylan.Wen's c++ indentation style based on built-in style `stroustrup'.")
 
 

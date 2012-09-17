@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-15 00:59>
+;; Time-stamp: <2012-09-17 11:49>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -210,6 +210,39 @@ Optional `dir' specifies the directory where the file locates."
   (if lst
     (dolist (elem lst)
       (print (format "%S" elem) (or (current-buffer) t)))))
+
+
+;; file and string utils
+
+(defun read-file (file)
+  "Read the content of a file into a String."
+  (when (file-readable-p file)
+    (with-temp-buffer
+      (insert-file-contents file)
+      (goto-char (point-min))
+      (buffer-string))))
+
+(defun empty-string-p (string)
+  (if (= (length string) 0)
+      t
+    nil))
+
+
+;; platform/machine utils
+
+(defun system-distribution ()
+  (let* ((dist-info
+          (split-string (read-file "/etc/issue") " " t)))
+    (cond
+     ((null dist-info) (values "" ""))
+     (t (values (first dist-info) (second dist-info))))))
+
+
+(defun dw-on-office-machine ()
+  (multiple-value-bind (dist-name dist-verison) (system-distribution)
+    (cond
+     ((and (equal dist-name "Ubuntu") (equal dist-verison "9.04")) t)
+     (t nil))))
 
 
 (provide 'dw-functionals)

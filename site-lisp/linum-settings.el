@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-08-26 22:59>
+;; Time-stamp: <2012-09-17 11:51>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,10 +29,13 @@
 ;; load face settings
 (require 'linum-face-settings)
 (require 'dev-base)
+(require 'dw-functionals)
+
 
 (defun linum+-settings ()
   "Settings for `linum'."
-  (setq linum+-offset t))
+  ;; (setq linum+-offset t)
+  )
 
 
 (defun linum-relative-settings ()
@@ -46,7 +49,10 @@
     (add-hook mode-hook
               (lambda ()
                 (linum-mode 1))))
-  (linum-relative-settings))
+  (if (dw-on-office-machine)
+      (linum+-settings)
+    (linum-relative-settings))
+  )
 
 
 (eval-after-load 'linum

@@ -51,6 +51,15 @@
   ;; do show the empty group
   (setq ibuffer-show-empty-filter-groups nil)
 
+  ;; set format
+  (setq ibuffer-formats
+        '((mark modified read-only " "
+                (name 30 30 :left :elide) " "
+                (size 9 -1 :right) " "
+                (mode 16 16 :left :elide) " "
+                filename-and-process)
+          (mark " " (name 30 -1) " " filename)))
+
   ;; gnus-style grouping
   (setq ibuffer-saved-filter-groups
         (quote (("Default"

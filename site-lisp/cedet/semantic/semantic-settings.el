@@ -104,6 +104,9 @@ This is a completement of `semantic-ia-fast-jump'."
     (if window-system
         (quote semantic-ia-complete-symbol-menu)
       (quote semantic-ia-complete-symbol)))
+
+  (setq semantic-idle-work-update-headers-flag nil)
+  (setq semantic-idle-work-parse-neighboring-files-flag nil)
   )
 
 

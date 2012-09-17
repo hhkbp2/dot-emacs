@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-15 00:47>
+;; Time-stamp: <2012-09-17 11:57>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 
 
 (require 'dev-base)
+(require 'dw-functionals)
 
 
 ;; 高亮光标处单词
@@ -123,8 +124,14 @@ The pairs include '', \"\", [], (), {}."
          my-delete-trailing-space
          my-untabify))
     ;; makefile里面用TAB来标记命令，所以不能删除tab
-    (if (not (and (equal mode-hook 'makefile-mode-hook)
-                  (equal feature 'my-untabify)))
+    (if (not (or
+              ;; no untabify in makefile
+              (and (equal mode-hook 'makefile-mode-hook)
+                   (equal feature 'my-untabify))
+              ;; no untabify in c/c++ mode to avoid svn howls. sick!
+              (and (dw-on-office-machine)
+                   (equal mode-hook 'c-mode-common-hook)
+                   (equal feature 'my-untabify))))
         (add-hook mode-hook feature))))
 
 
@@ -143,8 +150,6 @@ The pairs include '', \"\", [], (), {}."
 
 (dev-misc)
 
-
-(require 'dw-functionals)
 
 (require 'occur-settings)
 
