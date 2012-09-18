@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-17 11:57>
+;; Time-stamp: <2012-09-18 18:55>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -131,7 +131,8 @@ The pairs include '', \"\", [], (), {}."
               ;; no untabify in c/c++ mode to avoid svn howls. sick!
               (and (dw-on-office-machine)
                    (equal mode-hook 'c-mode-common-hook)
-                   (equal feature 'my-untabify))))
+                   (or (equal feature 'my-untabify)
+                       (equal feature 'my-delete-trailing-space)))))
         (add-hook mode-hook feature))))
 
 
