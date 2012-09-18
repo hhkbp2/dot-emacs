@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-17 18:40>
+;; Time-stamp: <2012-09-17 20:43>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -194,7 +194,7 @@ Optional `dir' specifies the directory where the file locates."
              (concat dir file)
            file)))
     (and (funcall (conjoin #'file-exists-p #'file-readable-p) file-to-load)
-     (load-file file-to-load))))
+         (load-file file-to-load))))
 
 (defun dw-load-related-file-if-exist (file)
   "Load file that is related to current directory if it exists."
@@ -208,8 +208,8 @@ Optional `dir' specifies the directory where the file locates."
 (defun dw-debug-print-list (lst)
   "Print list `lst' in current buffer or echo area."
   (if lst
-    (dolist (elem lst)
-      (print (format "%S" elem) (or (current-buffer) t)))))
+      (dolist (elem lst)
+        (print (format "%S" elem) (or (current-buffer) t)))))
 
 
 ;; file and string utils
@@ -222,8 +222,9 @@ Optional `dir' specifies the directory where the file locates."
       (goto-char (point-min))
       (buffer-string))))
 
-(defun empty-string-p (string)
-  (if (= (length string) 0)
+(defun empty-string-p (str)
+  "Return t if the string `str' is empty."
+  (if (= (length str) 0)
       t
     nil))
 
@@ -231,6 +232,10 @@ Optional `dir' specifies the directory where the file locates."
 ;; platform/machine utils
 
 (defun system-distribution ()
+  "Return current machine's distribution information in pair (name, version).
+The distribution information is from the file `/etc/issue'.
+E.g. On Ubuntu 9.04, it returns (\"Ubuntu\", \"9.04\").
+On Ubuntu 12.04.1 LTS, it returns (\"Ubuntu\", \"12.04.1\")."
   (let* ((dist-info
           (split-string (read-file "/etc/issue") " " t)))
     (cond
@@ -239,6 +244,7 @@ Optional `dir' specifies the directory where the file locates."
 
 
 (defun dw-on-office-machine ()
+  "Return t if it runs on my office machines."
   (multiple-value-bind (dist-name dist-verison) (system-distribution)
     (cond
      ((and (equal dist-name "Ubuntu")) t)
