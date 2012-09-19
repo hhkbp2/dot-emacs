@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-17 20:43>
+;; Time-stamp: <2012-09-19 17:37>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -222,6 +222,22 @@ Optional `dir' specifies the directory where the file locates."
       (goto-char (point-min))
       (buffer-string))))
 
+
+(defun read-file-nth-line (file &optional line-number)
+  "Return a single nth line of file `file'.
+With argument `line-number' not nil, return the corresponding nth line.
+E.g. To read the first line of file, set `line-number' 1. To read
+the second line, set `line-number' 2."
+  (when (file-readable-p file)
+    (with-temp-buffer
+      (insert-file-contents file)
+      (goto-char (point-min))
+      (beginning-of-line line-number)
+      (let ((line-begin-point (point)))
+        (end-of-line)
+        (buffer-substring line-begin-point (point))))))
+
+
 (defun empty-string-p (str)
   "Return t if the string `str' is empty."
   (if (= (length str) 0)
@@ -237,7 +253,7 @@ The distribution information is from the file `/etc/issue'.
 E.g. On Ubuntu 9.04, it returns (\"Ubuntu\", \"9.04\").
 On Ubuntu 12.04.1 LTS, it returns (\"Ubuntu\", \"12.04.1\")."
   (let* ((dist-info
-          (split-string (read-file "/etc/issue") " " t)))
+          (split-string (read-file-nth-line "/etc/issue") " " t)))
     (cond
      ((null dist-info) (values "" ""))
      (t (values (first dist-info) (second dist-info))))))
