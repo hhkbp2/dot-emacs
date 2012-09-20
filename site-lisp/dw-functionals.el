@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-19 17:37>
+;; Time-stamp: <2012-09-20 17:01>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -137,6 +137,36 @@ If point reaches the beginning or end of buffer, it stops there."
   (let ((beg (progn (backward-paragraph 1) (point)))
         (end (progn (forward-paragraph arg) (point))))
     (copy-region-as-kill beg end)))
+
+
+(defun dw-camelcase-to-underscore (start end)
+  "Convert any string matching something like aBc to a_bc."
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region start end)
+      (goto-char 1)
+      (let ((case-fold-search nil))
+        (while (search-forward-regexp "\\([a-z0-9]\\)\\([A-Z]\\)" nil t)
+          (replace-match (concat (match-string 1)
+                                 "_"
+                                 (downcase (match-string 2)))
+                         t nil))))))
+
+
+(defun dw-underscore-to-camelcase (start end)
+  "Convert any string matching something like a_bc to aBc."
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region start end)
+      (goto-char 1)
+      (let (case-fold-search)
+        (while (search-forward-regexp "\\([a-zA-Z0-9]\\)\\(_\\)\\([a-zA-Z0-9]\\)" nil t)
+          (replace-match (concat (match-string 1)
+                                 (capitalize (match-string 3)))
+                         t nil)
+          (backward-char))))))
 
 
 ;; delete trailing carriage return
