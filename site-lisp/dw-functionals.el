@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-20 17:01>
+;; Time-stamp: <2012-09-20 17:31>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -243,6 +243,30 @@ Optional `dir' specifies the directory where the file locates."
 
 
 ;; file and string utils
+
+(defun file-real-directory-p (file-name)
+  "Return t if `filename' names an existing real directory, not symbolic link."
+  (and (not (file-symlink-p file-name))
+       (file-directory-p file-name)))
+
+
+(defun expand-directory-name (name &optional default-directory)
+  "Convert filename `name' to absolute, if it exist as directory."
+  (let ((dir-name (file-truename name)))
+    (if (file-directory-p dir-name)
+        (expand-file-name dir-name))))
+
+
+(defun dw-get-real-dir (prefix-list)
+  "Return gtags root directory on office machine."
+  (when prefix-list
+    (let* ((prefix (first prefix-list))
+           (dir (expand-file-name
+                 (concat (user-login-name) "/rep/trunk") prefix)))
+      (if (file-real-directory-p dir)
+          dir
+        (dw-get-real-dir (rest prefix-list))))))
+
 
 (defun read-file (file)
   "Read the content of a file into a String."
