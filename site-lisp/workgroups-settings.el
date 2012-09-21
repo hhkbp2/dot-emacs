@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-21 10:35>
+;; Time-stamp: <2012-09-21 13:12>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -35,6 +35,8 @@
   (setq wg-prefix-key (kbd "C-c w"))
   ;; (wg-save-session-on-emacs-exit)
   (workgroups-mode 1)
+  (if (null (wg-workgroup-list))
+      (wg-create-workgroup "wg-default"))
   )
 
 
