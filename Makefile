@@ -2,7 +2,7 @@
 #
 # Author: Dylan.Wen <dylan.wen.dw@gmail.com>
 # Created: Sep 15, 2012
-# Time-stamp: <2012-09-15 18:13>
+# Time-stamp: <2012-09-21 11:00>
 #
 
 QUIET     := @
@@ -44,6 +44,7 @@ init-packages:
 	$(QUIET) cd import && tar -xzf color-theme-6.6.0.tar.gz && cd color-theme-6.6.0 && make
 	$(QUIET) cd import && tar -xzf ecb-2.40.tar.gz
 	$(QUIET) cd import && unzip jdee-bin-2.4.0.1.zip
+	$(QUIET) cd import && tar -xjf workgroups-experimental-f3339422.tar.bz2
 
 link-dot-emacs:
 	$(QUIET) $(call link-dot-emacs-if-needs)
@@ -57,5 +58,6 @@ site-clean:
   cedet-1.0 cedet \
   color-theme-6.6.0 \
   ecb-2.40 \
-  jdee-2.4.0.1
+  jdee-2.4.0.1 \
+  workgroups
 

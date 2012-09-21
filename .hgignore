@@ -6,4 +6,5 @@ syntax: regexp
 ^import/color-theme.*
 ^import/ecb.*
 ^import/jdee.*
+^import/workgroups
 
