@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-17 11:59>
+;; Time-stamp: <2012-09-26 10:39>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -42,7 +42,8 @@
   ;; 以上两种功能之和, default keybinding(on/off) "C-c C-t"
   ;;(c-toggle-auto-hungry-state)
 
-  (unless (dw-on-office-machine)
+  (if (dw-on-office-machine)
+      (c-subword-mode 1)
     (subword-mode 1))
 
   ;; 控制执行`indent-new-comment-line'(keybinding M-j)是否在下一行新建一条注释
