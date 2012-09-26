@@ -93,7 +93,7 @@
 
 (require 'session-settings)
 
-;;(require 'desktop-settings)
+(require 'desktop-settings)
 (require 'workgroups-settings)
 
 (require 'saveplace-settings)
