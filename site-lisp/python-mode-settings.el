@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-04-08 22:16>
+;; Time-stamp: <2012-09-29 10:59>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -55,7 +55,11 @@
   ;; delete on a gui
   (define-key python-mode-map [delete] 'c-hungry-delete-forward)
   ;; delete on point
-  (define-key python-mode-map [(control d)] 'c-hungry-delete-forward))
+  (define-key python-mode-map [(control d)] 'c-hungry-delete-forward)
+
+  (define-key python-mode-map [(control c) (c)] 'comment-dwim)
+  (define-key python-mode-map [(control c) (control c)] 'comment-dwim)
+  )
 
 
 ;; load python mode settings everytime loading python mode
