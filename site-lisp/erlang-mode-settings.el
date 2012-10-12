@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-08-11 12:27>
+;; Time-stamp: <2012-10-09 15:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 
 
 (require 'erlang-start)
+(require 'erlang)
 
 
 (defun erlang-mode-settings ()
