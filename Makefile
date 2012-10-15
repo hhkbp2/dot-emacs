@@ -40,7 +40,7 @@ site-init: init-packages link-dot-emacs
 .PHONY : init-packages
 init-packages:
 	$(QUIET) cd import && tar -xjf auto-complete-1.3.tar.bz2 && cd auto-complete-1.3 && make
-	$(QUIET) cd import && tar -xzf cedet-1.0.tar.gz && ln -s cedet-1.0 cedet && cd cedet/ && make
+	$(QUIET) cd import && tar -xzf cedet-1.1.tar.gz && ln -s cedet-1.1 cedet && cd cedet/ && make
 	$(QUIET) cd import && tar -xzf color-theme-6.6.0.tar.gz && cd color-theme-6.6.0 && make
 	$(QUIET) cd import && tar -xzf ecb-2.40.tar.gz
 	$(QUIET) cd import && unzip jdee-bin-2.4.0.1.zip
@@ -55,7 +55,7 @@ link-dot-emacs:
 site-clean:
 	$(QUIET) cd import && $(RM) \
   auto-complete-1.3 \
-  cedet-1.0 cedet \
+  cedet-1.0 cedet-1.1 cedet \
   color-theme-6.6.0 \
   ecb-2.40 \
   jdee-2.4.0.1 \
