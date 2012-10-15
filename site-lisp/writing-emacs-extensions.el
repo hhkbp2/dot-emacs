@@ -28,6 +28,11 @@
   (interactive "P")
   (scroll-behind (prefix-numeric-value n)))
 
+(global-set-key "\C-q" 'scroll-n-lines-behind)
+(global-set-key "\C-z" 'scroll-n-lines-ahead)
+
+(global-set-key "\C-x\C-q" 'quoted-insert)
+
 
 ;; Cursor motion
 
@@ -47,11 +52,16 @@ which define the cycling order for the command `move-cursor-to-window'.")
   (interactive)
   (move-to-window-line 0))
 
+(global-set-key "\M-," 'move-cursor-to-top)
+(global-set-key "\C-x," 'tags-loop-continue)
+
 
 (defun move-cursor-to-bottom ()
   "Put cursor at beginning of last visible line of current window."
   (interactive)
   (move-to-window-line -1))
+
+(global-set-key "\M-." 'move-cursor-to-bottom)
 
 
 (defun move-cursor-to-window (&optional arg)
@@ -68,6 +78,11 @@ which define the cycling order for the command `move-cursor-to-window'.")
     (move-cursor-to-top))
    ((eq move-cursor-to-window-last-op 'bottom)
     (move-cursor-to-bottom))))
+
+;; It is somewhat tricky using the key ; in key combination.
+(global-set-key (kbd "C-;") 'move-cursor-to-window)
+;; The statement above also works as
+;;(global-set-key [(control \;)] 'move-cursor-to-window)
 
 
 (defcustom move-line-to-window-margin 4
@@ -115,6 +130,10 @@ it uses `move-line-to-window-margin' instead of `scroll-margin'."
         (setq move-line-to-window-last-op 'bottom)
         (recenter (- -1 this-scroll-margin))))))))
 
+;; using "C-l" to toggle `recenter-top-bottom' already defined in `window.el',
+;; no need to redefine similar `move-line' key binding here
+;; (global-set-key "\C-l" 'move-line-to-window)
+
 
 ;;; Symbolic link handling
 
@@ -143,10 +162,8 @@ it uses `move-line-to-window-margin' instead of `scroll-margin'."
               (find-alternate-file target)
               (message "visit file [%s] instead of symlink [%s]"
                        target symlink-maybe))
-          ;;(error "Not visiting a symlink")
-          ))
-    ;;(error "Not visiting a file")
-    ))
+          (error "Not visiting a symlink")))
+    (error "Not visiting a file")))
 
 ;; visit the target file instead of symbolic link
 (add-hook 'find-file-hooks
