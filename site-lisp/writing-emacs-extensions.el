@@ -162,8 +162,10 @@ it uses `move-line-to-window-margin' instead of `scroll-margin'."
               (find-alternate-file target)
               (message "visit file [%s] instead of symlink [%s]"
                        target symlink-maybe))
-          (error "Not visiting a symlink")))
-    (error "Not visiting a file")))
+          ;; (error "Not visiting a symlink")
+          ))
+    ;; (error "Not visiting a file")
+    ))
 
 ;; visit the target file instead of symbolic link
 (add-hook 'find-file-hooks
