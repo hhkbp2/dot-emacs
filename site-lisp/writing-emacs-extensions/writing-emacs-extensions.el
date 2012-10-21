@@ -3,7 +3,7 @@
 ;; Bob Glickstein, O'REILLY, 1997
 
 
-;; windows switching
+;;; windows switching
 (global-set-key "\C-x\C-n" 'other-window)
 
 (defun other-window-backward (&optional n)
@@ -14,7 +14,7 @@
 (global-set-key "\C-x\C-p" 'other-window-backward)
 
 
-;; scroll
+;;; scroll
 (defalias 'scroll-ahead 'scroll-up)
 (defalias 'scroll-behind 'scroll-down)
 
@@ -34,7 +34,7 @@
 (global-set-key "\C-x\C-q" 'quoted-insert)
 
 
-;; Cursor motion
+;;; Cursor motion
 
 (defvar move-cursor-to-window-last-op nil
   "Indicates the last `move-cursor-to-window' operation performed.
@@ -133,6 +133,9 @@ it uses `move-line-to-window-margin' instead of `scroll-margin'."
 ;; using "C-l" to toggle `recenter-top-bottom' already defined in `window.el',
 ;; no need to redefine similar `move-line' key binding here
 ;; (global-set-key "\C-l" 'move-line-to-window)
+(global-set-key [(meta r)] 'move-cursor-to-window)
+(global-set-key [(control x) (l)] 'move-line-to-window)
+(global-set-key [(control x) (control l)] 'move-line-to-window)
 
 
 ;;; Symbolic link handling
@@ -171,6 +174,8 @@ it uses `move-line-to-window-margin' instead of `scroll-margin'."
 (add-hook 'find-file-hooks
           'visit-target-instead)
 
+(global-set-key [(control x) (t)] 'visit-target-instead)
+
 
 (defun clobber-symlink()
   "Replace symlink with a copy of the file."
@@ -187,42 +192,39 @@ it uses `move-line-to-window-margin' instead of `scroll-margin'."
           (error "Not visiting a symlink")))
     (error "Not visiting a file")))
 
+(global-set-key [(control x) (l)] 'clobber-symlink)
+
+
+(defun switch-to-buffer-advice-interactive ()
+  (list (read-buffer "Switch to buffer: "
+                      (other-buffer)
+                      (null current-prefix-arg))))
+
 
 ;; Advised buffer switching
 (defadvice switch-to-buffer (before existing-buffer
                                     activate compile)
   "When interactive, switch only to existing buffers,
 unless given a prefix argument."
-  (interactive
-   (list (read-buffer "Switch to buffer: "
-                      (other-buffer)
-                      (null current-prefix-arg)))))
-
-
+  (interactive (switch-to-buffer-advice-interactive)))
 
 ;; Advised buffer switching in other window
 (defadvice switch-to-buffer-other-window (before existing-buffer-other-window
                                                  activate compile)
   "When interactive, switch only to existing buffers in other window,
 unless given a prefix argument."
-  (interactive
-   (list (read-buffer "Switch to buffer: "
-                      (other-buffer)
-                      (null current-prefix-arg)))))
-
+  (interactive (switch-to-buffer-advice-interactive)))
 
 ;; Advised buffer switching in other frame
 (defadvice switch-to-buffer-other-frame (before existing-buffer-other-frame
                                                 activate compile)
   "When interactive, switch only to existing buffers in other frame,
 unless given a prefix argument."
-  (interactive
-   (list (read-buffer "Switch to buffer: "
-                      (other-buffer)
-                      (null (current-prefix-arg))))))
+  (interactive (switch-to-buffer-advice-interactive)))
 
 
-;; unscroll
+;;; Unscroll
+
 (put 'scroll-up 'unscrollable t)
 (put 'scroll-down 'unscrollable t)
 (put 'scroll-left 'unscrollable t)
@@ -269,11 +271,11 @@ unless given a prefix argument."
   (set-window-start nil unscroll-window-start)
   (set-window-hscroll nil unscroll-hscroll))
 
-
-(global-set-key [(meta r)] 'move-cursor-to-window)
-(global-set-key [(control x) (l)] 'move-line-to-window)
-(global-set-key [(control x) (control l)] 'move-line-to-window)
 (global-set-key [(meta o)] 'unscroll)
+
+
+;;; Search and Modifying Buffers
+
 
 
 (provide 'writing-emacs-extensions)
