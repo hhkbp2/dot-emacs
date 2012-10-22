@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-18 18:55>
+;; Time-stamp: <2012-10-22 23:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -185,7 +185,7 @@ The pairs include '', \"\", [], (), {}."
 (require 'conf-mode-settings)
 
 ;; flymake
-(require 'flymake)
+(require 'flymake-settings)
 
 ;; cedet
 (require 'cedet-settings)
