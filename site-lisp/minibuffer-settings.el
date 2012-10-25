@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2011-02-05 08:35>
+;; Time-stamp: <2012-10-25 10:12>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -47,17 +47,23 @@
 
   ;; `completion-ignored-extensions': 字符串列表，常为后缀
   ;; 补全文件名时不把以其中字符串结尾的文件名列为侯选
-  (setq completion-ignored-extensions
-        (append
-         '(;; tarball
-           ".bz2" ".7z" ".zip" ".gz" ".tar"
-           ;; specified doc
-           ".ps" ".pdf" ".chm" ".doc" ".deb"
-           ;; picture
-           ".png" ".jpg" ".JPG" ".bmp" ".BMP"
-           ;; directory
-           "font/" ".hg/" ".svn/")
-                completion-ignored-extensions))
+  (dolist (file-postfix
+           '(;; tarball
+             ".bz2" ".7z" ".zip" ".gz" ".tar"
+             ;; specified doc
+             ".ps" ".pdf" ".chm" ".doc" ".deb"
+             ;; picture
+             ".png" ".jpg" ".JPG" ".bmp" ".BMP"
+             ;; font
+             ".ttf"
+             ;; directory
+             ".hg/" ".svn/" ".git"
+             ;; compiled object and temporary file
+             ".elc" ; elisp
+             ".pyc" ; python
+             ".beam" ".boot" ; erlang
+             ))
+    (add-to-list 'completion-ignored-extensions file-postfix))
 
   ;; 当寻找一个同名的文件，自动关联上那个文件
   (setq uniquify-buffer-name-style 'forward))

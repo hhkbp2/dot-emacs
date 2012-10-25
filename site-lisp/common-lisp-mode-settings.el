@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-01-23 01:34>
+;; Time-stamp: <2012-10-25 09:56>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -31,10 +31,10 @@
 
 (defun common-lisp-mode-settings ()
   "Settings for `common-lisp-mode'."
-  (setq auto-mode-alist (append auto-mode-alist
-                                '(("\\.lisp$" . common-lisp-mode)
-                                  ("\\.cl$" . common-lisp-mode))))
-  )
+
+  (dolist (file-mode-pattern '(("\\.lisp$" . common-lisp-mode)
+                               ("\\.cl$" . common-lisp-mode)))
+    (add-to-list 'auto-mode-alist file-mode-pattern)))
 
 
 (common-lisp-mode-settings)

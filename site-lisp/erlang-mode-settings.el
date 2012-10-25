@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-09 15:28>
+;; Time-stamp: <2012-10-25 10:47>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,7 +25,6 @@
 
 
 (require 'erlang-start)
-(require 'erlang)
 
 
 (defun erlang-mode-settings ()
@@ -35,8 +34,17 @@
   (setq inferior-erlang-machine-options '("-sname" "emacs"))
   ;; add Erlang functions to an imenu menu
   (imenu-add-to-menubar "imenu")
-  ;; customize keys
-  (local-set-key [return] 'newline-and-indent)
+
+  (dolist (file-mode-pattern '(;; application description file
+                               ("\\.app\\'" . erlang-mode)
+                               ;; release description file
+                               ("\\.rel\\'" . erlang-mode)
+                               ;; release configuration file
+                               ("\\.config\\'" . erlang-mode)))
+    (add-to-list 'auto-mode-alist file-mode-pattern))
+
+  (local-set-key [(control c) (c)] 'comment-dwim)
+  (local-set-key [(control c) (control c)] 'comment-dwim)
   )
 
 (add-hook 'erlang-mode-hook

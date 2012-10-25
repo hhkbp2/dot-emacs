@@ -5,7 +5,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; Maintainer: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-23 00:14>
+;; Time-stamp: <2012-10-25 10:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,7 +26,6 @@
 
 
 (autoload 'flymake-find-file-hook "flymake" "" t)
-(require 'erlang-flymake)
 
 
 (defun flymake-get-make-gcc-cmdline (source base-dir)
@@ -108,6 +107,7 @@ Use CREATE-TEMP-F for creating temp copy."
 (defun flymake-erlang-settings ()
   "Settings for `flymake' for erlang."
 
+  (require 'erlang-flymake)
   (erlang-flymake-only-on-save)
   )
 
@@ -136,7 +136,9 @@ Use CREATE-TEMP-F for creating temp copy."
   (eval-after-load "emaci"
     `(flymake-settings-4-emaci))
 
-  (flymake-erlang-settings)
+  (and (>= emacs-major-version 23)
+       (>= emacs-minor-version 2)
+       (flymake-erlang-settings))
 
   (defvar flymake-mode-map (make-sparse-keymap))
 
