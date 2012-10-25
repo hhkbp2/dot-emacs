@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-25 10:47>
+;; Time-stamp: <2012-10-25 15:14>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -42,6 +42,12 @@
                                ;; release configuration file
                                ("\\.config\\'" . erlang-mode)))
     (add-to-list 'auto-mode-alist file-mode-pattern))
+
+  (local-set-key "\177" 'c-hungry-backspace)
+  (local-set-key [backspace] 'c-hungry-backspace)
+  (local-set-key [deletechar] 'c-hungry-delete-forward)
+  (local-set-key [delete] 'c-hungry-delete-forward)
+  (local-set-key [(control d)] 'c-hungry-delete-forward)
 
   (local-set-key [(control c) (c)] 'comment-dwim)
   (local-set-key [(control c) (control c)] 'comment-dwim)
