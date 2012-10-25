@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2011-12-18 23:57>
+;; Time-stamp: <2012-10-25 19:46>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,11 +27,11 @@
 (require 'pycomplete)
 
 
+(autoload 'python-mode "python-mode" "Python editing mode." t)
+
 (defun pycomplete-settings ()
   "Settings for `pycomplete'."
 
-  (setq auto-mode-alist (cons '("\\.py$" . python-mode)
-                              auto-mode-alist))
   (setq interpreter-mode-alist (cons '("python" . python-mode)
                                      interpreter-mode-alist))
 
@@ -43,7 +43,7 @@
   `(pycomplete-settings))
 
 
-(autoload 'python-mode "python-mode" "Python editing mode." t)
+(dw-add-file-mode-pattern '("\\.py$" . python-mode))
 
 
 (provide 'pycomplete-settings)

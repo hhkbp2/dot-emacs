@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-20 17:31>
+;; Time-stamp: <2012-10-25 19:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -214,7 +214,7 @@ If point reaches the beginning or end of buffer, it stops there."
             (and (apply fn args) (apply conj args)))))))
 
 
-;;; load utils
+;;; file loading utils
 
 (defun* dw-load-file-if-exist (&key file (dir nil))
   "Load the specified file if it exists.
@@ -231,6 +231,19 @@ Optional `dir' specifies the directory where the file locates."
   (dw-load-file-if-exist
    :file file
    :dir (file-name-directory (or load-file-name buffer-file-name))))
+
+
+;;; configure related utils
+
+(defun dw-add-file-mode-pattern (pattern)
+  "Add single file mode pattern into `auto-mode-alist'."
+  (or (assoc (car pattern) auto-mode-alist)
+      (setq auto-mode-alist (cons pattern auto-mode-alist))))
+
+(defun dw-add-file-mode-pattern-list (lst)
+  "Add all file mode pattern in `lst' into `auto-mode-alist'."
+  (dolist (pattern lst)
+    (dw-add-file-mode-pattern pattern)))
 
 
 ;;; debug utils

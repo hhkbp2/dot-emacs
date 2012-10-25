@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-07-15 17:00>
+;; Time-stamp: <2012-10-25 19:48>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,11 +28,11 @@
 
 
 (require 'whitespace)
+(require 'dw-functionals)
+
 
 (autoload 'markdown-mode "markdown-mode.el"
 "Majar mode for editing Markdown files" t)
-
-(add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
 
 (defun markdown-settings ()
   "Settings for `markdown-mode'."
@@ -44,6 +44,8 @@
 
 (add-hook 'markdown-mode-hook
           'markdown-settings)
+
+(dw-add-file-mode-pattern '("\\.markdown$" . markdown-mode))
 
 
 (provide 'markdown-settings)

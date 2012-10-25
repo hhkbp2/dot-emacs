@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-04-08 21:27>
+;; Time-stamp: <2012-10-25 19:49>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,11 +29,10 @@
 
 ;; load face settings
 (require 'jde-face-settings)
+(require 'dw-functionals)
 
 
 (autoload 'jde-mode "jde" "JDE mode." t)
-
-(add-to-list 'auto-mode-alist '("\\.java\\'" . jde-mode))
 
 
 (defun jde-settings ()
@@ -56,6 +55,8 @@
 
 (eval-after-load "jde-mode"
   `(jde-settings))
+
+(dw-add-file-mode-pattern '("\\.java$" . jde-mode))
 
 
 (provide 'jde-settings)

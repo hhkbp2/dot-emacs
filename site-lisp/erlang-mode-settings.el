@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-25 15:14>
+;; Time-stamp: <2012-10-25 19:42>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 
 
 (require 'erlang-start)
+(require 'dw-functionals)
 
 
 (defun erlang-mode-settings ()
@@ -34,14 +35,6 @@
   (setq inferior-erlang-machine-options '("-sname" "emacs"))
   ;; add Erlang functions to an imenu menu
   (imenu-add-to-menubar "imenu")
-
-  (dolist (file-mode-pattern '(;; application description file
-                               ("\\.app\\'" . erlang-mode)
-                               ;; release description file
-                               ("\\.rel\\'" . erlang-mode)
-                               ;; release configuration file
-                               ("\\.config\\'" . erlang-mode)))
-    (add-to-list 'auto-mode-alist file-mode-pattern))
 
   (local-set-key "\177" 'c-hungry-backspace)
   (local-set-key [backspace] 'c-hungry-backspace)
@@ -55,5 +48,14 @@
 
 (add-hook 'erlang-mode-hook
           'erlang-mode-settings)
+
+
+(dw-add-file-mode-pattern-list '(;; application description file
+                                 ("\\.app$" . erlang-mode)
+                                 ;; release description file
+                                 ("\\.rel$" . erlang-mode)
+                                 ;; release configuration file
+                                 ("\\.config$" . erlang-mode)))
+
 
 (provide 'erlang-mode-settings)
