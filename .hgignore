@@ -7,4 +7,6 @@ syntax: regexp
 ^import/ecb.*
 ^import/jdee.*
 ^import/workgroups
+^import/distel.*
 ^personal
+

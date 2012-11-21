@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-25 19:42>
+;; Time-stamp: <2012-11-15 16:32>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,6 +26,29 @@
 
 (require 'erlang-start)
 (require 'dw-functionals)
+(require 'distel)
+
+
+
+;; A number of the erlang-extended-mode key bindings are useful in the shell too
+(defconst distel-shell-keys
+  '(("\C-\M-i"   erl-complete)
+    ("\M-?"      erl-complete)
+    ("\M-."      erl-find-source-under-point)
+    ("\M-,"      erl-find-source-unwind)
+    ("\M-*"      erl-find-source-unwind)
+    )
+  "Additional keys to bind when in Erlang shell.")
+
+(defun distel-settings ()
+  "Settings for `distel'."
+
+  (add-hook 'erlang-shell-mode-hook
+            (lambda ()
+              ;; add some Distel bindings to the Erlang shell
+              (dolist (spec distel-shell-keys)
+                (define-key erlang-shell-mode-map (car spec) (cadr spec)))))
+  )
 
 
 (defun erlang-mode-settings ()
@@ -44,10 +67,16 @@
 
   (local-set-key [(control c) (c)] 'comment-dwim)
   (local-set-key [(control c) (control c)] 'comment-dwim)
+
+  (local-set-key [(control c) (m) (f)] 'mark-erlang-function)
+  (local-set-key [(control c) (m) (c)] 'mark-erlang-clause)
+
+  (distel-settings)
   )
 
 (add-hook 'erlang-mode-hook
           'erlang-mode-settings)
+(distel-setup)
 
 
 (dw-add-file-mode-pattern-list '(;; application description file
