@@ -2,7 +2,7 @@
 #
 # Author: Dylan.Wen <dylan.wen.dw@gmail.com>
 # Created: Sep 15, 2012
-# Time-stamp: <2012-11-15 16:57>
+# Time-stamp: <2012-11-23 18:28>
 #
 
 QUIET     := @
@@ -42,8 +42,10 @@ init-packages:
 	$(QUIET) cd import && tar -xjf auto-complete-1.3.tar.bz2 && cd auto-complete-1.3 && make
 	$(QUIET) cd import && tar -xzf cedet-1.1.tar.gz && ln -s cedet-1.1 cedet && cd cedet/ && make
 	$(QUIET) cd import && tar -xzf color-theme-6.6.0.tar.gz && cd color-theme-6.6.0 && make
-	$(QUIET) cd import && tar -xzf ecb-2.40.tar.gz
-	$(QUIET) cd import && unzip jdee-bin-2.4.0.1.zip
+	$(QUIET) cd import && tar -xzf ecb-2.40.tar.gz && \
+       sed -i -e "s#\(ecb-required-cedet-version-max '(1 \)0#\11#" ./ecb-2.40/ecb-upgrade.el
+	$(QUIET) cd import && unzip jdee-bin-2.4.0.1.zip && \
+      sed -i -e 's#\(jde-cedet-max-version "1\.\)0#\11#' ./jdee-bin-2.4.0.1/lisp/jde.el
 	$(QUIET) cd import && tar -xjf workgroups-experimental-f3339422.tar.bz2
 	$(QUIET) cd import && tar -xzf distel-4.03.tar.gz
 
