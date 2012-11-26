@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-25 19:28>
+;; Time-stamp: <2012-11-26 22:25>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -192,6 +192,62 @@ If point reaches the beginning or end of buffer, it stops there."
 
 ;;; language utils
 
+(defun single? (lst)
+  (and (consp lst)
+       (null (cdr lst))))
+
+(defun append1 (lst obj)
+  (append lst (list obj)))
+
+
+(defun map-int (fn n)
+  (let ((acc nil))
+    (dotimes (i n)
+      (push (funcall fn i) acc))
+    (nreverse acc)))
+
+(defun filter (fn lst)
+  (let ((acc nil))
+    (dolist (e lst)
+      (let ((val (funcall fn e)))
+        (if val (push val acc))))
+    (nreverse acc)))
+
+(defun most (fn lst)
+  (if (null lst)
+      (values nil nil)
+    (let* ((wins (car lst))
+           (max (funcall fn wins)))
+      (dolist (obj (cdr lst))
+        (let ((score (funcall fn obj)))
+          (when (> score max)
+            (setf wins obj
+                  max score))))
+      (values wins max))))
+
+(defun combiner (x)
+  (typecase x
+    (number #'+)
+    (list #'append)
+    (t #'list)))
+
+;; usage:
+;; (combine 2 3)
+;; (combine '(a b) '(c d))
+(defun combine (&rest args)
+  (apply (combiner (car args))
+         args))
+
+
+(defun compose (&rest fns)
+  "Return a function that apply all functions call in `fns'."
+  (destructuring-bind (fn1 . rest) (reverse fns)
+    #'(lambda (&rest args)
+        (reduce #'(lambda (v f) (funcall f v))
+                rest
+                :initial-value (apply fn1 args)))))
+
+
 (defun disjoin (fn &rest fns)
   "Return a predicate that return true when any of the predicates return true."
   ;; ugly code to enable lexical binding as common lisp
@@ -212,6 +268,17 @@ If point reaches the beginning or end of buffer, it stops there."
       (lexical-let ((conj (apply #'conjoin fns)))
         #'(lambda (&rest args)
             (and (apply fn args) (apply conj args)))))))
+
+
+(defun curry (fn &rest args)
+  #'(lambda (&rest args2)
+      (apply fn (append args args2))))
+
+(defun rcurry (fn &rest args)
+  #'(lambda (&rest args2)
+      (apply fn (append args2 args))))
+
+(defun always (x) #'(lambda (&rest args) x))
 
 
 ;;; file loading utils
