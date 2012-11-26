@@ -45,7 +45,7 @@ init-packages:
 	$(QUIET) cd import && tar -xzf ecb-2.40.tar.gz && \
        sed -i -e "s#\(ecb-required-cedet-version-max '(1 \)0#\11#" ./ecb-2.40/ecb-upgrade.el
 	$(QUIET) cd import && unzip jdee-bin-2.4.0.1.zip && \
-      sed -i -e 's#\(jde-cedet-max-version "1\.\)0#\11#' ./jdee-bin-2.4.0.1/lisp/jde.el
+      sed -i -e 's#\(jde-cedet-max-version "1\.\)0#\11#' ./jdee-2.4.0.1/lisp/jde.el
 	$(QUIET) cd import && tar -xjf workgroups-experimental-f3339422.tar.bz2
 	$(QUIET) cd import && tar -xzf distel-4.03.tar.gz
 
