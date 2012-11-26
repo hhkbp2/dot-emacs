@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2011-10-24 22:46>
+;; Time-stamp: <2012-11-26 15:22>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@
 
 ;;(require 'xscheme)
 (require 'scheme)
+(require 'geiser-install)
 
 
 (defun scheme-mode-settings ()
