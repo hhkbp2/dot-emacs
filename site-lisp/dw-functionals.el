@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-11-26 22:25>
+;; Time-stamp: <2012-12-06 10:42>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -393,12 +393,32 @@ On Ubuntu 12.04.1 LTS, it returns (\"Ubuntu\", \"12.04.1\")."
      (t (values (first dist-info) (second dist-info))))))
 
 
-(defun dw-on-office-machine ()
-  "Return t if it runs on my office machines."
+(defun dw-on-ubuntu ()
+  "Return t if it runs on linux distribution `Ubuntu'."
   (multiple-value-bind (dist-name dist-verison) (system-distribution)
     (cond
      ((and (equal dist-name "Ubuntu")) t)
      (t nil))))
+
+(defun dw-on-office-machine ()
+  "Return t if it runs on my office machines."
+  (dw-on-ubuntu))
+
+
+(defun dw-version->=-p (major-version minor-version)
+  "Return t if current version is equal or greater than the given."
+  (and (>= emacs-major-version major-version)
+       (>= emacs-minor-version minor-version)))
+
+(defun dw-version->=-23.2 ()
+  "Return t if current version is equal or greater than 23.2."
+  (interactive)
+  (dw-version->=-p 23 2))
+
+(defun dw-version->=-23.3 ()
+  "Return t if currrent version is equal or greater than 23.3."
+  (interactive)
+  (dw-version->=-p 23 3))
 
 
 (provide 'dw-functionals)

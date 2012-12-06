@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-22 23:28>
+;; Time-stamp: <2012-12-06 10:44>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -55,6 +55,8 @@
 See `wlc/auto-complete-pair'.)
 The pairs include '', \"\", [], (), {}."
 
+  (interactive)
+
   (make-local-variable 'skeleton-pair)
   (make-local-variable 'skeleton-pair-on-word)
   (make-local-variable 'skeleton-pair-filter-function)
@@ -83,11 +85,14 @@ The pairs include '', \"\", [], (), {}."
 (defun my-auto-complete-indent-pair ()
   "Automatically complete the right part of pairs(with indentation)."
 
+  (interactive)
+  (my-auto-complete-pair)
   ;; override the default {} pair auto-completion setting
   (make-local-variable 'skeleton-pair-alist)
   (setq skeleton-pair-alist
         (append '((?{ > \n > _ \n ?} >))
                 (assq-delete-all '?{ skeleton-pair-alist))))
+
 
 ;; 为部分编程mode加载右括号自动缩进补全
 (dolist (mode-hook dev-mode-hook-list-static)
@@ -96,6 +101,7 @@ The pairs include '', \"\", [], (), {}."
 ;; 为除各种lisp mode外的编程mode加载右括号自动补全
 (dolist (mode-hook dev-mode-hook-list-nonlisp)
   (add-hook mode-hook 'my-auto-complete-pair))
+
 
 ;;; 去tab化
 (defun my-untabify()
@@ -167,7 +173,7 @@ The pairs include '', \"\", [], (), {}."
 (require 'makefile-mode-settings)
 
 (require 'java-mode-settings)
-(require 'jde-settings)
+;;(require 'jde-settings)
 
 (require 'sh-mode-settings)
 (require 'awk-mode-settings)

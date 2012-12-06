@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2011-09-13 10:46>
+;; Time-stamp: <2012-12-06 10:47>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -33,7 +33,12 @@
   ;; set indentation style to "java"
   (c-set-style "java")
   ;; enable c-subword-mode
-  (c-subword-mode 1))
+  (if (dw-version->=-23.3)
+      (subword-mode 1)
+    (c-subword-mode 1))
+
+  (local-set-key [(control c) (c)] 'comment-dwim)
+  (local-set-key [(control c) (control c)] 'comment-dwim))
 
 
 (add-hook 'java-mode-hook

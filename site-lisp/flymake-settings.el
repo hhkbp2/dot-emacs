@@ -5,7 +5,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; Maintainer: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-25 10:28>
+;; Time-stamp: <2012-12-06 10:34>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 ;;; Code:
 
 
+(require 'dw-functionals)
 (autoload 'flymake-find-file-hook "flymake" "" t)
 
 
@@ -136,8 +137,7 @@ Use CREATE-TEMP-F for creating temp copy."
   (eval-after-load "emaci"
     `(flymake-settings-4-emaci))
 
-  (and (>= emacs-major-version 23)
-       (>= emacs-minor-version 2)
+  (if (dw-version->=-23.2)
        (flymake-erlang-settings))
 
   (defvar flymake-mode-map (make-sparse-keymap))

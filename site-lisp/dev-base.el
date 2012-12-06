@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-08-26 23:00>
+;; Time-stamp: <2012-12-04 10:40>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -52,6 +52,7 @@
     makefile-gmake-mode
     ;; java
     java-mode
+    jde-mode
     ;; shell, term and shell script
     sh-mode
     shell-mode
@@ -95,6 +96,7 @@
     makefile-mode-hook
     ;; java
     java-mode-hook
+    jde-mode-hook
     ;; shell, term and shell script
     sh-mode-hook
     shell-mode-hook
@@ -142,7 +144,8 @@
 
 (defvar dev-mode-hook-list-static
   '(c-mode-common-hook
-    java-mode-hook))
+    java-mode-hook
+    jde-mode-hook))
 
 
 (provide 'dev-base)
