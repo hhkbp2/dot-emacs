@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-09-15 01:00>
+;; Time-stamp: <2012-12-30 16:11>
 
 (require 'wuxch-dired "my-wuxch-dired")
 (require 'wuxch-dired-copy-paste "my-wuxch-dired-copy-paste")
@@ -12,6 +12,11 @@
 (require 'dw-functionals)
 
 (define-key global-map (kbd "C-x d") 'dired-jump)
+
+(defadvice dired-jump (after revert-dired-buffer
+                             activate compile)
+  "When display dired, revert buffer to see the latest update."
+  (revert-buffer))
 
 (defun his-dired-sort ()
   "dired-mode中让目录显示在文件前"
