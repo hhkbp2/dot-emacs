@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-12-06 10:42>
+;; Time-stamp: <2013-01-01 18:52>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -188,6 +188,13 @@ If point reaches the beginning or end of buffer, it stops there."
           (replace-match "" nil nil)
           (setq remove-count (1+ remove-count)))
         (message (format "%d ^M removed from buffer" remove-count))))))
+
+
+;;; basic data structure
+
+(defun update-alist (key list new-cdr)
+  "Update the item's cdr to `new-cdr' if its car equals `key' in alist `list'."
+  (setcdr (assoc key list) new-cdr))
 
 
 ;;; language utils

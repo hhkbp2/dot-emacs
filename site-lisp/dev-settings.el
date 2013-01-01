@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2013-01-01 16:58>
+;; Time-stamp: <2013-01-01 19:45>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -46,6 +46,8 @@
 
 ;; hs-minor-mode,折叠代码
 (require 'hs-minor-mode-settings)
+
+(require 'whitespace-settings)
 
 
 ;;; 配置右括号自动补全

@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2013-01-01 17:50>
+;; Time-stamp: <2013-01-01 19:45>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@
   "Settings for `markdown-mode'."
 
   (setq whitespace-style
-        '(tailing lines indentation))
+        '(face trailing lines indentation tabs tab-mark))
   (whitespace-mode 1)
   )
 

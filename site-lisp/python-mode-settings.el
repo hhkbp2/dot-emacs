@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-29 10:59>
+;; Time-stamp: <2013-01-01 19:43>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@
 
   ;; show whitespace/tab
   (setq whitespace-style
-        '(indentation::tab indentation::space tabs tab-mark trailing))
+        '(face indentation::tab indentation::space tabs tab-mark trailing))
   (whitespace-mode 1)
 
   ;; load ropemacs settings
