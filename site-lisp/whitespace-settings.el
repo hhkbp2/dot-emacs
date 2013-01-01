@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2013-01-01 19:53>
+;; Time-stamp: <2013-01-01 22:18>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 
 
 (require 'whitespace)
+(require 'whitespace-face-settings)
 
 
 (defun whitespace-settings ()

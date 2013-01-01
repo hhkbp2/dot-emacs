@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2011-02-10 01:21>
+;; Time-stamp: <2013-01-01 22:08>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -565,45 +565,6 @@ Created by Dylan.Wen <dylan.wen.dw@gmail.com>, 2009-02-09."
        (((type tty) (class mono))
         (:background "white" :foreground "blue" :weight book))
        (t (:background "#232323" :foreground "#9e91ff" :weight book))))
-     (whitespace-empty ((t (:background "gray22" :foreground "#ff79d9"))))
-     (whitespace-hspace ((t (:background "gray22" :foreground "#ff79d9"))))
-     (whitespace-indentation
-      ((((class color) (min-colors 88))
-        (:background "gray40" :foreground "#ff79d9"))
-       (((class color) (min-colors 16))
-        (:background "gray40" :foreground "#ff79d9"))
-       (((class color) (min-colors 8))
-        (:background "white" :foreground "red"))
-       (((type tty) (class mono))
-        (:background "white" :foreground "red"))
-       (t (:background "gray40" :foreground "#ff79d9"))))
-     (whitespace-line ((t (:background "gray22" :foreground "violet"))))
-     (whitespace-newline ((t (:foreground "darkgray" :weight normal))))
-     (whitespace-space ((t (:background "gray22" :foreground "#ff79d9"))))
-     (whitespace-space-after-tab
-      ((t (:background "gray22" :foreground "#ff79d9"))))
-     (whitespace-space-before-tab
-      ((t (:background "DarkOrange" :foreground "#ff79d9"))))
-     (whitespace-tab
-      ((((class color) (min-colors 88))
-        (:background "gray30" :foreground "#ff79d9"))
-       (((class color) (min-colors 16))
-        (:background "gray30" :foreground "#ff79d9"))
-       (((class color) (min-colors 8))
-        (:background "white" :foreground "red"))
-       (((type tty) (class mono))
-        (:background "white" :foreground "red"))
-       (t (:background "gray30" :foreground "#ff79d9"))))
-     (whitespace-trailing
-      ((((class color) (min-colors 88))
-        (:background "red"))
-       (((class color) (min-colors 16))
-        (:background "red"))
-       (((class color) (min-colors 8))
-        (:background "white"))
-       (((type tty) (class mono))
-        (:background "white"))
-       (t (:background "red"))))
      (widget-button ((t (:weight bold))))
      (widget-button-pressed ((t (:foreground "red"))))
      (widget-documentation ((t (:foreground "limegreen"))))

@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2011-02-05 13:14>
+;; Time-stamp: <2013-01-01 22:05>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 
 
 (defun tabbar-face-settings ()
-  "Fact settings for `tabbar-mode'."
+  "Face settings for `tabbar-mode'."
   (custom-set-faces
    ;; 设置默认主题: 背景和前景颜色，大小，字体
    '(tabbar-default
