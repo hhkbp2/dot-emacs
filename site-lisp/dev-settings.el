@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-12-06 10:44>
+;; Time-stamp: <2013-01-01 16:58>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -138,7 +138,9 @@ The pairs include '', \"\", [], (), {}."
               (and (dw-on-office-machine)
                    (equal mode-hook 'c-mode-common-hook)
                    (or (equal feature 'my-untabify)
-                       (equal feature 'my-delete-trailing-space)))))
+                       (equal feature 'my-delete-trailing-space)))
+              (and (equal mode-hook 'markdown-mode-hook)
+                   (equal feature 'my-delete-trailing-space))))
         (add-hook mode-hook feature))))
 
 
@@ -186,7 +188,7 @@ The pairs include '', \"\", [], (), {}."
 (require 'erlang-mode-settings)
 
 (require 'thrift-mode-settings)
-(require 'markdown-settings)
+(require 'markdown-mode-settings)
 
 (require 'conf-mode-settings)
 
