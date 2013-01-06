@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2013-01-06 11:04>
+;; Time-stamp: <2013-01-06 12:11>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -72,7 +72,7 @@ The pairs include '', \"\", [], (), {}."
         (append '((?{ > \n > _ \n ?} >))
                 (assq-delete-all '?{ skeleton-pair-alist))))
 
-(defun slime-settings ()
+(defun skeleton-settings ()
   "Settings for `skeleton'."
 
   ;; 为部分编程mode加载右括号自动缩进补全
@@ -83,6 +83,8 @@ The pairs include '', \"\", [], (), {}."
   (dolist (mode-hook dev-mode-hook-list-nonlisp)
     (add-hook mode-hook 'my-auto-complete-pair))
   )
+
+(skeleton-settings)
 
 
 (provide 'skeleton-settings)

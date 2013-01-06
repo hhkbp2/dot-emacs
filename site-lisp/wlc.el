@@ -5,7 +5,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-02-13 23:11>
+;; Time-stamp: <2013-01-06 11:50>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -1463,7 +1463,7 @@ NONHIGHLIGHTED-FACE-LIST."
   ;; turn on `font-lock-mode' globally
   (global-font-lock-mode t)
   ;; maximum decoration (highlighting)
-  (wlc/maximum-decoration-on)
+  ;;(wlc/maximum-decoration-on)
 
   ;; apply these features to `wlc/all-features-on-mode-hook-list'
   ;; need to add these manually because they are buffer local

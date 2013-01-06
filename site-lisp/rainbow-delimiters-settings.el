@@ -1,10 +1,10 @@
 ;; -*- Emacs-Lisp -*-
-;; Settings for `slime'.
+;; Settings for `rainbow-delimiters'.
 
-;; Copyright (C) 2011 Dylan.Wen
+;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2013-01-06 11:35>
+;; Time-stamp: <2013-01-06 12:12>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,30 +24,26 @@
 ;;; Code:
 
 
-(require 'slime)
-(require 'skeleton-settings)
+(require 'rainbow-delimiters)
+(require 'rainbow-delimiters-face-settings)
+(require 'dev-base)
 
 
-(defun slime-settings ()
-  "Settings for `slime'."
+(defun rainbow-delimiters-settings ()
+  "Settings for `rainbow-delimiters'."
 
-  ;; 使用sbcl作为common lisp实现
-  (setq inferior-lisp-program "/usr/bin/sbcl")
-  (slime-setup `(slime-fancy))
   )
 
-(defun slime-repl-settings ()
-  "Settings for `slime-repl-mode'."
+(eval-after-load "rainbow-delimiters"
+  `(rainbow-delimiters-settings))
 
-  (add-hook 'slime-repl-mode-hook 'my-auto-complete-pair)
-  (add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode)
+
+(defun enable-rainbow-delimiters ()
+  (dolist (mode-hook dev-mode-hook-list-lisp)
+    (add-hook mode-hook 'rainbow-delimiters-mode))
   )
 
-(eval-after-load "slime"
-  `(slime-settings))
-
-(eval-after-load "slime-repl"
-  `(slime-repl-settings))
+(enable-rainbow-delimiters)
 
 
-(provide 'slime-settings)
+(provide 'rainbow-delimiters-settings)

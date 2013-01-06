@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2013-01-06 10:31>
+;; Time-stamp: <2013-01-06 11:44>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -112,11 +112,12 @@
 
 (require 'occur-settings)
 
-(require 'wlc-settings)
-
 (require 'emacs-lisp-mode-settings)
 (require 'scheme-mode-settings)
 (require 'common-lisp-mode-settings)
+
+(require 'wlc-settings)
+(require 'rainbow-delimiters-settings)
 
 (require 'cc-mode-settings)
 (require 'c-mode-settings)
