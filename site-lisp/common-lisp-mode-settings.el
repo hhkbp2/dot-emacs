@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-10-25 19:39>
+;; Time-stamp: <2013-01-06 11:01>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,10 +30,9 @@
 
 (defun common-lisp-mode-settings ()
   "Settings for `common-lisp-mode'."
+
   )
 
-
-(slime-settings)
 
 (dw-add-file-mode-pattern-list '(("\\.lisp$" . common-lisp-mode)
                                  ("\\.cl$" . common-lisp-mode)))

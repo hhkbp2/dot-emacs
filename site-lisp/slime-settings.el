@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2011-12-19 00:51>
+;; Time-stamp: <2013-01-06 10:46>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 
 
 (require 'slime)
+(require 'skeleton-settings)
 
 
 (defun slime-settings ()
@@ -34,6 +35,18 @@
   (setq inferior-lisp-program "/usr/bin/sbcl")
   (slime-setup `(slime-fancy))
   )
+
+(defun slime-repl-settings ()
+  "Settings for `slime-repl-mode'."
+
+  (add-hook 'slime-repl-mode-hook 'my-auto-complete-pair)
+  )
+
+(eval-after-load "slime"
+  `(slime-settings))
+
+(eval-after-load "slime-repl"
+  `(slime-repl-settings))
 
 
 (provide 'slime-settings)

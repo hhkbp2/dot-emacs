@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-12-04 10:40>
+;; Time-stamp: <2013-01-06 10:13>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -43,6 +43,7 @@
     scheme-interaction-mode
     lisp-mode
     lisp-interaction-mode
+    slime-repl-mode
     ;; c/c++
     ;;c-mode-common
     c-mode
@@ -128,6 +129,7 @@
     emacs-lisp-mode-hook
     lisp-mode-hook
     lisp-interaction-mode-hook
+    slime-repl-mode-hook
     scheme-mode-hook
     scheme-interaction-mode-hook)
   "A list of all dev mode hooks.")
@@ -135,10 +137,9 @@
 
 
 (defvar dev-mode-hook-list-nonlisp
-  (let ((hook-list-nonlisp dev-mode-hook-list))
-    (dolist (mode-hook dev-mode-hook-list-lisp)
-      (setq hook-list-nonlisp (remove mode-hook hook-list-nonlisp)))
-    hook-list-nonlisp)
+  (remove-if #'(lambda (hook)
+                 (member hook dev-mode-hook-list))
+             dev-mode-hook-list)
   "A list of all nonlisp dev mode hooks.")
 
 
