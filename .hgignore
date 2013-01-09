@@ -10,3 +10,7 @@ syntax: regexp
 ^import/distel.*
 ^personal
 
+syntax: glob
+
+*.elc
+
