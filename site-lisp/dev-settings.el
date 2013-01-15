@@ -144,7 +144,7 @@
 (require 'conf-mode-settings)
 
 ;; flymake
-(require 'flymake-settings)
+;;(require 'flymake-settings)
 
 ;; cedet
 (require 'cedet-settings)
