@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2013-01-06 12:11>
+;; Time-stamp: <2013-01-31 10:32>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 (require 'dev-base)
 
 
-(defun my-auto-complete-pair ()
+(defun dw-auto-complete-pair ()
   "Automatically complete the right part of pairs used in all programming modes.
 \(Except all lisp modes, for which there is a separat setting in `wlc'.
 See `wlc/auto-complete-pair'.)
@@ -61,11 +61,11 @@ The pairs include '', \"\", [], (), {}."
   (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
   (local-set-key (kbd "{") 'skeleton-pair-insert-maybe))
 
-(defun my-auto-complete-indent-pair ()
+(defun dw-auto-complete-indent-pair ()
   "Automatically complete the right part of pairs(with indentation)."
 
   (interactive)
-  (my-auto-complete-pair)
+  (dw-auto-complete-pair)
   ;; override the default {} pair auto-completion setting
   (make-local-variable 'skeleton-pair-alist)
   (setq skeleton-pair-alist
@@ -77,11 +77,11 @@ The pairs include '', \"\", [], (), {}."
 
   ;; 为部分编程mode加载右括号自动缩进补全
   (dolist (mode-hook dev-mode-hook-list-static)
-    (add-hook mode-hook 'my-auto-complete-indent-pair))
+    (add-hook mode-hook 'dw-auto-complete-indent-pair))
 
   ;; 为除各种lisp mode外的编程mode加载右括号自动补全
   (dolist (mode-hook dev-mode-hook-list-nonlisp)
-    (add-hook mode-hook 'my-auto-complete-pair))
+    (add-hook mode-hook 'dw-auto-complete-pair))
   )
 
 (skeleton-settings)

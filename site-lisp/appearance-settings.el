@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2012-09-16 00:24>
+;; Time-stamp: <2013-01-29 00:18>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -75,10 +75,10 @@
 
   ;; font setting
   (set-fontset-font "fontset-default"
-                    'unicode '("Ubuntu Mono-13" . "unicode-bmp"))
+                    'unicode '("Ubuntu Mono-12" . "unicode-bmp"))
   (add-to-list 'default-frame-alist
-               '(font . "Ubuntu Mono-13"))
-  (set-frame-font "Ubuntu Mono-13")
+               '(font . "Ubuntu Mono-12"))
+  (set-frame-font "Ubuntu Mono-12")
 
   ;; 加载font-lock配置
   (require 'font-lock-settings)

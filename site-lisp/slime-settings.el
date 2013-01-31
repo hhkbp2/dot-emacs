@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
-;; Time-stamp: <2013-01-06 11:35>
+;; Time-stamp: <2013-01-31 10:35>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 
 
 (require 'slime)
-(require 'skeleton-settings)
+(require 'wlc)
 
 
 (defun slime-settings ()
@@ -39,7 +39,7 @@
 (defun slime-repl-settings ()
   "Settings for `slime-repl-mode'."
 
-  (add-hook 'slime-repl-mode-hook 'my-auto-complete-pair)
+  (add-hook 'slime-repl-mode-hook 'wlc/auto-complete-pair)
   (add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode)
   )
 

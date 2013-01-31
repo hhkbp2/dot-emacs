@@ -6,6 +6,8 @@
 (proclaim '(inline last1 single append1 conc1 mklist))
 (proclaim '(optimize speed))
 
+;;;; chapter 4
+
 ;;; figure 4.1
 
 (defun last1 (lst)
@@ -215,6 +217,29 @@
                  (intern (make-string 1
                                       :initial-element c)))
        (symbol-name sym)))
+
+;;;; chapter 5
+
+;;; figure 5.1
+
+(defvar *!equivs* (make-hash-table))
+
+(defun ! (fn)
+  (or (gethash fn *!equivs*) fn))
+
+(defun def! (fn fn!)
+  (setf (gethash fn *!equivs*) fn!))
+
+;;; figure 5.2
+
+(defun memoize (fn)
+  (let ((cache (make-hash-table :test #'equal)))
+    #'(lambda (&rest args)
+        (multiple-value-bind (val win) (gethash args cache)
+          (if win
+              val
+              (setf (gethash args cache)
+                    (apply fn args)))))))
 
 ;; TODO
 
