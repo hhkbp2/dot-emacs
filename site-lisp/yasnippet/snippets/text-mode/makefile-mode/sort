@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 #name : $(sort list)
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 $(sort ${1:list})

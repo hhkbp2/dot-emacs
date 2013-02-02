@@ -1,13 +1,13 @@
 # -*- mode: snippet -*-
 #name : header for python script
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 # -*- coding: utf-8 -*-
 ##################################################
 # ${1:a simple description with a single sentence}
 #
 # Copyright (C) 2011 Dylan.Wen
-# Author: Dylan.Wen <dylan.wen.dw@gmail.com>
+# Author: Dylan.Wen <hhkbp2@gmail.com>
 # Time-stamp: <>
 #
 # This file is free software under GPLv3.

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 #name : $(subst search-string,replace-string,text)
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 $(subst ${1:search-string},${2:replace-string},${3:text})

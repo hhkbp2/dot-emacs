@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #name : struct ... { ... }
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 struct ${1:name} {
     $0

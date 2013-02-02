@@ -1,6 +1,6 @@
 # Makefile for managing my dot-emacs repository
 #
-# Author: Dylan.Wen <dylan.wen.dw@gmail.com>
+# Author: Dylan.Wen <hhkbp2@gmail.com>
 # Created: Sep 15, 2012
 # Time-stamp: <2012-11-23 18:28>
 #

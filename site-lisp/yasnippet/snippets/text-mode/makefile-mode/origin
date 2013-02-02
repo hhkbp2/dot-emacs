@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 #name : $(origin variable)
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 $(origin ${1:variable})

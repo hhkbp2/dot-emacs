@@ -3,7 +3,7 @@
 
 ;; Copyright (C) 2011 Dylan.Wen
 
-;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
+;; Author: Dylan.Wen <hhkbp2@gmail.com>
 ;; Time-stamp: <2011-07-10 19:48>
 
 ;; This file is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@
 
   ;; 个人信息
   (setq user-full-name "Dylan.Wen")
-  (setq user-mail-address "dylan.wen.dw@gmail.com")
+  (setq user-mail-address "hhkbp2@gmail.com")
 
 
   ;; 默认主模式用 text-mode

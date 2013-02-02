@@ -1,13 +1,13 @@
 # -*- mode: snippet -*-
 #name : c/c++ file header of qmultiget : author, copyright ...
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 /* ${1:对文件的一句话简单描述}
 
 Copyright (C) 2006 liubin, 2011 Dylan.Wen
 
 Author: liubin <multiget@gmail.com>
-Maintainer: Dylan.Wen <dylan.wen.dw@gmail.com>
+Maintainer: Dylan.Wen <hhkbp2@gmail.com>
 Time-stamp: <>
 
 This program is free software: you can redistribute it and/or modify

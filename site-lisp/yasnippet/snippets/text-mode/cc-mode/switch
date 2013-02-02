@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #name : switch (...) {  case: ... default: ... }
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 switch (${1:integral_condition}) {
     case ${2:constant1}: {

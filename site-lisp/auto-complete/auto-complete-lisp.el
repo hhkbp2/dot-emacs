@@ -3,7 +3,7 @@
 
 ;; Copyright (C) 2012 Dylan.Wen
 
-;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
+;; Author: Dylan.Wen <hhkbp2@gmail.com>
 ;; Time-stamp: <2012-01-23 14:33>
 
 ;; This file is free software: you can redistribute it and/or modify

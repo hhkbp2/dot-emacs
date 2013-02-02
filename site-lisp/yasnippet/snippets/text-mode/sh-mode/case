@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #name : case ... in ... esac
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 case ${1:variable} in
     ${2:value} )

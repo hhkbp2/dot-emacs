@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 #name : struct servent *getservbyport(int port, const char *protoname);
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 getservbyport(${1:int port}, ${2:const char *protoname});

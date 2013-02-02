@@ -3,7 +3,7 @@
 
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
-;; Author: Dylan.Wen <dylan.wen.dw@gmail.com>
+;; Author: Dylan.Wen <hhkbp2@gmail.com>
 ;; Time-stamp: <2013-01-01 22:08>
 
 ;; This file is free software: you can redistribute it and/or modify
@@ -44,7 +44,7 @@
 (defun color-theme-darkmate ()
   "A color theme inspired by the darkmate color theme of gEdit,
 which is inspired by the default color theme of TextMate.
-Created by Dylan.Wen <dylan.wen.dw@gmail.com>, 2009-02-09."
+Created by Dylan.Wen <hhkbp2@gmail.com>, 2009-02-09."
   (interactive)
   ;;
   ;; Brief colors used in this theme:
@@ -588,7 +588,7 @@ Created by Dylan.Wen <dylan.wen.dw@gmail.com>, 2009-02-09."
 (add-to-list 'color-themes
              '(color-theme-darkmate
                "Darkmate"
-               "Dylan.Wen <dylan.wen.dw@gmail.com>"))
+               "Dylan.Wen <hhkbp2@gmail.com>"))
 
 
 (provide 'color-theme-darkmate)

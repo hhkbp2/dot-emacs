@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #name : if (...) { ... }
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 if (${1:condition}) {
     $0

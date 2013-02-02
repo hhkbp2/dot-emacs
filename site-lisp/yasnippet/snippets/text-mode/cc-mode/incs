@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 #name : #include <...>
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 #include <$1>

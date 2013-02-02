@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 #name : using direclaration using namespace::name;
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 using ${1:std}::${2:name};

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 #name : $(foreach variable,list,body)
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 $(foreach ${1:variable},${2:list},${3:body})

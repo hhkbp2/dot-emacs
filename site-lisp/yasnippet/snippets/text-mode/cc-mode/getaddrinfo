@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #name : int getaddrinfo(const char *hostname, const char *service, const struct addrinfo *hints, struct addrinfo **result);
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 getaddrinfo(${1:const char *hostname}, ${2:const char *service},
             ${3:const struct addrinfo *hints}, ${4:struct addrinfo **result});

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #name : case ... : { ... break; }
-#contributor : Dylan.Wen <dylan.wen.dw@gmail.com>
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 case ${2:constant1}: {
     $3
