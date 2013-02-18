@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-31 10:35>
+;; Time-stamp: <2013-02-09 16:22>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 ;;; Code:
 
 
-(require 'slime)
+(require 'slime-autoloads)
 (require 'wlc)
 
 
