@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-02-28 16:28>
+;; Time-stamp: <2013-03-13 14:42>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -97,7 +97,8 @@
   ;; 启动Emacs的时候最大化Emacs
   ;;(require 'maxframe-settings)
 
-  (require 'powerline-settings)
+  (unless (dw-on-office-machine)
+    (require 'powerline-settings))
   )
 
 (appearance-settings)

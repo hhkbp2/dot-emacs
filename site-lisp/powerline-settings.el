@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-03-13 14:33>
+;; Time-stamp: <2013-03-13 14:42>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -35,8 +35,7 @@
 
   )
 
-(unless (dw-on-office-machine)
-  (powerline-settings))
+(powerline-settings)
 
 
 (provide 'powerline-settings)
