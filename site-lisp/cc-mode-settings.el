@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-12-06 10:46>
+;; Time-stamp: <2013-04-07 22:23>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,6 +26,103 @@
 
 (require 'cc-mode)
 (require 'dw-functionals)
+
+
+(defconst dw-cc-mode-style
+  '((c-basic-offset . 4)
+    (c-comment-only-line-offset . 0)
+    (c-offsets-alist . (;; top indentation
+                        (topmost-intro . 0)
+                        (topmost-intro-cont . c-lineup-topmost-intro-cont)
+                        ;; -- macro --
+                        (cpp-macro . 0)
+                        ;;(cpp-macro-cont . )
+                        ;; -- function --
+                        (defun-open . 0)
+                        (defun-close . 0)
+                        (defun-block-intro . +)
+                        ;; between function arglist and opening brace
+                        (func-decl-cont . c-lineup-java-throws)
+                        ;; k&r style
+                        (knr-argdecl-intro . +)
+                        (knr-argdecl . 0)
+                        ;; argument
+                        (arglist-intro . c-lineup-arglist-intro-after-paren)
+                        (arglist-cont . c-lineup-gcc-asm-reg)
+                        (arglist-cont-nonempty . c-lineup-arglist-intro-after-paren)
+                        (arglist-close . c-lineup-arglist)
+                        ;; -- block --
+                        (block-open . 0)
+                        (block-close . 0)
+                        ;; -- enum or static array list --
+                        (brace-list-open . 0)
+                        (brace-list-close . 0)
+                        (brace-list-intro . +)
+                        (brace-list-entry . 0)
+                        (brace-entry-open . 0)
+                        ;; -- statement --
+                        (statement . 0)
+                        (statement-cont . +)
+                        (statement-block-intro . +)
+                        (statement-case-open . 0)
+                        (statement-case-intro . +)
+                        (substatement . +)
+                        (substatement-open . 0)
+                        (substatement-label . 2)
+                        ;; label
+                        (label . 2)
+                        (case-label . +)
+                        ;; control statement
+                        (do-while-closure . 0)
+                        (else-clause . 0)
+                        ;; namespace
+                        (namespace-open . 0)
+                        (namespace-close . 0)
+                        (innamespace . 0)
+                        ;; -- class --
+                        ;; inheritance list
+                        (inher-intro . ++)
+                        (inher-cont . c-lineup-multi-inher)
+                        ;; opening brace
+                        (class-open . 0)
+                        (class-close . 0)
+                        (inclass . ++)
+                        ;; in-class inline
+                        (inline-open . 0)
+                        (inline-close . 0)
+                        ;; label
+                        (access-label . -)
+                        ;; member initialization
+                        (member-init-intro . ++)
+                        (member-init-cont . c-lineup-multi-inher)
+                        ;; friend
+                        (friend . 0)
+                        ;; -- extern --
+                        (extern-lang-open . 0)
+                        (extern-lang-close . 0)
+                        (inextern-lang . +)
+                        ;; -- template --
+                        (template-args-cont . (c-lineup-template-args +))
+                        ;; -- others --
+                        ;; string
+                        (string . c-lineup-dont-change)
+                        ;; exception
+                        (catch-clause . 0)
+                        ;; comment
+                        (comment-intro . c-lineup-comment)
+                        ;; stream
+                        (stream-op . c-lineup-streamop)
+                        ;; expression inside
+                        (inexpr-statement . +)
+                        (inexpr-class . 0))))
+  "Dylan.Wen's cc mode indentation style.")
+
+
+(defmacro dw-apply-code-style (style)
+  (let ((sym-name (symbol-name style)))
+    `(progn
+       (c-add-style ,sym-name ,style)
+       (c-set-style ,sym-name))))
 
 
 (defun cc-mode-settings ()
@@ -58,6 +155,9 @@
   (setq c-macro-cppflags " ")
   (setq c-macro-prompt-flag t)
   (setq abbrev-mode t)
+
+  ;; 定制缩进风格
+  (dw-apply-code-style dw-cc-mode-style)
 
   ;; 定制注释风格
   (setq comment-start "// "

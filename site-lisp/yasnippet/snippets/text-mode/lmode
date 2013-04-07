@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : mode: ...
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
+# --
+-*- mode: $1 -*-
