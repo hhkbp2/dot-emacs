@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-06 10:13>
+;; Time-stamp: <2013-03-20 20:48>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -138,7 +138,7 @@
 
 (defvar dev-mode-hook-list-nonlisp
   (remove-if #'(lambda (hook)
-                 (member hook dev-mode-hook-list))
+                 (member hook dev-mode-hook-list-lisp))
              dev-mode-hook-list)
   "A list of all nonlisp dev mode hooks.")
 
