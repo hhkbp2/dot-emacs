@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-04-07 22:23>
+;; Time-stamp: <2013-04-13 16:24>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,7 +30,22 @@
 
 (defconst dw-cc-mode-style
   '((c-basic-offset . 4)
-    (c-comment-only-line-offset . 0)
+    (c-comment-only-line-offset . (0 . 0))
+    (c-hanging-braces-alist . ((substatement-open after)
+                               (brace-list-open)
+                               (namespace-open after)
+                               (class-open after)
+                               (extern-lang-open after)
+                               (inexpr-class-open after)))
+    (c-hanging-colons-alist . ((label after)
+                               (access-label after)
+                               (member-init-intro before)))
+    (c-cleanup-list . (brace-else-brace
+                       brace-elseif-brace
+                       brace-catch-brace
+                       empty-defun-braces
+                       scope-operator
+                       compact-empty-funcall))
     (c-offsets-alist . (;; top indentation
                         (topmost-intro . 0)
                         (topmost-intro-cont . c-lineup-topmost-intro-cont)
@@ -156,6 +171,8 @@
   (setq c-macro-prompt-flag t)
   (setq abbrev-mode t)
 
+  (setq c-tab-always-indent t)
+  (setq c-echo-syntactic-information-p t)
   ;; 定制缩进风格
   (dw-apply-code-style dw-cc-mode-style)
 

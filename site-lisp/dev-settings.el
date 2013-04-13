@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-04-01 16:01>
+;; Time-stamp: <2013-04-13 16:19>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -94,12 +94,16 @@
         (add-hook mode-hook feature))))
 
 
+(defconst dw-tab-width 4)
+
+
 (defun dev-misc()
   "Miscellaneous settings for software development."
 
   ;; set tab width
-  (setq default-tab-width 4)
-  (setq tab-width 4)
+  (setq default-tab-width dw-tab-width)
+  (setq tab-width dw-tab-width)
+  (setq tab-stop-list (number-sequence dw-tab-width 120 dw-tab-width))
 
   ;; 用空格而不用tab来对齐(默认用tab来对齐)
   (setq-default indent-tabs-mode nil)
