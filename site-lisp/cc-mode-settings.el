@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-04-13 16:24>
+;; Time-stamp: <2013-05-06 10:22>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,24 +26,49 @@
 
 (require 'cc-mode)
 (require 'dw-functionals)
+(require 'google-c-style)
 
 
 (defconst dw-cc-mode-style
-  '((c-basic-offset . 4)
+  '((c-recognize-knr-p . nil)
+    (c-enable-xemacs-performance-kludge-p . t) ; speed up indentation in XEmacs
+    (c-basic-offset . 2)
     (c-comment-only-line-offset . (0 . 0))
-    (c-hanging-braces-alist . ((substatement-open after)
-                               (brace-list-open)
-                               (namespace-open after)
+    (c-hanging-braces-alist . ((defun-open after)
+                               (defun-close before after)
+                               (inline-open after)
+                               (inline-close before after)
+                               (block-open after)
+                               (block-close . c-snug-do-while)
+                               (statement-case-open after)
+                               (substatement-open after)
                                (class-open after)
+                               (class-close before after)
+                               (inexpr-class-open after)
+                               (inexpr-class-close before)
                                (extern-lang-open after)
-                               (inexpr-class-open after)))
-    (c-hanging-colons-alist . ((label after)
+                               (extern-lang-close after)
+                               (namespace-open after)
+                               (brace-list-open)))
+    (c-hanging-colons-alist . ((case-label)
+                               (label after)
                                (access-label after)
-                               (member-init-intro before)))
+                               (member-init-intro before)
+                               (inher-intro)))
+    (c-hanging-semi&comma-criteria
+     . (c-semi&comma-no-newlines-for-oneline-inliners
+        c-semi&comma-inside-parenlist
+        c-semi&comma-no-newlines-before-nonblanks))
+    (c-indent-comments-syntactically-p . t)
+    (comment-column . 40)
+    (c-indent-comment-alist . ((other . (space . 2))))
+
     (c-cleanup-list . (brace-else-brace
                        brace-elseif-brace
                        brace-catch-brace
                        empty-defun-braces
+                       defun-close-semi
+                       list-close-comma
                        scope-operator
                        compact-empty-funcall))
     (c-offsets-alist . (;; top indentation
@@ -62,7 +87,8 @@
                         (knr-argdecl-intro . +)
                         (knr-argdecl . 0)
                         ;; argument
-                        (arglist-intro . c-lineup-arglist-intro-after-paren)
+                        ;;(arglist-intro . c-lineup-arglist-intro-after-paren)
+                        (arglist-intro google-c-lineup-expression-plus-4)
                         (arglist-cont . c-lineup-gcc-asm-reg)
                         (arglist-cont-nonempty . c-lineup-arglist-intro-after-paren)
                         (arglist-close . c-lineup-arglist)
@@ -78,14 +104,17 @@
                         ;; -- statement --
                         (statement . 0)
                         (statement-cont . +)
+                        ;;(statement-cont . c-lineup-assignments)
                         (statement-block-intro . +)
-                        (statement-case-open . 0)
+                        ;;(statement-case-open . 0)
+                        (statement-case-open . +)
                         (statement-case-intro . +)
                         (substatement . +)
                         (substatement-open . 0)
                         (substatement-label . 2)
                         ;; label
-                        (label . 2)
+                        ;;(label . 2)
+                        (label . /)
                         (case-label . +)
                         ;; control statement
                         (do-while-closure . 0)
@@ -101,12 +130,13 @@
                         ;; opening brace
                         (class-open . 0)
                         (class-close . 0)
-                        (inclass . ++)
+                        (inclass . +)
                         ;; in-class inline
                         (inline-open . 0)
                         (inline-close . 0)
                         ;; label
-                        (access-label . -)
+                        ;;(access-label . -)
+                        (access-label . /)
                         ;; member initialization
                         (member-init-intro . ++)
                         (member-init-cont . c-lineup-multi-inher)
@@ -200,6 +230,10 @@
 
 (add-hook 'c-mode-common-hook
           'cc-mode-settings)
+
+;; 使用google c++风格
+;;(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 
 (provide 'cc-mode-settings)

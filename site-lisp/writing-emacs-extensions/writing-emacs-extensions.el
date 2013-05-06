@@ -80,7 +80,7 @@ which define the cycling order for the command `move-cursor-to-window'.")
     (move-cursor-to-bottom))))
 
 ;; It is somewhat tricky using the key ; in key combination.
-(global-set-key (kbd "C-;") 'move-cursor-to-window)
+;;(global-set-key (kbd "C-;") 'move-cursor-to-window)
 ;; The statement above also works as
 ;;(global-set-key [(control \;)] 'move-cursor-to-window)
 

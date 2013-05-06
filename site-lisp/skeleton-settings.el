@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-31 10:32>
+;; Time-stamp: <2013-04-28 15:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -76,8 +76,8 @@ The pairs include '', \"\", [], (), {}."
   "Settings for `skeleton'."
 
   ;; 为部分编程mode加载右括号自动缩进补全
-  (dolist (mode-hook dev-mode-hook-list-static)
-    (add-hook mode-hook 'dw-auto-complete-indent-pair))
+  ;; (dolist (mode-hook dev-mode-hook-list-static)
+  ;;   (add-hook mode-hook 'dw-auto-complete-indent-pair))
 
   ;; 为除各种lisp mode外的编程mode加载右括号自动补全
   (dolist (mode-hook dev-mode-hook-list-nonlisp)
