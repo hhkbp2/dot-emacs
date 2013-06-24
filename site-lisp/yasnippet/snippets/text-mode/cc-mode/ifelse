@@ -3,8 +3,7 @@
 #contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 if (${1:condition}) {
-	$2
-}
-else {
-	$0
+    $2
+} else {
+    $0
 }
