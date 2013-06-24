@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-08-17 22:34>
+;; Time-stamp: <2013-06-24 12:13>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -106,6 +106,7 @@
                              (name . "^\\.bbdb$")
                              (name . "^\\.newsrc-dribble")))
                  ("Thrift" (name . "\\.thrift$"))
+                 ("Protobuf" (name . "\\.proto$"))
                  ("Markdown" (mode . markdown-mode))
                  ("Xml" (or (mode . nxml-mode)
                             (mode . xml-mode)
