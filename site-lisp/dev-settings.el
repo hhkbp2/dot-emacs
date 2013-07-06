@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-04-13 16:19>
+;; Time-stamp: <2013-06-24 10:35>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -143,6 +143,8 @@
 (require 'erlang-mode-settings)
 
 (require 'thrift-mode-settings)
+(require 'protobuf-mode-settings)
+
 (require 'markdown-mode-settings)
 
 (require 'conf-mode-settings)
