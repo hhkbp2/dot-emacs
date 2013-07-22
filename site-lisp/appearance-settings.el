@@ -35,7 +35,7 @@
 
   ;; hide menu-bar under terminal
   (if (equal window-system nil)
-      (menu-bar-mode nil))
+      (menu-bar-mode -1))
 
   ;; hide tool-bar
   (tool-bar-mode nil)
@@ -97,7 +97,7 @@
   ;; 启动Emacs的时候最大化Emacs
   ;;(require 'maxframe-settings)
 
-  (unless (dw-on-office-machine)
+  (when (display-graphic-p)
     (require 'powerline-settings))
   )
 

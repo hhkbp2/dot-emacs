@@ -34,7 +34,7 @@
   "Settings for `gtags-select-mode'."
   (linum-mode 1)
   ;; key-bindings
-  (define-key gtags-mode-map [(meta ,)] 'gtags-pop-stack)
+  (define-key gtags-mode-map [(meta \,)] 'gtags-pop-stack)
   (define-key gtags-mode-map [(meta .)] 'gtags-select-tag))
 
 
@@ -65,7 +65,7 @@
   (ad-activate 'gtags-select-mode)
 
   ;; key-bindings
-  (define-key gtags-mode-map [(meta ,)] 'gtags-pop-stack)
+  (define-key gtags-mode-map [(meta \,)] 'gtags-pop-stack)
   (define-key gtags-mode-map [(meta .)] 'gtags-find-tag-from-here))
 
 

@@ -43,7 +43,11 @@
   (icomplete-mode t)
 
   ;; 启用部分补全功能，如输入M-x q r r相当于M-x query-replace-regexp
-  (partial-completion-mode t)
+  (if (>= emacs-major-version 24)
+      (progn
+	(setq completion-styles '(partial-completion initials))
+	(setq completion-pcm-complete-word-inserts-delimiters t))
+    (partial-completion-mode t))
 
   ;; `completion-ignored-extensions': 字符串列表，常为后缀
   ;; 补全文件名时不把以其中字符串结尾的文件名列为侯选

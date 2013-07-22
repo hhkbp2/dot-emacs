@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-04 15:43>
+;; Time-stamp: <2013-07-22 14:14>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -43,12 +43,12 @@
   (setq hs-set-up-overlay 'hs-abstract-overlay)
 
   ;; key bindings
-  (define-key hs-minor-mode-map [(control c) (,) (H)] 'hs-hide-all)
-  (define-key hs-minor-mode-map [(control c) (,) (S)] 'hs-show-all)
-  (define-key hs-minor-mode-map [(control c) (,) (h)] 'hs-hide-block)
-  (define-key hs-minor-mode-map [(control c) (,) (s)] 'hs-show-block)
-  (define-key hs-minor-mode-map [(control c) (,) (l)] 'hs-hide-level)
-  (define-key hs-minor-mode-map [(control c) (,) (t)] 'hs-toggle-hiding)
+  (define-key hs-minor-mode-map [(control c) (\,) (H)] 'hs-hide-all)
+  (define-key hs-minor-mode-map [(control c) (\,) (S)] 'hs-show-all)
+  (define-key hs-minor-mode-map [(control c) (\,) (h)] 'hs-hide-block)
+  (define-key hs-minor-mode-map [(control c) (\,) (s)] 'hs-show-block)
+  (define-key hs-minor-mode-map [(control c) (\,) (l)] 'hs-hide-level)
+  (define-key hs-minor-mode-map [(control c) (\,) (t)] 'hs-toggle-hiding)
 
   ;; use mouse to hide/show
   (define-key hs-minor-mode-map [(C-down-mouse-1)] 'hs-toggle-hiding)
