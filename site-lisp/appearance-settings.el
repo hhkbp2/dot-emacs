@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-06-30 18:14>
+;; Time-stamp: <2013-07-23 02:26>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -34,11 +34,11 @@
   (setq visible-bell nil)
 
   ;; hide menu-bar under terminal
-  (if (equal window-system nil)
+  (if (not (display-graphic-p))
       (menu-bar-mode -1))
 
   ;; hide tool-bar
-  (tool-bar-mode nil)
+  (tool-bar-mode -1)
 
   ;; hide scroll-bar
   (scroll-bar-mode nil)
@@ -75,10 +75,10 @@
 
   ;; font setting
   (set-fontset-font "fontset-default"
-                    'unicode '("微软雅黑Monaco-11" . "unicode-bmp"))
+                    'unicode '("Ubuntu Mono-11" . "unicode-bmp"))
   (add-to-list 'default-frame-alist
-               '(font . "微软雅黑Monaco-11"))
-  (set-frame-font "微软雅黑Monaco-11")
+               '(font . "Ubuntu Mono-11"))
+  (set-frame-font "Ubuntu Mono-11")
 
   ;; 加载font-lock配置
   (require 'font-lock-settings)

@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-06-24 10:35>
+;; Time-stamp: <2013-07-23 10:57>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -56,18 +56,23 @@
 ;;; 去tab化
 (defun my-untabify()
   "Replace TAB with whitespace."
-  (add-hook 'local-write-file-hooks
+  (add-hook 'write-file-functions
             '(lambda()
                (save-excursion
-                 (untabify (point-min) (point-max))))))
+                 (untabify (point-min) (point-max)))
+               ;; Return nil for the benefit of `write-file-functions'.
+               nil)))
 
 
 ;;; 删除行末空白
 (defun my-delete-trailing-space()
   "Delete the trailing whitespace."
   (add-hook
-   'write-contents-functions ;; the buffer local hook
-   ;; 'write-file-functions  ;; alternative, the global hook
+   ;; buffer local, would be changed after buffer mode change.
+   'write-contents-functions
+   ;; alternative, buffer local, marked as a permanent-local,
+   ;; changing the major mode does not alter it.
+   ;; 'write-file-functions
    'delete-trailing-whitespace))
 
 
@@ -78,7 +83,8 @@
        '(highlight-symbol-mode-on
          hs-minor-mode
          my-delete-trailing-space
-         my-untabify))
+         my-untabify
+	 ))
     ;; makefile里面用TAB来标记命令，所以不能删除tab
     (if (not (or
               ;; no untabify in makefile

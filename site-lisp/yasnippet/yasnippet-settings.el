@@ -1,7 +1,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;;;; settings for yasnippet
-;; Time-stamp: <2012-09-15 16:03>
+;; Time-stamp: <2013-07-23 10:35>
 
 
 
@@ -25,7 +25,7 @@
 (eval-after-load "yasnippet"
   `(yasnippet-settings))
 
-(yas/load-directory yas/root-directory)
+;;(yas/load-directory yas/root-directory)
 
 
 (provide 'yasnippet-settings)
