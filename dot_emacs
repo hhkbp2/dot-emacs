@@ -4,7 +4,7 @@
 ;; Copyright (C) 2008,2009,2010,2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-22 13:11>
+;; Time-stamp: <2013-07-25 23:23>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -57,6 +57,8 @@
 (my-add-subdirs-to-load-path site-lisp-path)
 
 
+(require 'package-settings)
+
 ;; 一些基本的小函数
 (require 'ahei-misc)
 
@@ -88,6 +90,8 @@
 (setq uniquify-buffer-name-style 'forward)
 
 (require 'dired-settings)
+
+(require 'fiplr-settings)
 
 (require 'ido-settings)
 

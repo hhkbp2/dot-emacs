@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-23 02:26>
+;; Time-stamp: <2013-07-25 23:57>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -60,10 +60,15 @@
   ;; highlight marked region
   (setq-default transient-mark-mode t)
 
-
   ;; split the window horizontally when use ediff
   (setq ediff-split-window-function 'split-window-horizontally)
 
+  (when (>= emacs-major-version 24)
+    ;; after copy Ctrl+c in X11 apps, you can paste by `yank' in emacs
+    (setq x-select-enable-clipboard t)
+    ;; after mouse selection in X11, you can paste by `yank' in emacs
+    (setq x-select-enable-primary t)
+    )
 
   ;; set initial frame size
   ;;(setq initial-frame-alist '((width . 80) (height . 30)
