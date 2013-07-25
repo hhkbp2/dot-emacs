@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-23 10:57>
+;; Time-stamp: <2013-07-23 17:40>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -56,6 +56,7 @@
 ;;; 去tab化
 (defun my-untabify()
   "Replace TAB with whitespace."
+  (make-variable-buffer-local 'write-file-functions)
   (add-hook 'write-file-functions
             '(lambda()
                (save-excursion
@@ -83,8 +84,7 @@
        '(highlight-symbol-mode-on
          hs-minor-mode
          my-delete-trailing-space
-         my-untabify
-	 ))
+         my-untabify))
     ;; makefile里面用TAB来标记命令，所以不能删除tab
     (if (not (or
               ;; no untabify in makefile
