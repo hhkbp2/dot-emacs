@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-12-06 10:52>
+;; Time-stamp: <2013-07-26 21:12>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -49,9 +49,10 @@
     (add-hook mode-hook
               (lambda ()
                 (linum-mode 1))))
-  (if (dw-on-office-machine)
-      (linum+-settings)
-    (linum-relative-settings))
+  ;; show line numbers in absolute value
+  (linum+-settings)
+  ;; alternative, show line numbers
+  ;;(linum-relative-settings)
   )
 
 
