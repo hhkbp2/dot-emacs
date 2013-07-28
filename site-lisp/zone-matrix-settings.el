@@ -5,7 +5,7 @@
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
 ;; Created: Jan 25, 2011
-;; Time-stamp: <2011-01-27 16:20>
+;; Time-stamp: <2013-07-28 17:20>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
 
 (defun zone-matrix-settings ()
   "Settings for `zone-matrix'."
-  ;; TODO add setting if necessary.
+  (setq zmx-unicode-mode t)
   )
 
 

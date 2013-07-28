@@ -5,7 +5,7 @@
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
 ;; Created: Jan 25, 2011
-;; Time-stamp: <2013-07-28 16:06>
+;; Time-stamp: <2013-07-28 17:53>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -100,13 +100,19 @@
   :group 'zone-matrix)
 
 
+(defcustom zmx-unicode-mode nil
+  "*The flag indicates that char displayed is unicode or ansii."
+  :group 'zone-matrix)
+
+
 (defcustom zmx-update-time 0.02
   "*The time to wait for before the next screen update."
   :group 'zone-matrix)
 
 
 (defcustom zmx-update-speed-factor 1.5
-  "*The factor of light bar falling speed on every screen update.")
+  "*The factor of light bar falling speed on every screen update."
+  :group 'zone-matrix)
 
 
 (defcustom zmx-light-bar-max-length 30
@@ -162,7 +168,6 @@ into blank screen would be 1/N."
 
 (defun zmx-check-settings ()
   "Check the environment variable settings."
-  :group 'zone-matrix
   (unless (and (> zmx-update-time 0)
                ;;(> zmx-update-speed-factor 1)
                (> zmx-light-bar-max-length 1)
@@ -170,30 +175,74 @@ into blank screen would be 1/N."
     (error "error in function `zone-matrix': wrong setting.")))
 
 
-(defcustom zmx-char-table
+(defcustom zmx-ascii-char-table
   "ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789"
-  "*Char table to form light bar."
+  "*ASCII char table to form light bar."
+  :group 'zone-matrix)
+
+(defcustom zmx-japan-char-table
+  "\
+あいうえお\
+かきくけこ\
+さしすせそ\
+たちつてと\
+はひふへほ\
+なにぬねの\
+まみむめも\
+らりるれろ\
+やゆよ\
+ん\
+がぎぐげご\
+ざじずぜぞ\
+だぢづでど\
+ばびぶべぼ\
+ぱぴぷぺぽ\
+\
+アイウエオ\
+カキクケコ\
+サシスセソ\
+タチツテト\
+ハヒフヘホ\
+ナニヌネノ\
+マミムメモ\
+ラリルレロ\
+ヤユヨ\
+ン\
+ガギグゲゴ\
+ザジズゼゾ\
+ダヂヅデド\
+バビブベボ\
+パピプペポ"
+  "*Japan char table to form light bar."
+  :group 'zone-matrix)
+
+(defcustom zmx-unicode-char-table zmx-japan-char-table
+  "*Unicode char table to form light bar."
   :group 'zone-matrix)
 
 
+(defun zmx-blank-char ()
+  "Return a blank char."
+  (if zmx-unicode-mode
+      (encode-char 12288 'ucs)
+    ? ))
+
 (defun zmx-random (seq)
   "Return a random element in sequence SEQ."
-  :group 'zone-matrix
   (elt seq (random (length seq))))
 
 (defun zmx-random-char ()
   "Return a random char to form light bar."
-  :group 'zone-matrix
-  (zmx-random zmx-char-table))
+  (if zmx-unicode-mode
+      (zmx-random zmx-unicode-char-table)
+    (zmx-random zmx-ascii-char-table)))
 
 (defun zmx-random-char-str ()
   "Return a random char to form light bar."
-  :group 'zone-matrix
-  (char-to-string (zmx-random zmx-char-table)))
+  (char-to-string (zmx-random-char)))
 
 (defun zmx-random-light-bar-head-face ()
   "Return a random light bar head face."
-  :group 'zone-matrix
   (zmx-random zmx-light-bar-head-faces))
 
 
@@ -209,6 +258,7 @@ into blank screen would be 1/N."
 
 
 (defun zmx-move-char (text old new)
+  "Move char from position OLD to NEW in TEXT."
   (aset text new (aref text old))
   (put-text-property new (1+ new) 'face
                      (get-text-property old 'face text)
@@ -243,8 +293,8 @@ default nil.
            ,@body)))))
 
 
-(defun zmx-inner-loop-on-buffer (win-width visible-column-number)
-  "The inner loop of `zone-matrix'."
+(defun zmx-inner-loop-buffer-impl (win-width visible-column-number)
+  "The inner loop of `zmx-buffer-impl'."
   (let ((column-index 0)
         (point 0)
         (old-property nil)
@@ -281,7 +331,7 @@ default nil.
          ((equal old-property 'zmx-light-bar-tail-face)
           ;; The light bar fades.
           (zmx-update point
-                      (zmx-set-str-face (make-string 1 ? ) nil))
+                      (zmx-set-str-face (make-string 1 (zmx-blank-char)) nil))
           (aset light-bar-states column-index 0))
          ((member old-property zmx-light-bar-head-faces)
           ;; The light bar raises just now.
@@ -303,14 +353,13 @@ default nil.
                                               (zmx-random-light-bar-head-face)))
                 (aset light-bar-states column-index 1))
             (zmx-update point
-                        (zmx-set-str-face (make-string 1 ? ) nil))))))
+                        (zmx-set-str-face (make-string 1 (zmx-blank-char)) nil))))))
       ;; wait for some time to update the screen
       (sit-for zmx-update-time))))
 
 
-(defun zmx-on-buffer ()
-  "The Matrix screen saver of Emacs based on `zone'."
-  :group 'zone-matrix
+(defun zmx-buffer-impl ()
+  "The Matrix screen saver of Emacs, buffer based implemention."
   ;; Hide the mode line in order to avoid the fast update of column value
   ;; at modeline when `column-mode' is on, which could be annoying.
   ;; In `zone-matrix' the point change a lot in a really fast speed.
@@ -320,7 +369,9 @@ default nil.
    (message "")
    (let* (;; To minus one from `(window-width)' to avoid
           ;; the continuation char '$' or '\' from displaying
-          (win-width (1- (window-width)))
+          (win-width (if zmx-unicode-mode
+                         (/ (1- (window-width)) 2)
+                       (1- (window-width))))
           (win-height (window-height))
           ;; the number of column with visible char
           ;; the last column would have the char newline, which is not visible.
@@ -330,16 +381,19 @@ default nil.
      (zmx-check-settings)
      ;; Clean the last screen and insert the blank new content
      (erase-buffer)
-     (let ((line (concat (make-string visible-column-number ? ) [?\n])))
+     (let ((line (concat (make-string visible-column-number (zmx-blank-char)) [?\n])))
        (dotimes (var win-height)
          (insert line)))
      ;; Inner loop
      (condition-case err
-         (zmx-inner-loop-on-buffer win-width visible-column-number)
-       (error (setq quit t))))))
+         (zmx-inner-loop-buffer-impl win-width visible-column-number)
+       ((debug error) (setq quit t))))
+   )
+  )
 
 
-(defun zmx-inner-loop-on-text (win-width visible-column-number text)
+(defun zmx-inner-loop-text-impl (win-width visible-column-number text)
+  "The inner loop of `zmx-text-impl'."
   (let ((column-index 0)
         (point 0)
         (old-property nil)
@@ -374,7 +428,7 @@ default nil.
                              text))
          ((equal old-property 'zmx-light-bar-tail-face)
           ;; The light bar fades.
-          (aset text column-index ? )
+          (aset text column-index (zmx-blank-char))
           (put-text-property column-index (1+ column-index) 'face nil text)
           (aset light-bar-states column-index 0))
          ((member old-property zmx-light-bar-head-faces)
@@ -398,7 +452,7 @@ default nil.
                                    text)
                 (aset light-bar-states column-index 1))
             (progn
-              (aset text column-index ? )
+              (aset text column-index (zmx-blank-char))
               (put-text-property column-index (1+ column-index) 'face nil
                                  text))))))
       ;; clean last screen and insert the new content
@@ -410,7 +464,8 @@ default nil.
       (sit-for zmx-update-time))))
 
 
-(defun zmx-on-text ()
+(defun zmx-text-impl ()
+  "The Matrix screen saver for Emacs, text based implemention."
   ;; Hide the mode line in order to avoid the fast update of column value
   ;; at modeline when `column-mode' is on, which could be annoying.
   ;; In `zone-matrix' the point change a lot in a really fast speed.
@@ -418,9 +473,11 @@ default nil.
    (message "")
    (let* (;; To minus one from `(window-width)' to avoid
           ;; the continuation char '$' or '\' from displaying
-          (win-width (1- (window-width)))
+          (win-width (if zmx-unicode-mode
+                         (/ (1- (window-width)) 2)
+                       (1- (window-width))))
           (win-height (window-height))
-          (text (make-string (* win-width win-height) ? ))
+          (text (make-string (* win-width win-height) (zmx-blank-char)))
           ;; the number of column with visible char
           ;; the last column would have the char newline, which is not visible.
           (visible-column-number (1- win-width))
@@ -432,20 +489,20 @@ default nil.
        (aset text (1- (* (1+ line-index) win-width)) ?\n))
      ;; Inner loop
      (condition-case err
-         (zmx-inner-loop-on-text win-width visible-column-number text)
+         (zmx-inner-loop-text-impl win-width visible-column-number text)
        (error (setq quit t))))))
 
 
 (defun zone-matrix ()
   "The entry function for the framework `zone' to call.
 
-Two similiar function, `zmx-on-text' and `zmx-on-buffer', are provided
+Two similiar function, `zmx-text-impl' and `zmx-buffer-impl', are provided
 in this module based on different implementations.
 The former keeps track of a text object, which will be used to
 reflesh the whole screen. The later directly modify the zone buffer.
-It seems the `zmx-on-text' runs somewhat nicer than the other, even though
+It seems the `zmx-text-impl' runs somewhat nicer than the other, even though
 it requires higher resource consumption. So it is used as the default."
-  (zmx-on-text))
+  (zmx-text-impl))
 
 
 (provide 'zone-matrix)
