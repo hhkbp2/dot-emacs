@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2011-03-11 13:52>
+;; Time-stamp: <2013-07-30 14:11>
 
 ;; 在状态栏显示行号
 (line-number-mode 1)
@@ -14,11 +14,11 @@
 ;; 设置时间显示格式为:
 ;; <hour>:<minute> <month>-<day> <weekday>
 (setq display-time-format "<%H:%M %b %d %A>")
-; 设置时间显示更新间隔(单位: 秒)
+                                        ; 设置时间显示更新间隔(单位: 秒)
 (setq display-time-interval 20)
 
 ;; 在状态行显示时间
-(display-time)
+;;(display-time)
 
 ;; 在mode-line上用彩色显示当前buffer行数
 (defun get-lines-4-mode-line ()
@@ -28,7 +28,7 @@
              'mouse-face 'mode-line-highlight
              ;; 加上颜色
              'face 'mode-line-lines-face
-             'help-echo (format "%d lines" lines)) " ")))
+             'help-echo (format "%d lines" lines)))))
 
 (defun get-size-indication-format ()
   (if (and transient-mark-mode mark-active)
@@ -49,61 +49,61 @@
 (if is-after-emacs-23
     (setq-default
      mode-line-position
-     `((:eval (get-lines-4-mode-line))
-       (:propertize
-        "%p"
-        'local-map mode-line-column-line-number-mode-map
-        'mouse-face 'mode-line-highlight
-        'help-echo "Size indication mode\n\
-mouse-1: Display Line and Column Mode Menu")
-       ;; 当选中一块区域后, 会高亮显示这个区域有多少个字符, 没有选中区域的时候, 则显示当前buffer的大小
-       (size-indication-mode
-        (" "
-         (:eval
-          (propertize (get-size-indication-format)
-           'face (and transient-mark-mode mark-active (get-mode-line-region-face))
-           'local-map mode-line-column-line-number-mode-map
-           'mouse-face 'mode-line-highlight
-           'help-echo "Buffer position, mouse-1: Line/col menu"))))
-       (:eval
+     `((:eval
         ;; 当显示行号已经打开时, 则不在mode-line上显示行号
         (if line-number-mode
             (if column-number-mode
                 (propertize
-                 " (%l,%c)"
+                 "(%l,%c) "
                  'local-map mode-line-column-line-number-mode-map
                  'mouse-face 'mode-line-highlight
                  'help-echo "Line number and Column number\n\
 mouse-1: Display Line and Column Mode Menu")
               (propertize
-               " L%l"
+               "L%l "
                'local-map mode-line-column-line-number-mode-map
                'mouse-face 'mode-line-highlight
                'help-echo "Line Number\n\
 mouse-1: Display Line and Column Mode Menu"))
           (if column-number-mode
               (propertize
-               " C%c"
+               "C%c "
                'local-map mode-line-column-line-number-mode-map
                'mouse-face 'mode-line-highlight
                'help-echo "Column number\n\
-mouse-1: Display Line and Column Mode Menu"))))))
+mouse-1: Display Line and Column Mode Menu"))))
+       ;;        (:propertize
+       ;;         "%p"
+       ;;         'local-map mode-line-column-line-number-mode-map
+       ;;         'mouse-face 'mode-line-highlight
+       ;;         'help-echo "Size indication mode\n\
+       ;; mouse-1: Display Line and Column Mode Menu")
+       (:eval (get-lines-4-mode-line))
+       ;; 当选中一块区域后, 会高亮显示这个区域有多少个字符, 没有选中区域的时候, 则显示当前buffer的大小
+       (size-indication-mode
+        (" "
+         (:eval
+          (propertize (get-size-indication-format)
+                      'face (and transient-mark-mode mark-active (get-mode-line-region-face))
+                      'local-map mode-line-column-line-number-mode-map
+                      'mouse-face 'mode-line-highlight
+                      'help-echo "Buffer position, mouse-1: Line/col menu"))))))
   (let* ((help-echo "mouse-1: select (drag to resize), mouse-2 = C-x 1, mouse-3 = C-x 0"))
     (setq-default
      mode-line-position
-     `((:eval (get-lines-4-mode-line))
-       (:propertize "%p" 'help-echo ,help-echo)
+     `((:eval
+        (if (and line-number-mode (not linum-mode))
+            (if column-number-mode
+                (propertize "(%l,%c) " 'help-echo ,help-echo)
+              (propertize "L%l " 'help-echo ,help-echo))
+          (if column-number-mode
+              (propertize "C%c " 'help-echo ,help-echo))))
+       ;; (:propertize "%p" 'help-echo ,help-echo)
+       (:eval (get-lines-4-mode-line))
        (size-indication-mode
         (" " (:eval (propertize
                      (get-size-indication-format) 'help-echo ,help-echo
-                     'face (and transient-mark-mode mark-active (get-mode-line-region-face))))))
-       (:eval
-        (if (and line-number-mode (not linum-mode))
-            (if column-number-mode
-                (propertize " (%l,%c)" 'help-echo ,help-echo)
-              (propertize " L%l" 'help-echo ,help-echo))
-          (if column-number-mode
-              (propertize " C%c" 'help-echo ,help-echo))))))))
+                     'face (and transient-mark-mode mark-active (get-mode-line-region-face))))))))))
 
 (let* ((help-echo
         "mouse-1: Select (drag to resize)\n\
