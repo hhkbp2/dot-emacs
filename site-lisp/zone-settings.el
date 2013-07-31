@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-28 16:08>
+;; Time-stamp: <2013-07-31 17:05>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -92,8 +92,8 @@
   (zone-matrix-settings)
   ;; set `zone-matrix' to be the only zone program
   (setq zone-programs [
-;;                       zone-pgm-putz-with-case
-;;                       zone-pgm-random-life
+                       zone-pgm-putz-with-case
+                       zone-pgm-random-life
                        zone-matrix
                        ])
 
