@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-06-22 12:46>
+;; Time-stamp: <2013-08-04 03:35>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,12 +30,21 @@
 (defun keybinding-settings ()
   "Settings for keybinding."
 
-  ;; 常用习惯，`F1'打开帮助，常用帮助有info和woman（就是在emacs中看man）
+  ;; 很少需要挂起emacs，取消`suspend-frame'的默认键绑定
+  ;; 键序列`C-z'容易与键序列`C-x'混淆
+  (global-unset-key "\C-z")
+
+  ;; 不需要用`F1'打开帮助，常用帮助有info和woman（就是在emacs中看man）
   ;;(global-set-key [f1] 'info)
   (global-unset-key [(f1)])
+  ;; 取消默认的`kmacro-end-or-call-macro'键绑定
+  (global-unset-key [(f4)])
 
-  ;; 撤消，常用键
+  ;; undo and redo
   (global-set-key [f2] 'undo)
+  (global-set-key [(f3)] 'redo)
+  (global-set-key [(control q)] 'undo)
+  (global-set-key [(control z)] 'redo)
 
   ;; 关闭当前buffer
   (global-set-key [f10] 'kill-this-buffer)
@@ -63,10 +72,6 @@
   ;; 用`ibuffer'代替默认的`buffer-menu'
   (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-  ;; 很少需要挂起emacs，取消`suspend-frame'的默认键绑定
-  ;; 键序列`C-z'容易与键序列`C-x'混淆
-  (global-unset-key "\C-z")
-
   ;; 很少手动改`fill-column'的值，取消其默认键绑定
   ;; 键序列`C-x f'容易和键序列`C-x C-f'混淆
   (global-unset-key [(control x) (f)])
@@ -78,8 +83,6 @@
   (global-unset-key [(control x) (control c)])
   (global-set-key [(control x) (meta q)] 'save-buffers-kill-terminal)
 
-  ;; 取消不常用的键绑定
-  (global-unset-key [(f4)])
   )
 
 (keybinding-settings)

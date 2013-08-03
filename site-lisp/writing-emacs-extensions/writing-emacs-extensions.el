@@ -28,8 +28,8 @@
   (interactive "P")
   (scroll-behind (prefix-numeric-value n)))
 
-(global-set-key "\C-q" 'scroll-n-lines-behind)
-(global-set-key "\C-z" 'scroll-n-lines-ahead)
+(global-set-key "\C-c\C-p" 'scroll-n-lines-behind)
+(global-set-key "\C-c\C-n" 'scroll-n-lines-ahead)
 
 (global-set-key "\C-x\C-q" 'quoted-insert)
 

@@ -1,10 +1,10 @@
 ;; -*- Emacs-Lisp -*-
-;; Settings for `redo+'.
+;; Settings for `undo-tree'.
 
-;; Copyright (C) 2011 Dylan.Wen
+;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 03:02>
+;; Time-stamp: <2013-08-04 03:08>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,16 +24,17 @@
 ;;; Code:
 
 
-(require 'redo+)
+(require 'undo-tree)
 
 
-(defun redo+-settings ()
+(defun undo-tree-settings ()
   "Settings for `redo+'."
-
+  (defalias 'redo 'undo-tree-redo)
+  (global-undo-tree-mode 1)
   )
 
-(eval-after-load "redo+"
-  `(redo+-settings))
+(eval-after-load "undo-tree"
+  `(undo-tree-settings))
 
 
-(provide 'redo+-settings)
+(provide 'undo-tree-settings)
