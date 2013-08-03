@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 03:47>
+;; Time-stamp: <2013-08-04 04:56>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 (require 'helm)
 (require 'helm-match-plugin)
 (require 'helm-config)
+(require 'helm-face-settings)
 
 
 (defun helm-settings ()
