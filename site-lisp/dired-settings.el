@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2013-08-04 02:21>
+;; Time-stamp: <2013-08-04 02:37>
 
 (require 'wuxch-dired "my-wuxch-dired")
 (require 'wuxch-dired-copy-paste "my-wuxch-dired-copy-paste")
@@ -181,6 +181,8 @@
 (require 'dired-lis-settings)
 
 (def-redo-command dired-redo 'dired-redo 'dired-undo)
+
+(require 'dired-sort-menu+)
 
 
 (provide 'dired-settings)
