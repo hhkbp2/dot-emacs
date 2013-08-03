@@ -1,10 +1,10 @@
 ;; -*- Emacs-Lisp -*-
-;; Settings for `helm'.
+;; Settings for `smex'.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 03:47>
+;; Time-stamp: <2013-08-04 03:58>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,23 +24,23 @@
 ;;; Code:
 
 
-(require 'helm)
-(require 'helm-match-plugin)
-(require 'helm-config)
+(require 'smex)
 
 
-(defun helm-settings ()
-  "Settings for `helm'."
+(defun smex-settings ()
+  "Settings for `smex'."
 
-  ;; use helm for all
-  (helm-mode 1)
+  ;; autoloaded
+  ;;(smex-initialize)
 
-  (global-set-key [(control x) (control f)] 'helm-find-files)
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+  (global-set-key (kbd "C-c M-x") 'smex-update)
+  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
   )
 
+(eval-after-load "smex"
+  `(smex-settings))
 
-(eval-after-load "helm"
-  `(helm-settings))
 
-
-(provide 'helm-settings)
+(provide 'smex-settings)
