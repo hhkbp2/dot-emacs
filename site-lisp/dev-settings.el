@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-26 12:11>
+;; Time-stamp: <2013-08-03 17:52>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -75,6 +75,10 @@
    ;; changing the major mode does not alter it.
    ;; 'write-file-functions
    'delete-trailing-whitespace))
+
+(when (dw-version->=-p 24 3)             ; since version 24.3
+  ;; don't delete trailing empty lines of buffer
+  (setq delete-trailing-lines nil))
 
 
 ;; apply features
