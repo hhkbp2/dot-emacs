@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-03 14:56>
+;; Time-stamp: <2013-08-03 15:22>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,6 +30,29 @@
 (require 'python-ropemacs-settings)
 (require 'pycomplete-settings)
 (require 'jedi-settings)
+
+
+(defun dw-load-pylint-and-pep8 ()
+
+  ;; This line is needed to fix the bug:
+  ;; "Symbol's function definition is void: tramp-tramp-file-p"
+  ;; when `python-pylint' or `python-pep8' starts up.
+  (require 'tramp)
+
+  (require 'python-pylint-autoloads)
+  (require 'python-pep8-autoloads)
+  )
+(dw-load-pylint-and-pep8)
+
+
+(defun python-pylint-settings()
+  "Settings for `python-pylint'."
+
+  )
+
+(defun python-pep8-settings ()
+  "Settings for `python-pep8'."
+  )
 
 
 (defun python-mode-settings ()
