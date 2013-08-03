@@ -1,12 +1,22 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-12-30 16:11>
+;; Time-stamp: <2013-08-04 02:21>
 
 (require 'wuxch-dired "my-wuxch-dired")
 (require 'wuxch-dired-copy-paste "my-wuxch-dired-copy-paste")
 
 (require 'dired-details+)
-(setq dired-details-initially-hide nil)
+
+(defun dired-details-settings ()
+  "Settings for `dired-details'."
+  ;; hide dired details on dired buffer, default is t
+  ;;(setq dired-details-initially-hide nil)
+  ;; show symbolic link target path
+  (setq dired-details-hide-link-targets nil)
+  )
+
+(eval-after-load "dired-details"
+  `(dired-details-settings))
 
 (require 'dired+-settings)
 (require 'dw-functionals)
@@ -30,9 +40,6 @@
   (set-buffer-modified-p nil))
 (add-hook 'dired-after-readin-hook 'his-dired-sort)
 (add-hook 'dired-lood-hook 'his-dired-sort)
-
-;; dired中用T就把一个目录压缩为一个.tar.gz文件
-(require 'dired-tar)
 
 (defun ywb-dired-filter-regexp (regexp &optional arg)
   "dired mode中只显示后缀名符合正则表达式的文件和目录"
@@ -97,10 +104,10 @@
      ("M-s"         dired-sort-toggle-or-edit)
      ("M-g"         revert-buffer)
      ("M-r"         diredp-rename-this-file)
-     ("M-i m"       dired-mark)
+     ;; ("M-i m"       dired-mark)
      ("M-a"         wuxch-mark-all-files-directories)
-     ("M-i u"       dired-unmark)
-     ("M-i a"       dired-unmark-all-marks)
+     ;; ("M-i u"       dired-unmark)
+     ;; ("M-i a"       dired-unmark-all-marks)
      ("DEL"         dired-unmark-backward)
      ("M-o"         dired-omit-mode)
      ("M-/"         dired-undo)
