@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-31 17:05>
+;; Time-stamp: <2013-08-05 10:21>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -101,9 +101,9 @@
   (ad-activate 'zone)
 
   ;; trigger screen saver when Emacs is idle for a while
-  (zone-when-idle (* 60
-                     15 ;; personally I feel 15 minutes is fine
-                     ))
+  ;; (zone-when-idle (* 60
+  ;;                    15 ;; personally I feel 15 minutes is fine
+  ;;                    ))
   )
 
 (zone-settings)
