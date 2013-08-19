@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-10-25 19:46>
+;; Time-stamp: <2013-08-19 11:04>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,8 +27,6 @@
 (require 'pycomplete)
 
 
-(autoload 'python-mode "python-mode" "Python editing mode." t)
-
 (defun pycomplete-settings ()
   "Settings for `pycomplete'."
 
@@ -41,9 +39,6 @@
 
 (eval-after-load "pycomplete"
   `(pycomplete-settings))
-
-
-(dw-add-file-mode-pattern '("\\.py$" . python-mode))
 
 
 (provide 'pycomplete-settings)

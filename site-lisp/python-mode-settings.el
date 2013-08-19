@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-19 10:17>
+;; Time-stamp: <2013-08-19 11:42>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -84,6 +84,7 @@
   (define-key python-mode-map [(control c) (c)] 'comment-dwim)
   (define-key python-mode-map [(control c) (control c)] 'comment-dwim)
 
+  (require 'python-mode)
   (define-key python-mode-map (kbd "RET") 'py-newline-and-indent)
   )
 
