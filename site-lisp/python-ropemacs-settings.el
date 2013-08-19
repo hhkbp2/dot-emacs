@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-09-11 18:50>
+;; Time-stamp: <2013-08-12 10:56>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,13 +37,14 @@
 (defun python-ropemacs-load()
   "Load ropemacs library."
 
+;;  (setq ropemacs-enable-shortcuts nil)
   (setq ropemacs-global-prefix "C-c p")
-  (pymacs-load "ropemacs" "rope-")
 
+  (pymacs-load "ropemacs" "rope-")
   (setq ropemacs-codeassist-maxfixes 3)
   (setq ropemacs-guess-project t)
-  (setq ropemacs-enable-autoimport t)
   (setq ropemacs-confirm-saving 'nil)
+  (setq ropemacs-enable-autoimport t)
   (setq ropemacs-autoimport-modules '("os" "sys"))
   (ropemacs-mode t))
 
