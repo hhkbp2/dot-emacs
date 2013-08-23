@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-06 12:12>
+;; Time-stamp: <2013-08-23 10:34>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,7 +26,6 @@
 
 (require 'rainbow-delimiters)
 (require 'rainbow-delimiters-face-settings)
-(require 'dev-base)
 
 
 (defun rainbow-delimiters-settings ()
@@ -39,8 +38,8 @@
 
 
 (defun enable-rainbow-delimiters ()
-  (dolist (mode-hook dev-mode-hook-list-lisp)
-    (add-hook mode-hook 'rainbow-delimiters-mode))
+  (set-variable 'frame-background-mode 'dark)
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
   )
 
 (enable-rainbow-delimiters)
