@@ -5,7 +5,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-06 11:50>
+;; Time-stamp: <2013-08-24 17:30>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -68,7 +68,7 @@
 ;;
 ;; 5. additional highlighting
 ;;   currently support addtional highlight on elisp keywords,
-;;   built-in functions, every parentheses (in pair or not differently).
+;;   built-in functions.
 ;;
 ;; Hope you like it!
 
@@ -139,22 +139,6 @@ of another pattern on your need.
 Used in function `wlc/beginning-of-defun'."
   :type '(choice (const nil)
                  regexp)
-  :group 'wlc)
-
-
-(defcustom wlc/paren-regexp
-  "[]()[]"
-  "*Regex used to search parentheses in Lisp code."
-  :type '(choice (const nil)
-                 regexp)
-  :group 'wlc)
-
-
-(defcustom wlc/paren-nonhighlighted-face-list
-  '(font-lock-comment-face font-lock-string-face font-lock-doc-face
-                           font-lock-doc-string-face)
-  "*A list of face where parentheses wouldn't be highlighted in `wlc'."
-  :type 'list
   :group 'wlc)
 
 
@@ -777,15 +761,7 @@ cons-cells-consed\\|command-error-function\\|command-debug-status\\|\
 buffer-access-fontified-property\\|auto-resize-tool-bars\\|\
 auto-raise-tool-bar-buttons\
 \\)\\_>"
-     1 'wlc/built-in-variable-face)
-
-    ;;; highlight parentheses
-    ;; parentheses by default
-    ("[()]" . 'wlc/paren-default-face)
-    ;; parentheses in pair
-    (wlc/match-lisp-paren
-     (0 'wlc/paren-in-pair-face prepend))
-    )
+     1 'wlc/built-in-variable-face))
 
   "*A list of keywords of elisp.
 A user-level font-lock keywords to be added to the end of `font-lock-keywords'.
@@ -849,28 +825,6 @@ in font-lock mode."
   :group 'wlc)
 
 
-(defface wlc/paren-default-face
-  '((((class color) (min-colors 88)) (:foreground "red"))
-    (((class color) (min-colors 16)) (:foreground "red"))
-    (((class color) (min-colors 8)) (:foreground "red"))
-    (((type tty) (class mono)) (:foreground "red"))
-    (t (:inherit default :foreground "red")))
-  "Face to use for highlighting lisp parentheses \"()\" by default
-in font-lock mode."
-  :group 'wlc)
-
-
-(defface wlc/paren-in-pair-face
-  '((((class color) (min-colors 88)) (:foreground "burlywood"))
-    (((class color) (min-colors 16)) (:foreground "burlywood"))
-    (((class color) (min-colors 8)) (:foreground "blue"))
-    (((type tty) (class mono)) (:foreground "blue"))
-    (t (:inherit default :foreground "blue")))
-  "Face to use for highlighting matching lisp parentheses \"()\"
-in font-lock mode."
-  :group 'wlc)
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Internal variables
 
@@ -920,28 +874,6 @@ See the function `wlc/toggle-auto-complete-pair'.")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Functions
 
-(defun wlc/update-modeline ()
-  "Update the mode line for wlc."
-  (let ((fmt (format "/%s" ;; "/%s%s"
-                     (cond
-                      ((and wlc/electric-flag wlc/hungry-delete-key) "a")
-                      ((wlc/electric-flag) "l")
-                      ((wlc/hungry-delete-key) "h")
-                      (t ""))
-                     ;; (if (and skeleton-pair
-                     ;;          show-paren-mode)
-                     ;;     "p"
-                     ;;   "")
-                     ))
-        (bare-mode-name (if (string-match "\\(^[^/]*\\)/" mode-name)
-                            (substring mode-name
-                                       (match-beginning 1) (match-end 1))
-                          mode-name)))
-    (setq mode-name (if (> (length fmt) 1)
-                        (concat bare-mode-name fmt)
-                      bare-mode-name))
-    (force-mode-line-update)))
-
 
 ;;; user interface
 (defun wlc/toggle-fast-delete (&optional arg)
@@ -967,8 +899,7 @@ on the modeline after the mode name) the delete key gobbles all preceding
 whitespace in one fell swoop."
   (interactive "P")
   (setq wlc/hungry-delete-key
-        (c-calculate-state arg wlc/hungry-delete-key))
-  (wlc/update-modeline))
+        (c-calculate-state arg wlc/hungry-delete-key)))
 
 
 ;;; user interface
@@ -979,7 +910,6 @@ positive, turns it off when negative, and just toggles it when zero or
 left out."
   (interactive "P")
   (setq wlc/electric-flag (c-calculate-state arg wlc/electric-flag))
-  (wlc/update-modeline)
   (wlc/electric-keybindings))
 
 
@@ -994,8 +924,7 @@ left out."
       (progn
         (wlc/auto-complete-pair)
         (setq wlc/auto-complete-pair-state-init-flag t))
-    (setq skeleton-pair (c-calculate-state arg skeleton-pair)))
-  (wlc/update-modeline))
+    (setq skeleton-pair (c-calculate-state arg skeleton-pair))))
 
 
 ;;; user interface
@@ -1316,13 +1245,6 @@ column specified by the function `current-left-margin'."
   ;; Electric feature
   (wlc/electric-keybindings)
 
-  ;; Auto complete pair
-  ;; An alternative is to put these into setting file to be more customizable.
-  ;; (dolist (mode-hook
-  ;;          wlc/all-features-on-mode-hook-list)
-  ;;   (add-hook mode-hook
-  ;;             'wlc/toggle-auto-complete-pair))
-
   ;; Define key sequences
   (define-key lisp-mode-shared-map [(control c) (b)] 'backward-up-list)
   (define-key lisp-mode-shared-map [(control c) (control b)] 'backward-up-list)
@@ -1345,104 +1267,6 @@ column specified by the function `current-left-margin'."
   )
 
 
-(defun wlc/position-has-face (pos list-face)
-  "Return t if there is any face on position POS of buffer in list LIST-FACE."
-  (unless (and (integer-or-marker-p pos)
-               (listp list-face))
-    (error "error in function wlc/position-has-face: invalid argument."))
-  (let ((face-on-position (get-text-property pos 'face)))
-    (catch 'has-face
-      (dolist (face list-face)
-        (when (or (and (listp face-on-position)
-                       (memq face face-on-position))
-                  (eq face face-on-position))
-          (throw 'has-face t))))))
-
-
-(defun wlc/position-has-no-face (pos list-face)
-  "Return t if there is no face on position POS of buffer in list LIST-FACE."
-  (not (wlc/position-has-face pos list-face)))
-
-
-;; generic `font-lock-keywords' matcher for paren
-;; (based on syntax table, only for single character)
-(defun wlc/match-paren (paren-regexp nonhighlighted-face-list bound)
-  "Search for a parentheses matching PAREN-REGEXP in pair up to BOUND.
-Any matching parentheses should not be in any face of
-NONHIGHLIGHTED-FACE-LIST."
-  (catch 'found
-    (while (re-search-forward paren-regexp bound t)
-      (unless (wlc/position-has-face (1- (point)) nonhighlighted-face-list)
-        ;;
-        ;; A loan from `show-paren-function' of `paren.el'
-        ;;
-        (let ((oldpos (point))
-              (dir (cond
-                    ((eq (syntax-class (syntax-after (1- (point)))) 5) -1)
-                    ((eq (syntax-class (syntax-after (1- (point)))) 4)  1)))
-              pos mismatch)
-          ;;
-          ;; Find the other end of the sexp.
-          (when dir
-            (save-excursion
-              (save-restriction
-                ;; Determine the range within which to look for a match.
-                (when blink-matching-paren-distance
-                  (narrow-to-region
-                   (max (point-min) (- (point) blink-matching-paren-distance))
-                   (min (point-max) (+ (point) blink-matching-paren-distance))))
-                ;; If it is a open paren, move back to the start of it
-                ;; Prepare for `scan-sexps' to search a close paren
-                (when (= dir 1)
-                  (goto-char (match-beginning 0))
-                  (setq oldpos (point)))
-                ;; Scan across one sexp within that range.
-                ;; Errors or nil mean there is mismatch.
-                (condition-case ()
-                    (setq pos (scan-sexps (point) dir))
-                  (error (setq pos t
-                               mismatch t)))
-                ;; Move back the other way and verify we get back to the
-                ;; starting point. If not, these two parens don't really match.
-                ;; Maybe the one at point is escaped and doesn't really count.
-                (when (integerp pos)
-                  (unless (condition-case ()
-                              (eq (point) (scan-sexps pos (- dir)))
-                            (error nil))
-                    (setq pos nil
-                          mismatch t)))
-                ;; If found a "matching" paren, see if it is the right
-                ;; kind of paren to match the one we started at.
-                (when (integerp pos)
-                  (let ((beg (min pos oldpos))
-                        (end (max pos oldpos)))
-                    (unless (eq (syntax-class (syntax-after beg)) 8)
-                      (setq mismatch
-                            (not (or (eq (char-before end)
-                                         ;; This can give nil.
-                                         (cdr (syntax-after beg)))
-                                     (eq (char-after beg)
-                                         ;; This can give nil.
-                                         (cdr (syntax-after (1- end))))
-                                     ;; The cdr might hold a new paren-class
-                                     ;; info rather than a matching-char info,
-                                     ;; in which case the two CDRs should match.
-                                     (eq (cdr (syntax-after (1- end)))
-                                         (cdr (syntax-after beg))))))))))))
-          ;;
-          ;; return t when the paren is balanced in pair.
-          (unless mismatch
-            (throw 'found t)))))))
-
-
-;; `font-lock-keywords' matcher for lisp parentheses
-(defun wlc/match-lisp-paren (bound)
-  "Search for a Lisp parentheses in pair up to BOUND."
-  (wlc/match-paren wlc/paren-regexp
-                   wlc/paren-nonhighlighted-face-list
-                   bound))
-
-
 (defun wlc/maximum-decoration-on ()
   "Enable maximum decoration (highlighting) in `wlc'."
   ;; add maximum font-lock highlighting for each mode in
@@ -1463,7 +1287,7 @@ NONHIGHLIGHTED-FACE-LIST."
   ;; turn on `font-lock-mode' globally
   (global-font-lock-mode t)
   ;; maximum decoration (highlighting)
-  ;;(wlc/maximum-decoration-on)
+  (wlc/maximum-decoration-on)
 
   ;; apply these features to `wlc/all-features-on-mode-hook-list'
   ;; need to add these manually because they are buffer local

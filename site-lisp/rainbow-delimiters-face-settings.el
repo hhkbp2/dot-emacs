@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-06 12:10>
+;; Time-stamp: <2013-08-24 17:33>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,12 +29,18 @@
   "Face settings for `rainbow-delimiters'."
 
   (custom-set-faces
+   '(rainbow-delimiters-unmatched-face
+     ((((type x)) (:foreground "red"))
+      (((class color) (min-colors 256)) (:foreground "red"))
+      (((class color) (min-colors 16)) (:foreground "red"))
+      (((class color) (min-colors 8)) (:foreground "red"))
+      (t (:foreground "red"))))
    '(rainbow-delimiters-depth-1-face
      ((((type x)) (:foreground "burlywood"))
       (((class color) (min-colors 256)) (:foreground "burlywood"))
       (((class color) (min-colors 16)) (:foreground "burlywood"))
-      (((class color) (min-colors 8)) (:foreground "burlywood"))
-      (t (:foreground "burlywood"))))
+      (((class color) (min-colors 8)) (:foreground "blue"))
+      (t (:foreground "blue"))))
    ;; '(rainbow-delimiters-depth-2-face ((t (:foreground "blue"))))
    ;; '(rainbow-delimiters-depth-3-face ((t (:foreground "#8b7500"))))
    ;; '(rainbow-delimiters-depth-4-face ((t (:foreground "#8b7500"))))
@@ -43,7 +49,6 @@
    ;; '(rainbow-delimiters-depth-7-face ((t (:foreground "#8b7500"))))
    ;; '(rainbow-delimiters-depth-8-face ((t (:foreground "#8b7500"))))
    ;; '(rainbow-delimiters-depth-9-face ((t (:foreground "#8b7500"))))
-   ;; '(rainbow-delimiters-unmatched-face ((t (:foreground "red"))))
    )
   )
 
