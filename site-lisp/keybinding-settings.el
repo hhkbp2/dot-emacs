@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 03:44>
+;; Time-stamp: <2013-12-08 07:39>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,23 @@
 ;; 尽量放在.emacs文件的最后，以免被绑定的键不小心被后面的配置文件覆盖
 
 ;;; Code:
+
+
+(defun keybinding-settings-for-mac ()
+  "Settings for keybindings for mac os."
+
+  (when (eq system-type 'darwin)
+
+    ;; switch default settings on mac
+    ;;     command -> command
+    ;;     option -> meta
+    ;; to personal favour
+    (setq mac-option-modifier 'super)   ; `super' means command key
+    (setq mac-command-modifier 'meta)
+
+    ;; sets fn-delete to be right-delete
+    (global-set-key [kp-delete] 'delete-char)
+    ))
 
 
 (defun keybinding-settings ()
@@ -83,6 +100,7 @@
   (global-unset-key [(control x) (control c)])
   (global-set-key [(control x) (meta q)] 'save-buffers-kill-terminal)
 
+  (keybinding-settings-for-mac)
   )
 
 (keybinding-settings)
