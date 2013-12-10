@@ -4,6 +4,7 @@ syntax: regexp
 ^import/auto-complete.*
 ^import/cedet.*
 ^import/color-theme.*
+^import/debian_elisp
 ^import/ecb.*
 ^import/jdee.*
 ^import/workgroups

@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-03-20 20:48>
+;; Time-stamp: <2013-12-10 22:36>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -149,6 +149,6 @@
     jde-mode-hook))
 
 
-(provide 'dev-base)
+(provide 'dev-base-settings)
 
-;;; dev-base.el ends here
+;;; dev-base-settings.el ends here

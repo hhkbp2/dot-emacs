@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-28 21:10>
+;; Time-stamp: <2013-12-10 22:37>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 
 
 ;; load dev bases
-(require 'dev-base)
+(require 'dev-base-settings)
 
 ;; load customized faces of font-lock
 (require 'font-lock-face)

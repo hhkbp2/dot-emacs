@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-03 17:52>
+;; Time-stamp: <2013-12-10 22:37>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 ;;; Code:
 
 
-(require 'dev-base)
+(require 'dev-base-settings)
 (require 'dw-functionals)
 
 

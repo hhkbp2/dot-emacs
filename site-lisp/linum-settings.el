@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-26 21:12>
+;; Time-stamp: <2013-12-10 22:38>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 (require 'linum-relative)
 ;; load face settings
 (require 'linum-face-settings)
-(require 'dev-base)
+(require 'dev-base-settings)
 (require 'dw-functionals)
 
 
