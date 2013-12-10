@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-09-11 14:38>
+;; Time-stamp: <2013-12-10 21:56>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@
   (autoload 'pymacs-load "pymacs" nil t)
 
   ;; additional module search path
-  (setq pymacs-load-path '("~/program/python'"))
+  (setq pymacs-load-path '(dw-python-dev-dir dw-python-path))
   )
 
 

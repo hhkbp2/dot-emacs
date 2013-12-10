@@ -20,7 +20,11 @@
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 ;; Enable EDE (Project Management) features
+
+
+(require 'ede)
 (global-ede-mode 1)
+
 
 (defun ede-settings ()
   "Settings for `ede'.")

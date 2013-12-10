@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-09-15 16:04>
+;; Time-stamp: <2013-12-10 21:51>
 
 ;; cedet1.0pre6 is conflict with which-func
 ;; after require cedet, which-func cann't work
@@ -18,9 +18,10 @@
 (require 'speedbar-settings)
 (require 'senator-face-settings)
 
+;; TODO fix error on emacs 24.3, cedet 2.0
 ;; 用pulse实现Emacs的淡入淡出效果
 ;; http://emacser.com/pulse.htm
-(require 'pulse-settings)
+;; (require 'pulse-settings)
 
 ;;;###autoload
 (defun cedet-settings-4-info ()

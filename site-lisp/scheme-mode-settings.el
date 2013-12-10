@@ -26,7 +26,12 @@
 
 ;;(require 'xscheme)
 (require 'scheme)
-(require 'geiser-install)
+(case system-type
+	('darwin (require 'geiser-autoloads))
+	('gnu/linux (require 'geiser-install))
+	(t nil))
+
+
 
 
 (defun scheme-mode-settings ()

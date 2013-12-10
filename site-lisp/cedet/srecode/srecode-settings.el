@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 13:40>
+;; Time-stamp: <2013-12-10 21:38>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@
 ;;; Code:
 
 
+(require 'srecode)
 (require 'srecode-face-settings)
 
 

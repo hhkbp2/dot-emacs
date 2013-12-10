@@ -24,7 +24,7 @@
 ;;; Code:
 
 
-(require 'speedbar-loaddefs)
+(require 'speedbar)
 
 
 (defun speedbar-face-settings ()

@@ -24,8 +24,9 @@
 ;;; Code:
 
 
-(require 'speedbar-loaddefs)
+(require 'speedbar)
 (require 'speedbar-face-settings)
+
 
 (defun speedbar-settings ()
   "Settings for `speedbar'."

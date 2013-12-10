@@ -24,9 +24,6 @@
 ;;; Code:
 
 
-(require 'eassist)
-
-
 (defun eassist-settings ()
   "Settings for `eassist'."
 

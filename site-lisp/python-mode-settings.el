@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-19 11:42>
+;; Time-stamp: <2013-12-10 21:58>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,11 +24,31 @@
 ;;; Code:
 
 
+(defconst dw-python-dev-dir (expand-file-name "~/pro/python")
+  "Personal development code directory of python.")
+
+(defconst dw-python-path (expand-file-name
+                          "~/local/lib/python2.7/site-packages/")
+  "Personal PYTHONPATH for addtional libraries.")
+
+(defun dw-prepare-pypath ()
+  (let ((pypath (getenv "PYTHONPATH")))
+    (if (or (null pypath) (string= "" pypath))
+        (setenv "PYTHONPATH" dw-python-path)
+      (if (not (search dw-python-path pypath))
+          (setenv "PYTHONPATH" (concat dw-python-path ":" pypath))))))
+
+(when (eq system-type 'darwin)
+  ;; prepare PYTHONPATH for mac emacs as app started on dock
+  (dw-prepare-pypath))
+
+
 (require 'python)
 (require 'whitespace)
 (require 'pymacs-settings)
 (require 'python-ropemacs-settings)
-(require 'pycomplete-settings)
+;; TODO decide to remove `pycomplete' or keep it working on mac
+;;(require 'pycomplete-settings)
 (require 'jedi-settings)
 
 

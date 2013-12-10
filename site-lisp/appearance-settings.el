@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-25 23:57>
+;; Time-stamp: <2013-12-10 01:42>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -40,16 +40,18 @@
   ;; hide tool-bar
   (tool-bar-mode -1)
 
-  ;; hide scroll-bar
-  (scroll-bar-mode nil)
+  (if (display-graphic-p)
+      ;; hide scroll-bar
+      (scroll-bar-mode nil))
 
-    ;; make scroll movement more comfortable
+  ;; make scroll movement more comfortable
   (setq scroll-step 1
         scroll-margin 0
         scroll-conservatively 10000)
 
-  ;; 用滚轴鼠标
-  (mouse-wheel-mode t)
+  (if (display-graphic-p)
+      ;; 用滚轴鼠标
+      (mouse-wheel-mode t))
 
   ;; don't blink the cursor
   (blink-cursor-mode nil)
@@ -78,12 +80,13 @@
   ;;                            (menu-bar-lines . 0) (tool-bar-lines . 0)))
 
 
-  ;; font setting
-  (set-fontset-font "fontset-default"
-                    'unicode '("Ubuntu Mono-11" . "unicode-bmp"))
+  (if (display-graphic-p)
+      ;; font setting
+      (set-fontset-font "fontset-default"
+                        'unicode '("微软雅黑Monaco-14" . "unicode-bmp")))
   (add-to-list 'default-frame-alist
-               '(font . "Ubuntu Mono-11"))
-  (set-frame-font "Ubuntu Mono-11")
+               '(font . "微软雅黑Monaco-14"))
+  (set-frame-font "微软雅黑Monaco-14")
 
   ;; 加载font-lock配置
   (require 'font-lock-settings)

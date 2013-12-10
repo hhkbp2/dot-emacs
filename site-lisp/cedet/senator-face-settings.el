@@ -24,9 +24,6 @@
 ;;; Code:
 
 
-(require 'senator)
-
-
 (defun senator-face-settings ()
   "Face settings for `senator'."
   (custom-set-faces
