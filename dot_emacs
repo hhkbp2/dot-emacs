@@ -4,7 +4,7 @@
 ;; Copyright (C) 2008,2009,2010,2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 03:59>
+;; Time-stamp: <2013-12-12 01:51>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -117,8 +117,6 @@
 
 (require 'calendar-settings)
 
-(if (< emacs-major-version 24)
-    (require 'emms-settings))
 (require 'erc-settings)
 
 ;;; load software development settings
