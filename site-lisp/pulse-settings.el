@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-12 03:40>
+;; Time-stamp: <2013-12-13 21:52>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,6 +30,7 @@
 
 
 ;;; Advices:
+
 
 (defun pulse-toggle-integration-advice (arg)
   "Toggle activation of advised functions that will now pulse.
@@ -130,17 +131,12 @@ the following hook:
   (when (and pulse-command-advice-flag (interactive-p))
     (pulse-momentary-highlight-one-line (point))))
 
-(defadvice end-of-buffer (after pulse-advice activate)
-  "Cause the current line of buffer to pulse when the cursor gets there."
-  (when (and pulse-command-advice-flag (interactive-p))
-    (pulse-momentary-highlight-one-line (1- (point)))))
-
 
 (defun pulse-settings ()
   "Settings for `pulse'."
-
-  ;; enable pulse on advices
-  (pulse-toggle-integration-advice t))
+  (when (display-graphic-p)
+    ;; enable pulse on advices
+    (pulse-toggle-integration-advice t)))
 
 (eval-after-load "pulse"
   `(pulse-settings))

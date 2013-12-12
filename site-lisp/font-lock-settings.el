@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:37>
+;; Time-stamp: <2013-12-14 22:36>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -478,8 +478,6 @@ l_\\(?:onoff\\|linger\\)\
   ;;(setq jit-lock-chunk-size 1000)
 
   )
-
-(font-lock-settings)
 
 
 (provide 'font-lock-settings)

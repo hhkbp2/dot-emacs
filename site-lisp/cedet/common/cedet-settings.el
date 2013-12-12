@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2013-12-12 03:39>
+;; Time-stamp: <2013-12-13 21:38>
 
 ;; cedet1.0pre6 is conflict with which-func
 ;; after require cedet, which-func cann't work
