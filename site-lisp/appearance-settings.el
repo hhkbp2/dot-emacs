@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 01:42>
+;; Time-stamp: <2013-12-15 00:00>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,6 +22,11 @@
 ;;; Commentary:
 
 ;;; Code:
+
+
+(require 'font-settings)
+(require 'font-lock-settings)
+(require 'basic-faces-settings)
 
 
 (defun appearance-settings ()
@@ -79,22 +84,14 @@
   ;;(setq default-frame-alist '((width . 75) (height . 25)
   ;;                            (menu-bar-lines . 0) (tool-bar-lines . 0)))
 
-
-  (if (display-graphic-p)
-      ;; font setting
-      (set-fontset-font "fontset-default"
-                        'unicode '("微软雅黑Monaco-14" . "unicode-bmp")))
-  (add-to-list 'default-frame-alist
-               '(font . "微软雅黑Monaco-14"))
-  (set-frame-font "微软雅黑Monaco-14")
+  ;; 应用font配置
+  (font-settings)
 
   ;; 加载font-lock配置
-  (require 'font-lock-settings)
+  (font-lock-settings)
 
   ;; 设置背景景色为暗色以配合主题
   ;;(custom-set-variables '(frame-background-mode (quote dark)))
-
-  (require 'basic-faces-settings)
 
   ;; load `color-theme' settings
   (require 'color-theme-settings)
