@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-08 07:39>
+;; Time-stamp: <2013-12-14 17:46>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,21 +27,28 @@
 ;;; Code:
 
 
+(defun dw-mac-set-func-key-default ()
+  "Set command and option key on mac to default."
+  ;; set the functional key mapping on mac to default
+  ;;     command -> command
+  ;;     option -> meta
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'super))
+
+(defun dw-mac-set-func-key-swap ()
+  "Switch command and option key on mac."
+  ;; switch key settings on mac to personal favour
+  ;;     command -> meta
+  ;;     option -> command
+  (setq mac-option-modifier 'super)   ; `super' means command key
+  (setq mac-command-modifier 'meta))
+
 (defun keybinding-settings-for-mac ()
   "Settings for keybindings for mac os."
 
-  (when (eq system-type 'darwin)
-
-    ;; switch default settings on mac
-    ;;     command -> command
-    ;;     option -> meta
-    ;; to personal favour
-    (setq mac-option-modifier 'super)   ; `super' means command key
-    (setq mac-command-modifier 'meta)
-
-    ;; sets fn-delete to be right-delete
-    (global-set-key [kp-delete] 'delete-char)
-    ))
+  (dw-mac-set-func-key-default)
+  ;; sets fn-delete to be right-delete
+  (global-set-key [kp-delete] 'delete-char))
 
 
 (defun keybinding-settings ()
@@ -100,7 +107,8 @@
   (global-unset-key [(control x) (control c)])
   (global-set-key [(control x) (meta q)] 'save-buffers-kill-terminal)
 
-  (keybinding-settings-for-mac)
+  (when (eq system-type 'darwin)
+    (keybinding-settings-for-mac))
   )
 
 (keybinding-settings)
