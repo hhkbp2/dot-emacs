@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-08 16:16>
+;; Time-stamp: <2014-01-30 15:09>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -319,7 +319,8 @@ On Ubuntu 12.04.1 LTS, it returns (\"Ubuntu\", \"12.04.1\")."
 
 (defun dw-on-office-machine ()
   "Return t if it runs on my office machines."
-  (dw-on-ubuntu))
+  (when (eq system-type 'gnu/linux)
+    (dw-on-ubuntu)))
 
 
 (defun dw-version->=-p (major-version minor-version)

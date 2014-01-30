@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-13 21:52>
+;; Time-stamp: <2014-01-30 15:17>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -63,33 +63,32 @@ the following hook:
 
 (defadvice goto-line (after pulse-advice activate)
   "Cause the line that is `goto'd to pulse when the cursor gets there."
-  (when (and pulse-command-advice-flag (cedet-called-interactively-p))
+  (when (and pulse-command-advice-flag)
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice exchange-point-and-mark (after pulse-advice activate)
   "Cause the line that is `goto'd to pulse when the cursor gets there."
-  (when (and pulse-command-advice-flag (cedet-called-interactively-p)
-             (> (abs (- (point) (mark))) 400))
+  (when (and pulse-command-advice-flag (> (abs (- (point) (mark))) 400))
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice find-tag (after pulse-advice activate)
   "After going to a tag, pulse the line the cursor lands on."
-  (when (and pulse-command-advice-flag (cedet-called-interactively-p))
+  (when (and pulse-command-advice-flag)
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice tags-search (after pulse-advice activate)
   "After going to a hit, pulse the line the cursor lands on."
-  (when (and pulse-command-advice-flag (cedet-called-interactively-p))
+  (when (and pulse-command-advice-flag)
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice tags-loop-continue (after pulse-advice activate)
   "After going to a hit, pulse the line the cursor lands on."
-  (when (and pulse-command-advice-flag (cedet-called-interactively-p))
+  (when (and pulse-command-advice-flag)
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice pop-tag-mark (after pulse-advice activate)
   "After going to a hit, pulse the line the cursor lands on."
-  (when (and pulse-command-advice-flag (cedet-called-interactively-p))
+  (when (and pulse-command-advice-flag)
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice imenu-default-goto-function (after pulse-advice activate)
