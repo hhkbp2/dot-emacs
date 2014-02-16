@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-26 20:57>
+;; Time-stamp: <2014-02-16 14:03>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,11 +27,16 @@
 ;;(require 'xscheme)
 (require 'scheme)
 (case system-type
-	('darwin (require 'geiser-autoloads))
-	('gnu/linux (require 'geiser-install))
-	(t nil))
+    ('darwin (require 'geiser-autoloads))
+    ('gnu/linux (require 'geiser-install))
+    (t nil))
 
 
+(defun geiser-settings ()
+  "Settings for `geiser'."
+
+  (setq geiser-active-implementations '(guile)))
+(geiser-settings)
 
 
 (defun scheme-mode-settings ()
