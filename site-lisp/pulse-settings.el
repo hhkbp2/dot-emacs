@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-13 21:52>
+;; Time-stamp: <2014-02-16 13:54>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,6 +30,9 @@
 
 
 ;;; Advices:
+
+
+(require 'pulse)
 
 
 (defun pulse-toggle-integration-advice (arg)
