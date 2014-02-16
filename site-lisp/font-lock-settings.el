@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-14 22:36>
+;; Time-stamp: <2014-02-17 00:58>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -69,8 +69,8 @@ Refer to `font-lock-settings' for its usage.")
     ;; parentheses by default
     ("[](){}[]" . 'wlc/paren-default-face)
     ;; parentheses in pair
-    (lw-match-cc-paren
-     (0 'lw-pair-face prepend))
+    (dw-match-cc-paren
+     (0 'dw-pair-face prepend))
     )
 
   "*A list of keywords to highlight in c/c++ modes.")
@@ -86,13 +86,13 @@ Refer to `font-lock-settings' for its usage.")
   '(
     ;; namespace
     ("\\_<\\(std\\)\\_>"
-     1 'lw-keywords-cpp-namespace-face prepend)
+     1 'dw-keywords-cpp-namespace-face prepend)
     ;; standard library sequencial/associative container and container adaptor
     ("[^.]\\_<\\(\
 string\\|vector\\|list\\|deque\\|stack\\|\\(?:priority_\\)?queue\\|\
 \\(?:multi\\)?\\(?:map\\|set\\)\\|bitset\
 \\)\\_>"
-     1 'lw-keywords-cpp-std-container-face prepend)
+     1 'dw-keywords-cpp-std-container-face prepend)
     ;; container (and adaptor) related types definitions
     ("::\\_<\\(\
 \\(?:size\\|value\\|difference\\)_type\\|\
@@ -101,7 +101,7 @@ npos\\|\
 container_type\\|\
 \\(?:key\\|mapped\\|value\\)_type\
 \\)\\_>"
-     1 'lw-keywords-cpp-std-container-typedef-face)
+     1 'dw-keywords-cpp-std-container-typedef-face)
     ;; container (and adaptor) members
     ("[.]\\_<\\(\
 \\(?:r\\)?\\(begin\\|end\\)\\|\
@@ -114,13 +114,13 @@ pop\\|top\\|push\\|\
 count\\|\\(?:lower\\|upper\\)_bound\\|equal_range\\|\
 compare\\|any\\|none\\|test\\|\\(?:re\\)?set\\|flip\\|to_ulong\
 \\)\\_>"
-     1 'lw-keywords-cpp-std-container-member-face prepend)
+     1 'dw-keywords-cpp-std-container-member-face prepend)
     ;; iterator
     ("::\\(\\(?:\\(?:const_\\)?\\(?:reverse_\\)?\\)?iterator\\)\\_>"
-     1 'lw-keywords-cpp-std-iterator-face prepend)
+     1 'dw-keywords-cpp-std-iterator-face prepend)
     ;; genernal iterator
     ("\\(\\(?:front_\\|back_\\)?inserter\\|\\(?:[io]stream_\\)iterator\\)\\_>"
-     1 'lw-keywords-cpp-std-iterator-face prepend)
+     1 'dw-keywords-cpp-std-iterator-face prepend)
     ;; standard library algorithm
     ("[^.]\\_<\\(\
 find\\(?:_\\(?:if\\|first_of\\|end\\)\\)?\\|\
@@ -158,29 +158,29 @@ accumulate\\|\
 inner_product\\|\
 partial_sum\
 \\)\\_>"
-     1 'lw-keywords-cpp-std-algorithm-face prepend)
+     1 'dw-keywords-cpp-std-algorithm-face prepend)
     ("\\_<\\(\
 plus\\|minus\\|multiplies\\|divides\\|modulus\\|negate\\|\
 equal_to\\|not_equal_to\\|\\(?:greater\\|less\\)\\(?:_equal\\)?\\|\
 logical_\\(?:and\\|or\\|not\\)\
 \\)\\_>"
-     1 'lw-keywords-cpp-std-functor-face)
+     1 'dw-keywords-cpp-std-functor-face)
     ("\\_<\\(\
 bind\\(?:1st\\|2nd\\)\\|not\\(?:1\\|2\\)\
 \\)\\_>"
-     1 'lw-keywords-cpp-std-functor-adaptor-face)
+     1 'dw-keywords-cpp-std-functor-adaptor-face)
     ;; standard library io
     ;; io type
     ("\\_<\
 \\(w?\\(?:[io]\\|io\\|[io]?\\(?:f\\|string\\)\\)stream\\)\
 \\_>"
-     1 'lw-keywords-cpp-std-io-face prepend)
+     1 'dw-keywords-cpp-std-io-face prepend)
     ;; io predefine
     ("\\_<\\(w?c\\(?:in\\|out\\|err\\|log\\)\\)\\_>"
-     1 'lw-keywords-cpp-std-io-predef-face prepend)
+     1 'dw-keywords-cpp-std-io-predef-face prepend)
     ;; io flag and manipulator
     ("\\_<\\(flush\\|end[ls]\\|\\(?:no\\)?unitbuf\\)\\_>"
-     1 'lw-keywords-cpp-std-io-predef-face prepend)
+     1 'dw-keywords-cpp-std-io-predef-face prepend)
     )
 
   "*A list of keywords in c++ standard library to highlight.")
@@ -196,7 +196,7 @@ bind\\(?:1st\\|2nd\\)\\|not\\(?:1\\|2\\)\
   '(
     ;; namespace
     ("\\_<\\(boost\\)\\_>"
-     1 'lw-keywords-cpp-namespace-face prepend)
+     1 'dw-keywords-cpp-namespace-face prepend)
     )
 
   "*A list of keywords in c++ standard library to highlight.")
@@ -208,7 +208,7 @@ bind\\(?:1st\\|2nd\\)\\|not\\(?:1\\|2\\)\
     ("\\_<\\(\
 \\(?:err\\|log\\)_\\(?:dump\\|exit\\|msg\\|quit\\|ret\\|sys\\)\\|read\\|write\
 \\)\\_>"
-     1 'lw-keywords-apue-face)
+     1 'dw-keywords-apue-face)
 
     ;; ;; macros
     ;; ("\\(\\)"
@@ -248,7 +248,7 @@ get_port\\|set_\\(?:addr\\|port\\|wild\\)\\)\\|[Rr]ead\\(?:n\\|line\\)?\\|\
 [Gg]ethostbyname2\\|[Gg]etipnodebyname\\|[Ff]reehostent\\|\
 syslog\\|openlog\\|closelog\\|daemon_init\\|daemon_inetd\
 \\)\\_>"
-     1 'lw-keywords-unp-face)
+     1 'dw-keywords-unp-face)
 
     ;; macros and variables
     ("\\_<\\(\
@@ -333,7 +333,7 @@ l_\\(?:onoff\\|linger\\)\
 (defcustom font-lock-keywords-makefile
   '(
     ;; highlight simply expanded variable initialization, immediately evaluated.
-    (":=" 0 'lw-assign-operator-face)
+    (":=" 0 'dw-assign-operator-face)
     ;; highlight recursively expanded variable initialization,
     ;; whose evaluation is deferred.
     ("[^:?+]\\(=\\)" 1 font-lock-string-face append)
@@ -344,18 +344,18 @@ l_\\(?:onoff\\|linger\\)\
     ;; either immediate or deferred (it depends on that
     ;; the variable is simple or recursive).
     ("\\(+\\)\\(=\\)"
-     (1 'lw-assign-operator-face)
+     (1 'dw-assign-operator-face)
      (2 font-lock-string-face))
 
     ;; highlight parentheses in my favorite faces
-    ("[](){}<>[]" . 'lw-pair-face)
+    ("[](){}<>[]" . 'dw-pair-face)
     ;; highlight variables surrounding parentheses in pair
     ;; so the one not in pair will be highlighted differently as
-    ;; `lw-pair-face', as configured previously.
-    (lw-match-makefile-left-paren
-     (0 'lw-makefile-paren-face prepend))
-    (lw-match-makefile-right-paren
-     (0 'lw-makefile-paren-face prepend))
+    ;; `dw-pair-face', as configured previously.
+    (dw-match-makefile-left-paren
+     (0 'dw-makefile-paren-face prepend))
+    (dw-match-makefile-right-paren
+     (0 'dw-makefile-paren-face prepend))
 
     ;; override the makefile mode default setting for command line
     (makefile-match-action
@@ -374,7 +374,7 @@ l_\\(?:onoff\\|linger\\)\
     ("[^$]\\(\\$[({][@%*][DF][)}]\\)" 1 'makefile-targets prepend)
 
     ;; add built-in function names
-    (lw-match-makefile-built-in-function
+    (dw-match-makefile-built-in-function
      1 font-lock-builtin-face prepend t)
     )
 
@@ -382,7 +382,7 @@ l_\\(?:onoff\\|linger\\)\
 
 
 (defcustom font-lock-keywords-script
-  '(("[](){}<>[]" . 'lw-pair-face)
+  '(("[](){}<>[]" . 'dw-pair-face)
     )
 
   "*A list of keywords to highlight in shell/python modes.")

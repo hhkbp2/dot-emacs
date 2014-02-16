@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-21 17:21>
+;; Time-stamp: <2014-02-17 00:54>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@
 
   ;; set indentation style
   (setq sh-styles-alist
-        '(("lw-sh-style"
+        '(("dw-sh-style"
            (sh-basic-offset . 4)
            (sh-first-lines-indent . 0)
            (sh-indent-after-case . +)
@@ -57,7 +57,7 @@
            (sh-indent-for-else . 0)
            (sh-indent-for-fi . 0)
            (sh-indent-for-then . 0))))
-  (sh-load-style "lw-sh-style")
+  (sh-load-style "dw-sh-style")
   )
 
 ;; (eval-after-load "sh-script"

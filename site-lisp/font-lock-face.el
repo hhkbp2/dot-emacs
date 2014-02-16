@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-10 17:54>
+;; Time-stamp: <2014-02-17 01:00>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
 (require 'util)
 
 
-(defface lw-pair-face
+(defface dw-pair-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "skyblue"))
     (((class color) (min-colors 88) (background light)) (:foreground "skyblue"))
     (((class color) (min-colors 16) (background dark)) (:foreground "blue"))
@@ -42,7 +42,7 @@
   "Face to highlight parentheses.")
 
 
-(defface lw-assign-operator-face
+(defface dw-assign-operator-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "rosybrown"))
     (((class color) (min-colors 88) (background light)) (:foreground "rosybrown"))
     (((class color) (min-colors 16) (background dark)) (:foreground "white"))
@@ -54,7 +54,7 @@
   "Face to highlight assign operator \"=\".")
 
 
-(defface lw-keywords-apue-face
+(defface dw-keywords-apue-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#bd2626"))
     (((class color) (min-colors 88) (background light)) (:foreground "#bd2626"))
     (((class color) (min-colors 16) (background dark)) (:foreground "darkred"))
@@ -66,7 +66,7 @@
   "Face to highlight keywords of Advanced Programming in UNIX Environment.")
 
 
-(defface lw-keywords-unp-face
+(defface dw-keywords-unp-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "royalblue"))
     (((class color) (min-colors 88) (background light)) (:foreground "royalblue"))
     (((class color) (min-colors 16) (background dark)) (:foreground "royalblue"))
@@ -78,7 +78,7 @@
   "Face to highlight keywords of UNIX Network Programming.")
 
 
-(defface lw-makefile-paren-face
+(defface dw-makefile-paren-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "magenta"))
     (((class color) (min-colors 88) (background light)) (:foreground "magenta"))
     (((class color) (min-colors 16) (background dark)) (:foreground "magenta"))
@@ -90,7 +90,7 @@
   "Face to highlight makefile parenthesesis \"$()\".")
 
 
-(defface lw-keywords-cpp-namespace-face
+(defface dw-keywords-cpp-namespace-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#ff6100"))
     (((class color) (min-colors 88) (background light)) (:foreground "#ff6100"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#ff6100"))
@@ -102,7 +102,7 @@
   "Face to highlight c++ namespace name.")
 
 
-(defface lw-keywords-cpp-std-container-face
+(defface dw-keywords-cpp-std-container-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))
@@ -114,7 +114,7 @@
   "Face to highlight c++ standard library container (and adaptor) name.")
 
 
-(defface lw-keywords-cpp-std-container-member-face
+(defface dw-keywords-cpp-std-container-member-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))
@@ -126,7 +126,7 @@
   "Face to highlight c++ standard library container (and adaptor) member name.")
 
 
-(defface lw-keywords-cpp-std-container-typedef-face
+(defface dw-keywords-cpp-std-container-typedef-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))
@@ -138,7 +138,7 @@
   "Face to highlight c++ standard library container (and adaptor) typedef name.")
 
 
-(defface lw-keywords-cpp-std-iterator-face
+(defface dw-keywords-cpp-std-iterator-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))
@@ -150,7 +150,7 @@
   "Face to highlight c++ standard library iterator name.")
 
 
-(defface lw-keywords-cpp-std-algorithm-face
+(defface dw-keywords-cpp-std-algorithm-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))
@@ -162,7 +162,7 @@
   "Face to highlight c++ standard library algorithm name.")
 
 
-(defface lw-keywords-cpp-std-io-face
+(defface dw-keywords-cpp-std-io-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))
@@ -174,7 +174,7 @@
   "Face to highlight c++ standard library io class name.")
 
 
-(defface lw-keywords-cpp-std-io-predef-face
+(defface dw-keywords-cpp-std-io-predef-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))
@@ -186,7 +186,7 @@
   "Face to highlight c++ standard library io predefination name.")
 
 
-(defface lw-keywords-cpp-std-functor-face
+(defface dw-keywords-cpp-std-functor-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))
@@ -198,7 +198,7 @@
   "Face to highlight c++ standard library function object name.")
 
 
-(defface lw-keywords-cpp-std-functor-adaptor-face
+(defface dw-keywords-cpp-std-functor-adaptor-face
   '((((class color) (min-colors 88) (background dark)) (:foreground "#fce94f"))
     (((class color) (min-colors 88) (background light)) (:foreground "#fce94f"))
     (((class color) (min-colors 16) (background dark)) (:foreground "#fce94f"))

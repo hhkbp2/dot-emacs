@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-20 16:51>
+;; Time-stamp: <2014-02-17 00:54>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 
 
 ;; 定制`awk-mode'缩进风格
-(defconst lw-awk-style
+(defconst dw-awk-style
   '((c-basic-offset . 4)
     (c-comment-only-line-offset . 0)
     (c-hanging-braces-alist
@@ -48,8 +48,8 @@
 
 (defun awk-mode-settings ()
   "Settings for `awk-mode'."
-  (c-add-style "lw-awk-style" lw-awk-style)
-  (c-set-style "lw-awk-style"))
+  (c-add-style "dw-awk-style" dw-awk-style)
+  (c-set-style "dw-awk-style"))
 
 
 (add-hook 'awk-mode-hook

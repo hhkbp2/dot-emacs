@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-10 00:26>
+;; Time-stamp: <2014-02-17 00:56>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,33 +24,33 @@
 ;;; Code:
 
 
-(defvar lw-cc-paren-regexp
+(defvar dw-cc-paren-regexp
   "[](){}[]"
   "Regex used to search c/c++ parentheses.")
 
 
-(defcustom lw-cc-paren-nonhighlighted-face-list
+(defcustom dw-cc-paren-nonhighlighted-face-list
   '(font-lock-comment-face font-lock-string-face font-lock-doc-face
                            font-lock-doc-string-face)
   "*A list of face where makefile parenthese wouldn't be highlighted.")
 
 
-(defvar lw-makefile-left-paren-regexp
+(defvar dw-makefile-left-paren-regexp
   "\\$("
   "Regex used to search makefile left parentheses.")
 
 
-(defvar lw-makefile-right-paren-regexp
+(defvar dw-makefile-right-paren-regexp
   ")"
   "Regex used to search makefile right parentheses.")
 
 
-(defvar lw-makefile-paren-regexp
+(defvar dw-makefile-paren-regexp
   "\\(\\$(\\|)\\)"
   "Regex used to search makefile parentheses.")
 
 
-(defvar lw-makefile-built-in-function-regexp
+(defvar dw-makefile-built-in-function-regexp
   "\\$[({]\\(call\\|eval\\|filter\\(?:-out\\)?\\|findstring\\|\
 subst\\|patsubst\\|word\\(?:s\\|list\\)?\\|firstword\\|sort\\|shell\\|\
 wildcard\\|dir\\|notdir\\|suffix\\|basename\\|addsuffix\\|addprefix\\|\
@@ -58,16 +58,16 @@ join\\|if\\|error\\|foreach\\|strip\\|origin\\|warning\\)[:=#) \t\n]"
   "Regex used to search makefile built-in function.")
 
 
-(defcustom lw-makefile-keyword-nonhighlighted-face-list
+(defcustom dw-makefile-keyword-nonhighlighted-face-list
   '(font-lock-comment-face)
   "*A list of face where makefile parenthese wouldn't be highlighted.")
 
 
-(defun lw-position-has-face (pos list-face)
+(defun dw-position-has-face (pos list-face)
   "Return t if there is any face on position POS of buffer in list LIST-FACE."
   (unless (and (integer-or-marker-p pos)
                (listp list-face))
-    (error "error in function lw-position-has-face: invalid argument."))
+    (error "error in function dw-position-has-face: invalid argument."))
   (let ((face-on-position (get-text-property pos 'face)))
     (catch 'has-face
       (dolist (face list-face)
@@ -77,13 +77,13 @@ join\\|if\\|error\\|foreach\\|strip\\|origin\\|warning\\)[:=#) \t\n]"
           (throw 'has-face t))))))
 
 
-(defun lw-position-has-no-face (pos list-face)
+(defun dw-position-has-no-face (pos list-face)
   "Return t if there is no face on position POS of buffer in list LIST-FACE."
-  (not (lw-position-has-face pos list-face)))
+  (not (dw-position-has-face pos list-face)))
 
 
 ;; generic `font-lock-keywords' matcher for parentheses (based on regex)
-(defun lw-match-paren (paren-regexp
+(defun dw-match-paren (paren-regexp
                        left-paren-regexp right-paren-regexp
                        nonhighlighted-face-list bound side)
   "Search for a parentheses in pair up to BOUND.
@@ -97,7 +97,7 @@ SIDE has two valid values: `left' `right', means to search for the left
 parentheses or right parentheses separately."
   (unless (or (equal side 'left)
               (equal side 'right))
-    (error "error in function lw-match-paren: invalid argument."))
+    (error "error in function dw-match-paren: invalid argument."))
   (catch 'found
     (let (paren-target-regexp
           paren-pair-regexp
@@ -118,7 +118,7 @@ parentheses or right parentheses separately."
               bound-search-pair (point-min)))
       (while (re-search-forward paren-target-regexp bound t)
         ;; a target parentheses is found
-        (if (lw-position-has-no-face (match-beginning 0)
+        (if (dw-position-has-no-face (match-beginning 0)
                                       nonhighlighted-face-list)
             ;; the found target parentheses isn't in nonhighlighted face
             (let ((target-paren-counter 1)
@@ -132,7 +132,7 @@ parentheses or right parentheses separately."
                             (apply re-search-pair paren-regexp
                                    bound-search-pair t nil))
                   ;; a parentheses is found
-                  (if (lw-position-has-no-face (match-beginning 0)
+                  (if (dw-position-has-no-face (match-beginning 0)
                                                 nonhighlighted-face-list)
                       ;; the found parentheses isn't in nonhighlighted face
                       (if (string-match paren-pair-regexp (match-string 1))
@@ -147,42 +147,42 @@ parentheses or right parentheses separately."
 
 
 ;; `font-lock-keywords' matcher for c/c++ parentheses
-(defun lw-match-cc-paren (bound)
+(defun dw-match-cc-paren (bound)
   "Search for a c/c++ parentheses in pair up to BOUND."
-  (lw-match-paren lw-cc-paren-regexp
-                   lw-cc-paren-nonhighlighted-face-list
+  (dw-match-paren dw-cc-paren-regexp
+                   dw-cc-paren-nonhighlighted-face-list
                    bound))
 
 
 ;; `font-lock-keywords' matcher for makefile left parentheses
-(defun lw-match-makefile-left-paren (bound)
+(defun dw-match-makefile-left-paren (bound)
   "Search for a left makefile parentheses in pair up to BOUND."
-  (lw-match-paren lw-makefile-paren-regexp
-                  lw-makefile-left-paren-regexp
-                  lw-makefile-right-paren-regexp
-                  lw-makefile-keyword-nonhighlighted-face-list
+  (dw-match-paren dw-makefile-paren-regexp
+                  dw-makefile-left-paren-regexp
+                  dw-makefile-right-paren-regexp
+                  dw-makefile-keyword-nonhighlighted-face-list
                   bound
                   'left))
 
 
 ;; `font-lock-keywords' matcher for makefile right parentheses
-(defun lw-match-makefile-right-paren (bound)
+(defun dw-match-makefile-right-paren (bound)
   "Search for a right makefile parentheses in pair up to BOUND."
-  (lw-match-paren lw-makefile-paren-regexp
-                  lw-makefile-left-paren-regexp
-                  lw-makefile-right-paren-regexp
-                  lw-makefile-keyword-nonhighlighted-face-list
+  (dw-match-paren dw-makefile-paren-regexp
+                  dw-makefile-left-paren-regexp
+                  dw-makefile-right-paren-regexp
+                  dw-makefile-keyword-nonhighlighted-face-list
                   bound
                   'right))
 
 
 ;; `font-lock-keywords' matcher for makefile built-in function
-(defun lw-match-makefile-built-in-function (bound)
+(defun dw-match-makefile-built-in-function (bound)
   "Search for makefile built in function up to BOUND."
   (catch 'found
-    (while (re-search-forward lw-makefile-built-in-function-regexp bound t)
-      ;; (if (lw-position-has-no-face (1- (point))
-      ;;                              lw-makefile-keyword-nonhighlighted-face-list)
+    (while (re-search-forward dw-makefile-built-in-function-regexp bound t)
+      ;; (if (dw-position-has-no-face (1- (point))
+      ;;                              dw-makefile-keyword-nonhighlighted-face-list)
       (throw 'found t)
       ;;)
       )))
