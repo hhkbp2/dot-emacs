@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-02-16 14:03>
+;; Time-stamp: <2014-02-16 16:27>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,6 +26,8 @@
 
 ;;(require 'xscheme)
 (require 'scheme)
+(require 'cl)
+
 (case system-type
     ('darwin (require 'geiser-autoloads))
     ('gnu/linux (require 'geiser-install))
