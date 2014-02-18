@@ -5,7 +5,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-02-17 00:26>
+;; Time-stamp: <2014-02-18 23:19>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -1123,8 +1123,6 @@ similarly. See `beginning-of-defun' for more information."
          (goto-char (1- (match-end 0)))
          t)))
 
-(setq beginning-of-defun-function 'wlc/beginning-of-defun)
-
 
 (defun wlc/indent-context ()
   "Indent code context as much as possible and as smartly as possible."
@@ -1280,6 +1278,7 @@ column specified by the function `current-left-margin'."
 (defun wlc/on ()
   "Turn on wlc extension."
   (interactive)
+  (setq beginning-of-defun-function 'wlc/beginning-of-defun)
   ;; set keybings
   (wlc/keybindings)
   ;; show matching paren on point
