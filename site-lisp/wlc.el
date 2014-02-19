@@ -5,7 +5,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-02-18 23:19>
+;; Time-stamp: <2014-02-20 00:52>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -104,14 +104,17 @@
 ;; customization points
 
 (defcustom wlc/all-features-on-mode-hook-list
-  `(emacs-lisp-mode-hook lisp-mode-hook lisp-interaction-mode-hook)
+  `(emacs-lisp-mode-hook
+    lisp-mode-hook
+    lisp-interaction-mode-hook
+    scheme-mode-hook)
   "*A list of Lisp mode hooks to enable all features of `wlc'."
   :type 'list
   :group 'wlc)
 
 
 (defcustom wlc/maximum-decoration-mode-list
-  `(emacs-lisp-mode lisp-mode lisp-interaction-mode)
+  `(emacs-lisp-mode lisp-mode lisp-interaction-mode scheme-mode)
   "*A list of Lisp modes to enable maximum decoration (highlighting) feature."
   :type 'list
   :group 'wlc)
