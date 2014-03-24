@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-02-17 00:58>
+;; Time-stamp: <2014-03-23 11:43>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -65,13 +65,7 @@ Refer to `font-lock-settings' for its usage.")
 
 
 (defcustom font-lock-keywords-cc
-  '(;; highlight parentheses in c/c++ modes
-    ;; parentheses by default
-    ("[](){}[]" . 'wlc/paren-default-face)
-    ;; parentheses in pair
-    (dw-match-cc-paren
-     (0 'dw-pair-face prepend))
-    )
+  '()
 
   "*A list of keywords to highlight in c/c++ modes.")
 
@@ -346,16 +340,6 @@ l_\\(?:onoff\\|linger\\)\
     ("\\(+\\)\\(=\\)"
      (1 'dw-assign-operator-face)
      (2 font-lock-string-face))
-
-    ;; highlight parentheses in my favorite faces
-    ("[](){}<>[]" . 'dw-pair-face)
-    ;; highlight variables surrounding parentheses in pair
-    ;; so the one not in pair will be highlighted differently as
-    ;; `dw-pair-face', as configured previously.
-    (dw-match-makefile-left-paren
-     (0 'dw-makefile-paren-face prepend))
-    (dw-match-makefile-right-paren
-     (0 'dw-makefile-paren-face prepend))
 
     ;; override the makefile mode default setting for command line
     (makefile-match-action
