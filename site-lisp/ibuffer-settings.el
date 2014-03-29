@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-06-24 12:13>
+;; Time-stamp: <2014-03-29 16:48>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -76,8 +76,12 @@
                              (mode . conf-xdefaults-mode)))
                  ("C/C++" (or (mode . c-mode)
                               (mode . c++-mode)))
-                 ("Makefile" (or (mode . makefile-gmake-mode)
-                                 (mode . makefile-mode)))
+                 ("Makefile" (or (mode . makefile-mode)
+                                 (mode . makefile-automake-mode)
+                                 (mode . makefile-gmake-mode)
+                                 (mode . makefile-makepp-mode)
+                                 (mode . makefile-bsdmake-mode)
+                                 (mode . makeilfe-imake-mode)))
                  ("Java" (or (mode . java-mode)
                              (mode . jde-mode)))
                  ("ELisp" (or (mode . emacs-lisp-mode)))

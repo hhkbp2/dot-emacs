@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-12 08:28>
+;; Time-stamp: <2014-03-29 16:50>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,6 +29,7 @@
 
 (defconst dw-favor-en-font-list
   '("Envy Code R"
+    "Fantasque Sans Mono"
     "Monaco"
     "Menlo"
     "Source Code Pro"
