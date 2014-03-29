@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-03-29 16:48>
+;; Time-stamp: <2014-03-29 17:04>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -91,6 +91,7 @@
                                (mode . scheme-interaction-mode)))
                  ("Python" (mode . python-mode))
                  ("Erlang" (mode . erlang-mode))
+                 ("Go" (mode . go-mode))
                  ("TeX" (or (mode . tex-mode)
                             (mode . latex-mode)))
                  ("Plan" (or (mode . calendar-mode)
