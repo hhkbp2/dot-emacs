@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:37>
+;; Time-stamp: <2014-04-10 14:48>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -146,6 +146,8 @@
 (require 'python-mode-settings)
 
 (require 'erlang-mode-settings)
+
+(require 'go-mode-settings)
 
 (require 'thrift-mode-settings)
 (require 'protobuf-mode-settings)

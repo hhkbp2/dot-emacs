@@ -1,7 +1,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2012-09-15 16:06>
+;; Time-stamp: <2014-04-10 15:23>
 
 
 (require 'auto-complete-config)
@@ -52,7 +52,8 @@
                  ac-source-imenu
                  ac-source-files-in-current-dir
                  ac-source-filename))
-  (setq ac-modes ac+-modes)
+  (dolist (mode ac+-modes)
+    (add-to-list 'ac-modes mode))
 
   (defun ac-start-use-sources (sources)
     (interactive)
