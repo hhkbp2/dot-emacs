@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-09-15 01:06>
+;; Time-stamp: <2014-04-13 13:14>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,15 +30,11 @@
 (defun wlc-settings ()
   "Settings for `wlc'."
 
-  ;; customize like these
-  ;; enable wlc in scheme related mode
-  ;; (setq wlc/all-features-on-mode-hook-list
-  ;;       (append wlc/all-features-on-mode-hook-list
-  ;;               '(scheme-mode-hook scheme-interaction-mode-hook)))
-
-  ;; (setq wlc/maximum-decoration-mode-list
-  ;;       (append wlc/maximum-decoration-mode-list
-  ;;               '(scheme-mode scheme-interaction-mode)))
+  ;; enable wlc in `clojure-mode'
+  (dolist (mode-hook '(clojure-mode-hook))
+    (add-to-list 'wlc/all-features-on-mode-hook-list mode-hook))
+  (dolist (mode '(clojure-mode))
+    (add-to-list 'wlc/maximum-decoration-mode-list mode))
 
   ;; turn on wlc
   (wlc/on)
