@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-04-13 12:53>
+;; Time-stamp: <2014-04-13 13:53>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@
   ;; enable `eldoc'
   (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
   ;; hide *nrepl-connection* and *nrepl-server* from `switch-to-buffer'
-  (setq nrepl-hide-special-buffers)
+  ;;(setq nrepl-hide-special-buffers)
   ;; remap TAB to only indent
   ;; (setq cider-repl-tab-command 'indent-for-tab-command)
   ;; prevernt the auto-display of the REPL buffer in a separate window
