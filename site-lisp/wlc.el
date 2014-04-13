@@ -5,7 +5,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-02-20 00:52>
+;; Time-stamp: <2014-04-13 12:59>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -132,7 +132,7 @@
   :group 'wlc)
 
 
-(defcustom wlc/defun-regexp "^\\s-*\\s(\\s-*def\\(?:un\\|un\\*\\|ine\\|\
+(defcustom wlc/defun-regexp "^\\s-*\\s(\\s-*def\\(?:n\\|un\\|un\\*\\|ine\\|\
 macro\\|macro\\*\\|type\\|var\\|alias\\|varalias\\|const\\|custom\\|\
 face\\|group\\|advice\\|subst\\|theme\\|struct\\|subst\\*\\|setf\\)\\s-+?"
 

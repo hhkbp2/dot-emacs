@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-03-29 17:04>
+;; Time-stamp: <2014-04-13 12:57>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -89,6 +89,7 @@
                              (mode . slime-repl-mode)))
                  ("Scheme" (or (mode . scheme-mode)
                                (mode . scheme-interaction-mode)))
+                 ("Clojure" (mode . clojure-mode))
                  ("Python" (mode . python-mode))
                  ("Erlang" (mode . erlang-mode))
                  ("Go" (mode . go-mode))
