@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-02-09 16:22>
+;; Time-stamp: <2014-04-14 16:12>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -32,8 +32,12 @@
   "Settings for `slime'."
 
   ;; 使用sbcl作为common lisp实现
-  (setq inferior-lisp-program "/usr/bin/sbcl")
-  (slime-setup `(slime-fancy))
+  (setq inferior-lisp-program
+        (if (eq system-type 'darwin)
+            "/usr/local/bin/sbcl"
+          "/usr/bin/sbcl"))
+  (slime-setup `(slime-repl slime-fancy slime-fuzzy))
+  (setq slime-net-coding-system 'utf-8-unix)
   )
 
 (defun slime-repl-settings ()
