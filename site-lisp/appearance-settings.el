@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-15 00:00>
+;; Time-stamp: <2014-05-15 12:21>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -84,6 +84,8 @@
   ;;(setq default-frame-alist '((width . 75) (height . 25)
   ;;                            (menu-bar-lines . 0) (tool-bar-lines . 0)))
 
+  (encoding-settings)
+
   ;; 应用font配置
   (font-settings)
 
@@ -105,6 +107,17 @@
   (when (display-graphic-p)
     (require 'powerline-settings))
   )
+
+
+(defun encoding-settings ()
+  "Settings for encoding."
+  (let ((prefer-coding-list '(utf-8 gbk gb2312 big5)))
+    (dolist (coding (reverse prefer-coding-list))
+      (prefer-coding-system coding)))
+  (setq locale-coding-system 'utf-8)
+  (set-buffer-file-coding-system 'utf-8)
+  (setq default-buffer-file-coding-system 'utf-8)
+  (set-language-environment-coding-systems "utf-8"))
 
 (appearance-settings)
 

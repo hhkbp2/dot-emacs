@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-04-10 14:48>
+;; Time-stamp: <2014-05-22 21:31>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,10 +27,38 @@
 (require 'gocode-settings)
 
 
+(defun go-remove-unused-imports-before-save ()
+  "Add this to .emacs to run `go-remove-unused-imports' on buffer saving:
+ (add-hook 'before-save-hook 'go-remove-unused-imports)."
+
+  (interactive)
+  (when (eq major-mode 'go-mode)
+    (go-remove-unused-imports nil)))
+
+
 (defun go-mode-settings ()
   "Settings for `go-mode'."
 
+  ;; load `flymake-go'
+  ;;(require 'flymake-go)
+  ;; load `go-flymake'
+  ;;(require 'go-flymake)
+  ;; load `go-flycheck'
+  (require 'go-flycheck)
+  (add-hook 'go-mode-hook 'flycheck-mode)
+
+  ;; run gofmt on the current buffer when saving
+  ;; non `go-mode' buffer would be intact
+  (add-hook 'before-save-hook 'gofmt-before-save)
+
+  ;; TODO not working now, fix it
+  ;; run `go-remove-unused-imports' on the current buffer when saving
+  ;;(add-hook 'before-save-hook 'go-remove-unused-imports-before-save)
+
   )
+
+(eval-after-load "go-mode"
+  `(go-mode-settings))
 
 
 (provide 'go-mode-settings)
