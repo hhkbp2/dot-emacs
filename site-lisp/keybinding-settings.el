@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-14 17:46>
+;; Time-stamp: <2014-05-23 16:27>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -88,10 +88,6 @@
 
   ;; window之间的移动很常用，默认的绑定太繁琐，添加一个快捷键
   (global-set-key [(control o)] 'other-window)
-
-  ;; 把默认的windows move键modifier由`shift'换成`meta'
-  ;; 用 `modifier-{left,right,up,down}'可以在打开的窗口中的跳转
-  (windmove-default-keybindings 'meta)
 
   ;; 用`ibuffer'代替默认的`buffer-menu'
   (global-set-key (kbd "C-x C-b") 'ibuffer)
