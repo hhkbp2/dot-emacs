@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-22 21:31>
+;; Time-stamp: <2014-05-26 15:19>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -38,14 +38,6 @@
 
 (defun go-mode-settings ()
   "Settings for `go-mode'."
-
-  ;; load `flymake-go'
-  ;;(require 'flymake-go)
-  ;; load `go-flymake'
-  ;;(require 'go-flymake)
-  ;; load `go-flycheck'
-  (require 'go-flycheck)
-  (add-hook 'go-mode-hook 'flycheck-mode)
 
   ;; run gofmt on the current buffer when saving
   ;; non `go-mode' buffer would be intact

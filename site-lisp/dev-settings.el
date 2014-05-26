@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-04-13 12:53>
+;; Time-stamp: <2014-05-26 17:50>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -157,8 +157,9 @@
 
 (require 'conf-mode-settings)
 
-;; flymake
-;;(require 'flymake-settings)
+
+;; flycheck
+(require 'flycheck-settings)
 
 ;; cedet
 (require 'cedet-settings)
