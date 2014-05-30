@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-26 15:19>
+;; Time-stamp: <2014-05-30 17:27>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 
 
 (require 'gocode-settings)
+(require 'golint)
 
 
 (defun go-remove-unused-imports-before-save ()
