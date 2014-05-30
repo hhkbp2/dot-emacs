@@ -1,7 +1,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2014-04-10 15:23>
+;; Time-stamp: <2014-05-30 16:50>
 
 
 (require 'auto-complete-config)
@@ -9,6 +9,7 @@
 (require 'auto-complete-cc)
 (require 'auto-complete-python)
 (require 'auto-complete-lisp)
+(require 'go-autocomplete)
 (require 'util)
 
 
