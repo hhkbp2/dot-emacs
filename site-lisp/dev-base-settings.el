@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-06-17 17:44>
+;; Time-stamp: <2014-06-17 18:23>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -84,13 +84,10 @@
 
 (defvar dev-mode-list-lisp
   '(emacs-lisp-mode
-    common-lisp-mode
-    scheme-mode
-    scheme-interaction-mode
     lisp-mode
-    lisp-interaction-mode
-    slime-repl-mode
-    joxa-mode)
+    scheme-mode
+    clojure-mode
+    slime-repl-mode)
   "A list of lisp modes.")
 
 
@@ -144,11 +141,9 @@
 (defvar dev-mode-hook-list-lisp
   '(emacs-lisp-mode-hook
     lisp-mode-hook
-    lisp-interaction-mode-hook
-    slime-repl-mode-hook
     scheme-mode-hook
-    scheme-interaction-mode-hook
-    joxa-mode-hook)
+    clojure-mode-hook
+    slime-repl-mode-hook)
   "A list of lisp mode hooks.")
 
 
