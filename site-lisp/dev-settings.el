@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-26 17:50>
+;; Time-stamp: <2014-06-17 17:43>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -125,6 +125,7 @@
 (require 'scheme-mode-settings)
 (require 'common-lisp-mode-settings)
 (require 'clojure-mode-settings)
+(require 'joxa-mode-settings)
 
 (require 'wlc-settings)
 (require 'rainbow-delimiters-settings)

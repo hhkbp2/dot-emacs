@@ -5,7 +5,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-04-13 12:59>
+;; Time-stamp: <2014-06-17 17:38>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -54,7 +54,7 @@
 ;;     2) try to indent things as much as possible when it's asked to.
 ;;        press key sequence `C-c i', trigger `wlc/indent-context' to do this.
 ;;   Anyway, that is maximum in my head to do "indent things automatically
-;;   (or smartly)" in lisp.  Any comment or suggestion on enhancing this
+;;   (or smartly)" in Lisp.  Any comment or suggestion on enhancing this
 ;;   feature is appreciated.
 ;;
 ;; 3. automatically complete the right part of pairs
@@ -106,7 +106,6 @@
 (defcustom wlc/all-features-on-mode-hook-list
   `(emacs-lisp-mode-hook
     lisp-mode-hook
-    lisp-interaction-mode-hook
     scheme-mode-hook)
   "*A list of Lisp mode hooks to enable all features of `wlc'."
   :type 'list
@@ -114,7 +113,7 @@
 
 
 (defcustom wlc/maximum-decoration-mode-list
-  `(emacs-lisp-mode lisp-mode lisp-interaction-mode scheme-mode)
+  `(emacs-lisp-mode lisp-mode scheme-mode)
   "*A list of Lisp modes to enable maximum decoration (highlighting) feature."
   :type 'list
   :group 'wlc)
@@ -129,19 +128,6 @@
 (defcustom wlc/delete-function 'delete-char
   "*Function called by `wlc/hungry-delete-forward' when deleting forwards."
   :type 'function
-  :group 'wlc)
-
-
-(defcustom wlc/defun-regexp "^\\s-*\\s(\\s-*def\\(?:n\\|un\\|un\\*\\|ine\\|\
-macro\\|macro\\*\\|type\\|var\\|alias\\|varalias\\|const\\|custom\\|\
-face\\|group\\|advice\\|subst\\|theme\\|struct\\|subst\\*\\|setf\\)\\s-+?"
-
-  "*A regexp to match the start of a defun.
-Always non-nil.  It could be customized to match the start of a defun
-of another pattern on your need.
-Used in function `wlc/beginning-of-defun'."
-  :type '(choice (const nil)
-                 regexp)
   :group 'wlc)
 
 
@@ -1112,21 +1098,6 @@ See also `wlc/hungry-delete-backwards'."
       (funcall wlc/delete-function 1))))
 
 
-(defun wlc/beginning-of-defun (&optional arg)
-  "Move backward to the beginning of a defun in `wlc' mode.
-To customize the action of `beginning-of-defun' in `wlc' by setting it to
-`beginning-of-defun-function', which is called in `beginning-of-defun-raw'.
-
-This function takes the same argument as `beginning-of-defun' and behave
-similarly. See `beginning-of-defun' for more information."
-  (interactive "^p")
-  (let ((pos nil))
-    (and (< arg 0) (not (eobp)) (forward-char 1))
-    (and (re-search-backward wlc/defun-regexp nil t arg)
-         (goto-char (1- (match-end 0)))
-         t)))
-
-
 (defun wlc/indent-context ()
   "Indent code context as much as possible and as smartly as possible."
   (interactive "*")
@@ -1281,7 +1252,6 @@ column specified by the function `current-left-margin'."
 (defun wlc/on ()
   "Turn on wlc extension."
   (interactive)
-  (setq beginning-of-defun-function 'wlc/beginning-of-defun)
   ;; set keybings
   (wlc/keybindings)
   ;; show matching paren on point

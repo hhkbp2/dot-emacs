@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-04-10 15:12>
+;; Time-stamp: <2014-06-17 17:44>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,6 +24,9 @@
 ;;; Code:
 
 
+(require 'cl-lib)
+
+
 (defvar usual-mode-hook-list
   '(dired-mode-hook
     ibuffer-mode-hook
@@ -35,16 +38,8 @@
     Man-mode-hook))
 
 
-(defvar dev-mode-list
-  '(;; lisps
-    emacs-lisp-mode
-    common-lisp-mode
-    scheme-mode
-    scheme-interaction-mode
-    lisp-mode
-    lisp-interaction-mode
-    slime-repl-mode
-    ;; c/c++
+(defvar dev-mode-list-nonlisp
+  '(;; c/c++
     ;;c-mode-common
     c-mode
     c++-mode
@@ -84,16 +79,28 @@
     ;; text
     text-mode
     )
+  "A list of non-lisp dev modes.")
+
+
+(defvar dev-mode-list-lisp
+  '(emacs-lisp-mode
+    common-lisp-mode
+    scheme-mode
+    scheme-interaction-mode
+    lisp-mode
+    lisp-interaction-mode
+    slime-repl-mode
+    joxa-mode)
+  "A list of lisp modes.")
+
+
+(defvar dev-mode-list
+  (cl-union dev-mode-list-lisp dev-mode-list-nonlisp)
   "A list of all dev modes.")
 
 
-(defvar dev-mode-hook-list
-  '(;; lisps
-    emacs-lisp-mode-hook
-    scheme-mode-hook
-    lisp-mode-hook
-    lisp-interaction-mode-hook
-    ;; c/c++
+(defvar dev-mode-hook-list-nonlisp
+  '(;; c/c++
     c-mode-common-hook
     ;; makefile
     makefile-mode-hook
@@ -125,32 +132,29 @@
     ;; text
     test-mode-hook
     )
-  "A list of all dev mode hooks.")
-
-
-(defvar dev-mode-hook-list-lisp
-  '(;; lisps
-    emacs-lisp-mode-hook
-    lisp-mode-hook
-    lisp-interaction-mode-hook
-    slime-repl-mode-hook
-    scheme-mode-hook
-    scheme-interaction-mode-hook)
-  "A list of all dev mode hooks.")
-
-
-
-(defvar dev-mode-hook-list-nonlisp
-  (remove-if #'(lambda (hook)
-                 (member hook dev-mode-hook-list-lisp))
-             dev-mode-hook-list)
-  "A list of all nonlisp dev mode hooks.")
+  "A list of non-lisp dev mode hooks.")
 
 
 (defvar dev-mode-hook-list-static
   '(c-mode-common-hook
     java-mode-hook
     jde-mode-hook))
+
+
+(defvar dev-mode-hook-list-lisp
+  '(emacs-lisp-mode-hook
+    lisp-mode-hook
+    lisp-interaction-mode-hook
+    slime-repl-mode-hook
+    scheme-mode-hook
+    scheme-interaction-mode-hook
+    joxa-mode-hook)
+  "A list of lisp mode hooks.")
+
+
+(defvar dev-mode-hook-list
+  (cl-union dev-mode-hook-list-lisp dev-mode-hook-list-nonlisp)
+  "A list of all dev mode hooks.")
 
 
 (provide 'dev-base-settings)
