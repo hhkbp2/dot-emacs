@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-30 17:27>
+;; Time-stamp: <2014-07-08 14:31>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,6 +26,8 @@
 
 (require 'gocode-settings)
 (require 'golint)
+(require 'dw-functionals)
+(require 'go-mode)
 
 
 (defun go-remove-unused-imports-before-save ()
@@ -48,6 +50,14 @@
   ;; run `go-remove-unused-imports' on the current buffer when saving
   ;;(add-hook 'before-save-hook 'go-remove-unused-imports-before-save)
 
+  ;; key bindings
+  (dw-hungry-delete-on-mode-map go-mode-map)
+  (dw-commet-dwin-on-mode-map go-mode-map)
+
+  ;; Enable `subword-mode' since go is Camel style.
+  (add-hook 'go-mode-hook
+            '(lambda ()
+               (subword-mode)))
   )
 
 (eval-after-load "go-mode"

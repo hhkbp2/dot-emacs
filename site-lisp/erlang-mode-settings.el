@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-11-15 16:32>
+;; Time-stamp: <2014-07-08 14:29>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -56,27 +56,25 @@
 
   ;; when starting an Erlang shell in Emacs, default in the node name
   (setq inferior-erlang-machine-options '("-sname" "emacs"))
-  ;; add Erlang functions to an imenu menu
-  (imenu-add-to-menubar "imenu")
 
-  (local-set-key "\177" 'c-hungry-backspace)
-  (local-set-key [backspace] 'c-hungry-backspace)
-  (local-set-key [deletechar] 'c-hungry-delete-forward)
-  (local-set-key [delete] 'c-hungry-delete-forward)
-  (local-set-key [(control d)] 'c-hungry-delete-forward)
 
-  (local-set-key [(control c) (c)] 'comment-dwim)
-  (local-set-key [(control c) (control c)] 'comment-dwim)
+  (dw-hungry-delete-on-mode-map erlang-mode-map)
+  (dw-commet-dwin-on-mode-map erlang-mode-map)
 
-  (local-set-key [(control c) (m) (f)] 'mark-erlang-function)
-  (local-set-key [(control c) (m) (c)] 'mark-erlang-clause)
-
-  (distel-settings)
+  (add-hook 'erlang-mode-hook
+            (lambda ()
+              ;; add Erlang functions to an imenu menu
+              (imenu-add-to-menubar "imenu")
+              (local-set-key [(control c) (m) (f)] 'mark-erlang-function)
+              (local-set-key [(control c) (m) (c)] 'mark-erlang-clause)))
+  (distel-setup)
   )
 
-(add-hook 'erlang-mode-hook
-          'erlang-mode-settings)
-(distel-setup)
+(eval-after-load "erlang"
+  '(erlang-mode-settings))
+
+(eval-after-load "distel"
+  '(distel-settings))
 
 
 (dw-add-file-mode-pattern-list '(;; application description file

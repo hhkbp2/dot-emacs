@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:35>
+;; Time-stamp: <2014-07-08 14:24>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 ;;; Code:
 
 
-(require 'python)
+;;(require 'python)
 (require 'whitespace)
 (require 'python-base-settings)
 (require 'pymacs-settings)
@@ -32,6 +32,8 @@
 ;; TODO decide to remove `pycomplete' or keep it working on mac
 ;;(require 'pycomplete-settings)
 (require 'jedi-settings)
+(require 'dw-functionals)
+(require 'python-mode)
 
 
 (defun dw-load-pylint-and-pep8 ()
@@ -71,34 +73,22 @@
   ;; load ropemacs settings
   (python-ropemacs-settings)
 
-  ;; key binding settings
-  ;; backspace on a tty
-  (define-key python-mode-map "\177" 'c-hungry-backspace)
-  ;; backspace on gui
-  (define-key python-mode-map [backspace] 'c-hungry-backspace)
-  ;; delete on a tty
-  (define-key python-mode-map [deletechar] 'c-hungry-delete-forward)
-  ;; delete on a gui
-  (define-key python-mode-map [delete] 'c-hungry-delete-forward)
-  ;; delete on point
-  (define-key python-mode-map [(control d)] 'c-hungry-delete-forward)
+  ;; key bindings
+  (dw-hungry-delete-on-mode-map python-mode-map)
+  (dw-commet-dwin-on-mode-map python-mode-map)
 
-  (define-key python-mode-map [(control c) (c)] 'comment-dwim)
-  (define-key python-mode-map [(control c) (control c)] 'comment-dwim)
-
-  (require 'python-mode)
   (define-key python-mode-map (kbd "RET") 'py-newline-and-indent)
   )
 
 
 ;; load python mode settings everytime loading python mode
 ;; (in general, that is when a python file is open)
-(add-hook 'python-mode-hook
-          'python-mode-settings)
+(eval-after-load "python-mode"
+  '(python-mode-settings))
 
 
 ;; load ropemacs only when first time load file `python.el'
-(eval-after-load "python"
+(eval-after-load "python-mode"
   `(python-ropemacs-load))
 
 

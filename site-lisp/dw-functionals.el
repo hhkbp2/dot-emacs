@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-01-30 15:09>
+;; Time-stamp: <2014-07-08 14:38>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -337,6 +337,24 @@ On Ubuntu 12.04.1 LTS, it returns (\"Ubuntu\", \"12.04.1\")."
   "Return t if currrent version is equal or greater than 23.3."
   (interactive)
   (dw-version->=-p 23 3))
+
+(defmacro dw-hungry-delete-on-mode-map (mode-map)
+  ;; backspace on a tty
+  `(progn
+     (define-key ,mode-map "\177" 'c-hungry-backspace)
+     ;; backspace on gui
+     (define-key ,mode-map [backspace] 'c-hungry-backspace)
+     ;; delete on a tty
+     (define-key ,mode-map [deletechar] 'c-hungry-delete-forward)
+     ;; delete on a gui
+     (define-key ,mode-map [delete] 'c-hungry-delete-forward)
+     ;; delete on point
+     (define-key ,mode-map [(control d)] 'c-hungry-delete-forward)))
+
+(defmacro dw-commet-dwin-on-mode-map (mode-map)
+  `(progn
+     (define-key ,mode-map [(control c) (c)] 'comment-dwim)
+     (define-key ,mode-map [(control c) (control c)] 'comment-dwim)))
 
 
 (provide 'dw-functionals)
