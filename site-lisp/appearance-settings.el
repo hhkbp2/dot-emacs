@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-15 12:21>
+;; Time-stamp: <2014-08-04 11:59>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,6 +29,22 @@
 (require 'basic-faces-settings)
 
 
+(defun auto-scrolling-settings ()
+  "Settings for auto scrolling."
+
+  ;; make scroll movement more comfortable
+  (setq
+   ;; scroll one line up or down every time
+   scroll-step 1
+   ;; display just one line at the margins of top and bottom
+   scroll-margin 1
+   ;; always recenter pont if it moves off screen.
+   scroll-conservatively 0)
+  ;; don't scroll automatically to recenter the point in display
+  (setq-default scroll-up-aggressively 0
+                scroll-down-aggressively 0))
+
+
 (defun appearance-settings ()
   "Settings for appearance."
 
@@ -49,14 +65,11 @@
       ;; hide scroll-bar
       (scroll-bar-mode nil))
 
-  ;; make scroll movement more comfortable
-  (setq scroll-step 1
-        scroll-margin 0
-        scroll-conservatively 10000)
-
   (if (display-graphic-p)
       ;; 用滚轴鼠标
       (mouse-wheel-mode t))
+
+  (auto-scrolling-settings)
 
   ;; don't blink the cursor
   (blink-cursor-mode nil)
