@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-08-07 22:35>
+;; Time-stamp: <2014-03-29 16:50>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,16 +28,16 @@
 
 
 (defconst dw-favor-en-font-list
-  '("Monaco"
-    "Envy Code R"
+  '("Envy Code R"
     "Fantasque Sans Mono"
+    "Monaco"
     "Menlo"
     "Source Code Pro"
     "Ubuntu Mono"
     "WenQuanYi Micro Hei")
   "Personal favor font list for language en in descendent order.")
 
-(defconst dw-favor-font-size 14
+(defconst dw-favor-font-size 15
   "Personal favor font size for all kinds of font.")
 
 (defconst dw-favor-zh-font-list
@@ -105,7 +105,7 @@ its value comes from `en-font-size'."
     (dw-set-font dw-favor-en-font-list
                  dw-favor-font-size
                  dw-favor-zh-font-list
-                 (1+ dw-favor-font-size))))
+                 (1- dw-favor-font-size))))
 
 
 (provide 'font-settings)
