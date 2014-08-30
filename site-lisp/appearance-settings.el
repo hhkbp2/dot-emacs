@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-08-04 11:59>
+;; Time-stamp: <2014-08-30 19:47>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,9 +24,9 @@
 ;;; Code:
 
 
-(require 'font-settings)
 (require 'font-lock-settings)
 (require 'basic-faces-settings)
+(require 'frame-settings)
 
 
 (defun auto-scrolling-settings ()
@@ -45,25 +45,24 @@
                 scroll-down-aggressively 0))
 
 
+(defun encoding-settings ()
+  "Settings for encoding."
+  (let ((prefer-coding-list '(utf-8 gbk gb2312 big5)))
+    (dolist (coding (reverse prefer-coding-list))
+      (prefer-coding-system coding)))
+  (setq locale-coding-system 'utf-8)
+  (set-buffer-file-coding-system 'utf-8)
+  (setq default-buffer-file-coding-system 'utf-8)
+  (set-language-environment-coding-systems "utf-8"))
+
+
 (defun appearance-settings ()
   "Settings for appearance."
 
+  (frame-settings)
+
   ;; close startup message
   (setq inhibit-startup-message t)
-
-  ;; disable visible bell (and the noisy warning bell)
-  (setq visible-bell nil)
-
-  ;; hide menu-bar under terminal
-  (if (not (display-graphic-p))
-      (menu-bar-mode -1))
-
-  ;; hide tool-bar
-  (tool-bar-mode -1)
-
-  (if (display-graphic-p)
-      ;; hide scroll-bar
-      (scroll-bar-mode nil))
 
   (if (display-graphic-p)
       ;; 用滚轴鼠标
@@ -90,17 +89,7 @@
     (setq x-select-enable-primary t)
     )
 
-  ;; set initial frame size
-  ;;(setq initial-frame-alist '((width . 80) (height . 30)
-  ;;                            (menu-bar-lines . 0) (tool-bar-lines . 0)))
-  ;; set default frame size
-  ;;(setq default-frame-alist '((width . 75) (height . 25)
-  ;;                            (menu-bar-lines . 0) (tool-bar-lines . 0)))
-
   (encoding-settings)
-
-  ;; 应用font配置
-  (font-settings)
 
   ;; 加载font-lock配置
   (font-lock-settings)
@@ -114,25 +103,10 @@
   (require 'color-theme-darkmate)
   (color-theme-darkmate)
 
-  ;; 启动Emacs的时候最大化Emacs
-  ;;(require 'maxframe-settings)
-
   (when (display-graphic-p)
     (require 'powerline-settings))
   )
 
-
-(defun encoding-settings ()
-  "Settings for encoding."
-  (let ((prefer-coding-list '(utf-8 gbk gb2312 big5)))
-    (dolist (coding (reverse prefer-coding-list))
-      (prefer-coding-system coding)))
-  (setq locale-coding-system 'utf-8)
-  (set-buffer-file-coding-system 'utf-8)
-  (setq default-buffer-file-coding-system 'utf-8)
-  (set-language-environment-coding-systems "utf-8"))
-
 (appearance-settings)
-
 
 (provide 'appearance-settings)
