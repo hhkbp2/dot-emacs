@@ -62,7 +62,7 @@
 
 
 (defun dw-font-exsits-p (font-name-pattern)
-  "Return t if any available font matches `font-name-patterm', else nil."
+  "Return t if any available font matches `font-name-pattern', else nil."
   (x-list-fonts font-name-pattern))
 
 (defun dw-first-available-font (font-list)
