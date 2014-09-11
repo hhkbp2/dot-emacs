@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-08-30 19:40>
+;; Time-stamp: <2014-09-11 10:51>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -40,12 +40,11 @@
   ;; hide tool-bar
   (tool-bar-mode -1)
 
-  (if (display-graphic-p)
-      ;; hide scroll-bar
-      (scroll-bar-mode nil))
-
-  ;; 应用font配置
-  (font-settings)
+  (when (display-graphic-p)
+    ;; hide scroll-bar
+    (scroll-bar-mode nil)
+    ;; 应用font配置
+    (font-settings))
 
   ;; set initial frame size
   ;;(setq initial-frame-alist '((width . 80) (height . 30)

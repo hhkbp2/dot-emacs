@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-08-31 23:55>
+;; Time-stamp: <2014-09-11 10:53>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -120,11 +120,12 @@ settings according to `dw-font-pairs'."
 
 
 (defadvice frame-notice-user-settings (before dw-rescale-alist)
-  (let ((font-pair (dw-available-font-pair
-                    dw-favor-en-font-list dw-favor-zh-font-list)))
-    (dolist (elem (dw-font-rescale-alist-for-pair font-pair))
-      (add-to-list 'face-font-rescale-alist
-                   elem))))
+  (when (display-graphic-p)
+    (let ((font-pair (dw-available-font-pair
+                      dw-favor-en-font-list dw-favor-zh-font-list)))
+      (dolist (elem (dw-font-rescale-alist-for-pair font-pair))
+        (add-to-list 'face-font-rescale-alist
+                     elem)))))
 (ad-activate 'frame-notice-user-settings)
 
 
