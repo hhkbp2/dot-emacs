@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-10-17 18:02>
+;; Time-stamp: <2014-10-17 19:39>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -31,6 +31,10 @@
 ;; 高亮光标处单词
 (require 'highlight-symbol-settings)
 
+(defun dw-highlight-symbol-settings ()
+  (dolist (mode-hook dev-mode-hook-list)
+    (add-hook mode-hook 'highlight-symbol-mode-on)))
+(dw-highlight-symbol-settings)
 
 ;; 高亮最新做的修改
 ;;(require 'highlight-tail-settings)
@@ -47,6 +51,11 @@
 ;; hs-minor-mode,折叠代码
 (require 'hs-minor-mode-settings)
 
+(defun dw-hs-minor-mode-settings()
+  (dolist (mode-hook dev-mode-hook-list)
+    (add-hook mode-hook 'hs-minor-mode)))
+(dw-hs-minor-mode-settings)
+
 (require 'whitespace-settings)
 
 ;;; 配置右括号自动补全
@@ -54,7 +63,7 @@
 
 
 ;;; 去tab化
-(defun my-untabify()
+(defun dw-untabify()
   "Replace TAB with whitespace."
   (make-variable-buffer-local 'write-contents-functions)
   (add-hook 'write-contents-functions
@@ -64,9 +73,23 @@
                ;; Return nil for the benefit of `write-contents-functions'.
                nil)))
 
+(defun dw-untabify-settings ()
+  "Enable `untabify' in specified modes."
+
+  (let* ((excluding-list
+          '(;; no untabify in makefile since it uses tab to start commands
+            makefile-mode-hook
+            ;; no untabify in go source file since
+            ;; go officially recommands tab for indentation
+            go-mode-hook))
+         (hook-list (cl-set-difference dev-mode-hook-list excluding-list)))
+    (dolist (mode-hook hook-list)
+      (add-hook mode-hook 'dw-untabify))))
+
+(dw-untabify-settings)
 
 ;;; 删除行末空白
-(defun my-delete-trailing-space()
+(defun dw-delete-trailing-space()
   "Delete the trailing whitespace."
   (add-hook
    ;; buffer local, would be changed after buffer mode change.
@@ -75,6 +98,16 @@
    ;; changing the major mode does not alter it.
    ;; 'write-file-functions
    'delete-trailing-whitespace))
+
+(defun dw-delete-trailing-space-settings ()
+  (let* ((excluding-list '(;; don't delete trailing spaces in markdown files
+                          ;; (which could represent linefeed)
+                          markdown-mode-hook))
+        (hook-list (cl-set-difference dev-mode-hook-list excluding-list)))
+  (dolist (mode-hook hook-list)
+    (add-hook mode-hook 'dw-delete-trailing-space))))
+
+(dw-delete-trailing-space-settings)
 
 (when (dw-version->=-p 24 3)             ; since version 24.3
   ;; don't delete trailing empty lines of buffer
@@ -95,31 +128,9 @@
     (add-hook mode-hook
               '(lambda ()
                  ;; set tab width
-                 (setq tab-width dw-tab-width))))
-  )
-(dw-tab-settings)
+                 (setq tab-width dw-tab-width)))))
 
-;; apply features
-(dolist (mode-hook dev-mode-hook-list)
-  (dolist
-      (feature
-       '(highlight-symbol-mode-on
-         hs-minor-mode
-         my-delete-trailing-space
-         my-untabify))
-    ;; makefile里面用TAB来标记命令，所以不能删除tab
-    (if (not (or
-              ;; no untabify in makefile
-              (and (equal mode-hook 'makefile-mode-hook)
-                   (equal feature 'my-untabify))
-              ;; no untabify in golang source file
-              (and (equal mode-hook 'go-mode-hook)
-                   (equal feature 'my-untabify))
-              ;; don't delete trailing spaces in markdown files
-              ;; (which could represent linefeed)
-              (and (equal mode-hook 'markdown-mode-hook)
-                   (equal feature 'my-delete-trailing-space))))
-        (add-hook mode-hook feature))))
+(dw-tab-settings)
 
 
 (require 'paren-settings)
