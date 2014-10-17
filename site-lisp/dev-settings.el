@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-06-17 17:43>
+;; Time-stamp: <2014-10-17 18:02>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -56,12 +56,12 @@
 ;;; 去tab化
 (defun my-untabify()
   "Replace TAB with whitespace."
-  (make-variable-buffer-local 'write-file-functions)
-  (add-hook 'write-file-functions
+  (make-variable-buffer-local 'write-contents-functions)
+  (add-hook 'write-contents-functions
             '(lambda()
                (save-excursion
                  (untabify (point-min) (point-max)))
-               ;; Return nil for the benefit of `write-file-functions'.
+               ;; Return nil for the benefit of `write-contents-functions'.
                nil)))
 
 
@@ -81,6 +81,24 @@
   (setq delete-trailing-lines nil))
 
 
+(defconst dw-tab-width 4)
+
+(defun dw-tab-settings ()
+  "Settings for tab in various file formats."
+
+  ;; 用空格而不用tab来对齐(默认用tab来对齐)
+  (setq-default tab-width 4)
+  (setq-default indent-tabs-mode nil)
+  (setq tab-stop-list (number-sequence dw-tab-width 120 dw-tab-width))
+
+  (dolist (mode-hook dev-mode-hook-list)
+    (add-hook mode-hook
+              '(lambda ()
+                 ;; set tab width
+                 (setq tab-width dw-tab-width))))
+  )
+(dw-tab-settings)
+
 ;; apply features
 (dolist (mode-hook dev-mode-hook-list)
   (dolist
@@ -94,30 +112,17 @@
               ;; no untabify in makefile
               (and (equal mode-hook 'makefile-mode-hook)
                    (equal feature 'my-untabify))
+              ;; no untabify in golang source file
+              (and (equal mode-hook 'go-mode-hook)
+                   (equal feature 'my-untabify))
+              ;; don't delete trailing spaces in markdown files
+              ;; (which could represent linefeed)
               (and (equal mode-hook 'markdown-mode-hook)
                    (equal feature 'my-delete-trailing-space))))
         (add-hook mode-hook feature))))
 
 
-(defconst dw-tab-width 4)
-
-
-(defun dev-misc()
-  "Miscellaneous settings for software development."
-
-  ;; set tab width
-  (setq default-tab-width dw-tab-width)
-  (setq tab-width dw-tab-width)
-  (setq tab-stop-list (number-sequence dw-tab-width 120 dw-tab-width))
-
-  ;; 用空格而不用tab来对齐(默认用tab来对齐)
-  (setq-default indent-tabs-mode nil)
-
-  (require 'paren-settings)
-  )
-
-(dev-misc)
-
+(require 'paren-settings)
 
 (require 'occur-settings)
 
