@@ -14,7 +14,7 @@
 (require 'wdired)
 ;; (require 'dired-isearch)
 (require 'find-dired+)
-(require 'ls-lisp+)
+;;(require 'ls-lisp+)
 (require 'cl)
 
 (define-key dired-mode-map "r" 'wuxch-wdired-change-to-wdired-mode)
