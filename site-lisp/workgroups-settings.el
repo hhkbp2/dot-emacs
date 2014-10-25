@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-10-25 15:40>
+;; Time-stamp: <2014-10-25 16:22>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -31,11 +31,21 @@
 (defun workgroups-settings ()
   "Settings for `workgroups'."
 
-  (workgroups-mode 1)
   (setq wg-prefix-key (kbd "C-c w"))
-  (if (null (wg-workgroup-list))
-      (wg-create-workgroup "wg-default"))
-  (wg-save-session-on-emacs-exit)
+  (setq wg-session-file "~/.emacs.d/emacs_workgroups")
+  (workgroups-mode 1)
+
+  ;; What to do on Emacs exit / workgroups-mode exit?
+  (setq wg-emacs-exit-save-behavior 'save) ; Options: 'save 'ask nil
+  (setq wg-workgroups-mode-exit-save-behavior 'save) ; Options: 'save 'ask nil
+
+  ;; Mode Line changes
+  ;; Display workgroups in Mode Line?
+  ;; (setq wg-mode-line-display-on t) ; Default: (not (featurep 'powerline))
+  (setq wg-flag-modified t)
+  (setq wg-mode-line-decor-left-brace "["
+        wg-mode-line-decor-right-brace "]" ; how to surround it
+        wg-mode-line-decor-divider ":")
   )
 
 
