@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-10-25 15:16>
+;; Time-stamp: <2014-10-25 15:40>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -31,16 +31,15 @@
 (defun workgroups-settings ()
   "Settings for `workgroups'."
 
-  ;; TODO
-  (setq wg-prefix-key (kbd "C-c w"))
-  ;; (wg-save-session-on-emacs-exit)
   (workgroups-mode 1)
+  (setq wg-prefix-key (kbd "C-c w"))
   (if (null (wg-workgroup-list))
       (wg-create-workgroup "wg-default"))
+  (wg-save-session-on-emacs-exit)
   )
 
 
-(eval-after-load "workgroups"
+(eval-after-load "workgroups2"
   `(workgroups-settings))
 
 
