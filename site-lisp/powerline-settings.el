@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-03-13 14:42>
+;; Time-stamp: <2014-10-25 14:44>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -32,10 +32,9 @@
 
 (defun powerline-settings ()
   "Settings for `powerline'."
-
   )
 
-(powerline-settings)
-
+(eval-after-load "powerline"
+  `(powerline-settings))
 
 (provide 'powerline-settings)

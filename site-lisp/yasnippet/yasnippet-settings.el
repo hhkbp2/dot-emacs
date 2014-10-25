@@ -1,13 +1,11 @@
 ;; -*- Emacs-Lisp -*-
 
 ;;;; settings for yasnippet
-;; Time-stamp: <2013-07-23 10:35>
-
+;; Time-stamp: <2014-10-25 14:26>
 
 
 (require 'yasnippet)
 
-(yas/global-mode 1)
 
 (defun yasnippet-settings ()
   "Settings for `yasnippet'."
@@ -19,7 +17,10 @@
            (root (expand-file-name yas/root-directory)))
       (when (string-match (concat "^" root) bfn)
         (yas/load-snippet-buffer))))
-  (add-hook 'after-save-hook 'yasnippet-reload-after-save))
+  (add-hook 'after-save-hook 'yasnippet-reload-after-save)
+
+  (yas/global-mode 1)
+  )
 
 
 (eval-after-load "yasnippet"

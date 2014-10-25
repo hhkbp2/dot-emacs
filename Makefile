@@ -2,7 +2,7 @@
 #
 # Author: Dylan.Wen <hhkbp2@gmail.com>
 # Created: Sep 15, 2012
-# Time-stamp: <2013-12-13 21:36>
+# Time-stamp: <2014-10-25 15:26>
 #
 
 QUIET     := @
@@ -39,13 +39,10 @@ site-init: init-packages link-dot-emacs
 
 .PHONY : init-packages
 init-packages:
-	$(QUIET) cd import && tar -xjf auto-complete-1.3.tar.bz2 && cd auto-complete-1.3 && make
-	-$(QUIET) cd import && tar -xzf color-theme-6.6.0.tar.gz && cd color-theme-6.6.0 && make
 	$(QUIET) cd import && tar -xzf ecb-2.40.tar.gz && \
        sed -i -e "s#\(ecb-required-cedet-version-max '(1 \)0#\11#" ./ecb-2.40/ecb-upgrade.el
 	$(QUIET) cd import && unzip jdee-bin-2.4.0.1.zip && \
       sed -i -e 's#\(jde-cedet-max-version "1\.\)0#\11#' ./jdee-2.4.0.1/lisp/jde.el
-	$(QUIET) cd import && tar -xjf workgroups-experimental-f3339422.tar.bz2
 	$(QUIET) cd import && tar -xzf distel-4.03.tar.gz
 
 link-dot-emacs:
@@ -56,11 +53,7 @@ link-dot-emacs:
 .PHONY : site-clean
 site-clean:
 	$(QUIET) cd import && $(RM) \
-  auto-complete-1.3 \
-  cedet-1.0 cedet-1.1 cedet \
-  color-theme-6.6.0 \
   ecb-2.40 \
   jdee-2.4.0.1 \
-  workgroups \
   distel-4.03
 

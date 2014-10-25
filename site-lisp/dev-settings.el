@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-10-17 19:39>
+;; Time-stamp: <2014-10-25 15:18>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -39,14 +39,8 @@
 ;; 高亮最新做的修改
 ;;(require 'highlight-tail-settings)
 
-
 ;; 高亮当前行
 (require 'highlight-current-line-settings)
-
-
-;; company, 自动补全
-;;(require 'company-settings)
-
 
 ;; hs-minor-mode,折叠代码
 (require 'hs-minor-mode-settings)
@@ -185,9 +179,6 @@
 ;; 把speedbar放到当前frame里面
 (require 'sr-speedbar-settings)
 
-;; 把imenu以tree的形式显示出来
-(require 'imenu-tree-settings)
-
 ;; ecb 代码浏览器
 (require 'ecb-settings)
 (require 'tree-buffer-settings)
@@ -196,6 +187,7 @@
 (require 'gtags-settings)
 
 ;; 所有的自动补全的配置
+(require 'yasnippet-settings)
 (require 'auto-complete-settings-all)
 
 

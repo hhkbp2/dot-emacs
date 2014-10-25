@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-09-21 13:12>
+;; Time-stamp: <2014-10-25 15:16>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 ;;; Code:
 
 
-(require 'workgroups)
+(require 'workgroups2)
 
 
 (defun workgroups-settings ()

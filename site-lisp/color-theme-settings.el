@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-28 20:41>
+;; Time-stamp: <2014-10-25 15:29>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 ;;; Code:
 
 
-(require 'color-theme-autoloads)
+(require 'color-theme)
 (require 'color-theme+)
 
 (defun color-theme-settings ()

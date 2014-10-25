@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-07-08 14:24>
+;; Time-stamp: <2014-10-25 14:20>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,8 +29,6 @@
 (require 'python-base-settings)
 (require 'pymacs-settings)
 (require 'python-ropemacs-settings)
-;; TODO decide to remove `pycomplete' or keep it working on mac
-;;(require 'pycomplete-settings)
 (require 'jedi-settings)
 (require 'dw-functionals)
 (require 'python-mode)

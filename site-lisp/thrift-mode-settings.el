@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-09-13 22:58>
+;; Time-stamp: <2014-10-25 15:05>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 ;;; Code:
 
 
-(require 'thrift-mode "thrift")
+(require 'thrift)
 
 (defun thrift-mode-settings ()
   (setq thrift-indent-level 4)
