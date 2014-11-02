@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-09-11 10:53>
+;; Time-stamp: <2014-11-02 17:27>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,7 +25,8 @@
 
 
 (defconst dw-favor-en-font-list
-  '("M+ 1mn"
+  '("Input"
+    "M+ 1mn"
     "Envy Code R"
     "Monaco"
     "Menlo"
@@ -43,9 +44,11 @@
   "Personal favor font list for language zh in descendent order.")
 
 (setq dw-font-pairs
-      '((("M+ 1mn" . "Hiragino Sans GB") .
+      '((("Input" . "Hiragino Sans GB") .
          ;; font-spec parameters, rescale ratio
-         (((:size 15) . 1.0) . ((:size 15) . 1.1)))
+         (((:size 14) . 1.0) . ((:size 14) . 1.0)))
+        (("M+ 1mn" . "Hiragino Sans GB") .
+         (((:size 14) . 1.0) . ((:size 14) . 1.1)))
         (("Monaco" . "Hiragino Sans GB") .
          (((:size 14) . 1.0) . ((:size 14) . 1.2)))
         (("Envy Code R" . "Hiragino Sans GB") .

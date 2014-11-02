@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-09-15 16:36>
+;; Time-stamp: <2014-11-02 17:32>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -40,7 +40,6 @@
 
   (setq desktop-base-file-name "emacs.desktop")
   (desktop-load-default)
-  ;;(desktop-read)
   (desktop-save-mode 1)
   )
 

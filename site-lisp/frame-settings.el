@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-09-11 10:51>
+;; Time-stamp: <2014-11-02 17:47>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -45,28 +45,19 @@
     (scroll-bar-mode nil)
     ;; 应用font配置
     (font-settings))
-
-  ;; set initial frame size
-  ;;(setq initial-frame-alist '((width . 80) (height . 30)
-  ;;                            (menu-bar-lines . 0) (tool-bar-lines . 0)))
-  ;; set default frame size
-  ;;(setq default-frame-alist '((width . 75) (height . 25)
-  ;;                            (menu-bar-lines . 0) (tool-bar-lines . 0)))
-  ;; 启动Emacs的时候最大化Emacs
-  ;;(require 'maxframe-settings)
-
   )
 
 
 (defun frame-settings ()
   "Settings related to frame."
 
-  (if (and (fboundp 'daemonp) (daemonp))
-      (add-hook 'after-make-frame-functions
+  ;; run this settings function for this frame.
+  (dw-frame-settings)
+  ;; hook this settings function to future frame creation.
+  (add-hook 'after-make-frame-functions
                 '(lambda (new-frame)
                    (select-frame new-frame)
                    (dw-frame-settings)))
-    (dw-frame-settings))
   )
 
 
