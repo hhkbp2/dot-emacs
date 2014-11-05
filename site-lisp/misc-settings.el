@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-07-10 19:48>
+;; Time-stamp: <2014-11-05 14:26>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -44,12 +44,16 @@
   ;; 设置默认的自动换行长度
   (setq default-fill-column 80)
 
-
   ;; disable auto-backup
   (setq make-backup-files nil)
 
   ;; 设置自动保存的击键次数，即每隔100次击键就自动保存文件
   (setq auto-save-interval 100)
+
+  ;; Save auto-save files to the system's temporary directory
+  ;; to avoid they from cluttering my file tree.
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
 
   ;; automatically save modified file-visiting buffer without query while exit
   (add-hook 'find-file-hook '(lambda ()
