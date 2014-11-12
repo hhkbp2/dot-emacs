@@ -1,7 +1,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2014-05-30 16:50>
+;; Time-stamp: <2014-11-06 12:53>
 
 
 (require 'auto-complete-config)
@@ -159,7 +159,7 @@
           ac-source-imenu)))
 
 (defun ac-settings-4-ruby ()
-  (require 'rcodetools-settings)
+  ;;(require 'rcodetools-settings)
   (setq ac-omni-completion-sources
         (list (cons "\\." '(ac-source-rcodetools))
               (cons "::" '(ac-source-rcodetools)))))
