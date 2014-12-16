@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-10-25 15:18>
+;; Time-stamp: <2014-12-07 17:38>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -75,7 +75,10 @@
             makefile-mode-hook
             ;; no untabify in go source file since
             ;; go officially recommands tab for indentation
-            go-mode-hook))
+            go-mode-hook
+            ;; markdown file could contains codes of any language, including
+            ;; makefile or go.
+            markdown-mode-hook))
          (hook-list (cl-set-difference dev-mode-hook-list excluding-list)))
     (dolist (mode-hook hook-list)
       (add-hook mode-hook 'dw-untabify))))
