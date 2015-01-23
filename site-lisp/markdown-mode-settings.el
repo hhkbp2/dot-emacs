@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-08 22:38>
+;; Time-stamp: <2015-01-16 18:24>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -42,7 +42,8 @@
 (add-hook 'markdown-mode-hook
           'markdown-mode-settings)
 
-(dw-add-file-mode-pattern '("\\.markdown$" . markdown-mode))
+(dw-add-file-mode-pattern-list '(("\\.markdown$" . markdown-mode)
+                                 ("\\.md$" . markdown-mode)))
 
 
 (provide 'markdown-mode-settings)

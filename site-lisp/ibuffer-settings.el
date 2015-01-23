@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-06-17 17:42>
+;; Time-stamp: <2015-01-22 16:51>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -93,6 +93,7 @@
                  ("Joxa" (mode . joxa-mode))
                  ("Erlang" (mode . erlang-mode))
                  ("Python" (mode . python-mode))
+                 ("Ruby" (mode . ruby-mode))
                  ("Go" (mode . go-mode))
                  ("TeX" (or (mode . tex-mode)
                             (mode . latex-mode)))
