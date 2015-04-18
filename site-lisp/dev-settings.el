@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-12-07 17:38>
+;; Time-stamp: <2015-04-19 02:24>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -157,6 +157,8 @@
 
 (require 'shell-mode-settings)
 (require 'multi-term-settings)
+
+(require 'scss-mode-settings)
 
 (require 'python-mode-settings)
 
