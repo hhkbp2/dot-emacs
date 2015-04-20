@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-11-02 17:47>
+;; Time-stamp: <2015-02-17 14:59>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@
 
   (when (display-graphic-p)
     ;; hide scroll-bar
-    (scroll-bar-mode nil)
+    (scroll-bar-mode -1)
     ;; 应用font配置
     (font-settings))
   )
