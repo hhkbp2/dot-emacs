@@ -33,3 +33,5 @@
 
 (eval-after-load "scss-mode"
   '(scss-mode-settings))
+
+(provide 'scss-mode-settings)
