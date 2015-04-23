@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : coding for python script
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
+# --
+# -*- coding: utf-8 -*-

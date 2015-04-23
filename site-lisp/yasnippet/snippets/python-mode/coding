@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-#name : header encoding for python script
+#name : coding for python script
 #contributor : Dylan.Wen <hhkbp2@gmail.com>
 # --
 # -*- coding: utf-8 -*-
