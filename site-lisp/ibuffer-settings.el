@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-01-22 16:51>
+;; Time-stamp: <2015-04-23 11:56>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -91,6 +91,7 @@
                                (mode . scheme-interaction-mode)))
                  ("Clojure" (mode . clojure-mode))
                  ("Joxa" (mode . joxa-mode))
+                 ("Elixir" (mode . elixir-mode))
                  ("Erlang" (mode . erlang-mode))
                  ("Python" (mode . python-mode))
                  ("Ruby" (mode . ruby-mode))
