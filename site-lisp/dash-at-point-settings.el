@@ -4,7 +4,7 @@
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 21:31>
+;; Time-stamp: <2015-04-26 12:10>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,6 +22,8 @@
 ;;; Commentary:
 
 ;;; Code:
+
+(require 'dash-at-point)
 
 (defun dash-at-point-settings ()
   "Settings for `dash-at-point'."

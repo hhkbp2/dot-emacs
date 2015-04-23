@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 18:02>
+;; Time-stamp: <2015-04-27 18:19>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -69,11 +69,12 @@
                              (mode . slime-repl-mode)))
                  ("Scheme" (or (mode . scheme-mode)
                                (mode . scheme-interaction-mode)))
-                 ("Ruby" (mode . ruby-mode))
+                 ("Ruby" (or (mode . ruby-mode)
+                             (mode . enh-ruby-mode)))
                  ("Python" (mode . python-mode))
-                 ("Erlang" (mode . erlang-mode))
                  ("Joxa" (mode . joxa-mode))
                  ("Elixir" (mode . elixir-mode))
+                 ("Erlang" (mode . erlang-mode))
                  ("Go" (mode . go-mode))
                  ("C/C++" (or (mode . c-mode)
                               (mode . c++-mode)))
@@ -83,9 +84,9 @@
                                  (mode . makefile-makepp-mode)
                                  (mode . makefile-bsdmake-mode)
                                  (mode . makeilfe-imake-mode)))
+                 ("Clojure" (mode . clojure-mode))
                  ("Java" (or (mode . java-mode)
                              (mode . jde-mode)))
-                 ("Clojure" (mode . clojure-mode))
                  ("Thrift" (name . "\\.thrift$"))
                  ("Protobuf" (name . "\\.proto$"))
                  ("Shell" (or (mode . sh-mode)
@@ -99,6 +100,7 @@
                              (mode . conf-space-mode)
                              (mode . conf-xdefaults-mode)))
                  ("Markdown" (mode . markdown-mode))
+                 ("ReST" (mode . rst-mode))
                  ("JavaScript" (mode . js-mode))
                  ("Html" (or (mode . html-helper-mode)
                              (mode . html-mode)

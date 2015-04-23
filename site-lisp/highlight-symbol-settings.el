@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 ;;;; Settings for `highlight-symbol'.
-;; Time-stamp: <2015-04-25 18:04>
+;; Time-stamp: <2015-04-27 17:58>
 
 
 (require 'util)
@@ -68,8 +68,13 @@ DIR has to be 1 or -1."
     `(highlight-symbol-settings-4-emaci))
 
   (eal-define-keys
-   `(emacs-lisp-mode-map lisp-interaction-mode-map java-mode-map
-                         c-mode-base-map text-mode-map ruby-mode-map html-mode-map)
+   `(emacs-lisp-mode-map
+     lisp-interaction-mode-map
+     java-mode-map
+     c-mode-base-map
+     text-mode-map
+     ruby-mode-map
+     html-mode-map)
    `(("C-c M-H" highlight-symbol-at-point)
      ("C-c M-R" highlight-symbol-remove-all)
      ("C-c M-N" highlight-symbol-next)

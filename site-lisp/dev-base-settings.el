@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-25 18:34>
+;; Time-stamp: <2015-04-27 18:00>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -54,6 +54,9 @@
     shell-mode
     ;; awk
     awk-mode
+    ;; ruby
+    ruby-mode
+    enh-ruby-mode
     ;; python
     python-mode
     ;; erlang
@@ -111,6 +114,9 @@
     shell-mode-hook
     ;; awk
     awk-mode-hook
+    ;; ruby
+    ruby-mode-hook
+    enh-ruby-mode-hook
     ;; python
     python-mode-hook
     ;; erlang
