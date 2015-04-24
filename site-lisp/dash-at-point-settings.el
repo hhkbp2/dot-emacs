@@ -1,10 +1,10 @@
 ;; -*- Emacs-Lisp -*-
-;; Settings for mac os.
+;; Settings for `dash-at-point'.
 
-;; Copyright (C) 2011 Dylan.Wen
+;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 21:33>
+;; Time-stamp: <2015-04-24 21:31>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,17 +23,16 @@
 
 ;;; Code:
 
+(defun dash-at-point-settings ()
+  "Settings for `dash-at-point'."
 
-(require 'exec-path-from-shell)
-(require 'dash-at-point-settings)
-
-
-(defun mac-settings ()
-  "Settings for mac os."
-
-  ;; set `exec-path' and PATH to the shell path rather than
-  ;; the system-wide default
-  (exec-path-from-shell-initialize))
+  (global-set-key [(control c)(d)] 'dash-at-point)
+  )
 
 
-(provide 'mac-settings)
+(eval-after-load "dash-at-point"
+  `(dash-at-point-settings))
+
+
+(provide 'dash-at-point-settings)
+
