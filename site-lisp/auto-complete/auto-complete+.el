@@ -82,19 +82,10 @@
   :type '(list symbol)
   :group 'auto-complete+)
 
-(defcustom ac+-source-elisp-faces '((candidates . ac+-elisp-faces-candidate))
+(defcustom ac+-source-elisp-faces
+  '((candidates . ac+-elisp-faces-candidate)
+    (prefix . "\\<set-\\(?:face-\\)?\\(?:back\\|fore\\)ground\\(?:-color\\)? +\"\\(\\(?:\\sw\\|\\s_\\)*\\)"))
   "Source for faces used in Emacs."
-  :group 'auto-complete+)
-
-(defcustom ac+-omni-completion-elisp-faces-sources
-  '(("\\<set-\\(back\\|fore\\)ground-color\s+\"" ac+-source-elisp-faces)
-    ("\\<set-face-\\(back\\|fore\\)ground\s+\"" ac+-source-elisp-faces))
-  "Emacs faces for `ac-omni-completion-sources'."
-  :group 'auto-complete+)
-
-(defcustom ac+-source-elisp-features
-  '((candidates . ac+-elisp-features-candidate))
-  "Source for complete Emacs Lisp `features'."
   :group 'auto-complete+)
 
 (defun ac+-filename-candidate ()
@@ -131,14 +122,6 @@
 (defun ac+-elisp-features-candidate ()
   "Get all candidates of elisp features."
   (all-completions ac-prefix (mapcar 'symbol-name features)))
-
-(defun ac+-apply-source-elisp-faces ()
-  "Add `ac+-elisp-faces-candidate' to `ac-omni-completion-sources'."
-  (if ac-omni-completion-sources
-      (dolist (source ac+-omni-completion-elisp-faces-sources)
-        (add-to-list 'ac-omni-completion-sources source))
-    (setq ac-omni-completion-sources
-          (append ac-omni-completion-sources ac+-omni-completion-elisp-faces-sources))))
 
 (setq ac-source-filename '((candidates . ac+-filename-candidate)))
 (setq ac-source-files-in-current-dir '((candidates . ac+-files-candidate)))

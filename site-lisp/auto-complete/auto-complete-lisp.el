@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-01-23 14:33>
+;; Time-stamp: <2015-04-24 17:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -31,13 +31,10 @@
 
 (defun ac-settings-4-lisp ()
   "Auto complete settings for lisp mode."
-  (setq ac-omni-completion-sources
-        '(("\\<featurep\s+'" ac+-source-elisp-features)
-          ("\\<require\s+'"  ac+-source-elisp-features)
-          ("\\<load\s+\""    ac-source-emacs-lisp-features)))
-  (ac+-apply-source-elisp-faces)
   (setq ac-sources
-        '(ac-source-features
+        '(ac-source-emacs-lisp-features
+          ac+-source-elisp-faces
+          ac-source-features
           ac-source-functions
           ac-source-yasnippet
           ac-source-variables

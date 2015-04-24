@@ -1,7 +1,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2014-11-06 12:53>
+;; Time-stamp: <2015-04-24 16:24>
 
 
 (require 'auto-complete-config)
@@ -96,8 +96,6 @@
   '(ac-settings-4-autopair))
 
 (defun ac-settings-4-java ()
-  (setq ac-omni-completion-sources (list (cons "\\." '(ac-source-semantic))
-                                         (cons "->" '(ac-source-semantic))))
   (setq ac-sources
         '(ac-source-semantic
           ac-source-yasnippet
@@ -159,10 +157,15 @@
           ac-source-imenu)))
 
 (defun ac-settings-4-ruby ()
-  ;;(require 'rcodetools-settings)
-  (setq ac-omni-completion-sources
-        (list (cons "\\." '(ac-source-rcodetools))
-              (cons "::" '(ac-source-rcodetools)))))
+  (setq ac-sources
+        '(ac-source-semantic
+          ac-source-yasnippet
+          ac-source-dictionary
+          ac-source-abbrev
+          ac-source-words-in-buffer
+          ac-source-words-in-same-mode-buffers
+          ac-source-files-in-current-dir
+          ac-source-filename)))
 
 (defun ac-settings-4-html ()
   (setq ac-sources
