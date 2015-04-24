@@ -4,7 +4,7 @@
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 20:58>
+;; Time-stamp: <2015-04-24 22:17>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -51,10 +51,9 @@
 (defun smartparens-face-settings ()
   "Face settings for `smartparens-mode'."
   ;; TODO set these faces:
-  ;; sp-highlight-pair-overlay
-  ;; sp-highlight-wrap-overlay
-  ;; sp-highlight-wrap-tag-overlay
+  ;; sp-pair-overlay-face
+  ;; sp-wrap-overlay-face
+  ;; sp-wrap-tag-overlay-face
   )
-
 
 (provide 'smartparens-face-settings)
