@@ -5,7 +5,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-06-17 17:38>
+;; Time-stamp: <2015-04-24 20:32>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -849,17 +849,6 @@ like `enter' (or in an another name `return') is pressed.")
 (make-variable-buffer-local 'wlc/electric-flag)
 
 
-(defvar wlc/auto-complete-state-init-flag nil
-  "Internal flag to indicate automatically complete pair feature initialized.
-It is set to t after the first time this feature is enabled and
-keep the same value for current buffer ever.
-It is created to keep the code executed minimum and improve the performance.
-Never set it in any style.
-See the function `wlc/toggle-auto-complete-pair'.")
-
-(make-variable-buffer-local 'wlc/auto-complete-state-init-flag)
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Functions
 
@@ -900,34 +889,6 @@ left out."
   (interactive "P")
   (setq wlc/electric-flag (c-calculate-state arg wlc/electric-flag))
   (wlc/electric-keybindings))
-
-
-;;; user interface
-(defun wlc/toggle-auto-complete-pair (&optional arg)
-  "Toggle the automatically complete pair feature.
-Optional numeric ARG, if supplied, turns on automatically complete pair when
-positive, turns it off when negative, and just toggles it when zero or
-left out."
-  (interactive "P")
-  (if (not wlc/auto-complete-state-init-flag)
-      (progn
-        (wlc/auto-complete-pair)
-        (setq wlc/auto-complete-pair-state-init-flag t))
-    (setq skeleton-pair (c-calculate-state arg skeleton-pair))))
-
-
-;;; user interface
-(defun wlc/toggle-show-paren-on-point (&optional arg)
-  "Toggle the show matching parentheseses on point feature.
-Optional numberic ARG, if supplied, turns on this feature when
-positive, turns it off when negative, and just toggles it when zero
-or left out.
-When it is enabled, any matching parentheses is highlighted on point.
-See the function `show-paren-mode' for more information."
-  (interactive "P")
-  (if (c-calculate-state arg show-paren-mode)
-      (show-paren-mode 1)
-    (show-paren-mode -1)))
 
 
 (defun wlc/fast-in-literal (&optional position)
@@ -1123,42 +1084,6 @@ See also `wlc/hungry-delete-backwards'."
         (indent-according-to-mode))))
 
 
-(defun wlc/auto-complete-pair()
-  "Automatically complete the right part of pairs used in all lisp modes.
-The pairs include `', \"\", [], (), {}."
-
-  ;; make these control variables local to avoid affecting the global settings
-  (make-local-variable 'skeleton-pair)
-  (make-local-variable 'skeleton-pair-on-word)
-  (make-local-variable 'skeleton-pair-filter-function)
-  (make-local-variable 'skeleton-pair-alist)
-
-  ;; enable auto pair
-  (setq skeleton-pair t)
-  ;; don't auto complete pair before or inside a word
-  (setq skeleton-pair-on-word nil)
-  ;; enable no checking before inserting the complemental pair, which is
-  ;; the default value of it. Resetting it here is to prevent it from
-  ;; being polluted before this by any global setting, e.g. someone set
-  ;; the global value only for c/c++ incorrectly before loading wlc.
-  ;; For a comprehensible setup example refer to skeleton.el page 3.
-  (setq skeleton-pair-filter-function (lambda () nil))
-  ;; customize the complete part on each left part of pairs inserting
-  ;; Actually we just keep them the same as default behaviors in skeleton.el.
-  (setq skeleton-pair-alist
-        '( ;; (?` _ "'") ; we need backquote for macro, no auto-pair
-          (?\" _ "\"")
-          (?\[ _ "]")
-          (?\( _ ")")
-          (?{ _ ?})))
-  ;; customize which key triggers the auto complete action
-  ;;(local-set-key (kbd "`") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe))
-
-
 ;; simple indentation before newline
 (defun indent-and-newline ()
   "Indent current line according to major mode and insert a newline.
@@ -1254,8 +1179,6 @@ column specified by the function `current-left-margin'."
   (interactive)
   ;; set keybings
   (wlc/keybindings)
-  ;; show matching paren on point
-  (wlc/toggle-show-paren-on-point 1)
   ;; turn on `font-lock-mode' globally
   (global-font-lock-mode t)
   ;; maximum decoration (highlighting)
@@ -1267,9 +1190,7 @@ column specified by the function `current-left-margin'."
            wlc/all-features-on-mode-hook-list)
     (add-hook mode-hook '(lambda ()
                            ;; enable hungry delete feature
-                           (wlc/toggle-hungry-state 1)
-                           ;; enable automatically complete pair feature
-                           (wlc/toggle-auto-complete-pair 1))))
+                           (wlc/toggle-hungry-state 1))))
   )
 
 

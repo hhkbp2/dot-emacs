@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-19 02:24>
+;; Time-stamp: <2015-04-24 20:43>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -52,8 +52,8 @@
 
 (require 'whitespace-settings)
 
-;;; 配置右括号自动补全
-(require 'skeleton-settings)
+;;; 配置括号匹配高亮与补全
+(require 'smartparens-settings)
 
 
 ;;; 去tab化
@@ -130,8 +130,6 @@
 (dw-tab-settings)
 
 
-(require 'paren-settings)
-
 (require 'occur-settings)
 
 (require 'emacs-lisp-mode-settings)
@@ -158,6 +156,7 @@
 (require 'shell-mode-settings)
 (require 'multi-term-settings)
 
+(require 'ruby-mode-settings)
 (require 'scss-mode-settings)
 
 (require 'python-mode-settings)

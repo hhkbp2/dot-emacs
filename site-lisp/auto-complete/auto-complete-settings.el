@@ -218,14 +218,6 @@
    ('tcl-mode-hook    'ac-settings-4-tcl)))
 
 
-(eal-eval-by-modes
- ac-modes
- (lambda (mode)
-   (let ((mode-name (symbol-name mode)))
-     (when (and (intern-soft mode-name) (intern-soft (concat mode-name "-map")))
-       (define-key (symbol-value (am-intern mode-name "-map")) (kbd "C-c a") 'ac-start)))))
-
-
 (provide 'auto-complete-settings)
 
 ;;; auto-complete-settings.el ends here

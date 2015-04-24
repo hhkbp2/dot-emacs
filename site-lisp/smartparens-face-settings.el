@@ -1,10 +1,10 @@
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `paren'.
+;; Face settings for `smartparens'.
 
-;; Copyright (C) 2011 Dylan.Wen
+;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 13:18>
+;; Time-stamp: <2015-04-24 20:58>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,13 +24,10 @@
 ;;; Code:
 
 
-(require 'paren)
-
-
-(defun paren-face-settings ()
-  "Face settings for `paren'."
+(defun show-smartparens-face-settings ()
+  "Face settings for `show-smartparens-mode'."
   (custom-set-faces
-   '(show-paren-match
+   '(sp-show-pair-match-face
      ((((class color) (min-colors 88))
        (:background "#bb66ff" :foreground "#eeeeee" :weight bold))
       (((class color) (min-colors 16))
@@ -40,7 +37,7 @@
       (((type tty) (class mono))
        (:background "purple" :foreground "white" :weight bold))
       (t (:background "#bb66ff" :foreground "#eeeeee" :weight bold))))
-   '(show-paren-mismatch
+   '(sp-show-pair-mismatch-face
      ((((class color) (min-colors 88))
        (:background "#ff2f6a" :foreground "#232323" :weight bold))
       (((class color) (min-colors 16))
@@ -51,9 +48,13 @@
        (:background "red" :foreground "white" :weight bold))
       (t (:background "#ff2f6a" :foreground "#232323" :weight bold))))))
 
+(defun smartparens-face-settings ()
+  "Face settings for `smartparens-mode'."
+  ;; TODO set these faces:
+  ;; sp-highlight-pair-overlay
+  ;; sp-highlight-wrap-overlay
+  ;; sp-highlight-wrap-tag-overlay
+  )
 
-(eval-after-load "paren"
-  '(paren-face-settings))
 
-
-(provide 'paren-face-settings)
+(provide 'smartparens-face-settings)

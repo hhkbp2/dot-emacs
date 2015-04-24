@@ -1,10 +1,10 @@
 ;; -*- Emacs-Lisp -*-
-;; Settings for `paren'.
+;; Settings for `smartparens'.
 
-;; Copyright (C) 2011 Dylan.Wen
+;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 13:19>
+;; Time-stamp: <2015-04-24 20:57>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,24 +24,20 @@
 ;;; Code:
 
 
-(require 'paren)
-;; load face settings
-(require 'paren-face-settings)
+(require 'smartparens-config)
+(require 'smartparens-face-settings)
 
 
-(defun paren-settings ()
-  "Settings for `paren'."
-  ;; highlight matching(unmatching)parenthese around cursor
-  (show-paren-mode t)
-  ;; parenthese style, 高亮匹配的括号
-  (setq show-paren-style 'parentheses)
-  ;; parenthese style, 高亮匹配的括号及括号中内容
-  ;;(setq show-paren-style 'expression)
+(defun smartparens-settings()
+  "Settings for `smartparens'."
+  (smartparens-face-settings)
+  (show-smartparens-face-settings)
   )
 
+(eval-after-load "smartparens"
+  `(smartparens-settings))
 
-(eval-after-load "paren"
-  '(paren-settings))
+(smartparens-global-mode t)
+(show-smartparens-global-mode t)
 
-
-(provide 'paren-settings)
+(provide 'smartparens-settings)
