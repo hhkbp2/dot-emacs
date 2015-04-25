@@ -4,7 +4,7 @@
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 19:27>
+;; Time-stamp: <2015-04-25 18:03>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,7 +27,12 @@
 
 (defun ruby-mode-settings ()
   "Settings for `ruby-mode'."
+
   )
+
+(eval-after-load "enh-ruby-mode"
+  `(ruby-mode-settings))
+
 
 (defun enh-ruby-mode-settings ()
   "Settings for `enh-ruby-mode'."

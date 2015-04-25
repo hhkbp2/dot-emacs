@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 20:43>
+;; Time-stamp: <2015-04-25 18:12>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,30 +27,6 @@
 (require 'dev-base-settings)
 (require 'dw-functionals)
 
-
-;; 高亮光标处单词
-(require 'highlight-symbol-settings)
-
-(defun dw-highlight-symbol-settings ()
-  (dolist (mode-hook dev-mode-hook-list)
-    (add-hook mode-hook 'highlight-symbol-mode-on)))
-(dw-highlight-symbol-settings)
-
-;; 高亮最新做的修改
-;;(require 'highlight-tail-settings)
-
-;; 高亮当前行
-(require 'highlight-current-line-settings)
-
-;; hs-minor-mode,折叠代码
-(require 'hs-minor-mode-settings)
-
-(defun dw-hs-minor-mode-settings()
-  (dolist (mode-hook dev-mode-hook-list)
-    (add-hook mode-hook 'hs-minor-mode)))
-(dw-hs-minor-mode-settings)
-
-(require 'whitespace-settings)
 
 ;;; 配置括号匹配高亮与补全
 (require 'smartparens-settings)
@@ -172,6 +148,32 @@
 
 (require 'conf-mode-settings)
 
+;; 高亮光标处单词
+(require 'highlight-symbol-settings)
+
+(defun dw-highlight-symbol-settings ()
+  (dolist (mode-hook dev-mode-hook-list)
+    (add-hook mode-hook 'highlight-symbol-mode-on)))
+(dw-highlight-symbol-settings)
+
+;; 高亮最新做的修改
+;;(require 'highlight-tail-settings)
+
+;; 高亮当前行
+(require 'highlight-current-line-settings)
+
+;; 高亮缩进
+(require 'highlight-indentation-settings)
+
+;; hs-minor-mode,折叠代码
+(require 'hs-minor-mode-settings)
+
+(defun dw-hs-minor-mode-settings()
+  (dolist (mode-hook dev-mode-hook-list)
+    (add-hook mode-hook 'hs-minor-mode)))
+(dw-hs-minor-mode-settings)
+
+(require 'whitespace-settings)
 
 ;; flycheck
 (require 'flycheck-settings)

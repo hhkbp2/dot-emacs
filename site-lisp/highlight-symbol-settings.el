@@ -1,7 +1,6 @@
 ;; -*- Emacs-Lisp -*-
-
-;;;; settings for highlight symbol
-;; Time-stamp: <2011-01-29 18:28>
+;;;; Settings for `highlight-symbol'.
+;; Time-stamp: <2015-04-25 18:04>
 
 
 (require 'util)
