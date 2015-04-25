@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : #!/usr/bin/env ruby
+#contributor : Dylan.Wen <hhkbp2@gmail.com>
+# --
+#!/usr/bin/env ruby

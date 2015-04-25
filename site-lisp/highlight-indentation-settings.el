@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-25 18:24>
+;; Time-stamp: <2015-04-25 18:35>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -49,8 +49,16 @@
 (eval-after-load "highlight-indentation"
   `(highlight-indentation-settings))
 
+(dolist (mode-hook '(c-mode-common-hook
+                     java-mode-hook
+                     enh-ruby-mode-hook
+                     python-mode-hook
+                     erlang-mode-hook
+                     js-mode-hook
+                     html-mode-hook
+                     conf-mode-hook))
+  (add-hook mode-hook
+            (lambda () (highlight-indentation-current-column-mode))))
 
-(add-hook 'enh-ruby-mode-hook
-          (lambda () (highlight-indentation-current-column-mode)))
 
 (provide 'highlight-indentation-settings)

@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-06-17 18:23>
+;; Time-stamp: <2015-04-25 18:34>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -60,6 +60,8 @@
     erlang-mode
     ;; go
     go-mode
+    ;; javascript
+    js-mode
     ;; snippet-mode
     snippet-mode
     ;; latex
@@ -115,6 +117,8 @@
     erlang-mode-hook
     ;; go
     go-mode-hook
+    ;; javascript
+    js-mode-hook
     ;; snippet-mode
     snippet-mode-hook
     ;; latex
