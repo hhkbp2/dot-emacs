@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-27 11:10>
+;; Time-stamp: <2015-04-27 18:19>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -69,7 +69,8 @@
                              (mode . slime-repl-mode)))
                  ("Scheme" (or (mode . scheme-mode)
                                (mode . scheme-interaction-mode)))
-                 ("Ruby" (mode . ruby-mode))
+                 ("Ruby" (or (mode . ruby-mode)
+                             (mode . enh-ruby-mode)))
                  ("Python" (mode . python-mode))
                  ("Joxa" (mode . joxa-mode))
                  ("Elixir" (mode . elixir-mode))
