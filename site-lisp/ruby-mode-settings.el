@@ -4,7 +4,7 @@
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-25 18:03>
+;; Time-stamp: <2015-05-04 16:05>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -41,7 +41,11 @@
 
   (sp-with-modes '(rhtml-mode)
     (sp-local-pair "<" ">")
-       (sp-local-pair "<%" "%>"))
+    (sp-local-pair "<%" "%>"))
+
+  (define-key enh-ruby-mode-map "\C-d" 'c-hungry-delete-forward)
+  (define-key enh-ruby-mode-map "\177" 'c-hungry-delete-backwards)
+  (define-key enh-ruby-mode-map [?\C-c ?\d] 'comment-dwim)
   )
 
 (eval-after-load "enh-ruby-mode"
@@ -53,7 +57,7 @@
                                  ("\\.gemspec$" . enh-ruby-mode)
                                  ("\\.ru$" . enh-ruby-mode)
                                  ("Gemfile$" . enh-ruby-mode))
-                               'force-add)
+                               t)
 
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 

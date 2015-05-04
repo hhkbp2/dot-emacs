@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 20:26>
+;; Time-stamp: <2015-05-04 16:11>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -221,8 +221,8 @@ Optional `dir' specifies the directory where the file locates."
 
 (defun dw-add-file-mode-pattern (pattern force-add)
   "Add single file mode pattern into `auto-mode-alist'."
-  (or (or force-add
-          (assoc (car pattern) auto-mode-alist))
+  (if (or force-add
+          (not (assoc (car pattern) auto-mode-alist)))
       (setq auto-mode-alist (cons pattern auto-mode-alist))))
 
 (defun dw-add-file-mode-pattern-list (lst &optional force-add)
