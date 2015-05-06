@@ -4,7 +4,7 @@
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-05-04 16:05>
+;; Time-stamp: <2015-05-05 17:34>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -46,6 +46,7 @@
   (define-key enh-ruby-mode-map "\C-d" 'c-hungry-delete-forward)
   (define-key enh-ruby-mode-map "\177" 'c-hungry-delete-backwards)
   (define-key enh-ruby-mode-map [?\C-c ?\d] 'comment-dwim)
+  (define-key enh-ruby-mode-map (kbd "RET") 'newline-and-indent)
   )
 
 (eval-after-load "enh-ruby-mode"
