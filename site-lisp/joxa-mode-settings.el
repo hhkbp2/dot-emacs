@@ -2,7 +2,7 @@
 ;; Settings for the `joxa-mode'.
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-06-17 17:40>
+;; Time-stamp: <2015-05-31 19:42>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,11 +23,23 @@
 
 
 (require 'joxa-mode)
+(require 'dash-at-point)
 
+(defun dw-dash-at-point-for-joxa (&optional edit-docset)
+  "Trigger `dash-at-point' for joxa mode with erlang docset."
+  (interactive "P")
+  (let* ((thing (thing-at-point 'symbol))
+         (docset (or edit-docset "erlang")))
+    (dash-at-point-run-search
+     (replace-regexp-in-string
+      "/" ":" (replace-regexp-in-string "-" "_" thing))
+     docset)))
 
 (defun joxa-mode-settings ()
   "Settings for `joxa-mode'."
 
+  ;; search dash in erlang docset
+  (define-key joxa-mode-map [(control c) (d)] 'dw-dash-at-point-for-joxa)
   )
 
 (eval-after-load "joxa-mode"

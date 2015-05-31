@@ -1,10 +1,10 @@
 ;; -*- Emacs-Lisp -*-
-;; Settings for `dash-at-point'.
+;; Settings for `grep'.
 
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-05-31 18:30>
+;; Time-stamp: <2015-05-18 15:10>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,18 +23,16 @@
 
 ;;; Code:
 
-(require 'dash-at-point)
 
-(defun dash-at-point-settings ()
-  "Settings for `dash-at-point'."
+(defun neotree-settings ()
+  "Settings for `neotree'."
 
-  (global-set-key [(control c) (d)] 'dash-at-point)
+  (setq neo-banner-message "NeoTree")
+  (setq neo-smart-open t)
+  (setq neo-window-width 34)
   )
 
+(eval-after-load "neotree"
+  `(neotree-settings))
 
-(eval-after-load "dash-at-point"
-  `(dash-at-point-settings))
-
-
-(provide 'dash-at-point-settings)
-
+(provide 'neotree-settings)

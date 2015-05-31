@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-25 18:12>
+;; Time-stamp: <2015-05-18 15:02>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -177,6 +177,9 @@
 
 ;; flycheck
 (require 'flycheck-settings)
+
+;; neotree
+(require 'neotree-settings)
 
 ;; cedet
 (require 'cedet-settings)
