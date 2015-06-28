@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-08-30 19:47>
+;; Time-stamp: <2015-06-28 21:20>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -102,9 +102,6 @@
   ;; load my favorite color theme
   (require 'color-theme-darkmate)
   (color-theme-darkmate)
-
-  (when (display-graphic-p)
-    (require 'powerline-settings))
   )
 
 (appearance-settings)
