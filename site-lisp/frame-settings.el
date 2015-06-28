@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-02-17 14:59>
+;; Time-stamp: <2015-06-28 21:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -32,6 +32,8 @@
 
   ;; disable visible bell (and the noisy warning bell)
   (setq visible-bell nil)
+  ;; turn off alarms completely
+  (setq ring-bell-function 'ignore)
 
   ;; hide menu-bar under terminal
   (if (not (display-graphic-p))
