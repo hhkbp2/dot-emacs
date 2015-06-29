@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-06-29 11:29>
+;; Time-stamp: <2015-06-29 11:40>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -174,16 +174,16 @@ mouse-3: Toggle minor modes"
            (propertize "%]" 'help-echo recursive-edit-help-echo))))
     (setq-default mode-line-modes standard-mode-line-modes)
     (setq-default mode-line-format
-                  `(" %e"
+                  `(" "
                     mode-line-client
                     mode-line-modified
                     " "
                     mode-line-buffer-identification
                     ,(propertize " " 'help-echo help-echo)
                     mode-line-position
-                    (vc-mode vc-mode)
-                    mode-line-modes
                     (which-func-mode (" " which-func-format))
+                    mode-line-modes
+                    ;; (vc-mode vc-mode)
                     (display-time-string (" " display-time-string))
                     (working-mode-line-message (" " working-mode-line-message)))))
 
