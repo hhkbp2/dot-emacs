@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-31 17:16>
+;; Time-stamp: <2015-06-29 11:29>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -73,6 +73,14 @@
   (size-indication-mode -1)
   (setq-default mode-line-buffer-identification
                 (propertized-buffer-identification "%15b"))
+  (setq-default mode-line-modified
+                (list (propertize
+                       "%1*"
+                       'help-echo 'mode-line-read-only-help-echo
+                       'local-map (purecopy (make-mode-line-mouse-map
+                                             'mouse-1
+                                             #'mode-line-toggle-read-only))
+                       'mouse-face 'mode-line-highlight)))
 
   (if is-after-emacs-23
       (setq-default
@@ -166,11 +174,9 @@ mouse-3: Toggle minor modes"
            (propertize "%]" 'help-echo recursive-edit-help-echo))))
     (setq-default mode-line-modes standard-mode-line-modes)
     (setq-default mode-line-format
-                  `("-%e"
-                    mode-line-mule-info
+                  `(" %e"
                     mode-line-client
                     mode-line-modified
-                    mode-line-remote
                     " "
                     mode-line-buffer-identification
                     ,(propertize " " 'help-echo help-echo)
@@ -179,16 +185,15 @@ mouse-3: Toggle minor modes"
                     mode-line-modes
                     (which-func-mode (" " which-func-format))
                     (display-time-string (" " display-time-string))
-                    (working-mode-line-message (" " working-mode-line-message))
-                    ,(propertize "-%-" 'help-echo help-echo))))
+                    (working-mode-line-message (" " working-mode-line-message)))))
 
   (setq mode-line-format-bak mode-line-format)
   (setq mode-line t)
 
   ;; 在标题栏显示登陆名称和文件名
   (setq frame-title-format
-      '("Emacs - "
-        (:eval (or (buffer-file-name) (buffer-name)))))
+        '("Emacs - "
+          (:eval (or (buffer-file-name) (buffer-name)))))
   )
 
 (mode-line-settings)
