@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-11-02 17:27>
+;; Time-stamp: <2015-07-18 18:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,10 +25,10 @@
 
 
 (defconst dw-favor-en-font-list
-  '("Input"
+  '("Monaco"
+    "Input"
     "M+ 1mn"
     "Envy Code R"
-    "Monaco"
     "Menlo"
     "Source Code Pro"
     "Ubuntu Mono"

@@ -71,7 +71,8 @@
     c-mode c++-mode java-mode
     autoconf-mode makefile-automake-mode makefile-gmake-mode makefile-mode
     sh-mode shell-mode awk-mode
-    python-mode perl-mode cperl-mode  ruby-mode ; erlang-mode
+    python-mode perl-mode cperl-mode  ruby-mode
+    erlang-mode joxa-mode
     latex-mode LaTeX-mode
     xml-mode sgml-mode html-mode fundamental-mode
     conf-javaprop-mode conf-unix-mode conf-mode change-log-mode
