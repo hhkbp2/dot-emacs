@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-07-18 18:28>
+;; Time-stamp: <2015-07-25 14:10>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,16 +28,13 @@
   '("Monaco"
     "Input"
     "M+ 1mn"
-    "Envy Code R"
     "Menlo"
-    "Source Code Pro"
-    "Ubuntu Mono"
-    "Fantasque Sans Mono"
     )
   "Personal favor font list for language en in descendent order.")
 
 (defconst dw-favor-zh-font-list
-  '("Hiragino Sans GB"
+  '("思源黑体"
+    "Hiragino Sans GB"
     "WenQuanYi Micro Hei Mono"
     "微软雅黑Monaco"
     )
@@ -46,19 +43,16 @@
 (setq dw-font-pairs
       '((("Input" . "Hiragino Sans GB") .
          ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 14) . 1.0)))
+         (((:size 15) . 1.0) . ((:size 16) . 1.0)))
+        (("Input" . "思源黑体") .
+         ;; font-spec parameters, rescale ratio
+         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
         (("M+ 1mn" . "Hiragino Sans GB") .
          (((:size 14) . 1.0) . ((:size 14) . 1.1)))
         (("Monaco" . "Hiragino Sans GB") .
          (((:size 14) . 1.0) . ((:size 14) . 1.2)))
-        (("Envy Code R" . "Hiragino Sans GB") .
-         (((:size 15) . 1.0) . ((:size 15) . 1.1)))
-        (("Source Code Pro" . "Hiragino Sans GB") .
-         (((:size 15) . 1.0) . ((:size 15) . 1.2)))
-        (("Ubuntu Mono" . "Hiragino Sans GB") .
-         (((:size 16) . 1.0) . ((:size 16) . 1.0)))
-        (("Fantasque Sans Mono" . "Hiragino Sans GB") .
-         (((:size 16) . 1.0) . ((:size 16) . 1.0)))
+        (("Monaco" . "思源黑体") .
+         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
         (("M+ 1mn" . "WenQuanYi Micro Hei Mono") .
          (((:size 15) . 1.0) . ((:size 15) . 1.1)))
         ))
