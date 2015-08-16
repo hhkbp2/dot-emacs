@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-27 18:00>
+;; Time-stamp: <2015-08-04 15:10>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -61,6 +61,7 @@
     python-mode
     ;; erlang
     erlang-mode
+    elixir-mode
     ;; go
     go-mode
     ;; javascript
@@ -92,7 +93,8 @@
     lisp-mode
     scheme-mode
     clojure-mode
-    slime-repl-mode)
+    slime-repl-mode
+    joxa-mode)
   "A list of lisp modes.")
 
 
@@ -121,6 +123,7 @@
     python-mode-hook
     ;; erlang
     erlang-mode-hook
+    elixir-mode-hook
     ;; go
     go-mode-hook
     ;; javascript
@@ -153,7 +156,8 @@
     lisp-mode-hook
     scheme-mode-hook
     clojure-mode-hook
-    slime-repl-mode-hook)
+    slime-repl-mode-hook
+    joxa-mode-hook)
   "A list of lisp mode hooks.")
 
 
