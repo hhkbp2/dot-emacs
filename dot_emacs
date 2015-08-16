@@ -4,7 +4,7 @@
 ;; Copyright (C) 2008,2009,2010,2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-05-18 12:25>
+;; Time-stamp: <2015-08-16 18:43>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,6 +23,9 @@
 
 
 ;; 每节(section)开始于以3个分号开始的行
+
+
+(require 'cl)
 
 
 ;; path utils
@@ -133,9 +136,13 @@
 (require 'server-settings)
 
 ;;; system dependent loading
-(when (eq system-type 'darwin)
-  (require 'mac-settings)
-  (mac-settings))
+(case system-type
+  (`darwin (progn
+             (require 'mac-settings)
+             (mac-settings)))
+  (`gnu/linux (progn
+                (require 'linux-settings)
+                (linux-settings))))
 
 ;;; additional emacs lisp
 
