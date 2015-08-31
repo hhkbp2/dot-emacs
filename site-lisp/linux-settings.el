@@ -24,9 +24,6 @@
 ;;; Code:
 
 
-(require 'zeal-at-point-settings)
-
-
 (defun linux-settings ()
   "Settings for linux."
   )
