@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-07-08 14:29>
+;; Time-stamp: <2016-02-14 17:30>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -66,7 +66,12 @@
               ;; add Erlang functions to an imenu menu
               (imenu-add-to-menubar "imenu")
               (local-set-key [(control c) (m) (f)] 'mark-erlang-function)
-              (local-set-key [(control c) (m) (c)] 'mark-erlang-clause)))
+              (local-set-key [(control c) (m) (c)] 'mark-erlang-clause)
+              ;; set indentations
+              (setq erlang-indent-level 2
+                    erlang-indent-guard 4
+                    erlang-argument-indent 4)
+              ))
   (distel-setup)
   )
 

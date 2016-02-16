@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-04-14 16:12>
+;; Time-stamp: <2015-09-19 19:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -43,7 +43,6 @@
 (defun slime-repl-settings ()
   "Settings for `slime-repl-mode'."
 
-  (add-hook 'slime-repl-mode-hook 'wlc/auto-complete-pair)
   (add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode)
   )
 

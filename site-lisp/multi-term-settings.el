@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-04-07 12:34>
+;; Time-stamp: <2015-10-25 23:24>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@
   (setq multi-term-switch-after-close nil)
   ;; jump to dedicated buffer when calling multi-term-dedicated-open
   (setq multi-term-dedicated-select-after-open-p t)
-  (setq multi-term-program "/bin/bash")
+  (setq multi-term-program "/bin/zsh")
   (setq multi-term-buffer-name "multi-term")
   (setq term-unbind-key-list '("C-x" "<ESC>" "<up>" "<down>" "C-j"))
   (setq
