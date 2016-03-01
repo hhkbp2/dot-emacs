@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-25 23:45>
+;; Time-stamp: <2016-03-01 12:18>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,6 +23,8 @@
 
 ;;; Code:
 
+(require 'my-subdirs)
+
 ;; After loading the init file and abbrev file(if there is any),
 ;; emacs 24 will run some code like these to load installed packages.
 (when (>= emacs-major-version 24)
@@ -37,10 +39,14 @@
     ("melpa" . "http://melpa.milkbox.net/packages/"))
   "Addtional package sources.")
 
+(defun dw-package-recompile-all ()
+  (interactive)
+  (byte-recompile-directory package-user-dir nil 'force))
 
 (defun package-settings ()
   (dolist (source dw-package-addition-sources)
-    (add-to-list 'package-archives source)))
+    (add-to-list 'package-archives source))
+  (my-add-subdirs-to-load-path package-user-dir))
 
 
 (eval-after-load "package"

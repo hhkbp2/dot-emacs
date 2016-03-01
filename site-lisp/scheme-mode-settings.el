@@ -27,11 +27,7 @@
 ;;(require 'xscheme)
 (require 'scheme)
 (require 'cl)
-
-(case system-type
-    ('darwin (require 'geiser-autoloads))
-    ('gnu/linux (require 'geiser-install))
-    (t nil))
+(require 'geiser)
 
 
 (defun geiser-settings ()

@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-08-04 15:10>
+;; Time-stamp: <2016-03-01 12:09>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -62,6 +62,8 @@
     ;; erlang
     erlang-mode
     elixir-mode
+    ;; rust
+    rust-mode
     ;; go
     go-mode
     ;; javascript
@@ -124,6 +126,8 @@
     ;; erlang
     erlang-mode-hook
     elixir-mode-hook
+    ;; rust
+    rust-mode-hook
     ;; go
     go-mode-hook
     ;; javascript

@@ -52,3 +52,5 @@ or `CVS', and any subdirectory that contains a file named `.nosearch'."
     (if (equal window-system 'w32)
         (setq load-path (append (nreverse dirs) load-path))
       (normal-top-level-add-to-load-path (cdr (nreverse dirs))))))
+
+(provide 'my-subdirs)

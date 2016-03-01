@@ -24,7 +24,7 @@
 ;;; Code:
 
 
-(require 'jedi-autoloads)
+(require 'jedi)
 
 
 (defun jedi-settings ()

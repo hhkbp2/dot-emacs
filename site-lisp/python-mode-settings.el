@@ -24,7 +24,6 @@
 ;;; Code:
 
 
-;;(require 'python)
 (require 'whitespace)
 (require 'python-base-settings)
 (require 'pymacs-settings)

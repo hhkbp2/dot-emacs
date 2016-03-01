@@ -4,7 +4,7 @@
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-02-29 17:52>
+;; Time-stamp: <2016-03-01 10:05>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,10 +27,16 @@
 (require 'rust-mode)
 
 
-
 (defun rust-mode-settings ()
   "Settings for `rust-mode'."
 
+  (setq racer-cmd (expand-file-name "~/local/bin/racer")
+        racer-rust-src-path (expand-file-name "~/pro/code/rustc-1.6.0/src/"))
+  ;; activate racer when `rust-mode' starts
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+
+  ;;
   )
 
 (eval-after-load "rust-mode"

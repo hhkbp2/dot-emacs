@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-27 18:19>
+;; Time-stamp: <2016-03-01 10:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -75,6 +75,7 @@
                  ("Joxa" (mode . joxa-mode))
                  ("Elixir" (mode . elixir-mode))
                  ("Erlang" (mode . erlang-mode))
+                 ("Rust" (mode . rust-mode))
                  ("Go" (mode . go-mode))
                  ("C/C++" (or (mode . c-mode)
                               (mode . c++-mode)))

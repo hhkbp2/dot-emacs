@@ -25,7 +25,7 @@
 
 
 (require 'helm)
-(require 'helm-match-plugin)
+(require 'helm-swoop)
 (require 'helm-config)
 (require 'helm-face-settings)
 
