@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-01 10:06>
+;; Time-stamp: <2016-03-02 01:25>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -69,12 +69,15 @@
                              (mode . slime-repl-mode)))
                  ("Scheme" (or (mode . scheme-mode)
                                (mode . scheme-interaction-mode)))
-                 ("Ruby" (or (mode . ruby-mode)
-                             (mode . enh-ruby-mode)))
-                 ("Python" (mode . python-mode))
                  ("Joxa" (mode . joxa-mode))
                  ("Elixir" (mode . elixir-mode))
                  ("Erlang" (mode . erlang-mode))
+                 ("Clojure" (mode . clojure-mode))
+                 ("Java" (or (mode . java-mode)
+                             (mode . jde-mode)))
+                 ("Ruby" (or (mode . ruby-mode)
+                             (mode . enh-ruby-mode)))
+                 ("Python" (mode . python-mode))
                  ("Rust" (mode . rust-mode))
                  ("Go" (mode . go-mode))
                  ("C/C++" (or (mode . c-mode)
@@ -85,9 +88,6 @@
                                  (mode . makefile-makepp-mode)
                                  (mode . makefile-bsdmake-mode)
                                  (mode . makeilfe-imake-mode)))
-                 ("Clojure" (mode . clojure-mode))
-                 ("Java" (or (mode . java-mode)
-                             (mode . jde-mode)))
                  ("Thrift" (name . "\\.thrift$"))
                  ("Protobuf" (name . "\\.proto$"))
                  ("Shell" (or (mode . sh-mode)
@@ -102,11 +102,14 @@
                              (mode . conf-xdefaults-mode)))
                  ("Markdown" (mode . markdown-mode))
                  ("ReST" (mode . rst-mode))
-                 ("JavaScript" (mode . js-mode))
                  ("Html" (or (mode . html-helper-mode)
                              (mode . html-mode)
                              (mode . css-mode)
                              (mode . sgml-mode)))
+                 ("JavaScript" (mode . js-mode))
+                 ("Toml" (mode . toml-mode))
+                 ("Yaml" (mode . yaml-mode))
+                 ("Json" (mode . json-mode))
                  ("Xml" (or (mode . nxml-mode)
                             (mode . xml-mode)
                             (mode . sgml-mode)))
