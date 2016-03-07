@@ -1,7 +1,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2016-03-01 09:58>
+;; Time-stamp: <2016-03-07 18:25>
 
 
 (require 'auto-complete-config)
@@ -54,6 +54,7 @@
                  ac-source-imenu
                  ac-source-files-in-current-dir
                  ac-source-filename))
+
   (dolist (mode ac+-modes)
     (add-to-list 'ac-modes mode))
 
@@ -144,7 +145,8 @@
           ac-source-abbrev
           ac-source-words-in-buffer
           ac-source-words-in-same-mode-buffers
-          ac-source-imenu)))
+          ac-source-imenu))
+  (ac-ispell-ac-setup))
 
 (defun ac-settings-4-eshell ()
   (setq ac-sources
@@ -194,15 +196,6 @@
           ac-source-words-in-same-mode-buffers
           ac-source-files-in-current-dir
           ac-source-filename)))
-
-(defun ac-settings-4-default ()
-  ;; TODO add more settings
-  )
-
-
-(am-add-hooks
- `(svn-log-edit-mode-hook change-log-mode-hook)
- 'ac-settings-4-default)
 
 (apply-args-list-to-fun
  (lambda (hook fun)

@@ -1,7 +1,7 @@
 ;; auto-complete-settings-all.el --- All settings about `auto-complete'.
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2011-09-11 18:38>
+;; Time-stamp: <2016-03-07 18:26>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -24,8 +24,6 @@
 ;; 自动补全
 (require 'auto-complete-settings)
 
-;; (require 'company-settings)
-
 ;; 自动插入一些文件模板,用template
 ;;(require 'template-settings)
 
@@ -34,9 +32,6 @@
 
 ;; 超强的snippet
 (require 'yasnippet-settings)
-
-;; 超强的abbrev
-;;(require 'msf-abbrev-settings)
 
 
 (provide 'auto-complete-settings-all)
