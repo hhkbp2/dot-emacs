@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-01 14:28>
+;; Time-stamp: <2016-03-09 11:39>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,6 +29,7 @@
   (add-hook 'go-mode-hook 'flycheck-mode))
 
 (defun flycheck-4-elisp ()
+  (setq flycheck-emacs-lisp-load-path 'inherit)
   (add-hook 'emacs-lisp-mode-hook 'flycheck-mode))
 
 (defun flycheck-4-cc-mode ()
