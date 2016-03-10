@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-07-08 14:31>
+;; Time-stamp: <2016-03-10 17:26>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,25 +30,15 @@
 (require 'go-mode)
 
 
-(defun go-remove-unused-imports-before-save ()
-  "Add this to .emacs to run `go-remove-unused-imports' on buffer saving:
- (add-hook 'before-save-hook 'go-remove-unused-imports)."
-
-  (interactive)
-  (when (eq major-mode 'go-mode)
-    (go-remove-unused-imports nil)))
-
-
 (defun go-mode-settings ()
   "Settings for `go-mode'."
+
+  ;; load `flymake-go'
+  (require 'flymake-go)
 
   ;; run gofmt on the current buffer when saving
   ;; non `go-mode' buffer would be intact
   (add-hook 'before-save-hook 'gofmt-before-save)
-
-  ;; TODO not working now, fix it
-  ;; run `go-remove-unused-imports' on the current buffer when saving
-  ;;(add-hook 'before-save-hook 'go-remove-unused-imports-before-save)
 
   ;; key bindings
   (dw-hungry-delete-on-mode-map go-mode-map)
@@ -57,7 +47,16 @@
   ;; Enable `subword-mode' since go is Camel style.
   (add-hook 'go-mode-hook
             '(lambda ()
-               (subword-mode)))
+               ;; turn on `go-eldoc'
+               (go-eldoc-setup)
+
+               ;; turn on `subword-mode' since golang uses camel case.
+               (subword-mode)
+               ;; keybindings
+               (local-set-key (kbd "M-.") 'godef-jump)
+               (local-set-key (kbd "C-c i") 'go-goto-imports)
+               (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+               ))
   )
 
 (eval-after-load "go-mode"

@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-02-29 17:53>
+;; Time-stamp: <2016-03-10 15:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -35,7 +35,6 @@
 ;;; 去tab化
 (defun dw-untabify()
   "Replace TAB with whitespace."
-  (make-variable-buffer-local 'write-contents-functions)
   (add-hook 'write-contents-functions
             '(lambda()
                (save-excursion
