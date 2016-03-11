@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-01 12:18>
+;; Time-stamp: <2016-03-11 11:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -39,9 +39,94 @@
     ("melpa" . "http://melpa.milkbox.net/packages/"))
   "Addtional package sources.")
 
+(defvar dw-package-list
+  '(
+    undo-tree
+    redo+
+
+    color-theme
+    cal-china-x
+
+    dired+
+    dired-details
+    dired-details+
+    fiplr
+    neotree
+    sr-speedbar
+    maxframe
+    windresize
+
+    ido-complete-space-or-hyphen
+    helm
+    helm-swoop
+    smex
+
+    auto-complete
+    ac-ispell
+    yasnippet
+    gtags
+    flycheck
+    flymake
+    highlight-indentation
+    highlight-symbol
+    highlight-tail
+    multi-term
+
+    exec-path-from-shell
+    dash
+    dash-at-point
+
+    rainbow-delimiters
+    smartparens
+    slime
+    geiser
+    ac-geiser
+
+    clojure-mode
+    cider
+
+    google-c-style
+
+    erlang
+    elixir-mode
+
+    python-mode
+    pymacs
+    jedi
+    python-pep8
+    python-pylint
+
+    enh-ruby-mode
+
+    rust-mode
+    racer
+    ac-racer
+    flycheck-rust
+
+    go-mode
+    go-autocomplete
+    go-eldoc
+    golint
+    go-errcheck
+    flymake-go
+
+    thrift
+    protobuf-mode
+    scss-mode
+    yaml-mode
+    toml-mode
+    json-mode
+    ))
+
 (defun dw-package-recompile-all ()
   (interactive)
   (byte-recompile-directory package-user-dir nil 'force))
+
+(defun dw-package-check-all-installed ()
+  (interactive)
+  (dolist (p dw-package-list)
+    (when (not (package-installed-p p))
+      (package-install p))))
 
 (defun package-settings ()
   (dolist (source dw-package-addition-sources)
