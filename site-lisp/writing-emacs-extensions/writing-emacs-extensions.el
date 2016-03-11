@@ -52,17 +52,10 @@ which define the cycling order for the command `move-cursor-to-window'.")
   (interactive)
   (move-to-window-line 0))
 
-(global-set-key "\M-," 'move-cursor-to-top)
-(global-set-key "\C-x," 'tags-loop-continue)
-
-
 (defun move-cursor-to-bottom ()
   "Put cursor at beginning of last visible line of current window."
   (interactive)
   (move-to-window-line -1))
-
-(global-set-key "\M-." 'move-cursor-to-bottom)
-
 
 (defun move-cursor-to-window (&optional arg)
   "Put cursor at beginning of first or last visible line of current window."
