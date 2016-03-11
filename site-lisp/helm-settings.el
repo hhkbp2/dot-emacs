@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 04:56>
+;; Time-stamp: <2016-03-11 17:31>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,8 +25,9 @@
 
 
 (require 'helm)
-(require 'helm-swoop)
 (require 'helm-config)
+(require 'helm-swoop)
+(require 'helm-files)
 (require 'helm-face-settings)
 
 

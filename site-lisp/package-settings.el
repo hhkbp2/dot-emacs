@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-11 11:07>
+;; Time-stamp: <2016-03-11 17:13>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -58,6 +58,7 @@
 
     ido-complete-space-or-hyphen
     helm
+    helm-ag
     helm-swoop
     smex
 
@@ -73,7 +74,6 @@
     multi-term
 
     exec-path-from-shell
-    dash
     dash-at-point
 
     rainbow-delimiters
