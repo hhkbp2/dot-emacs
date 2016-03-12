@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-23 16:27>
+;; Time-stamp: <2016-03-12 17:18>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -84,10 +84,6 @@
   (global-set-key [(home)] 'beginning-of-buffer)
   ;; End键 光标跳到文件结尾
   (global-set-key [(end)] 'end-of-buffer)
-
-
-  ;; window之间的移动很常用，默认的绑定太繁琐，添加一个快捷键
-  (global-set-key [(control o)] 'other-window)
 
   ;; 用`ibuffer'代替默认的`buffer-menu'
   (global-set-key (kbd "C-x C-b") 'ibuffer)
