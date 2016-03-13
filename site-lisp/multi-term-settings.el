@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-10-25 23:24>
+;; Time-stamp: <2016-03-13 18:37>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -88,11 +88,6 @@
   ;; 打开终端，根据爱好可以绑定为：eshell,shell,term,terminal-emulator
   ;; 这里绑定multi-term
   (global-set-key [f9] 'multi-term)
-
-  (apply-define-key
-   global-map
-   `(("C-x n" multi-term-next)
-     ("C-x p" multi-term-prev)))
 
   (apply-define-key
    text-mode-map
