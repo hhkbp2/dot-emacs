@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-10 15:07>
+;; Time-stamp: <2016-03-13 17:45>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -108,13 +108,25 @@
 (require 'occur-settings)
 
 (require 'emacs-lisp-mode-settings)
-(require 'scheme-mode-settings)
 (require 'common-lisp-mode-settings)
-(require 'clojure-mode-settings)
+(require 'scheme-mode-settings)
 (require 'joxa-mode-settings)
 
 (require 'wlc-settings)
 (require 'rainbow-delimiters-settings)
+
+(require 'elixir-mode-settings)
+(require 'erlang-mode-settings)
+
+(require 'clojure-mode-settings)
+(require 'java-mode-settings)
+;;(require 'jde-settings)
+
+(require 'ruby-mode-settings)
+(require 'python-mode-settings)
+
+(require 'rust-mode-settings)
+(require 'go-mode-settings)
 
 (require 'cc-mode-settings)
 (require 'c-mode-settings)
@@ -122,32 +134,19 @@
 
 (require 'makefile-mode-settings)
 
-(require 'java-mode-settings)
-;;(require 'jde-settings)
-
 (require 'sh-mode-settings)
 (require 'awk-mode-settings)
+(require 'conf-mode-settings)
 
 (require 'shell-mode-settings)
 (require 'multi-term-settings)
-
-(require 'ruby-mode-settings)
-(require 'scss-mode-settings)
-
-(require 'python-mode-settings)
-
-(require 'erlang-mode-settings)
-
-(require 'go-mode-settings)
-
-(require 'rust-mode-settings)
 
 (require 'thrift-mode-settings)
 (require 'protobuf-mode-settings)
 
 (require 'markdown-mode-settings)
+(require 'scss-mode-settings)
 
-(require 'conf-mode-settings)
 
 ;; 高亮光标处单词
 (require 'highlight-symbol-settings)
