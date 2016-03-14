@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-13 17:45>
+;; Time-stamp: <2016-03-14 10:18>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -120,7 +120,6 @@
 
 (require 'clojure-mode-settings)
 (require 'java-mode-settings)
-;;(require 'jde-settings)
 
 (require 'ruby-mode-settings)
 (require 'python-mode-settings)

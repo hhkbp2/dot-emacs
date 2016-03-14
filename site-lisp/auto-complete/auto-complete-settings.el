@@ -1,7 +1,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2016-03-07 18:25>
+;; Time-stamp: <2016-03-14 10:20>
 
 
 (require 'auto-complete-config)
@@ -203,7 +203,6 @@
  `(('c-mode-hook      'ac-settings-4-c)
    ('c++-mode-hook    'ac-settings-4-cpp)
    ('java-mode-hook   'ac-settings-4-java)
-   ('jde-mode-hook    'ac-settings-4-java)
    ('text-mode-hook   'ac-settings-4-text)
    ('eshell-mode-hook 'ac-settings-4-eshell)
    ('ruby-mode-hook   'ac-settings-4-ruby)
