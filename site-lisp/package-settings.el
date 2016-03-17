@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-11 17:13>
+;; Time-stamp: <2016-03-17 11:44>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -61,6 +61,8 @@
     helm-ag
     helm-swoop
     smex
+
+    guide-key
 
     auto-complete
     ac-ispell
