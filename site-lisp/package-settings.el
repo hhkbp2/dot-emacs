@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-17 14:29>
+;; Time-stamp: <2016-03-17 15:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -51,6 +51,7 @@
     dired-details
     dired-details+
     fiplr
+    popwin
     neotree
     sr-speedbar
     maxframe
@@ -64,6 +65,8 @@
     helm-swoop
     smex
 
+    google-this
+    youdao-dictionary
     guide-key
 
     auto-complete

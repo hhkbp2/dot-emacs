@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-11-05 14:26>
+;; Time-stamp: <2016-03-17 15:24>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@
 ;;; Code:
 
 
+(require 'popwin)
 (require 'zone-settings)
 
 
@@ -67,7 +68,6 @@
   ;; 支持中键粘贴
   (setq mouse-yank-at-point t)
 
-
   ;; use y or n instead of yes or no answer
   (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -87,6 +87,9 @@
 
   (put 'narrow-to-region 'disabled nil)
   (put 'narrow-to-page 'disabled nil)
+
+  ;; turn on `popwin'
+  (popwin-mode 1)
 
   ;; apply `zone' settings
   (zone-settings)
