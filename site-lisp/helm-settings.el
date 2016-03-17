@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-11 17:31>
+;; Time-stamp: <2016-03-17 16:35>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,6 +29,8 @@
 (require 'helm-swoop)
 (require 'helm-files)
 (require 'helm-face-settings)
+(require 'helm-descbinds)
+(require 'helm-describe-modes)
 
 
 (defun helm-settings ()
@@ -38,6 +40,11 @@
   (helm-mode 1)
 
   (global-set-key [(control x) (control f)] 'helm-find-files)
+
+  ;; replace `describe-bindings' to `helm-descbinds'
+  (helm-descbinds-mode)
+  ;; remap `describe-mode' to `helm-describe-modes'
+  ;;(global-set-key [remap describe-mode] #'helm-describe-modes)
   )
 
 
