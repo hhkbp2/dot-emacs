@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-17 11:44>
+;; Time-stamp: <2016-03-17 14:29>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -57,6 +57,8 @@
     windresize
 
     ido-complete-space-or-hyphen
+    ido-ubiquitous
+    ido-yes-or-no
     helm
     helm-ag
     helm-swoop

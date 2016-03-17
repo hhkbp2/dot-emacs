@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 04:16>
+;; Time-stamp: <2016-03-17 14:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -32,6 +32,8 @@
 ;; load face settings
 (require 'ido-face-settings)
 (require 'ido-complete-space-or-hyphen)
+(require 'ido-ubiquitous)
+(require 'ido-yes-or-no)
 
 
 (defun ido-settings ()
@@ -42,6 +44,10 @@
   (ido-mode 1)
   ;; toggle ido speed-ups everywhere file and directory names are read.
   (ido-everywhere 1)
+
+  (ido-ubiquitous-mode 1)
+
+  (ido-yes-or-no-mode 1)
   )
 
 (eval-after-load "ido"
