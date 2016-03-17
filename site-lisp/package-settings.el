@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-17 15:28>
+;; Time-stamp: <2016-03-17 16:11>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -82,6 +82,7 @@
 
     exec-path-from-shell
     dash-at-point
+    osx-dictionary
 
     rainbow-delimiters
     smartparens
