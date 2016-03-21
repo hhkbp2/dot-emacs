@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-21 16:46>
+;; Time-stamp: <2016-03-21 17:21>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,7 +24,6 @@
 ;;; Code:
 
 
-(require 'gocode-settings)
 (require 'golint)
 (require 'dw-functionals)
 (require 'go-mode)

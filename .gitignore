@@ -1,10 +1,7 @@
 
 # imports
 import/debian_elisp
-import/ecb*
-import/jdee*
 import/distel*
-import/goflymake
 personal
 
 # compiled files
