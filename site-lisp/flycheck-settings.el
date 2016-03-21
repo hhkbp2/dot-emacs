@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-09 11:39>
+;; Time-stamp: <2016-03-21 17:47>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,6 +22,9 @@
 ;;; Commentary:
 
 ;;; Code:
+
+
+(require 'flycheck)
 
 
 (defun flycheck-4-go ()
@@ -53,7 +56,6 @@
   ;; 1. `flycheck-mode' is enabled
   ;; 2. the buffer is save
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
-  (setq flycheck-completion-system 'ido)
 
   ;; enable flycheck in specified modes
   (dolist (func '(flycheck-4-elisp
