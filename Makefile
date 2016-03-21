@@ -2,7 +2,7 @@
 #
 # Author: Dylan.Wen <hhkbp2@gmail.com>
 # Created: Sep 15, 2012
-# Time-stamp: <2016-03-20 11:44>
+# Time-stamp: <2016-03-21 15:55>
 #
 
 QUIET     := @
@@ -39,8 +39,6 @@ site-init: init-packages link-dot-emacs
 
 .PHONY : init-packages
 init-packages:
-	$(QUIET) cd import && tar -xzf ecb-2.40.tar.gz && \
-       sed -i -e "s#\(ecb-required-cedet-version-max '(1 \)0#\11#" ./ecb-2.40/ecb-upgrade.el
 	$(QUIET) cd import && tar -xzf distel-4.03.tar.gz
 
 link-dot-emacs:
@@ -50,7 +48,5 @@ link-dot-emacs:
 
 .PHONY : site-clean
 site-clean:
-	$(QUIET) cd import && $(RM) \
-  ecb-2.40 \
-  distel-4.03
+	$(QUIET) cd import && $(RM) distel-4.03
 

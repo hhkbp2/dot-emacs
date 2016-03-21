@@ -24,7 +24,6 @@
 ;;; Code:
 
 
-(require 'ecb-autoloads)
 ;; load face settings
 (require 'ecb-face-settings)
 
