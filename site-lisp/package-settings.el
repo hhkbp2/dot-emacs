@@ -117,7 +117,6 @@
     go-eldoc
     golint
     go-errcheck
-    flymake-go
 
     thrift
     protobuf-mode
