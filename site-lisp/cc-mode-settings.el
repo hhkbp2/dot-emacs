@@ -1,10 +1,10 @@
+;;; cc-mode-settings.el --- Settings for `cc-mode'.
 ;; -*- Emacs-Lisp -*-
-;; Settings for `cc-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-05-06 10:22>
+;; Time-stamp: <2016-03-22 11:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -237,3 +237,5 @@
 
 
 (provide 'cc-mode-settings)
+
+;;; cc-mode-settings.el ends here

@@ -1,10 +1,10 @@
+;;; abbrev-settings.el --- Settings for `abbrev-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `abbrev-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-21 13:09>
+;; Time-stamp: <2016-03-22 11:08>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -40,3 +40,5 @@
 
 
 (provide 'abbrev-settings)
+
+;;; abbrev-settings.el ends here

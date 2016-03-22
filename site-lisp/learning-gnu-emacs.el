@@ -1,7 +1,15 @@
+;;; learning-gnu-emacs.el --- Code from book Learning GNU Emacs
 ;; -*- Emacs-Lisp -*-
+
+;; Time-stamp: <2016-03-22 12:07>
+
+;;; Commentary:
+
 ;; emacs lisp code in Learning GNU Emacs, 2rd
 ;; 《学习GNU Emacs, 第二版》
 ;; Debra Cameron, Bill Rosenblatt & Eric Raymond, Chinese translation, 2003
+
+;;; Code:
 
 
 (defun count-words-buffer ()
@@ -56,3 +64,5 @@ print a message in the minibuffer with result."
 
 
 (provide 'learning-gnu-emacs)
+
+;;; learning-gnu-emacs.el ends here

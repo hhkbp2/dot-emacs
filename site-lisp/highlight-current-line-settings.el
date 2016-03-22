@@ -1,10 +1,10 @@
+;;; highlight-current-line-settings.el --- Settings for `highlight-current-line'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `highlight-current-line'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:38>
+;; Time-stamp: <2016-03-22 11:48>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -73,3 +73,5 @@
 
 
 (provide 'highlight-current-line-settings)
+
+;;; highlight-current-line-settings.el ends here

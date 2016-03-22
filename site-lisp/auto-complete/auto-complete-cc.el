@@ -1,10 +1,10 @@
-;; auto-complete-cc.el --- Settings for `auto-complete' in c/c++ modes.
+;;; auto-complete-cc.el --- Settings for `auto-complete' in c/c++ modes
 ;; -*- Emacs-Lisp -*-
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-03-13 22:03>
+;; Time-stamp: <2016-03-22 11:09>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

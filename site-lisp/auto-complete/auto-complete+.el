@@ -1,4 +1,5 @@
 ;;; auto-complete+.el --- Auto complete plus
+;; -*- Emacs-Lisp -*-
 
 ;; Copyright (C) 2009 ahei, 2012 Dylan.Wen
 

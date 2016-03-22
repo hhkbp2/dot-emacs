@@ -1,10 +1,10 @@
+;;; multi-term-settings.el --- Settings for `multi-term'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `multi-term'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-13 18:37>
+;; Time-stamp: <2016-03-22 14:41>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -168,3 +168,5 @@
 
 
 (provide 'multi-term-settings)
+
+;;; multi-term-settings.el ends here

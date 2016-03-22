@@ -1,10 +1,10 @@
+;;; ruby-mode-settings.el --- Settings for `ruby-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `ruby-mode'.
 
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-05-05 17:34>
+;; Time-stamp: <2016-03-22 14:52>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -63,3 +63,5 @@
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
 (provide 'ruby-mode-settings)
+
+;;; ruby-mode-settings.el ends here

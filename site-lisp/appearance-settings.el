@@ -1,10 +1,10 @@
+;;; appearance-settings.el --- Settings for appearance
 ;; -*- Emacs-Lisp -*-
-;; Settings for appearance.
 
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-06-28 21:20>
+;; Time-stamp: <2016-03-22 11:08>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -107,3 +107,5 @@
 (appearance-settings)
 
 (provide 'appearance-settings)
+
+;;; appearance-settings.el ends here

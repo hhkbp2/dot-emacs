@@ -1,7 +1,12 @@
+;;; auto-complete-settings.el --- Settings for `auto-complete'
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2016-03-14 10:20>
+;; Time-stamp: <2016-03-22 11:08>
+
+;;; Commentary:
+
+;;; Code:
 
 
 (require 'auto-complete-config)

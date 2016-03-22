@@ -1,10 +1,10 @@
+;;; tabbar-face-settings.el --- Face settings for `tabbar-mode'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `tabbar-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-01 22:05>
+;; Time-stamp: <2016-03-22 15:01>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -120,3 +120,5 @@
 
 
 (provide 'tabbar-face-settings)
+
+;;; tabbar-face-settings.el ends here

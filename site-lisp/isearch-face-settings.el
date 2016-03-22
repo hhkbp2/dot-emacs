@@ -1,10 +1,10 @@
+;;; isearch-face-settings.el --- Face settings for `isearch'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `isearch'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 14:17>
+;; Time-stamp: <2016-03-22 11:55>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -56,3 +56,5 @@
 
 
 (provide 'isearch-face-settings)
+
+;;; isearch-face-settings.el ends here

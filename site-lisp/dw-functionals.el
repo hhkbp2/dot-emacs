@@ -1,10 +1,10 @@
+;;; dw-functionals.el --- Dylan.Wen's elisp functionality
 ;; -*- Emacs-Lisp -*-
-;; dw-functionals.el --- Dylan.Wen's elisp functionality
 
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-05-04 16:11>
+;; Time-stamp: <2016-03-22 11:12>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -359,3 +359,5 @@ On Ubuntu 12.04.1 LTS, it returns (\"Ubuntu\", \"12.04.1\")."
 
 
 (provide 'dw-functionals)
+
+;;; dw-functionals.el ends here

@@ -1,10 +1,10 @@
+;;; helm-settings.el --- Settings for `helm'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `helm'.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-17 16:35>
+;; Time-stamp: <2016-03-22 11:47>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -53,3 +53,5 @@
 
 
 (provide 'helm-settings)
+
+;;; helm-settings.el ends here

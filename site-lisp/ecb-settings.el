@@ -1,10 +1,10 @@
+;;; ecb-settings.el --- Settings for `ecb'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `ecb'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 14:10>
+;; Time-stamp: <2016-03-22 11:13>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -319,3 +319,5 @@ under window system.")
 
 
 (provide 'ecb-settings)
+
+;;; ecb-settings.el ends here

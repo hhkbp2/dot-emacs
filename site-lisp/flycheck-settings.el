@@ -1,10 +1,10 @@
+;;; flycheck-settings.el --- Settings for `flycheck'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `flycheck'.
 
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-21 17:47>
+;; Time-stamp: <2016-03-22 11:36>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -72,3 +72,5 @@
 
 
 (provide 'flycheck-settings)
+
+;;; flycheck-settings.el ends here

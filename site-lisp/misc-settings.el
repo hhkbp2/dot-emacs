@@ -1,10 +1,10 @@
+;;; misc-settings.el --- Miscellaneous settings
 ;; -*- Emacs-Lisp -*-
-;; Miscellaneous settings.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-17 15:24>
+;; Time-stamp: <2016-03-22 14:39>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -99,3 +99,5 @@
 
 
 (provide 'misc-settings)
+
+;;; misc-settings.el ends here

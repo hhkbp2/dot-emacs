@@ -1,10 +1,10 @@
+;;; winner-mode-settings.el --- Settings for `winner-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `winner-mode-settings'.
 
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-23 16:54>
+;; Time-stamp: <2016-03-22 15:20>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -44,3 +44,5 @@
 
 
 (provide 'winner-mode-settings)
+
+;;; winner-mode-settings.el ends here

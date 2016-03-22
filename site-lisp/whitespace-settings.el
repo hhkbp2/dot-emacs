@@ -1,10 +1,10 @@
+;;; whitespace-settings.el --- Settings for `whitespace'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `whitespace'.
 
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-26 21:07>
+;; Time-stamp: <2016-03-22 15:17>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -47,3 +47,5 @@
 
 
 (provide 'whitespace-settings)
+
+;;; whitespace-settings.el ends here

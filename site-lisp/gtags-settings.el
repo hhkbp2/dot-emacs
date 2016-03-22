@@ -1,10 +1,10 @@
+;;; gtags-settings.el --- Settings for `gtags-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `gtags-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:37>
+;; Time-stamp: <2016-03-22 11:46>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -81,3 +81,5 @@
 
 
 (provide 'gtags-settings)
+
+;;; gtags-settings.el ends here

@@ -1,10 +1,10 @@
+;;; saveplace-settings.el --- Settings for `saveplace'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `saveplace'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-18 15:07>
+;; Time-stamp: <2016-03-22 14:53>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -43,3 +43,5 @@
 
 
 (provide 'saveplace-settings)
+
+;;; saveplace-settings.el ends here

@@ -1,10 +1,10 @@
+;;; erc-settings.el --- Settings for `erc'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `erc'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-09-15 00:53>
+;; Time-stamp: <2016-03-22 11:30>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -162,3 +162,5 @@
 
 
 (provide 'erc-settings)
+
+;;; erc-settings.el ends here

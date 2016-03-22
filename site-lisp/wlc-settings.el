@@ -1,10 +1,10 @@
+;;; wlc-settings.el --- Settings for `wlc'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `wlc'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-04-13 13:14>
+;; Time-stamp: <2016-03-22 15:21>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -45,3 +45,5 @@
 
 
 (provide 'wlc-settings)
+
+;;; wlc-settings.el ends here

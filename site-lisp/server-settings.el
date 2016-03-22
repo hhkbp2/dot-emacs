@@ -1,10 +1,10 @@
+;;; server-settings.el --- Settings for `server'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `server'.
 
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-08-28 11:57>
+;; Time-stamp: <2016-03-22 14:55>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -39,3 +39,5 @@
 
 
 (provide 'server-settings)
+
+;;; server-settings.el ends here

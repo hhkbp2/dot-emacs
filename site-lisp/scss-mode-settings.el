@@ -1,10 +1,10 @@
-;; -*- Emacs-Lisp -*-
-;; Settings for `python-mode'.
+;;; scss-mode-settings.el --- Settings for `scss-mode'
+;; -*- Emacs-Lisp -*-;
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-19 02:16>
+;; Time-stamp: <2016-03-22 15:32>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -35,3 +35,5 @@
   '(scss-mode-settings))
 
 (provide 'scss-mode-settings)
+
+;;; scss-mode-settings.el ends here

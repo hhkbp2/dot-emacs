@@ -1,10 +1,10 @@
+;;; rust-mode-settings.el --- Settings for `rust-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `rust-mode'.
 
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-01 10:05>
+;; Time-stamp: <2016-03-22 14:53>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -44,3 +44,5 @@
 
 
 (provide 'rust-mode-settings)
+
+;;; rust-mode-settings.el ends here

@@ -1,10 +1,10 @@
+;;; protobuf-mode-settings.el --- Settings for `protobuf-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `protobuf-mode'.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-06-24 12:12>
+;; Time-stamp: <2016-03-22 14:47>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,3 +37,5 @@
 
 
 (provide 'protobuf-mode-settings)
+
+;;; protobuf-mode-settings.el ends here

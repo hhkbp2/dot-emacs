@@ -1,10 +1,10 @@
+;;; pulse-settings.es --- Settings for `pulse'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `pulse'.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-02-16 14:14>
+;; Time-stamp: <2016-03-22 14:47>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -145,3 +145,5 @@ the following hook:
 
 
 (provide 'pulse-settings)
+
+;;; pulse-settings.el ends here

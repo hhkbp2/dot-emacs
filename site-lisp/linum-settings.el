@@ -1,10 +1,10 @@
+;;; linum-settings.el --- Settings for `linum-mode' and its extensions
 ;; -*- Emacs-Lisp -*-
-;; Settings for `linum-mode' and its extensions.
 
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:38>
+;; Time-stamp: <2016-03-22 12:17>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -60,3 +60,5 @@
   '(linum-settings))
 
 (provide 'linum-settings)
+
+;;; linum-settings.el ends here

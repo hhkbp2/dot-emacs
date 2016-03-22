@@ -1,10 +1,10 @@
+;;; makefile-face-settings.el --- Face settings for `makefile-mode'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `makefile-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 15:12>
+;; Time-stamp: <2016-03-22 14:32>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -48,3 +48,5 @@
 
 
 (provide 'makefile-face-settings)
+
+;;; makefile-face-settings.el ends here

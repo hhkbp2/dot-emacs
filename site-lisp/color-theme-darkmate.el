@@ -1,10 +1,10 @@
+;; color-theme-darkmate.el --- The darkmate color theme for emacs
 ;; -*- Emacs-Lisp -*-
-;; color-theme-darkmate.el --- The darkmate color theme for emacs.
 
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-01 22:08>
+;; Time-stamp: <2016-03-22 11:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -592,3 +592,5 @@ Created by Dylan.Wen <hhkbp2@gmail.com>, 2009-02-09."
 
 
 (provide 'color-theme-darkmate)
+
+;;; color-theme-darkmate.el ends here

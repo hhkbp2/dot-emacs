@@ -1,10 +1,10 @@
+;;; slime-settings.el --- Settings for `slime'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `slime'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-09-19 19:06>
+;; Time-stamp: <2016-03-22 14:57>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -54,3 +54,5 @@
 
 
 (provide 'slime-settings)
+
+;;; slime-settings.el ends here

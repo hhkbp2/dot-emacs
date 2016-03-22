@@ -1,10 +1,10 @@
+;;; go-mode-settings.el --- Settings for `go-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `go-mode'.
 
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-21 17:21>
+;; Time-stamp: <2016-03-22 11:45>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -60,3 +60,5 @@
 
 
 (provide 'go-mode-settings)
+
+;;; go-mode-settings.el ends here

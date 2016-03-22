@@ -1,10 +1,10 @@
+;;; python-base-settings.el --- A few base settings for python
 ;; -*- Emacs-Lisp -*-
-;; A few base settings for python.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:34>
+;; Time-stamp: <2016-03-22 14:49>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -44,3 +44,5 @@
 
 
 (provide 'python-base-settings)
+
+;;; python-base-settings.el ends here

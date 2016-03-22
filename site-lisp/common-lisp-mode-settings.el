@@ -1,10 +1,10 @@
+;;; common-lisp-mode-settings.el --- Settings for `common-lisp-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `common-lisp-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-06 11:01>
+;; Time-stamp: <2016-03-22 11:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -39,3 +39,5 @@
 
 
 (provide 'common-lisp-mode-settings)
+
+;;; common-lisp-mode-settings.el ends here

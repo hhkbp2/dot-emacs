@@ -1,10 +1,10 @@
+;;; desktop-settings.el --- Settings for `desktop'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `desktop'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-27 11:24>
+;; Time-stamp: <2016-03-22 11:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -49,3 +49,5 @@
 
 
 (provide 'desktop-settings)
+
+;;; desktop-settings.el ends here

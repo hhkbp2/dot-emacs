@@ -1,10 +1,10 @@
+;;; ido-settings.el --- Settings for `ido-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `ido-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-17 14:28>
+;; Time-stamp: <2016-03-22 11:55>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -55,3 +55,5 @@
 
 
 (provide 'ido-settings)
+
+;;; ido-settings.el ends here

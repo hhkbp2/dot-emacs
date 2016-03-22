@@ -1,10 +1,10 @@
+;;; rainbow-delimiters-face-settings.el --- Face settings for `rainbow-delimiters'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `rainbow-delimiters'.
 
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-24 21:18>
+;; Time-stamp: <2016-03-22 14:51>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -95,3 +95,5 @@
 
 
 (provide 'rainbow-delimiters-face-settings)
+
+;;; rainbow-delimiters-face-settings.el ends here

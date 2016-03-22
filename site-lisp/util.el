@@ -1,6 +1,12 @@
+;;; util.el --- A few utilities.
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-09-26 01:01:33 Sunday by taoshanwen>
+;; Time-stamp: <2016-03-22 15:14>
+
+;;; Commentary:
+
+;;; Code:
+
 
 (require 'eval-after-load)
 
@@ -129,52 +135,6 @@ FUN-LIST can be a symbol, also can be a list whose element is a symbol."
                                 (kill-buffer (process-buffer proc))))))))
 
 ;;;###autoload
-(defun list-colors-display-htm (&optional list)
-  "Create HTML page which lists all the defined colors."
-  (interactive)
-  (if (and (null list) window-system)
-      (progn
-        (setq list (x-defined-colors))
-        ;; Delete duplicate colors.
-        (let ((l list))
-          (while (cdr l)
-            (if (facemenu-color-equal (car l) (car (cdr l)))
-                (setcdr l (cdr (cdr l)))
-              (setq l (cdr l)))))))
-  (with-output-to-temp-buffer "*Colors*"
-    (save-excursion
-      (set-buffer standard-output)
-      (insert "<html>\n"
-              "<head>\n"
-              "<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n"
-              "<title>Colors</title>\n"
-              "</head>\n"
-              "<body>\n"
-              "<h1>Colors</h1>\n"
-              "<p>\n"
-              "<pre>\n")
-      (let (s)
-        (while list
-          (insert (format (concat "<span style=\"background-color:%s\">%-20s</span>"
-                                  "  "
-                                  "<span style=\"color:%s\">%s</span>"
-                                  "\n")
-                          (html-color (car list)) (car list)
-                          (html-color (car list)) (car list)))
-          (setq list (cdr list))))
-      (insert "</pre>"
-              "</body>"
-              "</html>"))))
-
-;;;###autoload
-(defun html-color (string)
-  "Convert colors names to rgb(n1,n2,n3) strings."
-  (format "rgb(%d,%d,%d)"
-          (/ (nth 0 (x-color-values string)) 256)
-          (/ (nth 1 (x-color-values string)) 256)
-          (/ (nth 2 (x-color-values string)) 256)))
-
-;;;###autoload
 (defmacro def-command-max-window (command)
   "Make definition of command which after execute command COMMAND execute `delete-other-windows'."
   `(defun ,(am-intern command "-max-window") ()
@@ -211,3 +171,5 @@ KEY is a string or vector representing a sequence of keystrokes."
   (define-key keymap key nil))
 
 (provide 'util)
+
+;;; util.el ends here

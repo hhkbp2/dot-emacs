@@ -1,10 +1,10 @@
+;;; hs-minor-mode-settings.el --- Settings for `hs-minor-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `hs-minor-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-22 14:14>
+;; Time-stamp: <2016-03-22 11:53>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -146,3 +146,5 @@
 
 
 (provide 'hs-minor-mode-settings)
+
+;;; hs-minor-mode-settings.el ends here

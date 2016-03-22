@@ -1,10 +1,10 @@
+;;; calendar-face-settings.el --- Face settings for `calendar'.
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `calendar'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 14:02>
+;; Time-stamp: <2016-03-22 11:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -56,3 +56,5 @@
 
 
 (provide 'calendar-face-settings)
+
+;;; calendar-face-settings.el ends here

@@ -1,10 +1,10 @@
+;;; calendar-settings.el --- Settings for `calendar'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `calendar'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-09-15 00:53>
+;; Time-stamp: <2016-03-22 11:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -92,3 +92,5 @@
 
 
 (provide 'calendar-settings)
+
+;;; calendar-settings.el ends here

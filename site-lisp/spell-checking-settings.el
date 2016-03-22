@@ -1,10 +1,10 @@
+;;; spell-checking-settings.el --- Settings for spell checking
 ;; -*- Emacs-Lisp -*-
-;; Settings for spell checking.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:38>
+;; Time-stamp: <2016-03-22 15:00>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -55,3 +55,5 @@
 
 
 (provide 'spell-checking-settings)
+
+;;; spell-checking-settings.el ends here

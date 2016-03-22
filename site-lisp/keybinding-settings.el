@@ -1,10 +1,10 @@
+;;; keybinding-settings.el --- Settings for key binding
 ;; -*- Emacs-Lisp -*-
-;; Settings for key binding.
 
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-12 17:18>
+;; Time-stamp: <2016-03-22 12:00>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -107,3 +107,5 @@
 
 
 (provide 'keybinding-settings)
+
+;;; keybinding-settings.el ends here

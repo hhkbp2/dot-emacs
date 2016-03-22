@@ -1,10 +1,10 @@
+;;; dev-base-settings.el --- A few base definations and contants of dev
 ;; -*- Emacs-Lisp -*-
-;; A few base definations and contants of dev
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-14 10:19>
+;; Time-stamp: <2016-03-22 11:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

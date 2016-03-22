@@ -1,10 +1,10 @@
+;;; frame-settings.el --- Settings for frame
 ;; -*- Emacs-Lisp -*-
-;; Settings related to frame.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-06-28 21:28>
+;; Time-stamp: <2016-03-22 11:44>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -64,3 +64,5 @@
 
 
 (provide 'frame-settings)
+
+;;; frame-settings.el ends here

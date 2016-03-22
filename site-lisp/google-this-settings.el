@@ -1,10 +1,10 @@
+;;; google-this-settings.el --- Settings for `google-this'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `google-this'.
 
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-17 14:54>
+;; Time-stamp: <2016-03-22 11:46>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -42,3 +42,5 @@
 
 
 (provide 'google-this-settings)
+
+;;; google-this-settings.el ends here

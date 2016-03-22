@@ -1,10 +1,10 @@
+;;; highlight-indentation-settings.el --- Settings for `highlight-indentation'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `highlight-indentation'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-25 18:35>
+;; Time-stamp: <2016-03-22 11:49>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -62,3 +62,5 @@
 
 
 (provide 'highlight-indentation-settings)
+
+;;; highlight-indentation-settings.el ends here

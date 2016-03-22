@@ -1,10 +1,10 @@
+;;; pymacs-settings.el --- Settings for `pymacs'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `pymacs'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-12-10 22:35>
+;; Time-stamp: <2016-03-22 14:48>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -47,3 +47,5 @@
 
 
 (provide 'pymacs-settings)
+
+;;; pymacs-settings.el ends here

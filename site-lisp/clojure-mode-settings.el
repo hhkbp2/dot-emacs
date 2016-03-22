@@ -1,10 +1,10 @@
+;;; clojure-mode-settings.el --- Settings for the `clojure-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for the `clojure-mode'.
 
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-04-13 12:52>
+;; Time-stamp: <2016-03-22 11:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,3 +37,4 @@
 
 (provide 'clojure-mode-settings)
 
+;;; clojure-mode-settings.el ends here

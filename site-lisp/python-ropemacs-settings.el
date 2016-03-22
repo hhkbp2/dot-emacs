@@ -1,10 +1,10 @@
+;;; python-ropemacs-settings.el --- Settings for `python-ropemacs'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `python-ropemacs'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-12 10:56>
+;; Time-stamp: <2016-03-22 14:50>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -50,3 +50,5 @@
 
 
 (provide 'python-ropemacs-settings)
+
+;;; python-ropemacs-settings.el ends here

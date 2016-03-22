@@ -1,10 +1,10 @@
+;;; makefile-mode-settings.el --- Settings for `makefile-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `makefile-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-01-01 19:39>
+;; Time-stamp: <2016-03-22 14:33>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -49,3 +49,5 @@
 
 
 (provide 'makefile-mode-settings)
+
+;;; makefile-mode-settings.el ends here

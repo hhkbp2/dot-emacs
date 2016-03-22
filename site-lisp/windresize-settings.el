@@ -1,10 +1,10 @@
+;;; windresize-settings.el --- Settings for `windresize'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `windresize'.
 
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-23 16:43>
+;; Time-stamp: <2016-03-22 15:19>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -38,3 +38,5 @@
 
 
 (provide 'windresize-settings)
+
+;;; windresize-settings.el ends here

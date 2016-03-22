@@ -1,11 +1,11 @@
+;; zone-matrix.el --- The matrix screen saver on Emacs
 ;; -*- Emacs-Lisp -*-
-;; zone-matrix.el --- The matrix screen saver on Emacs.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
 ;; Created: Jan 25, 2011
-;; Time-stamp: <2013-07-28 17:53>
+;; Time-stamp: <2016-03-22 15:22>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -506,3 +506,5 @@ it requires higher resource consumption. So it is used as the default."
 
 
 (provide 'zone-matrix)
+
+;;; zone-matrix.el ends here

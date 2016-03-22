@@ -1,10 +1,10 @@
+;;; fiplr-settings.el --- Settings for  `fiplr'
 ;; -*- Emacs-Lisp -*-
-;; Settings for  `fiplr'.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-07-25 23:44>
+;; Time-stamp: <2016-03-22 11:36>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -42,3 +42,5 @@
   `(fiplr-settings))
 
 (provide 'fiplr-settings)
+
+;;; fiplr-settings.el ends here

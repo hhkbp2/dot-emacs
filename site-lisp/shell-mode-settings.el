@@ -1,10 +1,10 @@
+;;; shell-mode-settings.el --- Settings for `shell-mode' and `term-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `shell-mode' and `term-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-30 01:10>
+;; Time-stamp: <2016-03-22 14:57>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -90,3 +90,5 @@
 
 
 (provide 'shell-mode-settings)
+
+;;; shell-mode-settings.el ends here

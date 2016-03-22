@@ -1,10 +1,10 @@
+;;; minibuffer-settings.el --- Settings for `minibuffer'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `minibuffer'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-10-25 10:12>
+;; Time-stamp: <2016-03-22 14:39>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -45,8 +45,8 @@
   ;; 启用部分补全功能，如输入M-x q r r相当于M-x query-replace-regexp
   (if (>= emacs-major-version 24)
       (progn
-	(setq completion-styles '(partial-completion initials))
-	(setq completion-pcm-complete-word-inserts-delimiters t))
+    (setq completion-styles '(partial-completion initials))
+    (setq completion-pcm-complete-word-inserts-delimiters t))
     (partial-completion-mode t))
 
   ;; `completion-ignored-extensions': 字符串列表，常为后缀
@@ -78,3 +78,5 @@
 
 
 (provide 'minibuffer-settings)
+
+;;; minibuffer-settings.el ends here

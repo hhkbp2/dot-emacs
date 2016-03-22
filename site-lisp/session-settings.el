@@ -1,10 +1,10 @@
+;;; session-settings.el --- Settings for `session'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `session'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-18 15:13>
+;; Time-stamp: <2016-03-22 14:56>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -49,3 +49,5 @@ this function to `after-init-hook'." t)
 
 
 (provide 'session-settings)
+
+;;; session-settings.el ends here

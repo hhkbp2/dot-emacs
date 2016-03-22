@@ -1,10 +1,10 @@
+;;; occur-settings.el --- Settings for `occur-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `occur-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2012-09-15 00:45>
+;; Time-stamp: <2016-03-22 14:44>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -189,3 +189,5 @@ If there is no more next match, rewind to the first match in current buffer."
 
 
 (provide 'occur-settings)
+
+;;; occur-settings.el ends here

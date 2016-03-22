@@ -1,6 +1,11 @@
+;;; my-subdirs.el --- Functions to add dir to `load-path'
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-09-05 17:05:25 Sunday by taoshanwen>
+;; Time-stamp: <2016-03-22 14:45>
+
+;;; Commentary:
+
+;;; Code:
 
 (defun my-add-subdirs-to-load-path (dir)
   "把DIR的所有子目录都加到`load-path'里面"
@@ -54,3 +59,5 @@ or `CVS', and any subdirectory that contains a file named `.nosearch'."
       (normal-top-level-add-to-load-path (cdr (nreverse dirs))))))
 
 (provide 'my-subdirs)
+
+;;; my-subdirs.el ends here

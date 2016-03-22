@@ -1,10 +1,10 @@
+;;; color-theme+.el --- An enhancement of `color-theme'
 ;; -*- Emacs-Lisp -*-
-;; An enhancement of `color-theme'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-29 00:03>
+;; Time-stamp: <2016-03-22 11:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -80,3 +80,5 @@ To apply different face settings according to different term types."
 
 
 (provide 'color-theme+)
+
+;;; color-theme+.el ends here

@@ -1,10 +1,10 @@
+;;; font-lock-face.el --- Settings for a few favorite font-lock faces
 ;; -*- Emacs-Lisp -*-
-;; A few my favorite font-lock face
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-02-17 01:00>
+;; Time-stamp: <2016-03-22 11:39>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -211,3 +211,5 @@
 
 
 (provide 'font-lock-face)
+
+;;; font-lock-face.el ends here

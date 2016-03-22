@@ -1,10 +1,10 @@
+;;; dired+-face-settings.el --- Face settings for `dired+'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `dired+'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-01 16:10>
+;; Time-stamp: <2016-03-22 11:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -143,3 +143,5 @@
 
 
 (provide 'dired+-face-settings)
+
+;;; dired+-face-settings.el ends here

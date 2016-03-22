@@ -1,10 +1,10 @@
+;;; python-mode-settings.el --- Settings for `python-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `python-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-10-25 14:20>
+;; Time-stamp: <2016-03-22 14:49>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -90,3 +90,5 @@
 
 
 (provide 'python-mode-settings)
+
+;;; python-mode-settings.el ends here

@@ -1,7 +1,12 @@
+;;; on-lisp.el --- Code from book On Lisp
 ;; -*- Emacs-Lisp -*-
-;; Emacs lisp code ported from the book On Lisp
+
+;;; Commentary:
+
+;; Emacs Lisp code ported from the book On Lisp
 ;; Paul Graham, Prentice Hall, 1993
 
+;;; Code:
 
 (proclaim '(inline last1 single append1 conc1 mklist))
 (proclaim '(optimize speed))
@@ -363,3 +368,5 @@
 
 
 (provide 'on-lisp)
+
+;;; on-lisp.el ends here

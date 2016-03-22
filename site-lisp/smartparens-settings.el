@@ -1,10 +1,10 @@
+;;; smartparens-settings.el --- Settings for `smartparens'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `smartparens'.
 
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 20:57>
+;; Time-stamp: <2016-03-22 14:59>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -41,3 +41,5 @@
 (show-smartparens-global-mode t)
 
 (provide 'smartparens-settings)
+
+;;; smartparens-settings.el ends here

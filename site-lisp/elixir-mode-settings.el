@@ -1,10 +1,10 @@
+;;; elixir-mode-settings.el --- Settings for `elixir-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `elixir-mode'.
 
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-13 17:40>
+;; Time-stamp: <2016-03-22 11:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -39,3 +39,5 @@
 
 
 (provide 'elixir-mode-settings)
+
+;;; elixir-mode-settings.el ends here

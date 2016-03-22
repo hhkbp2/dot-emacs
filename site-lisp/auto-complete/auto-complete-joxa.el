@@ -1,10 +1,10 @@
-;; auto-complete-joxa.el --- Settings for `auto-complete' in joxa modes.
+;;; auto-complete-joxa.el --- Settings for `auto-complete' in joxa mode
 ;; -*- Emacs-Lisp -*-
 
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-07-18 18:30>
+;; Time-stamp: <2016-03-22 15:34>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -45,4 +45,5 @@
               'auto-complete-joxa)
 
 (provide 'auto-complete-joxa)
+
 ;;; auto-complete-joxa.el ends here

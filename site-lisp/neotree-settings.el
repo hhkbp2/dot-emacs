@@ -1,10 +1,10 @@
+;;; neotree-settings.el --- Settings for `neotree'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `grep'.
 
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-05-18 15:10>
+;; Time-stamp: <2016-03-22 14:43>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -36,3 +36,5 @@
   `(neotree-settings))
 
 (provide 'neotree-settings)
+
+;;; neotree-settings.el ends here

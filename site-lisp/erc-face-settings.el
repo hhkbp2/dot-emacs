@@ -1,10 +1,10 @@
+;;; erc-face-settings.el --- Face settings for `erc'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `erc'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 14:05>
+;; Time-stamp: <2016-03-22 11:29>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -57,3 +57,5 @@
 
 
 (provide 'erc-face-settings)
+
+;;; erc-face-settings.el ends here

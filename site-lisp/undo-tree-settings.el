@@ -1,10 +1,10 @@
+;;; undo-tree-settings.el --- Settings for `undo-tree'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `undo-tree'.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 03:08>
+;; Time-stamp: <2016-03-22 15:11>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -38,3 +38,5 @@
 
 
 (provide 'undo-tree-settings)
+
+;;; undo-tree-settings.el ends here

@@ -1,4 +1,5 @@
 ;;; linum-relative.el --- display relative line number in the left margin
+;;; -*- Emacs-Lisp -*-
 
 ;; Copyright 2012 Yen-Chin,Lee 2012 Dylan.Wen
 ;;
@@ -101,4 +102,5 @@
 
 
 (provide 'linum-relative)
-;;; linum-relative.el ends here.
+
+;;; linum-relative.el ends here

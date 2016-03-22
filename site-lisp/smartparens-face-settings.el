@@ -1,10 +1,10 @@
+;;; smartparens-face-settings.el --- Face settings for `smartparens'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `smartparens'.
 
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 22:17>
+;; Time-stamp: <2016-03-22 14:58>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -57,3 +57,5 @@
   )
 
 (provide 'smartparens-face-settings)
+
+;;; smartparens-face-settings.el ends here

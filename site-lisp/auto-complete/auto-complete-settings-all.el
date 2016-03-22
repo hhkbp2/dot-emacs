@@ -1,7 +1,7 @@
-;; auto-complete-settings-all.el --- All settings about `auto-complete'.
+;;; auto-complete-settings-all.el --- All settings about `auto-complete'
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2016-03-07 18:26>
+;; Time-stamp: <2016-03-22 15:04>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -18,22 +18,20 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
+;;; Commentary:
+
+;;; Code:
+
+
 ;; hippie expand
 (require 'hippie-expand-settings)
 
 ;; 自动补全
 (require 'auto-complete-settings)
 
-;; 自动插入一些文件模板,用template
-;;(require 'template-settings)
-
-;; 自动插入一些文件模板
-;;(require 'auto-insert-settings)
-
 ;; 超强的snippet
 (require 'yasnippet-settings)
 
-
 (provide 'auto-complete-settings-all)
 
-;; auto-complete-settings-all.el ends here
+;;; auto-complete-settings-all.el ends here

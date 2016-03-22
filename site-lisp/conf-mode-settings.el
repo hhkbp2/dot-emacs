@@ -1,10 +1,10 @@
+;;; conf-mode-settings.el --- Settings for `conf-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `conf-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-03-03 01:37>
+;; Time-stamp: <2016-03-22 11:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,3 +37,5 @@
 
 
 (provide 'conf-mode-settings)
+
+;;; conf-mode-settings.el ends here

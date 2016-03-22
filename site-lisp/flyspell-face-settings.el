@@ -1,10 +1,10 @@
+;;; flyspell-face-settings.el --- Face settings for `flyspell'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `flyspell-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 15:24>
+;; Time-stamp: <2016-03-22 15:27>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,3 +37,5 @@
 
 
 (provide 'flyspell-face-settings)
+
+;;; flyspell-face-settings.el ends here

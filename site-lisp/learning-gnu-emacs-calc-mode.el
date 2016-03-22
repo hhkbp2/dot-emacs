@@ -1,3 +1,10 @@
+;;; learning-gnu-emacs-calc-mode.el --- Calc Mode from book Learning GNU Emacs
+;; -*- Emacs-Lisp -*-
+
+;; Time-stamp: <2016-03-22 12:05>
+
+;;; Commentary:
+
 ;; A calculator major mode, which is an example of making a new major mode in
 ;; Learning GNU Emacs, 2rd
 ;; 《学习GNU Emacs, 第二版》
@@ -8,6 +15,9 @@
 ;;  c   clear the stack
 ;;  =   print the value at the top of the stack
 ;;  p   print the entire stack contents
+
+;;; Code:
+
 
 (defvar calc-mode-map nil
   "Local keymap for calculator mode buffers.")
@@ -151,3 +161,7 @@ whitespace is necessary, except to separate numbers."
   (setq major-mode 'calc-mode)
   (setq mode-name "Calculator")
   (use-local-map calc-mode-map))
+
+(provide 'calc-mode)
+
+;;; learning-gnu-emacs-calc-mode.el ends here

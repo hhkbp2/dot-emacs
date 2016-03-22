@@ -1,10 +1,10 @@
+;;; windmove-settings.el --- Settings for `windmove'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `windmove'.
 
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-05-23 16:27>
+;; Time-stamp: <2016-03-22 15:19>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -40,3 +40,5 @@
 
 
 (provide 'windmove-settings)
+
+;;; windmove-settings.el ends here

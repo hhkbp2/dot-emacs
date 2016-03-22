@@ -1,10 +1,10 @@
+;;; emacs-lisp-mode-settings.el --- Settings for `emacs-lisp-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `emacs-lisp-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-18 14:57>
+;; Time-stamp: <2016-03-22 11:29>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -49,3 +49,5 @@
 
 
 (provide 'emacs-lisp-mode-settings)
+
+;;; emacs-lisp-mode-settings.el ends here

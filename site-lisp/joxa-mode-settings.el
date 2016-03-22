@@ -1,8 +1,8 @@
+;;; joxa-mode-settings.el --- Settings for the `joxa-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for the `joxa-mode'.
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-05-31 19:42>
+;; Time-stamp: <2016-03-22 12:00>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -46,3 +46,5 @@
   `(joxa-mode-settings))
 
 (provide 'joxa-mode-settings)
+
+;;; joxa-mode-settings.el ends here

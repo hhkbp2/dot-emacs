@@ -1,10 +1,10 @@
+;;; font-lock-settings.el --- Settings for `font-lock-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `font-lock-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2014-03-23 11:43>
+;; Time-stamp: <2016-03-22 11:41>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -465,3 +465,5 @@ l_\\(?:onoff\\|linger\\)\
 
 
 (provide 'font-lock-settings)
+
+;;; font-lock-settings.el ends here

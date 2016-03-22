@@ -1,10 +1,10 @@
+;;; cal-china-x-face-settings.el --- Face settings for `cal-china-x'
 ;; -*- Emacs-Lisp -*-
-;; Face settings for `cal-china-x'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 14:01>
+;; Time-stamp: <2016-03-22 11:07>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,3 +37,5 @@
 
 
 (provide 'cal-china-x-face-settings)
+
+;;; cal-china-x-face-settings.el ends here

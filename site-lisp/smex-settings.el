@@ -1,10 +1,10 @@
+;;; smex-settings.el --- Settings for `smex'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `smex'.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2013-08-04 03:58>
+;; Time-stamp: <2016-03-22 14:59>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -44,3 +44,4 @@
 
 
 (provide 'smex-settings)
+;;; smex-settings.el ends here

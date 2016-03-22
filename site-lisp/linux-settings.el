@@ -1,10 +1,10 @@
+;;; linux-settings.el --- Settings for linux os
 ;; -*- Emacs-Lisp -*-
-;; Settings for linux os.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-08-16 18:32>
+;; Time-stamp: <2016-03-22 12:18>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,3 +30,5 @@
 
 
 (provide 'linux-settings)
+
+;;; linux-settings.el ends here

@@ -1,10 +1,10 @@
+;;; tabbar-settings.el --- Settings for `tabbar-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `tabbar-mode'.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-02-05 13:08>
+;; Time-stamp: <2016-03-22 15:02>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -53,3 +53,5 @@
 
 
 (provide 'tabbar-settings)
+
+;;; tabbar-settings.el ends here

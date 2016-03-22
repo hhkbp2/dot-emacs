@@ -1,10 +1,10 @@
+;;; erlang-mode-settings.el --- Settings for `erlang-mode'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `erlang-mode'.
 
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-02-14 17:30>
+;; Time-stamp: <2016-03-22 11:30>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -91,3 +91,5 @@
 
 
 (provide 'erlang-mode-settings)
+
+;;; elang-mode-settings.el ends here

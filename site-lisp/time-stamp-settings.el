@@ -1,10 +1,10 @@
+;;; time-stamp-settings.el --- Settings for `time-stamp'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `time-stamp'
 
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2011-01-21 13:17>
+;; Time-stamp: <2016-03-22 15:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -42,3 +42,5 @@
 
 
 (provide 'time-stamp-settings)
+
+;;; time-stamp-settings.el ends here

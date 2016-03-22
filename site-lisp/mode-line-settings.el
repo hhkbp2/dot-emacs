@@ -1,10 +1,10 @@
+;;; mode-line-settings.el --- Settings for `mode-line'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `mode-line'.
 
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-06-29 11:40>
+;; Time-stamp: <2016-03-22 14:40>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -209,3 +209,5 @@ mouse-3: Toggle minor modes"
 
 
 (provide 'mode-line-settings)
+
+;;; mode-line-settings.el ends here

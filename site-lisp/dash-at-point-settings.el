@@ -1,10 +1,10 @@
+;;; dash-at-point-settings.el --- Settings for `dash-at-point'
 ;; -*- Emacs-Lisp -*-
-;; Settings for `dash-at-point'.
 
 ;; Copyright (C) 2015 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-05-31 18:30>
+;; Time-stamp: <2016-03-22 11:06>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -38,3 +38,4 @@
 
 (provide 'dash-at-point-settings)
 
+;;; dash-at-point-settings.el ends here

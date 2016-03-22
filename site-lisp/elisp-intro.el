@@ -1,8 +1,15 @@
+;;; elisp-intro.el --- Code from the book "elisp intro"
 ;; -*- Emacs-Lisp -*-
-;; emacs lisp code in Programming in Emacs Lisp: An Introduction, 2rd
+
+;; Emacs Lisp code in Programming in Emacs Lisp: An Introduction, 2rd
 ;; Robert J. Chassell, Chinese translation, 2001
 ;; 《GNU Emacs Lisp编程入门》第二版中文版
 
+;; Time-stamp: <2016-03-22 14:34>
+
+;;; Commentary:
+
+;;; Code:
 
 ;;; chapter 13
 
@@ -541,3 +548,5 @@ SYMBOL-WIDTH is number of each column."
 
 
 (provide 'elisp-intro)
+
+;;; elisp-intro.el ends here
