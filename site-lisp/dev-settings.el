@@ -1,10 +1,10 @@
+;;; dev-settings.el --- Settings for software development
 ;; -*- Emacs-Lisp -*-
-;; Settings for software development.
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-14 10:18>
+;; Time-stamp: <2016-03-22 15:09>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -189,7 +189,6 @@
 
 ;; ecb 代码浏览器
 (require 'ecb-settings)
-(require 'tree-buffer-settings)
 
 ;; global
 (require 'gtags-settings)
@@ -200,3 +199,5 @@
 
 
 (provide 'dev-settings)
+
+;;; dev-settings.el ends here
