@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:12>
+;; Time-stamp: <2016-03-23 10:30>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ plus those ending with extensions in `dired-omit-extensions'."
 (defun dired-x-settings ()
   "Settings for `dired-x'."
   (unless is-before-emacs-21
-    (setq dired-omit-files (concat dired-omit-files "\\|^\\.\\|^semantic.cache$\\|^CVS$"))
+    (setq dired-omit-files (concat dired-omit-files "\\|^\\.\\|^semantic.cache$\\|^CVS$\\|^flycheck_"))
     (if mswin
         (setq dired-omit-files (concat dired-omit-files "\\|^_"))))
   (setq dired-omit-size-limit 1000000))
