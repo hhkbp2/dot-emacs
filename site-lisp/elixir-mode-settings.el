@@ -4,7 +4,7 @@
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:28>
+;; Time-stamp: <2016-03-22 16:46>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,14 +24,9 @@
 ;;; Code:
 
 
-(require 'flymake-elixir)
-
-
 (defun elixir-mode-settings ()
   "Settings for `elixir-mode'."
 
-  ;; enable `flymake-elixir'
-  (add-hook 'elixir-mode-hook 'flymake-elixir-load)
   )
 
 (eval-after-load "elixir-mode"

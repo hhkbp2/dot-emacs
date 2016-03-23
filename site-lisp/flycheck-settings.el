@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:36>
+;; Time-stamp: <2016-03-22 16:46>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,27 +27,53 @@
 (require 'flycheck)
 
 
-(defun flycheck-4-go ()
-  (require 'go-flycheck)
-  (add-hook 'go-mode-hook 'flycheck-mode))
-
 (defun flycheck-4-elisp ()
+  "Flycheck settings for `emacs-lisp-mode'."
   (setq flycheck-emacs-lisp-load-path 'inherit)
   (add-hook 'emacs-lisp-mode-hook 'flycheck-mode))
 
-(defun flycheck-4-cc-mode ()
-  ;; TODO add impl
-  )
+
+(defun flycheck-4-elixir ()
+  "Flycheck settings for `elixir-mode'."
+
+  ;; add flycheck checker for elixir
+  (flycheck-define-checker elixir-mix
+    "An Elixir syntax checker using the Elixir interpreter.
+Refer to `https://github.com/ananthakumaran/dotfiles/.emacs.d/init-elixir.el'."
+    :command ("mix" "compile" source)
+    :error-patterns ((error line-start
+                            "** (" (zero-or-more not-newline) ") "
+                            (zero-or-more not-newline) ":" line ": " (message)
+                            line-end)
+                     (warning line-start
+                              (one-or-more (not (syntax whitespace))) ":"
+                              line ": "
+                              (message)
+                              line-end))
+    :modes elixir-mode)
+  (add-to-list 'flycheck-checkers 'elixir-mix)
+  (add-hook 'elixir-mode-hook 'flycheck-mode))
+
 
 (defun flycheck-4-python ()
+  "Flycheck settings for `python-mode'."
   (add-hook 'python-mode-hook '(lambda ()
                                  (flycheck-mode)
                                  (flycheck-select-checker 'python-pylint))))
 
+
+(defun flycheck-4-go ()
+  "Flycheck settings for `go-mode'."
+  (require 'go-flycheck)
+  (add-hook 'go-mode-hook 'flycheck-mode))
+
+
 (defun flycheck-4-rust ()
+  "Flycheck settings for `rust-mode'."
   (require 'flycheck-rust)
   (add-hook 'rust-mode-hook 'flycheck-mode)
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
 
 (defun flycheck-settings ()
   "Settings for `flycheck'."
@@ -59,10 +85,10 @@
 
   ;; enable flycheck in specified modes
   (dolist (func '(flycheck-4-elisp
-                  flycheck-4-cc-mode
+                  flycheck-4-elixir
                   flycheck-4-python
-                  flycheck-4-rust
-                  flycheck-4-go))
+                  flycheck-4-go
+                  flycheck-4-rust))
     (funcall func))
   )
 
