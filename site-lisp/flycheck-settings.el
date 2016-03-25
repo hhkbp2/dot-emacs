@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 16:46>
+;; Time-stamp: <2016-03-25 10:53>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -32,6 +32,13 @@
   (setq flycheck-emacs-lisp-load-path 'inherit)
   (add-hook 'emacs-lisp-mode-hook 'flycheck-mode))
 
+(defun flycheck-4-erlang ()
+  "Flycheck settings for `erlang-mode'."
+  ;; TODO customize
+  ;; flycheck-erlang-include-path
+  ;; flycheck-erlang-library-path
+  (add-hook 'erlang-mode-hook 'flycheck-mode)
+  )
 
 (defun flycheck-4-elixir ()
   "Flycheck settings for `elixir-mode'."
@@ -85,6 +92,7 @@ Refer to `https://github.com/ananthakumaran/dotfiles/.emacs.d/init-elixir.el'."
 
   ;; enable flycheck in specified modes
   (dolist (func '(flycheck-4-elisp
+                  flycheck-4-erlang
                   flycheck-4-elixir
                   flycheck-4-python
                   flycheck-4-go
