@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:55>
+;; Time-stamp: <2016-03-30 10:55>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -33,7 +33,6 @@
 (require 'ido-face-settings)
 (require 'ido-complete-space-or-hyphen)
 (require 'ido-ubiquitous)
-(require 'ido-yes-or-no)
 
 
 (defun ido-settings ()
@@ -47,7 +46,6 @@
 
   (ido-ubiquitous-mode 1)
 
-  (ido-yes-or-no-mode 1)
   )
 
 (eval-after-load "ido"

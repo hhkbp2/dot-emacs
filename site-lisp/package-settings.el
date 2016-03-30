@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 16:02>
+;; Time-stamp: <2016-03-30 10:55>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -58,10 +58,11 @@
 
     ido-complete-space-or-hyphen
     ido-ubiquitous
-    ido-yes-or-no
     helm
     helm-ag
     helm-swoop
+    helm-descbinds
+    helm-describe-modes
     smex
 
     google-this
