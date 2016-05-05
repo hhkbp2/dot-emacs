@@ -1,10 +1,8 @@
-;;; smartparens-settings.el --- Settings for `smartparens'
+;;; kapok-mode-settings.el --- Settings for the `kapok-mode'
 ;; -*- Emacs-Lisp -*-
 
-;; Copyright (C) 2015 Dylan.Wen
-
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-31 15:25>
+;; Time-stamp: <2016-05-05 16:39>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -24,24 +22,16 @@
 ;;; Code:
 
 
-(require 'smartparens-config)
-(require 'smartparens-face-settings)
+(require 'kapok-mode)
 
+(defun kapok-mode-settings ()
+  "Settings for `kapok-mode'."
 
-(defun smartparens-settings()
-  "Settings for `smartparens'."
-  (smartparens-face-settings)
-  (show-smartparens-face-settings)
   )
 
-(eval-after-load "smartparens"
-  `(smartparens-settings))
+(eval-after-load "kapok-mode"
+  `(kapok-mode-settings))
 
-(smartparens-global-mode t)
-(show-smartparens-global-mode t)
+(provide 'kapok-mode-settings)
 
-;; TODO add smartparens settings for erlang mode
-
-(provide 'smartparens-settings)
-
-;;; smartparens-settings.el ends here
+;;; kapok-mode-settings.el ends here

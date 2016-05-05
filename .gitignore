@@ -2,6 +2,7 @@
 # imports
 import/debian_elisp
 import/distel*
+import/kapok*
 personal
 
 # compiled files
