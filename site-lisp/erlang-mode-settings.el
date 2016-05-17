@@ -4,7 +4,7 @@
 ;; Copyright (C) 2012 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:30>
+;; Time-stamp: <2016-05-14 20:25>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -63,6 +63,10 @@
 
   (add-hook 'erlang-mode-hook
             (lambda ()
+              ;; turn on `subword-mode' since erlang uses camel case for
+              ;; variable names.
+              (subword-mode)
+
               ;; add Erlang functions to an imenu menu
               (imenu-add-to-menubar "imenu")
               (local-set-key [(control c) (m) (f)] 'mark-erlang-function)
