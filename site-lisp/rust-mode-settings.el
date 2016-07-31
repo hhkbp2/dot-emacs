@@ -4,7 +4,7 @@
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-07-28 17:16>
+;; Time-stamp: <2016-07-31 23:59>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
 (defun rust-mode-settings ()
   "Settings for `rust-mode'."
 
-  (setq racer-cmd (expand-file-name "~/local/bin/racer")
+  (setq racer-cmd (concat (getenv "CARGO_HOME") "/bin/racer")
         racer-rust-src-path (expand-file-name "~/pro/code/rustc-nightly/src/"))
   ;; activate racer when `rust-mode' starts
   (add-hook 'rust-mode-hook #'racer-mode)
