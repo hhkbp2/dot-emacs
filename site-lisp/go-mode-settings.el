@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:45>
+;; Time-stamp: <2016-08-09 19:58>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@
 (defun go-mode-settings ()
   "Settings for `go-mode'."
 
-  ;; run gofmt on the current buffer when saving
+  ;; run gofmt before saving golang buffer
   ;; non `go-mode' buffer would be intact
   (add-hook 'before-save-hook 'gofmt-before-save)
 
