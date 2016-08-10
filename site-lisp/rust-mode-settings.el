@@ -4,7 +4,7 @@
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-08-09 19:55>
+;; Time-stamp: <2016-08-10 19:28>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@
   (add-hook 'rust-mode-hook #'racer-mode)
   (add-hook 'racer-mode-hook #'eldoc-mode)
   ;; run rustfmt before saving rust buffer
-  (add-hook 'rust-mode-hook #'rust-enable-format-on-save)
+  ;; (add-hook 'rust-mode-hook #'rust-enable-format-on-save)
   )
 
 (eval-after-load "rust-mode"
