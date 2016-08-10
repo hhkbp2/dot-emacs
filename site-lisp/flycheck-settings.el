@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-25 10:53>
+;; Time-stamp: <2016-08-11 00:13>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -96,7 +96,11 @@ Refer to `https://github.com/ananthakumaran/dotfiles/.emacs.d/init-elixir.el'."
                   flycheck-4-elixir
                   flycheck-4-python
                   flycheck-4-go
-                  flycheck-4-rust))
+                  ;; disable flycheck for rust mode since
+                  ;; it's slow and usually blocks cargo from compiling
+                  ;; the project (only one instance of cargo could at a time)
+                  ;; flycheck-4-rust
+                  ))
     (funcall func))
   )
 
