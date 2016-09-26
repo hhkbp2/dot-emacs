@@ -4,7 +4,7 @@
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-08-11 14:39>
+;; Time-stamp: <2016-09-26 10:55>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@
   (add-hook 'rust-mode-hook #'racer-mode)
   (add-hook 'racer-mode-hook #'eldoc-mode)
   ;; run rustfmt before saving rust buffer
-  ;; (add-hook 'rust-mode-hook #'rust-enable-format-on-save)
+  (add-hook 'rust-mode-hook #'rust-enable-format-on-save)
 
   ;; key bindings
   (dw-hungry-delete-on-mode-map rust-mode-map)
@@ -48,7 +48,9 @@
   (add-hook 'rust-mode-hook
             '(lambda ()
                ;; turn on `subword-mode' since rust contains camel style names.
-               (subword-mode)))
+               (subword-mode)
+               ;; turn off `rainbow-delimiters-mode' since it's not smooth in rust-mode
+               (rainbow-delimiters-mode-disable)))
   )
 
 (eval-after-load "rust-mode"
