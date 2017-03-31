@@ -4,7 +4,7 @@
 ;; Copyright (C) 2014 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-08-09 19:58>
+;; Time-stamp: <2017-03-30 15:15>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -32,8 +32,9 @@
 (defun go-mode-settings ()
   "Settings for `go-mode'."
 
-  ;; run gofmt before saving golang buffer
+  ;; run goimports before saving golang buffer
   ;; non `go-mode' buffer would be intact
+  (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
 
   ;; key bindings
@@ -49,10 +50,7 @@
                ;; turn on `subword-mode' since golang uses camel case.
                (subword-mode)
                ;; keybindings
-               (local-set-key (kbd "M-.") 'godef-jump)
-               (local-set-key (kbd "C-c i") 'go-goto-imports)
-               (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
-               ))
+               (local-set-key (kbd "M-.") 'godef-jump)))
   )
 
 (eval-after-load "go-mode"

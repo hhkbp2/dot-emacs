@@ -4,7 +4,7 @@
 ;; Copyright (C) 2016 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-09-26 10:55>
+;; Time-stamp: <2017-02-04 10:15>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -50,7 +50,10 @@
                ;; turn on `subword-mode' since rust contains camel style names.
                (subword-mode)
                ;; turn off `rainbow-delimiters-mode' since it's not smooth in rust-mode
-               (rainbow-delimiters-mode-disable)))
+               (rainbow-delimiters-mode-disable)
+               ;; turn off `electric-indent-mode' since it has some issue with
+               ;; indentation position sometimes
+               (electric-indent-local-mode 0)))
   )
 
 (eval-after-load "rust-mode"
