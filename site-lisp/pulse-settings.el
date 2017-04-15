@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 14:47>
+;; Time-stamp: <2017-04-16 00:17>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -104,33 +104,33 @@ the following hook:
 
 (defadvice exchange-point-and-mark (after pulse-advice activate)
   "Cause the line that is `goto'd to pulse when the cursor gets there."
-  (when (and pulse-command-advice-flag (interactive-p)
+  (when (and pulse-command-advice-flag (called-interactively-p 'interactive)
              (> (abs (- (point) (mark))) 400))
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice switch-to-buffer (after pulse-advice activate)
   "Cause the current line of new buffer to pulse when the cursor gets there."
-  (when (and pulse-command-advice-flag (interactive-p))
+  (when (and pulse-command-advice-flag (called-interactively-p 'interactive))
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice ido-switch-buffer (after pulse-advice activate)
   "Cause the current line of new buffer to pulse when the cursor gets there."
-  (when (and pulse-command-advice-flag (interactive-p))
+  (when (and pulse-command-advice-flag (called-interactively-p 'interactive))
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice previous-buffer (after pulse-advice activate)
   "After previous-buffer, pulse the line the cursor lands on."
-  (when (and pulse-command-advice-flag (interactive-p))
+  (when (and pulse-command-advice-flag (called-interactively-p 'interactive))
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice next-buffer (after pulse-advice activate)
   "After next-buffer, pulse the line the cursor lands on."
-  (when (and pulse-command-advice-flag (interactive-p))
+  (when (and pulse-command-advice-flag (called-interactively-p 'interactive))
     (pulse-momentary-highlight-one-line (point))))
 
 (defadvice beginning-of-buffer (after pulse-advice activate)
   "Cause the current line of buffer to pulse when the cursor gets there."
-  (when (and pulse-command-advice-flag (interactive-p))
+  (when (and pulse-command-advice-flag (called-interactively-p 'interactive))
     (pulse-momentary-highlight-one-line (point))))
 
 
