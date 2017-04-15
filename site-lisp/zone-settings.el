@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 15:23>
+;; Time-stamp: <2017-04-16 00:29>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,6 +26,8 @@
 
 (require 'zone)
 (require 'zone-matrix-settings)
+(require 'ecb)
+(require 'tabbar)
 
 
 (defcustom zone-ad-restore nil

@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:30>
+;; Time-stamp: <2017-04-16 00:24>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,19 +37,6 @@
                          ".."
                          (substring nick -1))))
     nick))
-
-
-(defvar xwl-erc-last-datestamp nil)
-(make-variable-buffer-local 'xwl-erc-last-datestamp)
-
-(defadvice erc-insert-timestamp-left (around insert-datestamp activate)
-  ad-do-it
-  (let ((datestamp (erc-format-timestamp (current-time)
-                                         xwl-erc-datestamp-format)))
-    (unless (string= datestamp xwl-erc-last-datestamp)
-      (ad-set-arg 0 datestamp)
-      ad-do-it
-      (setq xwl-erc-last-datestamp datestamp))))
 
 
 (defun erc-settings ()
