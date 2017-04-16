@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2017-04-16 20:14>
+;; Time-stamp: <2017-04-16 20:32>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -53,7 +53,6 @@
     fiplr
     popwin
     neotree
-    sr-speedbar
     windresize
 
     ido-complete-space-or-hyphen
