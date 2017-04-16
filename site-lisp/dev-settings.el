@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2017-04-16 20:10>
+;; Time-stamp: <2017-04-16 20:27>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -180,10 +180,6 @@
 
 ;; neotree
 (require 'neotree-settings)
-
-;; cedet
-(require 'cedet-settings)
-(require 'eassist-settings)
 
 ;; 把speedbar放到当前frame里面
 (require 'sr-speedbar-settings)
