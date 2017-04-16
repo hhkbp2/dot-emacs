@@ -4,7 +4,7 @@
 ;; Copyright (C) 2009, 2010, 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:07>
+;; Time-stamp: <2017-04-16 20:16>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -84,30 +84,6 @@ Created by Dylan.Wen <hhkbp2@gmail.com>, 2009-02-09."
       (foreground-color . "#eeeeee")
       (mouse-color . "sienna1"))
      ((ac-fuzzy-cursor-color . "red")
-      (ecb-analyse-bucket-element-face . ecb-analyse-bucket-element-face)
-      (ecb-analyse-bucket-node-face . ecb-analyse-bucket-node-face)
-      (ecb-analyse-face . ecb-default-highlight-face)
-      (ecb-analyse-general-face . ecb-default-general-face)
-      (ecb-directories-general-face . ecb-default-general-face)
-      (ecb-directory-face . ecb-default-highlight-face)
-      (ecb-directory-not-accessible-face . ecb-directory-not-accessible-face)
-      (ecb-history-bucket-node-face . ecb-history-bucket-node-face)
-      (ecb-history-dead-buffer-face . ecb-history-dead-buffer-face)
-      (ecb-history-face . ecb-history-face)
-      (ecb-history-general-face . ecb-default-general-face)
-      (ecb-history-indirect-buffer-face . ecb-history-indirect-buffer-face)
-      (ecb-method-face . ecb-default-highlight-face)
-      (ecb-method-non-semantic-face . speedbar-tag-face)
-      (ecb-methods-general-face . ecb-default-general-face)
-      (ecb-mode-line-data-face . ecb-mode-line-data-face)
-      (ecb-mode-line-prefix-face . ecb-mode-line-prefix-face)
-      (ecb-mode-line-win-nr-face . ecb-mode-line-win-nr-face)
-      (ecb-source-face . ecb-default-highlight-face)
-      (ecb-source-in-directories-buffer-face . ecb-source-in-directories-buffer-face)
-      (ecb-source-read-only-face . ecb-source-read-only-face)
-      (ecb-sources-general-face . ecb-default-general-face)
-      (ecb-tag-header-face . ecb-tag-header-face)
-      (ecb-tree-guide-line-face . ecb-tree-guide-line-face)
       (ibuffer-deletion-face . font-lock-warning-face)
       (ibuffer-filter-group-name-face . bold)
       (ibuffer-marked-face . font-lock-type-face)

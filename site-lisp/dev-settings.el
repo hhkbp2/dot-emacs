@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-05-05 16:33>
+;; Time-stamp: <2017-04-16 20:10>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -187,9 +187,6 @@
 
 ;; 把speedbar放到当前frame里面
 (require 'sr-speedbar-settings)
-
-;; ecb 代码浏览器
-(require 'ecb-settings)
 
 ;; global
 (require 'gtags-settings)

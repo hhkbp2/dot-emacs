@@ -4,7 +4,7 @@
 ;; Copyright (C) 2013 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-30 10:55>
+;; Time-stamp: <2017-04-16 20:14>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -72,7 +72,6 @@
     auto-complete
     ac-ispell
     yasnippet
-    ecb
     gtags
     flycheck
     highlight-indentation

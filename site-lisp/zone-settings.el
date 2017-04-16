@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2017-04-16 00:29>
+;; Time-stamp: <2017-04-16 20:14>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,7 +26,6 @@
 
 (require 'zone)
 (require 'zone-matrix-settings)
-(require 'ecb)
 (require 'tabbar)
 
 
@@ -45,17 +44,6 @@
   ;; the window config
   (add-to-list 'zone-ad-restore
                `(set-window-configuration ,(current-window-configuration)))
-
-  ;; if ecb is enabled, turn it off.
-  (let ((ecb-on nil))
-    (condition-case nil
-        (if ecb-minor-mode
-            (setq ecb-on t))
-      (error (setq ecb-on nil)))
-    (when ecb-on
-      (add-to-list 'zone-ad-restore
-                   '(ecb))
-      (ecb-deactivate)))
 
   ;; fullfill the window with just one current buffer
   (delete-other-windows)
