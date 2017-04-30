@@ -1,5 +1,4 @@
 ;;; cc-mode-settings.el --- Settings for `cc-mode'.
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -151,72 +150,71 @@
        (c-add-style ,sym-name ,style)
        (c-set-style ,sym-name))))
 
+(use-package cc-mode
+  :defer t
+  :config
+  (progn
+    (add-hook
+     'c-mode-common-hook
+     (lambda()
+       ;; 定制`cc-mode'环境
+       ;; 缩进的宽度在自定义的缩进风格中设置
+       (setq c-basic-offset 'set-from-style)
 
-(defun cc-mode-settings ()
-  "Settings for `cc-mode'."
+       ;; 自动开始新行`auto-newline', default keybinding(on/off) "C-c C-a"
+       ;; (c-toggle-auto-state)
+       ;; 饥饿的删除键`hungry-delete-key', default keybinding(on/off) "C-c C-d"
+       (c-toggle-hungry-state)
+       ;; 以上两种功能之和, default keybinding(on/off) "C-c C-t"
+       ;;(c-toggle-auto-hungry-state)
 
-  ;; 定制`cc-mode'环境
-  ;; 缩进的宽度在自定义的缩进风格中设置
-  (setq c-basic-offset 'set-from-style)
+       (if (dw-version->=-23.3)
+           (subword-mode 1)
+         (c-subword-mode 1))
 
-  ;; ;; 自动开始新行`auto-newline', default keybinding(on/off) "C-c C-a"
-  ;; (c-toggle-auto-state)
-  ;; ;; 饥饿的删除键`hungry-delete-key', default keybinding(on/off) "C-c C-d"
-  (c-toggle-hungry-state)
-  ;; 以上两种功能之和, default keybinding(on/off) "C-c C-t"
-  ;;(c-toggle-auto-hungry-state)
+       ;; 控制执行`indent-new-comment-line'是否在下一行新建一条注释
+       (setq comment-multi-line nil)
 
-  (if (dw-version->=-23.3)
-      (subword-mode 1)
-    (c-subword-mode 1))
+       ;; 在状态条上显示当前光标在哪个函数体内部
+       ;;(which-function-mode)
 
-  ;; 控制执行`indent-new-comment-line'(keybinding M-j)是否在下一行新建一条注释
-  (setq comment-multi-line nil)
+       ;; 预处理设置
+       (setq c-macro-shrink-window-flag t)
+       (setq c-macro-preprocessor "cpp -C")
+       (setq c-macro-cppflags " ")
+       (setq c-macro-prompt-flag t)
+       (setq abbrev-mode t)
 
-  ;; 在状态条上显示当前光标在哪个函数体内部
-  ;;(which-function-mode)
+       (setq c-tab-always-indent t)
+       (setq c-echo-syntactic-information-p t)
+       ;; 定制缩进风格
+       (dw-apply-code-style dw-cc-mode-style)
 
-  ;; 预处理设置
-  (setq c-macro-shrink-window-flag t)
-  (setq c-macro-preprocessor "cpp -C")
-  (setq c-macro-cppflags " ")
-  (setq c-macro-prompt-flag t)
-  (setq abbrev-mode t)
+       ;; 定制注释风格
+       (setq comment-start "// "
+             comment-end "")
 
-  (setq c-tab-always-indent t)
-  (setq c-echo-syntactic-information-p t)
-  ;; 定制缩进风格
-  (dw-apply-code-style dw-cc-mode-style)
+       ;; keybindings
+       ;;(define-key c-mode-base-map [(control \`)] 'hs-toggle-hiding)
+       ;; 将回车代替C-j的功能，换行的同时对齐
+       (define-key c-mode-base-map [(return)] 'newline-and-indent)
+       ;;(define-key c-mode-base-map [(f7)] 'compile)
+       ;;(define-key c-mode-base-map [(meta \`)] 'c-indent-command)
 
-  ;; 定制注释风格
-  (setq comment-start "// "
-        comment-end "")
+       ;; define key sequences for comment and uncomment
+       (define-key c-mode-base-map [(control c) (k)] 'kill-sexp)
+       (define-key c-mode-base-map [(control c) (control k)] 'kill-sexp)
+       (define-key c-mode-base-map [(control c) (j)] 'backward-kill-sexp)
+       (define-key c-mode-base-map [(control c) (control j)] 'backward-kill-sexp)
+       (define-key c-mode-base-map [(control c) (m)] 'mark-sexp)
+       (define-key c-mode-base-map [(control c) (control m)] 'mark-sexp)
+       (define-key c-mode-base-map [(control c) (c)] 'comment-dwim)
+       (define-key c-mode-base-map [(control c) (control c)] 'comment-dwim)))
 
-  ;; keybindings
-  ;;(define-key c-mode-base-map [(control \`)] 'hs-toggle-hiding)
-  ;; 将回车代替C-j的功能，换行的同时对齐
-  (define-key c-mode-base-map [(return)] 'newline-and-indent)
-  ;;(define-key c-mode-base-map [(f7)] 'compile)
-  ;;(define-key c-mode-base-map [(meta \`)] 'c-indent-command)
-
-  ;; define key sequences for comment and uncomment
-  (define-key c-mode-base-map [(control c) (k)] 'kill-sexp)
-  (define-key c-mode-base-map [(control c) (control k)] 'kill-sexp)
-  (define-key c-mode-base-map [(control c) (j)] 'backward-kill-sexp)
-  (define-key c-mode-base-map [(control c) (control j)] 'backward-kill-sexp)
-  (define-key c-mode-base-map [(control c) (m)] 'mark-sexp)
-  (define-key c-mode-base-map [(control c) (control m)] 'mark-sexp)
-  (define-key c-mode-base-map [(control c) (c)] 'comment-dwim)
-  (define-key c-mode-base-map [(control c) (control c)] 'comment-dwim)
-  )
-
-(add-hook 'c-mode-common-hook
-          'cc-mode-settings)
-
-;; 使用google c++风格
-;;(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-
+    ;; 使用google c++风格
+    ;;(add-hook 'c-mode-common-hook 'google-set-c-style)
+    (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+    ))
 
 (provide 'cc-mode-settings)
 
