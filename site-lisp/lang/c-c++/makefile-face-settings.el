@@ -1,5 +1,4 @@
 ;;; makefile-face-settings.el --- Face settings for `makefile-mode'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 

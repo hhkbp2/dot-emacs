@@ -1,5 +1,4 @@
 ;;; makefile-mode-settings.el --- Settings for `makefile-mode'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -7,12 +6,12 @@
 
 
 (use-package make-mode
-  :ensure t
   :defer t
   :config
   (progn
+    (require 'makefile-face-settings)
     (makefile-face-settings)
-    (add-hook 'mode-hook
+    (add-hook 'makefile-mode-hook
               (lambda()
                 (require 'whitespace)
                 ;; show whitespace/tab

@@ -1,5 +1,4 @@
 ;;; awk-mode-settings.el --- Settings for `awk-mode'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -27,16 +26,15 @@
      (statement-cont . +)))
   "Dylan.Wen's awk indentation style based on built-in style `awk'.")
 
-
-(defun awk-mode-settings ()
-  "Settings for `awk-mode'."
-  (c-add-style "dw-awk-style" dw-awk-style)
-  (c-set-style "dw-awk-style"))
-
-
-(add-hook 'awk-mode-hook
-          'awk-mode-settings)
-
+(use-package awk-mode
+  :defer t
+  :config
+  (progn
+    (add-hook 'awk-mode-hook
+              (lambda()
+                (c-add-style "dw-awk-style" dw-awk-style)
+                (c-set-style "dw-awk-style"))))
+  )
 
 (provide 'awk-mode-settings)
 
