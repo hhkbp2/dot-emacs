@@ -1,5 +1,4 @@
 ;;; color-theme+.el --- An enhancement of `color-theme'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 

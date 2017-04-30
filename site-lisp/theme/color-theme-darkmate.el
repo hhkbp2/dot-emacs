@@ -1,5 +1,4 @@
 ;; color-theme-darkmate.el --- The darkmate color theme for emacs
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 ;;
