@@ -98,7 +98,6 @@
 (require 'wlc-settings)
 (require 'rainbow-delimiters-settings)
 
-(require 'elixir-mode-settings)
 (require 'erlang-mode-settings)
 
 (require 'clojure-mode-settings)
@@ -111,7 +110,6 @@
 (require 'go-mode-settings)
 
 (require 'cc-mode-settings)
-(require 'c-mode-settings)
 (require 'c++-mode-settings)
 
 (require 'makefile-mode-settings)
