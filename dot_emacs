@@ -1,5 +1,4 @@
 ;;; dot_emacs --- Dot Emacs file of Dylan.Wen
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -20,7 +19,7 @@
 ;; path utils
 
 (defun file-directory (file-name)
-  "Return the directory of file, following symlink."
+  "Return the directory of FILE-NAME, following symlink."
   (let ((symlink-target (file-symlink-p file-name)))
     (cond ((null symlink-target)
            (file-name-directory file-name))
@@ -28,7 +27,7 @@
            (file-name-directory
             (expand-file-name symlink-target (file-name-directory file-name))))
           (t
-           (error "corrupted symlink. %S" file-name)))))
+           (error "Corrupted symlink.  %S" file-name)))))
 
 (defun current-directory ()
   "Return current directory."
@@ -38,9 +37,9 @@
 ;;; adding load path
 
 (defconst import-path
-  (concat (current-directory) "import/") "另外导入的emacs lisp包的路径")
+  (concat (current-directory) "import/") "另外导入的emacs lisp包的路径.")
 (defconst site-lisp-path
-  (concat (current-directory) "site-lisp/") "自己写的emacs lisp配置/增强包路径")
+  (concat (current-directory) "site-lisp/") "自己写的emacs lisp配置/增强包路径.")
 
 ;; 加载`my-subdirs'库
 (load (concat site-lisp-path "my-subdirs"))
@@ -148,4 +147,7 @@
 ;; Bob Glickstein 1997
 (require 'writing-emacs-extensions)
 
+;; Local Variables:
+;; mode: emacs-lisp
+;; End:
 ;;; dot_emacs ends here
