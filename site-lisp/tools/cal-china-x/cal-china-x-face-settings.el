@@ -1,5 +1,4 @@
 ;;; cal-china-x-face-settings.el --- Face settings for `cal-china-x'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -12,11 +11,6 @@
    '(cal-china-x-general-holiday-face ((t (:background "green"))))
    '(cal-china-x-important-holiday-face ((t (:background "red")))))
   )
-
-
-(eval-after-load "cal-china-x"
-  '(cal-china-x-face-settings))
-
 
 (provide 'cal-china-x-face-settings)
 

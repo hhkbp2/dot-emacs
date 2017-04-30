@@ -1,5 +1,4 @@
 ;; basic-faces-settings.el --- Settings for basic faces
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -128,10 +127,12 @@
      ((t (:background "#1A1A1A" :foreground "white")))))
   )
 
-
-(eval-after-load "faces"
-  '(basic-faces-settings))
-
+(use-package faces
+  :defer t
+  :config
+  (progn
+    (basic-faces-settings))
+  )
 
 (provide 'basic-faces-settings)
 

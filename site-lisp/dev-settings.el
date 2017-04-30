@@ -110,7 +110,6 @@
 (require 'go-mode-settings)
 
 (require 'cc-mode-settings)
-(require 'c++-mode-settings)
 
 (require 'makefile-mode-settings)
 

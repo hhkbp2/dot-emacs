@@ -1,5 +1,4 @@
 ;;; calendar-face-settings.el --- Face settings for `calendar'.
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -31,11 +30,6 @@
        (:background "white" :foreground "green" :slant italic))
       (t (:background "gray30" :foreground "#acc900" :slant italic)))))
   )
-
-
-(eval-after-load "calendar"
-  '(calendar-face-settings))
-
 
 (provide 'calendar-face-settings)
 
