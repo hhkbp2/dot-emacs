@@ -13,6 +13,8 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(require 'use-package)
+
 (require 'cl)
 
 

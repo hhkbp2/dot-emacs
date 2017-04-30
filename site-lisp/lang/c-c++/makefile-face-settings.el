@@ -6,6 +6,7 @@
 ;;; Code:
 
 
+;;;###autoload
 (defun makefile-face-settings ()
   "Face settings for `makefile-mode'."
   (custom-set-faces
@@ -23,11 +24,6 @@
       (t (:foreground "wheat" :weight book))))
    '(makefile-makepp-perl ((t (:background "DarkBlue")))))
   )
-
-
-(eval-after-load "make-mode"
-  '(makefile-face-settings))
-
 
 (provide 'makefile-face-settings)
 
