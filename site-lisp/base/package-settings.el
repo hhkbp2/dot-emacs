@@ -29,7 +29,6 @@
     neotree
     windresize
 
-    google-this
     youdao-dictionary
     guide-key
 
