@@ -1,5 +1,4 @@
 ;;; shell-mode-settings.el --- Settings for `shell-mode' and `term-mode'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 ;;
@@ -9,29 +8,6 @@
 ;;
 
 ;;; Code:
-
-
-;; turn on color
-(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-
-
-(defun shell-mode-settings ()
-  "Settings for `shell-mode' and `term-mode'."
-
-  ;; key binding:
-  ;; up and down arrow keys to traverse through the previous commands
-  (local-set-key '[up] 'comint-previous-input)
-  (local-set-key '[down] 'comint-next-input)
-  (local-set-key '[tab] 'comint-dynamic-complete)
-  (setq comint-input-sender 'my-shell-simple-send)
-
-  (ansi-color-for-comint-mode-on)
-  ;;(setq ansi-color-for-comint-mode t)
-  )
-
-(dolist (mode-hook
-         '(shell-mode-hook term-mode-hook))
-  (add-hook mode-hook 'shell-mode-settings))
 
 
 (defun my-shell-simple-send (proc command)
@@ -53,7 +29,6 @@
    ;; Send other commands to the default handler.
    (t (comint-simple-send proc command))))
 
-
 (defun kill-buffer-when-shell-command-exit ()
   "Close current buffer when `shell-command' exit."
   (let ((process (ignore-errors (get-buffer-process (current-buffer)))))
@@ -64,12 +39,27 @@
          (when (string-match "\\(finished\\|exited\\)" change)
            (kill-buffer (process-buffer proc))))))))
 
+(use-package shell-mode
+  :defer t
+  :config
+  (progn
+    (dolist (mode-hook
+             '(shell-mode-hook term-mode-hook))
+      (add-hook mode-hook
+                (lambda()
+                  (ansi-color-for-comint-mode-on)
 
-(dolist (mode-hook
-         '(gdb-mode-hook term-mode-hook))
-  (add-hook mode-hook
-            'kill-buffer-when-shell-command-exit))
-
+                  ;; key binding:
+                  ;; up and down arrow keys to traverse through the previous commands
+                  (local-set-key '[up] 'comint-previous-input)
+                  (local-set-key '[down] 'comint-next-input)
+                  (local-set-key '[tab] 'comint-dynamic-complete)
+                  (setq comint-input-sender 'my-shell-simple-send))))
+    (dolist (mode-hook
+             '(gdb-mode-hook term-mode-hook))
+      (add-hook mode-hook
+                'kill-buffer-when-shell-command-exit)))
+  )
 
 (provide 'shell-mode-settings)
 
