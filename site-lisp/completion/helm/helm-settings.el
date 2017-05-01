@@ -16,6 +16,8 @@
     (require 'helm-descbinds)
     (require 'helm-describe-modes)
 
+    (helm-face-settings)
+
     ;; use helm for all
     (helm-mode 1)
 

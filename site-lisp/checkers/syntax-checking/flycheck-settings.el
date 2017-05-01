@@ -1,12 +1,8 @@
 ;;; flycheck-settings.el --- Settings for `flycheck'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
 ;;; Code:
-
-
-(require 'flycheck)
 
 
 (defun flycheck-4-elisp ()
@@ -63,33 +59,28 @@ Refer to `https://github.com/ananthakumaran/dotfiles/.emacs.d/init-elixir.el'."
   (add-hook 'rust-mode-hook 'flycheck-mode)
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
+(use-package flycheck
+  :defer t
+  :config
+  (progn
+    ;; check syntax when
+    ;; 1. `flycheck-mode' is enabled
+    ;; 2. the buffer is save
+    (setq flycheck-check-syntax-automatically '(mode-enabled save))
 
-(defun flycheck-settings ()
-  "Settings for `flycheck'."
-
-  ;; check syntax when
-  ;; 1. `flycheck-mode' is enabled
-  ;; 2. the buffer is save
-  (setq flycheck-check-syntax-automatically '(mode-enabled save))
-
-  ;; enable flycheck in specified modes
-  (dolist (func '(flycheck-4-elisp
-                  flycheck-4-erlang
-                  flycheck-4-elixir
-                  flycheck-4-python
-                  flycheck-4-go
-                  ;; disable flycheck for rust mode since
-                  ;; it's slow and usually blocks cargo from compiling
-                  ;; the project (only one instance of cargo could at a time)
-                  ;; flycheck-4-rust
-                  ))
-    (funcall func))
+    ;; enable flycheck in specified modes
+    (dolist (func '(flycheck-4-elisp
+                    flycheck-4-erlang
+                    flycheck-4-elixir
+                    flycheck-4-python
+                    flycheck-4-go
+                    ;; disable flycheck for rust mode since
+                    ;; it's slow and usually blocks cargo from compiling
+                    ;; the project (only one instance of cargo could at a time)
+                    ;; flycheck-4-rust
+                    ))
+      (funcall func)))
   )
-
-
-(eval-after-load "flycheck"
-  `(flycheck-settings))
-
 
 (provide 'flycheck-settings)
 

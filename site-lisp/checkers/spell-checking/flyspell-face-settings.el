@@ -1,5 +1,4 @@
 ;;; flyspell-face-settings.el --- Face settings for `flyspell'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -12,11 +11,6 @@
    '(flyspell-duplicate ((t (:foreground "#fcaf3e" :underline t))))
    '(flyspell-incorrect ((t (:foreground "#cc0000" :strike-through t)))))
   )
-
-
-(eval-after-load "flyspell"
-  '(flyspell-face-settings))
-
 
 (provide 'flyspell-face-settings)
 

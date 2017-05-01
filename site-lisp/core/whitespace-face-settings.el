@@ -1,12 +1,8 @@
 ;;; whitespace-face-settings.el --- Face settings for `whitespace'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
 ;;; Code:
-
-
-(require 'whitespace)
 
 
 (defun whitespace-face-settings ()
@@ -54,10 +50,6 @@
      ((t (:background "gray22" :foreground "#ff79d9"))))
    )
   )
-
-(eval-after-load "whitespace"
-  `(whitespace-face-settings))
-
 
 (provide 'whitespace-face-settings)
 
