@@ -1,20 +1,13 @@
 ;;; kapok-mode-settings.el --- Settings for the `kapok-mode'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
 ;;; Code:
 
 
-(require 'kapok-mode)
-
-(defun kapok-mode-settings ()
-  "Settings for `kapok-mode'."
-
+(use-package kapok-mode
+  :defer t
   )
-
-(eval-after-load "kapok-mode"
-  `(kapok-mode-settings))
 
 (provide 'kapok-mode-settings)
 

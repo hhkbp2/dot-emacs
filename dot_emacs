@@ -107,8 +107,6 @@
 
 (require 'calendar-settings)
 
-(require 'erc-settings)
-
 ;;; load software development settings
 (require 'dev-settings)
 

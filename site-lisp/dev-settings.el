@@ -101,7 +101,6 @@
 (require 'erlang-mode-settings)
 
 (require 'clojure-mode-settings)
-(require 'java-mode-settings)
 
 (require 'ruby-mode-settings)
 (require 'python-mode-settings)
