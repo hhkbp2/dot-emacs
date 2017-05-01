@@ -9,6 +9,7 @@
   (require 'dash-at-point-settings)
   (require 'exec-path-from-shell)
 
+  (setq exec-path-from-shell-check-startup-files nil)
   ;; set `exec-path' and PATH to the shell path rather than
   ;; the system-wide default
   (exec-path-from-shell-initialize))
