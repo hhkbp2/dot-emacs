@@ -1,5 +1,4 @@
 ;;; dired-lis-face-settings.el --- Face settings for `dired-lis'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -12,11 +11,6 @@
    '(dired-lis-mode-line-face
      ((t (nil)))))
   )
-
-
-(eval-after-load "dired-lis"
-  '(dired-lis-face-settings))
-
 
 (provide 'dired-lis-face-settings)
 

@@ -1,5 +1,4 @@
 ;;; dired-x-settings.el --- Settings for `dired-x'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -20,16 +19,16 @@ plus those ending with extensions in `dired-omit-extensions'."
  `(dired-mode-hook)
  'dired-omit-mode)
 
-(defun dired-x-settings ()
-  "Settings for `dired-x'."
-  (unless is-before-emacs-21
-    (setq dired-omit-files (concat dired-omit-files "\\|^\\.\\|^semantic.cache$\\|^CVS$\\|^flycheck_"))
-    (if mswin
-        (setq dired-omit-files (concat dired-omit-files "\\|^_"))))
-  (setq dired-omit-size-limit 1000000))
-
-(eval-after-load "dired-x"
-  `(dired-x-settings))
+(use-package dired-x
+  :defer t
+  :config
+  (progn
+    (unless is-before-emacs-21
+      (setq dired-omit-files (concat dired-omit-files "\\|^\\.\\|^semantic.cache$\\|^CVS$\\|^flycheck_"))
+      (if mswin
+          (setq dired-omit-files (concat dired-omit-files "\\|^_"))))
+    (setq dired-omit-size-limit 1000000))
+  )
 
 (provide 'dired-x-settings)
 

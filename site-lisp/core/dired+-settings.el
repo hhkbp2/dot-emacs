@@ -1,14 +1,17 @@
 ;;; dired+-settings.el --- Settings for `dired+'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
 ;;; Code:
 
-
-(require 'dired+)
-(require 'dired+-face-settings)
-
+(use-package dired+
+  :defer t
+  :ensure t
+  :config
+  (progn
+    (require 'dired+-face-settings)
+    (dired+-face-settings))
+  )
 
 (provide 'dired+-settings)
 

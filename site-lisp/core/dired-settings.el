@@ -1,5 +1,4 @@
 ;;; dired-settings.el --- Settings for `dired'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 

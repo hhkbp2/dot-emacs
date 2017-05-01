@@ -1,5 +1,4 @@
 ;;; dired+-face-settings.el --- Face settings for `dired+'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
