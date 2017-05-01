@@ -1,7 +1,6 @@
 ;;; elisp-ref.el --- Code from Emacs Lisp Reference Manual
-;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2016-03-22 11:27>
+;; Time-stamp: <2017-05-01 13:42>
 
 ;;; Commentary:
 

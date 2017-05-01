@@ -1,11 +1,10 @@
 ;;; elisp-intro.el --- Code from the book "elisp intro"
-;; -*- Emacs-Lisp -*-
 
 ;; Emacs Lisp code in Programming in Emacs Lisp: An Introduction, 2rd
 ;; Robert J. Chassell, Chinese translation, 2001
 ;; 《GNU Emacs Lisp编程入门》第二版中文版
 
-;; Time-stamp: <2016-03-22 14:34>
+;; Time-stamp: <2017-05-01 13:42>
 
 ;;; Commentary:
 
