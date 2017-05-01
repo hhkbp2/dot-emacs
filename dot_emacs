@@ -135,14 +135,6 @@
 
 ;;; additional emacs lisp
 
-;; load elisp of Learning GNU Emacs, 2rd
-;; Debra Cameron, Bill Rosenblatt & Eric Raymond, Chinese translation, 2003
-(require 'learning-gnu-emacs)
-
-;; load elisp of Programming in Emacs Lisp: An Introduction, 2rd
-;; Robert J. Chassell, Chinese translation, 2001
-(require 'elisp-intro)
-
 ;; load elisp of Writing GNU Emacs Extensions, 1st
 ;; Bob Glickstein 1997
 (require 'writing-emacs-extensions)
