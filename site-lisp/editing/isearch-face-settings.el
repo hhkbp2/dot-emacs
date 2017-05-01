@@ -1,5 +1,4 @@
 ;;; isearch-face-settings.el --- Face settings for `isearch'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -35,7 +34,6 @@
 
 (eval-after-load "isearch"
   '(isearch-face-settings))
-
 
 (provide 'isearch-face-settings)
 
