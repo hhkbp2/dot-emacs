@@ -10,7 +10,7 @@
   :config
   (progn
     (require 'makefile-face-settings)
-    (makefile-face-settings)
+
     (add-hook 'makefile-mode-hook
               (lambda()
                 (require 'whitespace)

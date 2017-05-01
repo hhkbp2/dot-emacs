@@ -12,6 +12,9 @@
    '(cal-china-x-important-holiday-face ((t (:background "red")))))
   )
 
+(eval-after-load "cal-china-x"
+  '(cal-china-x-face-settings))
+
 (provide 'cal-china-x-face-settings)
 
 ;;; cal-china-x-face-settings.el ends here

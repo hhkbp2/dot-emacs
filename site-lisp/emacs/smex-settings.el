@@ -7,6 +7,7 @@
 
 (use-package smex
   :defer t
+  :ensure t
   :bind
   (([(meta x)] . smex)
    ([(meta X)] . smex-major-mode-commands)

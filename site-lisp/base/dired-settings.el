@@ -8,19 +8,22 @@
 (require 'wuxch-dired "my-wuxch-dired")
 (require 'wuxch-dired-copy-paste "my-wuxch-dired-copy-paste")
 
-(require 'dired-details+)
-
-(defun dired-details-settings ()
-  "Settings for `dired-details'."
+(use-package dired-details
+  :defer t
+  :ensure t
+  :config
+  (progn
   ;; hide dired details on dired buffer, default is t
   ;;(setq dired-details-initially-hide nil)
   ;; show symbolic link target path
-  (setq dired-details-hide-link-targets nil)
+  (setq dired-details-hide-link-targets nil))
   )
 
-(eval-after-load "dired-details"
-  `(dired-details-settings))
+(use-package dired-details+
+  :defer t
+  :ensure t)
 
+(require 'dired-details+)
 (require 'dired+-settings)
 (require 'dw-functionals)
 

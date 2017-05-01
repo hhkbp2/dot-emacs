@@ -6,8 +6,8 @@
 
 
 (use-package slime
-  :ensure t
   :defer t
+  :ensure t
   :config
   (progn
     (require 'wlc)

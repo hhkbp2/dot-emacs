@@ -10,7 +10,7 @@
   :config
   (progn
     (require 'whitespace-face-settings)
-    (whitespace-face-settings)
+
     (when (display-graphic-p)
       ;; refer to http://ergoemacs.org/emacs/whitespace-mode.html
       (setq whitespace-display-mappings

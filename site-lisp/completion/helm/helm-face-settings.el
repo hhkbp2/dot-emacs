@@ -25,6 +25,9 @@
    )
   )
 
+(eval-after-load "helm"
+  `(helm-face-settings))
+
 (provide 'helm-face-settings)
 
 ;;; helm-face-settings.el ends here

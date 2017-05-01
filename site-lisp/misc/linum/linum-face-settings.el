@@ -5,10 +5,6 @@
 
 ;;; Code:
 
-(require 'linum)
-(require 'linum-relative)
-
-
 (defun linum-face-settings ()
   "Face settings for `linum-mode'."
   (custom-set-faces
@@ -48,13 +44,11 @@
        (t (:background "white" :foreground "black"
                      :weight semi-bold :slant normal))))))
 
-
 (eval-after-load 'linum
   '(linum-face-settings))
 
 (eval-after-load 'linum-relative
   '(linum-relative-face-settings))
-
 
 (provide 'linum-face-settings)
 

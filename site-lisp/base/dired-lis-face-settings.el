@@ -12,6 +12,9 @@
      ((t (nil)))))
   )
 
+(eval-after-load "dired-lis"
+  '(dired-lis-face-settings))
+
 (provide 'dired-lis-face-settings)
 
 ;;; dired-lis-face-settings.el ends here

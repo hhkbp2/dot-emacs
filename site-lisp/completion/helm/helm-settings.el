@@ -16,8 +16,6 @@
     (require 'helm-descbinds)
     (require 'helm-describe-modes)
 
-    (helm-face-settings)
-
     ;; use helm for all
     (helm-mode 1)
 
@@ -29,6 +27,22 @@
     ;;(global-set-key [remap describe-mode] #'helm-describe-modes)
     )
   )
+
+(use-package helm-ag
+  :defer t
+  :ensure t)
+
+(use-package helm-swoop
+  :defer t
+  :ensure t)
+
+(use-package helm-descbinds
+  :defer t
+  :ensure t)
+
+(use-package helm-describe-modes
+  :defer t
+  :ensure t)
 
 (provide 'helm-settings)
 

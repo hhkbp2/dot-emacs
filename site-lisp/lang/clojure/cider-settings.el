@@ -5,8 +5,8 @@
 ;;; Code:
 
 (use-package cider
-  :ensure t
   :defer t
+  :ensure t
   :config
   (progn
     ;; enable `eldoc'

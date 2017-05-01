@@ -6,6 +6,7 @@
 
 (use-package geiser
   :defer t
+  :ensure t
   :config
   (progn
     (setq geiser-active-implementations '(guile)))

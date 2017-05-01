@@ -1,5 +1,4 @@
 ;;; package-settings.el --- Settings for the package manager `package'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -26,25 +25,9 @@
     undo-tree
     redo+
 
-    color-theme
-    cal-china-x
-
-    dired+
-    dired-details
-    dired-details+
-    fiplr
     popwin
     neotree
     windresize
-
-    ido-complete-space-or-hyphen
-    ido-ubiquitous
-    helm
-    helm-ag
-    helm-swoop
-    helm-descbinds
-    helm-describe-modes
-    smex
 
     google-this
     youdao-dictionary
@@ -61,17 +44,11 @@
     multi-term
 
     exec-path-from-shell
-    dash-at-point
     osx-dictionary
 
     rainbow-delimiters
     smartparens
-    slime
-    geiser
     ac-geiser
-
-    clojure-mode
-    cider
 
     google-c-style
 
@@ -115,15 +92,14 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
-(defun package-settings ()
-  (dolist (source dw-package-addition-sources)
-    (add-to-list 'package-archives source))
-  (my-add-subdirs-to-load-path package-user-dir))
-
-
-(eval-after-load "package"
-  `(package-settings))
-
+(use-package package
+  :defer t
+  :config
+  (progn
+    (dolist (source dw-package-addition-sources)
+      (add-to-list 'package-archives source))
+    (my-add-subdirs-to-load-path package-user-dir))
+  )
 
 (provide 'package-settings)
 

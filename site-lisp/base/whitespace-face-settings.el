@@ -51,6 +51,9 @@
    )
   )
 
+(eval-after-load "whitespace"
+  `(whitespace-face-settings))
+
 (provide 'whitespace-face-settings)
 
 ;;; whitespace-face-settings.el ends here

@@ -8,12 +8,11 @@
   :defer t
   :init
   (progn
-	(require 'dired-lis)
+    (require 'dired-lis)
     (global-dired-lis-mode))
   :config
   (progn
     (require 'dired-lis-face-settings)
-    (dired-lis-face-settings))
   :bind
   (:map  isearch-mode-map
    ([(control h)] . dired-lis-isearch-up-directory))

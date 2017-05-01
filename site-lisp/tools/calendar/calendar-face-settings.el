@@ -31,6 +31,9 @@
       (t (:background "gray30" :foreground "#acc900" :slant italic)))))
   )
 
+(eval-after-load "calendar"
+  '(calendar-face-settings))
+
 (provide 'calendar-face-settings)
 
 ;;; calendar-face-settings.el ends here

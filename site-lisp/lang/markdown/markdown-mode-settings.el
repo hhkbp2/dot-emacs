@@ -7,8 +7,8 @@
 
 
 (use-package markdown-mode
-  :ensure t
   :defer t
+  :ensure t
   :config
   (progn
     (add-hook 'markdown-mode-hook

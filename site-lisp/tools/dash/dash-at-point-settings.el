@@ -6,6 +6,7 @@
 
 
 (use-package dash-at-point
+  :defer t
   :ensure t
   :commands dash-at-point
   :bind (([(control c) (d)] . dash-at-point))

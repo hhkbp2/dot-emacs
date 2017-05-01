@@ -1,5 +1,4 @@
 ;;; ido-face-settings.el --- Face settings for `ido'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -31,10 +30,8 @@
       (t (:foreground "#9e91ff" :weight bold)))))
   )
 
-
 (eval-after-load "ido"
   '(ido-face-settings))
-
 
 (provide 'ido-face-settings)
 

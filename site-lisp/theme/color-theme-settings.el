@@ -10,6 +10,7 @@
 
 (use-package color-theme
   :defer t
+  :ensure t
   :config
   (progn
     (require 'color-theme+)

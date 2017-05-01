@@ -5,8 +5,8 @@
 ;;; Code:
 
 (use-package clojure-mode
-  :ensure t
   :defer t
+  :ensure t
   :config
   (progn
     (require 'cider-settings))

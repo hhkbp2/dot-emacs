@@ -15,7 +15,6 @@
   (progn
     (require 'dev-base-settings)
     (require 'flyspell-face-settings)
-    (flyspell-face-settings)
 
     ;; use apsell as ispell backend
     (setq-default ispell-program-name "aspell")
