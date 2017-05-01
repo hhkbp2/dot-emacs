@@ -82,7 +82,7 @@
     ;; 搜索时不区分大小写
     (setq-default case-fold-search t))
   :bind
-  (([(contral x) (meta s)] . isearch-forward-cur-word)
+  (([(control x) (meta s)] . isearch-forward-cur-word)
    :map isearch-mode-map
    ([(meta i)] . isearch-query-replace-current-sb)
    ([(meta k)] . isearch-clean)

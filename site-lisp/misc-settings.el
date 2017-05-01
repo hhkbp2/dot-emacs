@@ -72,9 +72,6 @@
 
   ;; turn on `popwin'
   (popwin-mode 1)
-
-  ;; apply `zone' settings
-  (zone-settings)
   )
 
 (misc-settings)

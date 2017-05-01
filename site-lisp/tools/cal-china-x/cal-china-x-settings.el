@@ -13,7 +13,7 @@
   :ensure t
   :config
   (progn
-    (require 'cal-china-x-face-settings)
+    (require 'cal-china-x-face-settings))
   )
 
 (provide 'cal-china-x-settings)

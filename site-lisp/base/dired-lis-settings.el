@@ -12,7 +12,7 @@
     (global-dired-lis-mode))
   :config
   (progn
-    (require 'dired-lis-face-settings)
+    (require 'dired-lis-face-settings))
   :bind
   (:map  isearch-mode-map
    ([(control h)] . dired-lis-isearch-up-directory))

@@ -24,7 +24,7 @@
 
 
 (use-package linum
-  :defec t
+  :defer t
   :config
   (progn
     (require 'linum+)
