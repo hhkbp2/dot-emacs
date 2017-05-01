@@ -1,5 +1,4 @@
 ;;; redo+-settings.el --- Settings for `redo+'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -8,15 +7,9 @@
 
 (require 'redo+)
 
-
-(defun redo+-settings ()
-  "Settings for `redo+'."
-
-  )
-
-(eval-after-load "redo+"
-  `(redo+-settings))
-
+(use-package redo+
+  :defer t
+  :ensure t)
 
 (provide 'redo+-settings)
 

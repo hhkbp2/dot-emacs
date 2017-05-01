@@ -1,12 +1,11 @@
 ;;; smartparens-face-settings.el --- Face settings for `smartparens'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
 ;;; Code:
 
 
-(defun show-smartparens-face-settings ()
+(defun smartparens-show-pair-face-settings ()
   "Face settings for `show-smartparens-mode'."
   (custom-set-faces
    '(sp-show-pair-match-face
@@ -36,7 +35,11 @@
   ;; sp-pair-overlay-face
   ;; sp-wrap-overlay-face
   ;; sp-wrap-tag-overlay-face
+  (smartparens-show-pair-face-settings)
   )
+
+(eval-after-load "smartparens"
+  '(smartparens-face-settings))
 
 (provide 'smartparens-face-settings)
 

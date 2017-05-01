@@ -1,10 +1,8 @@
 ;;; rainbow-delimiters-face-settings.el --- Face settings for `rainbow-delimiters'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
 ;;; Code:
-
 
 
 (defun rainbow-delimiters-face-settings ()

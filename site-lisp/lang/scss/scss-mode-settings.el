@@ -6,6 +6,7 @@
 
 (use-package scss-mode
   :defer t
+  :ensure t
   :config
   (progn
     ;; By default `scss-mode' will auto-compile scss file and

@@ -22,9 +22,6 @@
 
 (defvar dw-package-list
   '(
-    undo-tree
-    redo+
-
     popwin
     neotree
     windresize
@@ -45,8 +42,6 @@
     exec-path-from-shell
     osx-dictionary
 
-    rainbow-delimiters
-    smartparens
     ac-geiser
 
     google-c-style
@@ -73,9 +68,6 @@
     golint
     go-errcheck
 
-    thrift
-    protobuf-mode
-    scss-mode
     yaml-mode
     toml-mode
     json-mode
