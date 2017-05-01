@@ -5,15 +5,6 @@
 
 ;;; Code:
 
-
-(require 'whitespace)
-
-(require 'pymacs-settings)
-(require 'python-ropemacs-settings)
-(require 'jedi-settings)
-(require 'dw-functionals)
-(require 'python-mode)
-
 (defconst dw-python-dev-dir (expand-file-name "~/pro/python")
   "Personal development code directory of python.")
 
@@ -56,16 +47,22 @@
     (setq pymacs-load-path `(,dw-python-dev-dir ,dw-python-path)))
   )
 
+(use-package jedi
+  :defer t
+  :ensure t
+  :commands jedi:setup
+  :config
+  (progn
+    (setq jedi:setup-keys t)
+    (setq jedi:complete-on-dot t))
+  )
+
 (use-package python-mode
   :defer t
   :ensure t
   :config
   (progn
-    ;; This line is needed to fix the bug:
-    ;; "Symbol's function definition is void: tramp-tramp-file-p"
-    ;; when `python-pylint' or `python-pep8' starts up.
-    (require 'tramp)
-
+    (require 'whitespace)
     (require 'python-pylint-autoloads)
     (require 'python-pep8-autoloads)
 
@@ -85,6 +82,8 @@
 
     ;; load ropemacs
     (python-ropemacs-load)
+
+    (add-hook 'python-mode-hook 'jedi:setup)
 
     ;; key bindings
     (dw-hungry-delete-on-mode-map python-mode-map)
