@@ -32,7 +32,6 @@
     auto-complete
     ac-ispell
     yasnippet
-    gtags
     flycheck
     highlight-indentation
     highlight-symbol
