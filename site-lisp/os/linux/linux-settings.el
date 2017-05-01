@@ -1,5 +1,4 @@
 ;;; linux-settings.el --- Settings for linux os
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -10,6 +9,8 @@
   "Settings for linux."
   )
 
+(when (equal system-type `gnu/linux)
+  (linux-settings))
 
 (provide 'linux-settings)
 

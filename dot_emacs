@@ -120,12 +120,10 @@
 (case system-type
   (`darwin
    (progn
-     (require 'mac-settings)
-     (mac-settings)))
+     (require 'osx-settings)))
   (`gnu/linux
    (progn
-     (require 'linux-settings)
-     (linux-settings))))
+     (require 'linux-settings))))
 
 ;;; additional emacs lisp
 
