@@ -1,14 +1,8 @@
 ;;; zone-settings.el --- Settings for `zone'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
 ;;; Code:
-
-
-(require 'zone)
-(require 'zone-matrix-settings)
-(require 'tabbar)
 
 
 (defcustom zone-ad-restore nil
@@ -57,29 +51,29 @@
     (funcall zone-ad-restore)))
 
 
-(defun zone-settings ()
-  "Settings for `zone'."
+(use-package zone
+  :defer t
+  :config
+  (progn
+    (require 'zone-matrix)
+    (require 'zone-matrix-settings)
 
-  ;; apply settings for `zone-matrix'
-  (zone-matrix-settings)
-  ;; set `zone-matrix' to be the only zone program
-  (setq zone-programs [
-                       zone-pgm-putz-with-case
-                       zone-pgm-random-life
-                       zone-matrix
-                       ])
+    ;; set `zone-matrix' to be the only zone program
+    (setq zone-programs [
+                         zone-pgm-putz-with-case
+                         zone-pgm-random-life
+                         zone-matrix
+                         ])
 
-  ;; activate advices
-  (ad-activate 'zone)
+    ;; activate advices
+    (ad-activate 'zone)
 
-  ;; trigger screen saver when Emacs is idle for a while
-  ;; (zone-when-idle (* 60
-  ;;                    15 ;; personally I feel 15 minutes is fine
-  ;;                    ))
+    ;; trigger screen saver when Emacs is idle for a while
+    ;; (zone-when-idle (* 60
+    ;;                    15 ;; personally I feel 15 minutes is fine
+    ;;                    ))
+    )
   )
-
-(zone-settings)
-
 
 (provide 'zone-settings)
 
