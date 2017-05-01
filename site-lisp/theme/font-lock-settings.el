@@ -1,5 +1,4 @@
 ;;; font-lock-settings.el --- Settings for `font-lock-mode'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 

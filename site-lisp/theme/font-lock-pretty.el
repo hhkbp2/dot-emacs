@@ -1,5 +1,4 @@
 ;;; font-lock-pretty.el --- A few features to make `font-lock-mode' pretty
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 

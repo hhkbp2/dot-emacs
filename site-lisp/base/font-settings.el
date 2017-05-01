@@ -1,5 +1,4 @@
 ;;; font-settings.el --- Settings for font
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 

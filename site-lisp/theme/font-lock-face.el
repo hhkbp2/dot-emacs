@@ -1,5 +1,4 @@
 ;;; font-lock-face.el --- Settings for a few favorite font-lock faces
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 ;;
@@ -7,9 +6,6 @@
 ;;
 
 ;;; Code:
-
-
-(require 'util)
 
 
 (defface dw-pair-face

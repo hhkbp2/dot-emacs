@@ -1,5 +1,4 @@
 ;;; frame-settings.el --- Settings for frame
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
