@@ -1,5 +1,4 @@
 ;;; helm-face-settings.el --- Face settings for `helm'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -25,20 +24,6 @@
       (t (:background "black"))))
    )
   )
-
-(defun helm-files-face-settings ()
-  "Face settings for `helm-files'."
-
-  ;; TODO add impl
-  )
-
-
-(eval-after-load "helm"
-  `(helm-face-settings))
-
-(eval-after-load "helm-files"
-  `(helm-files-face-settings))
-
 
 (provide 'helm-face-settings)
 
