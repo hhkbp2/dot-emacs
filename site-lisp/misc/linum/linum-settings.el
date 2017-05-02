@@ -25,19 +25,21 @@
 
 (use-package linum
   :defer t
+  :init
+  (progn
+    (require 'dev-base-settings)
+    ;; enable `linum-mode' in all modes listed as `usual-mode-hook-list'
+    (dolist (mode-hook
+             (append usual-mode-hook-list dev-mode-hook-list))
+      (add-hook mode-hook
+                (lambda ()
+                  (linum-mode 1)))))
   :config
   (progn
     (require 'linum+)
     ;;(require 'linum-relative)
     ;; load face settings
     (require 'linum-face-settings)
-    (require 'dev-base-settings)
-
-    (dolist (mode-hook
-             (append usual-mode-hook-list dev-mode-hook-list))
-      (add-hook mode-hook
-                (lambda ()
-                  (linum-mode 1))))
     )
   )
 
