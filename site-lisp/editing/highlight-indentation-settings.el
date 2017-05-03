@@ -1,5 +1,4 @@
 ;;; highlight-indentation-settings.el --- Settings for `highlight-indentation'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -22,26 +21,26 @@
       (((class color) (min-colors 8)) (:background "black"))
       (t (:background "black"))))))
 
-(defun highlight-indentation-settings()
-  "Settings for `highlight-indentation'."
-
-  (highlight-indentation-face-settings)
+(use-package highlight-indentation
+  :defer t
+  :ensure t
+  :init
+  (progn
+    (dolist (mode-hook '(c-mode-common-hook
+                         java-mode-hook
+                         enh-ruby-mode-hook
+                         python-mode-hook
+                         erlang-mode-hook
+                         js-mode-hook
+                         html-mode-hook
+                         conf-mode-hook))
+      (add-hook mode-hook
+                (lambda()
+                  (highlight-indentation-current-column-mode)))))
+  :config
+  (progn
+    (highlight-indentation-face-settings))
   )
-
-(eval-after-load "highlight-indentation"
-  `(highlight-indentation-settings))
-
-(dolist (mode-hook '(c-mode-common-hook
-                     java-mode-hook
-                     enh-ruby-mode-hook
-                     python-mode-hook
-                     erlang-mode-hook
-                     js-mode-hook
-                     html-mode-hook
-                     conf-mode-hook))
-  (add-hook mode-hook
-            (lambda () (highlight-indentation-current-column-mode))))
-
 
 (provide 'highlight-indentation-settings)
 
