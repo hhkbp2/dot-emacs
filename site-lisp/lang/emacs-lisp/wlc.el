@@ -1,11 +1,10 @@
 ;; wlc.el --- wonderful lisp coding extension
-;; -*- Emacs-Lisp -*-
 ;; A few features to make wonderful lisp coding exprience in emacs
 
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2015-04-24 20:32>
+;; Time-stamp: <2017-05-07 11:14>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -1173,7 +1172,7 @@ column specified by the function `current-left-margin'."
     (font-lock-add-keywords mode
                             wlc/font-lock-keywords-elisp 'ADD-TO-END)))
 
-
+;;;###autoload
 (defun wlc/on ()
   "Turn on wlc extension."
   (interactive)
