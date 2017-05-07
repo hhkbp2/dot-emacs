@@ -1,5 +1,4 @@
 ;;; appearance-settings.el --- Settings for appearance
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
