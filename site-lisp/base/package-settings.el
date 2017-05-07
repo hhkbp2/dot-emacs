@@ -36,7 +36,6 @@
     highlight-indentation
     highlight-symbol
     highlight-tail
-    multi-term
 
     exec-path-from-shell
     osx-dictionary

@@ -1,7 +1,7 @@
 ;;; util.el --- A few utilities.
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2016-03-22 15:14>
+;; Time-stamp: <2017-05-07 11:17>
 
 ;;; Commentary:
 
@@ -12,8 +12,6 @@
 
 (defvar mswin  (equal window-system 'w32)  "Non-nil means windows system.")
 (defvar cygwin (equal system-type 'cygwin) "Non-nil means cygwin system.")
-
-(defvar use-cua nil "Use CUA mode or not.")
 
 (defvar last-region-beg     nil "Beginning of last region.")
 (defvar last-region-end     nil "End of last region.")
