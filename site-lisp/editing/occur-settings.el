@@ -1,5 +1,4 @@
 ;;; occur-settings.el --- Settings for `occur-mode'
-;; -*- Emacs-Lisp -*-
 
 ;;; Commentary:
 
@@ -8,10 +7,12 @@
 
 ;;; occur on current symbol
 
+;;;###autoload
 (defconst occur-default-output-buffer-name "*Occur*"
   "The default output buffer name of command `occur'.")
 
 ;; define customized occur commands
+;;;###autoload
 (defun occur-symbol (&optional nlines)
   "Run command `occur' on current word.
 To simplify the interface to `occur' when programming."
@@ -49,6 +50,7 @@ To simplify the interface to `occur' when programming."
 
 ;;; movements in occur mode
 
+;;;###autoload
 (defun occur-find-match-quiet (n search)
   "Find the Nth match that fits function SEARCH, and do it quietly.
 Comparing to `occur-find-match', if it fails, return the list
@@ -72,7 +74,7 @@ In all cases it never move the point."
       ;; we get the Nth match position of buffer
       (list t position))))
 
-
+;;;###autoload
 (defun occur-prev-rewind (&optional n)
   "Move to the Nth (default 1) previous match in an Occur mode buffer.
 If there is no more previous match, rewind to the last match in current buffer."
@@ -111,7 +113,7 @@ If there is no more previous match, rewind to the last match in current buffer."
      ((< n 0)
       (occur-next-rewind (- n))))))
 
-
+;;;###autoload
 (defun occur-next-rewind (&optional n)
   "Move to the Nth (default 1) next match in an Occur mode buffer.
 If there is no more next match, rewind to the first match in current buffer."
@@ -147,28 +149,25 @@ If there is no more next match, rewind to the first match in current buffer."
      ((< n 0)
       (occur-prev-rewind (- n))))))
 
-
-(defun occur-settings ()
-  "Settings for `occur-mode'."
-
-  ;; reference:
-  ;; `list-matching-lines-default-context-lines'
-  ;; display N lines before and after the matching regexp
-  ;; N default value is 0
-  ;; N < 0 : include N lines only before the match
-  ;; N > 0 : include N lines both before and after
-  ;; --
-  ;; I get used to display a few line before and after the match
-  ;; to see the context
-  (setq list-matching-lines-default-context-lines 2)
-
-  ;; simplify key bindings of jumping to the previous and next match
-  (define-key occur-mode-map [(p)] 'occur-prev-rewind)
-  (define-key occur-mode-map [(n)] 'occur-next-rewind))
-
-(add-hook 'occur-mode-hook
-          'occur-settings)
-
+(use-package replace
+  :defer t
+  :config
+  (progn
+    ;; reference:
+    ;; `list-matching-lines-default-context-lines'
+    ;; display N lines before and after the matching regexp
+    ;; N default value is 0
+    ;; N < 0 : include N lines only before the match
+    ;; N > 0 : include N lines both before and after
+    ;; --
+    ;; I get used to display a few line before and after the match
+    ;; to see the context
+    (setq list-matching-lines-default-context-lines 2))
+  :bind
+  ((:map occur-mode-map
+         ([(p)] . occur-prev-rewind)
+         ([(n)] . occur-next-rewind)))
+  )
 
 (provide 'occur-settings)
 
