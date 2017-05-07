@@ -102,8 +102,6 @@
 
 (require 'time-stamp-settings)
 
-(require 'abbrev-settings)
-
 (require 'dict-settings)
 (require 'spell-checking-settings)
 
