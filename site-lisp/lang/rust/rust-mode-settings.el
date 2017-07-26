@@ -23,7 +23,6 @@
     (dw-hungry-delete-on-mode-map rust-mode-map)
     (dw-commet-dwin-on-mode-map rust-mode-map)
 
-    ;; Enable `subword-mode' since rust contains camel style names.
     (add-hook 'rust-mode-hook
               '(lambda ()
                  ;; turn on `subword-mode' since rust contains camel style names.

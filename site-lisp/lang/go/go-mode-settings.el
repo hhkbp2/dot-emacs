@@ -5,7 +5,6 @@
 ;;; Code:
 
 
-(require 'golint)
 (require 'dw-functionals)
 (require 'go-mode)
 
@@ -22,10 +21,23 @@
              (file-exists-p vendor))
         (cons vendor (go-plain-gopath)))))
 
+(use-package go-rename
+  :defer t
+  :ensure t
+  )
+
+(use-package go-guru
+  :defer t
+  :ensure t
+  )
+
 (use-package go-mode
   :defer t
   :config
   (progn
+    (require 'go-guru)
+    (require 'golint)
+
     ;; set GOPATH for TiDB source files using advice
     (defadvice gofmt (before gofmt-prepare-gopath activate)
       "Detect GOPATH and set it before running `gofmt'."
@@ -50,6 +62,9 @@
     ;; Enable `subword-mode' since go is Camel style.
     (add-hook 'go-mode-hook
               '(lambda ()
+                 ;; enable identifier highlighting
+                 (go-guru-hl-identifier-mode)
+
                  ;; turn on `go-eldoc'
                  (go-eldoc-setup)
 

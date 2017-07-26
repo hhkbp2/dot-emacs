@@ -164,9 +164,9 @@ If there is no more next match, rewind to the first match in current buffer."
     ;; to see the context
     (setq list-matching-lines-default-context-lines 2))
   :bind
-  ((:map occur-mode-map
-         ([(p)] . occur-prev-rewind)
-         ([(n)] . occur-next-rewind)))
+  (:map occur-mode-map
+        ([(p)] . occur-prev-rewind)
+        ([(n)] . occur-next-rewind))
   )
 
 (provide 'occur-settings)

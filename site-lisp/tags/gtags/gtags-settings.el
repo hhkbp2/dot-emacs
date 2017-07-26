@@ -22,8 +22,7 @@
     (dolist (mode-hook dev-mode-hook-list-static)
       (add-hook mode-hook
                 '(lambda ()
-                   (gtags-mode 1)
-                   (gtags-settings)))))
+                   (gtags-mode 1)))))
   :config
   (progn
     (let ((dir (expand-directory-name "~/pro")))
