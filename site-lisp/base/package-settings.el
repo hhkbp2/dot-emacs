@@ -55,11 +55,6 @@
 
     enh-ruby-mode
 
-    rust-mode
-    racer
-    ac-racer
-    flycheck-rust
-
     go-mode
     go-autocomplete
     go-eldoc

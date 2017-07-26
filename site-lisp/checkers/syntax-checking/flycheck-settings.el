@@ -52,13 +52,6 @@ Refer to `https://github.com/ananthakumaran/dotfiles/.emacs.d/init-elixir.el'."
   (require 'go-flycheck)
   (add-hook 'go-mode-hook 'flycheck-mode))
 
-
-(defun flycheck-4-rust ()
-  "Flycheck settings for `rust-mode'."
-  (require 'flycheck-rust)
-  (add-hook 'rust-mode-hook 'flycheck-mode)
-  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
-
 (use-package flycheck
   :defer t
   :config
@@ -74,10 +67,6 @@ Refer to `https://github.com/ananthakumaran/dotfiles/.emacs.d/init-elixir.el'."
                     flycheck-4-elixir
                     flycheck-4-python
                     flycheck-4-go
-                    ;; disable flycheck for rust mode since
-                    ;; it's slow and usually blocks cargo from compiling
-                    ;; the project (only one instance of cargo could at a time)
-                    ;; flycheck-4-rust
                     ))
       (funcall func)))
   )

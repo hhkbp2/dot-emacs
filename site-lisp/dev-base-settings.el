@@ -43,8 +43,6 @@
     ;; erlang
     erlang-mode
     elixir-mode
-    ;; rust
-    rust-mode
     ;; go
     go-mode
     ;; javascript
@@ -106,8 +104,6 @@
     ;; erlang
     erlang-mode-hook
     elixir-mode-hook
-    ;; rust
-    rust-mode-hook
     ;; go
     go-mode-hook
     ;; javascript

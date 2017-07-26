@@ -105,7 +105,6 @@
 (require 'ruby-mode-settings)
 (require 'python-mode-settings)
 
-(require 'rust-mode-settings)
 (require 'go-mode-settings)
 
 (require 'cc-mode-settings)
