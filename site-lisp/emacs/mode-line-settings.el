@@ -25,45 +25,44 @@
   (and transient-mark-mode mark-active
        (if window-system 'region 'region-invert)))
 
-(use-package mode-line
-  :defer t
-  :config
-  (progn
-    ;; 在状态栏显示行号
-    (line-number-mode 1)
-    ;; 在状态栏显示列号
-    (column-number-mode 1)
+(defun mode-line-settings ()
+  "Settings for `mode-line`."
 
-    ;; 在状态栏显示日期时间
-    (setq display-time-day-and-date t)
-    ;; 设置时间显示为24小时制
-    (setq display-time-24hr-format t)
-    ;; 设置时间显示格式为:
-    ;; <hour>:<minute> <month>-<day> <weekday>
-    (setq display-time-format "<%H:%M %b %d %A>")
-    ;; 设置时间显示更新间隔(单位: 秒)
-    (setq display-time-interval 20)
+  ;; 在状态栏显示行号
+  (line-number-mode 1)
+  ;; 在状态栏显示列号
+  (column-number-mode 1)
 
-    ;; 在状态行显示时间
-    ;;(display-time)
+  ;; 在状态栏显示日期时间
+  (setq display-time-day-and-date t)
+  ;; 设置时间显示为24小时制
+  (setq display-time-24hr-format t)
+  ;; 设置时间显示格式为:
+  ;; <hour>:<minute> <month>-<day> <weekday>
+  (setq display-time-format "<%H:%M %b %d %A>")
+  ;; 设置时间显示更新间隔(单位: 秒)
+  (setq display-time-interval 20)
 
-    (when (display-graphic-p)
-      (copy-face 'region 'region-invert)
-      (invert-face 'region-invert))
+  ;; 在状态行显示时间
+  ;;(display-time)
 
-    (size-indication-mode -1)
-    (setq-default mode-line-buffer-identification
-                  (propertized-buffer-identification "%15b"))
-    (setq-default mode-line-modified
-                  (list (propertize
-                         "%1*"
-                         'help-echo 'mode-line-read-only-help-echo
-                         'local-map (purecopy (make-mode-line-mouse-map
-                                               'mouse-1
-                                               #'mode-line-toggle-read-only))
-                         'mouse-face 'mode-line-highlight)))
+  (when (display-graphic-p)
+    (copy-face 'region 'region-invert)
+    (invert-face 'region-invert))
 
-    (if is-after-emacs-23
+  (size-indication-mode -1)
+  (setq-default mode-line-buffer-identification
+                (propertized-buffer-identification "%15b"))
+  (setq-default mode-line-modified
+                (list (propertize
+                       "%1*"
+                       'help-echo 'mode-line-read-only-help-echo
+                       'local-map (purecopy (make-mode-line-mouse-map
+                                             'mouse-1
+                                             #'mode-line-toggle-read-only))
+                       'mouse-face 'mode-line-highlight)))
+
+  (if is-after-emacs-23
       (setq-default
        mode-line-position
        `((:eval
@@ -175,8 +174,10 @@ mouse-3: Toggle minor modes"
   (setq frame-title-format
         '("Emacs - "
           (:eval (or (buffer-file-name) (buffer-name)))))
-    )
   )
+
+(mode-line-settings)
+
 
 ;;;###autoload
 (defun toggle-mode-line ()
