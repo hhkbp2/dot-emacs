@@ -5,6 +5,8 @@
 ;;; Code:
 
 
+(require 'kapok-mode)
+
 (use-package kapok-mode
   :defer t
   )

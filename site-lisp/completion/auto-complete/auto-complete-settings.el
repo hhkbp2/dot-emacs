@@ -2,7 +2,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2016-03-22 11:08>
+;; Time-stamp: <2017-11-03 15:09>
 
 ;;; Commentary:
 
@@ -15,6 +15,7 @@
 (require 'auto-complete-python)
 (require 'auto-complete-lisp)
 (require 'auto-complete-joxa)
+(require 'auto-complete-kapok)
 (require 'go-autocomplete)
 (require 'util)
 
