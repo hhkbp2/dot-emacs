@@ -56,13 +56,10 @@
 
     (dw-load-related-file-if-exist "../../../personal/dw-calendar-settings.el")
 
-    ;; 日历不和日记相连，我不用Calendar自带的diary记日记
-    (setq mark-diary-entries-in-calendar nil)
-
+    ;; 在日历串突出标记今日
+    (add-hook 'calendar-today-visible-hook 'calendar-mark-today)
     ;; 在日历中突出标记节日和生日
-    (setq mark-holidays-in-calendar t)
-    ;; 打开calendar时自动打开节日和生日列表
-    ;;(setq view-calendar-holidays-initially t)
+    (setq calendar-mark-holidays-flag t)
 
     ;; 只查看我自己定制的节日
     (setq calendar-holidays dw-holidays))
