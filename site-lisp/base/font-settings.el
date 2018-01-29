@@ -34,9 +34,9 @@
         (("Monaco" . "Hiragino Sans GB") .
          (((:size 14) . 1.0) . ((:size 14) . 1.2)))
         (("Monaco" . "思源宋体") .
-         (((:size 13) . 1.0) . ((:size 13) . 1.0)))
+         (((:size 14) . 1.0) . ((:size 14) . 1.0)))
         (("Monaco" . "思源黑体") .
-         (((:size 13) . 1.0) . ((:size 15) . 1.0)))
+         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
         (("M+ 1mn" . "WenQuanYi Micro Hei Mono") .
          (((:size 15) . 1.0) . ((:size 15) . 1.1)))
         ))
