@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2016-03-22 11:08>
+;; Time-stamp: <2020-08-23 03:32>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -41,38 +41,12 @@
     (symbol     . "o")))
 
 
-(defun ac-ropemacs+-candidates ()
-  (mapcar (lambda (completion)
-            (concat ac-prefix completion))
-          (ignore-errors
-            (rope-completions))))
-
-
-(ac-define-source ropemacs+
-  '((candidates . ac-ropemacs+-candidates)
-    (symbol     . "p")))
-
-
-(ac-define-source ropemacs+-dot
-  '((candidates . ac-ropemacs+-candidates)
-    (symbol     . "p")
-    (prefix     . c-dot)
-    (requires   . 0)))
-
-
 (defun ac-settings-4-python ()
   (setq ac-sources
-
-        ;; one alternative: add ropemacs source to default ac sources
-        ;;(append (list 'ac-source-ropemacs) ac-sources)
 
         ;; another alternative:
         ;; specify all valid sources for python mode one by one
         '(
-          ;;ac-source-pythondotel
-          ac-source-ropemacs
-          ;; ac-source-ropemacs+
-          ;; ac-source-ropemacs+-dot
           ac-source-semantic
           ac-source-yasnippet
           ac-source-dictionary
@@ -85,7 +59,6 @@
 
 (defun auto-complete-python ()
   ;; setup auto-complete
-  (ac-ropemacs-setup)
   (ac-settings-4-python))
 
 

@@ -48,10 +48,6 @@
     elixir-mode
 
     python-mode
-    pymacs
-    jedi
-    python-pep8
-    python-pylint
 
     enh-ruby-mode
 

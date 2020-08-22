@@ -40,13 +40,6 @@ Refer to `https://github.com/ananthakumaran/dotfiles/.emacs.d/init-elixir.el'."
   (add-hook 'elixir-mode-hook 'flycheck-mode))
 
 
-(defun flycheck-4-python ()
-  "Flycheck settings for `python-mode'."
-  (add-hook 'python-mode-hook '(lambda ()
-                                 (flycheck-mode)
-                                 (flycheck-select-checker 'python-pylint))))
-
-
 (defun flycheck-4-go ()
   "Flycheck settings for `go-mode'."
   (require 'go-flycheck)
@@ -65,7 +58,6 @@ Refer to `https://github.com/ananthakumaran/dotfiles/.emacs.d/init-elixir.el'."
     (dolist (func '(flycheck-4-elisp
                     flycheck-4-erlang
                     flycheck-4-elixir
-                    flycheck-4-python
                     flycheck-4-go
                     ))
       (funcall func)))

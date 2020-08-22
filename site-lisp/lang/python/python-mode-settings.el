@@ -19,58 +19,16 @@
       (if (not (search dw-python-path pypath))
           (setenv "PYTHONPATH" (concat dw-python-path ":" pypath))))))
 
-(defun python-ropemacs-load()
-  "Load ropemacs library."
-
-  ;; (setq ropemacs-enable-shortcuts nil)
-  (setq ropemacs-global-prefix "C-c p")
-
-  (pymacs-load "ropemacs" "rope-")
-  (setq ropemacs-codeassist-maxfixes 3)
-  (setq ropemacs-guess-project t)
-  (setq ropemacs-confirm-saving 'nil)
-  (setq ropemacs-enable-autoimport t)
-  (setq ropemacs-autoimport-modules '("os" "sys"))
-  (ropemacs-mode t))
-
-(use-package pymacs
-  :defer t
-  :config
-  (progn
-    (autoload 'pymacs-apply "pymacs")
-    (autoload 'pymacs-call "pymacs")
-    (autoload 'pymacs-eval "pymacs" nil t)
-    (autoload 'pymacs-exec "pymacs" nil t)
-    (autoload 'pymacs-load "pymacs" nil t)
-
-    ;; additional module search path
-    (setq pymacs-load-path `(,dw-python-dev-dir ,dw-python-path)))
-  )
-
-(use-package jedi
-  :defer t
-  :ensure t
-  :commands jedi:setup
-  :config
-  (progn
-    (setq jedi:setup-keys t)
-    (setq jedi:complete-on-dot t))
-  )
-
 (use-package python-mode
   :defer t
   :ensure t
   :config
   (progn
     (require 'whitespace)
-    (require 'python-pylint-autoloads)
-    (require 'python-pep8-autoloads)
 
     (when (eq system-type 'darwin)
       ;; prepare PYTHONPATH for mac emacs as app started on dock
       (dw-prepare-pypath))
-
-    (require 'pymacs)
 
     ;; set tab width
     (setq tab-width 4)
@@ -79,11 +37,6 @@
     (setq whitespace-style
           '(face indentation::tab indentation::space tabs tab-mark trailing))
     (whitespace-mode 1)
-
-    ;; load ropemacs
-    (python-ropemacs-load)
-
-    (add-hook 'python-mode-hook 'jedi:setup)
 
     ;; key bindings
     (dw-hungry-delete-on-mode-map python-mode-map)
