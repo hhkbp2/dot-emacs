@@ -17,7 +17,7 @@
 
 (defvar dw-package-addition-sources
   '(("marmalade" . "http://marmalade-repo.org/packages/")
-    ("melpa" . "http://melpa.milkbox.net/packages/"))
+    ("melpa" . "http://melpa.org/packages/"))
   "Addtional package sources.")
 
 (defvar dw-package-list
