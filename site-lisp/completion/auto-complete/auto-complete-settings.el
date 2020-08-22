@@ -2,7 +2,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2017-11-03 15:09>
+;; Time-stamp: <2020-08-23 04:32>
 
 ;;; Commentary:
 
@@ -151,8 +151,7 @@
           ac-source-abbrev
           ac-source-words-in-buffer
           ac-source-words-in-same-mode-buffers
-          ac-source-imenu))
-  (ac-ispell-ac-setup))
+          ac-source-imenu)))
 
 (defun ac-settings-4-eshell ()
   (setq ac-sources

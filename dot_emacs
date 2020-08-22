@@ -103,7 +103,6 @@
 (require 'time-stamp-settings)
 
 (require 'dict-settings)
-(require 'spell-checking-settings)
 
 (require 'calendar-settings)
 

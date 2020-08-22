@@ -30,7 +30,6 @@
     guide-key
 
     auto-complete
-    ac-ispell
     yasnippet
     flycheck
     highlight-indentation
