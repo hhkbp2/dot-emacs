@@ -6,39 +6,31 @@
 
 
 (defconst dw-favor-en-font-list
-  '("Monaco"
-    "Input"
-    "M+ 1mn"
+  '("Monaco Nerd Font"
+    "Monaco"
     "Menlo"
     )
   "Personal favor font list for language en in descendent order.")
 
 (defconst dw-favor-zh-font-list
   '("思源宋体"
-    "思源黑体"
-    "Hiragino Sans GB"
-    "WenQuanYi Micro Hei Mono"
-    "微软雅黑Monaco"
-    )
+    "思源黑体")
   "Personal favor font list for language zh in descendent order.")
 
 (setq dw-font-pairs
-      '((("Input" . "Hiragino Sans GB") .
+      '(
+        (("Monaco Nerd Font" . "思源宋体") .
          ;; font-spec parameters, rescale ratio
-         (((:size 15) . 1.0) . ((:size 16) . 1.0)))
-        (("Input" . "思源黑体") .
+         (((:size 14) . 1.0) . ((:size 14) . 1.4)))
+        (("Monaco Nerd Font" . "思源黑体") .
          ;; font-spec parameters, rescale ratio
          (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        (("M+ 1mn" . "Hiragino Sans GB") .
-         (((:size 14) . 1.0) . ((:size 14) . 1.1)))
-        (("Monaco" . "Hiragino Sans GB") .
-         (((:size 14) . 1.0) . ((:size 14) . 1.2)))
         (("Monaco" . "思源宋体") .
-         (((:size 14) . 1.0) . ((:size 14) . 1.0)))
+         ;; font-spec parameters, rescale ratio
+         (((:size 14) . 1.0) . ((:size 14) . 1.4)))
         (("Monaco" . "思源黑体") .
+         ;; font-spec parameters, rescale ratio
          (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        (("M+ 1mn" . "WenQuanYi Micro Hei Mono") .
-         (((:size 15) . 1.0) . ((:size 15) . 1.1)))
         ))
 
 
