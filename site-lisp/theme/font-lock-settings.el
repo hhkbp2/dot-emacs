@@ -298,13 +298,6 @@ l_\\(?:onoff\\|linger\\)\
   "*A list of keywords of UNIX Network Programming to highlight.")
 
 
-(defcustom font-lock-keywords-java
-  `(;; TODO add keywords for java
-    )
-
-  "*A list of keywords to highlight in java mode.")
-
-
 (defcustom font-lock-keywords-makefile
   '(
     ;; highlight simply expanded variable initialization, immediately evaluated.
@@ -410,11 +403,6 @@ l_\\(?:onoff\\|linger\\)\
                             (eval keywords)
                             'ADD-TO-END))
 
-
-  ;; java mode
-  (font-lock-add-keywords 'java-mode
-                          font-lock-keywords-java
-                          'ADD-TO-END)
 
 
   ;; makefile mode

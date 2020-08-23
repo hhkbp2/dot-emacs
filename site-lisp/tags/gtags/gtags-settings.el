@@ -19,10 +19,9 @@
   :init
   (progn
     (require 'dev-base-settings)
-    (dolist (mode-hook dev-mode-hook-list-static)
-      (add-hook mode-hook
+      (add-hook 'c-mode-common-hook
                 '(lambda ()
-                   (gtags-mode 1)))))
+                   (gtags-mode 1))))
   :config
   (progn
     (let ((dir (expand-directory-name "~/pro")))

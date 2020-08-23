@@ -28,8 +28,6 @@
     ;; makefile
     makefile-mode
     makefile-gmake-mode
-    ;; java
-    java-mode
     ;; shell, term and shell script
     sh-mode
     shell-mode
@@ -42,8 +40,6 @@
     elixir-mode
     ;; go
     go-mode
-    ;; javascript
-    js-mode
     ;; snippet-mode
     snippet-mode
     ;; latex
@@ -85,8 +81,6 @@
     c-mode-common-hook
     ;; makefile
     makefile-mode-hook
-    ;; java
-    java-mode-hook
     ;; shell, term and shell script
     sh-mode-hook
     shell-mode-hook
@@ -99,8 +93,6 @@
     elixir-mode-hook
     ;; go
     go-mode-hook
-    ;; javascript
-    js-mode-hook
     ;; snippet-mode
     snippet-mode-hook
     ;; latex
@@ -116,11 +108,6 @@
     test-mode-hook
     )
   "A list of non-lisp dev mode hooks.")
-
-
-(defvar dev-mode-hook-list-static
-  '(c-mode-common-hook
-    java-mode-hook))
 
 
 (defvar dev-mode-hook-list-lisp

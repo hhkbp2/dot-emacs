@@ -1,7 +1,7 @@
 ;;; util.el --- A few utilities.
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2017-05-07 11:17>
+;; Time-stamp: <2020-08-23 16:26>
 
 ;;; Commentary:
 
@@ -24,7 +24,7 @@
 (defconst is-before-emacs-21 (>= 21 emacs-major-version) "是否是emacs 21或以前的版本")
 (defconst is-after-emacs-23  (<= 23 emacs-major-version) "是否是emacs 23或以后的版本")
 
-(defvar c-modes '(c-mode c++-mode awk-mode java-mode) "*C modes.")
+(defvar c-modes '(c-mode c++-mode awk-mode) "*C modes.")
 (defvar dev-modes (append c-modes '(python-mode perl-mode makefile-gmake-mode)) "*Modes for develop.")
 
 ;;;###autoload

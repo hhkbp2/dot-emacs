@@ -27,11 +27,8 @@
   :init
   (progn
     (dolist (mode-hook '(c-mode-common-hook
-                         java-mode-hook
-                         enh-ruby-mode-hook
                          python-mode-hook
                          erlang-mode-hook
-                         js-mode-hook
                          html-mode-hook
                          conf-mode-hook))
       (add-hook mode-hook

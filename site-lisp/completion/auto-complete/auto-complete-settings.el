@@ -2,7 +2,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2020-08-23 04:32>
+;; Time-stamp: <2020-08-23 16:21>
 
 ;;; Commentary:
 
@@ -103,16 +103,6 @@
 (eval-after-load "autopair"
   '(ac-settings-4-autopair))
 
-(defun ac-settings-4-java ()
-  (setq ac-sources
-        '(ac-source-semantic
-          ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
 (defun ac-settings-4-c ()
   (setq ac-sources
         '(ac-source-libc
@@ -164,27 +154,7 @@
           ac-source-symbols
           ac-source-imenu)))
 
-(defun ac-settings-4-ruby ()
-  (setq ac-sources
-        '(ac-source-semantic
-          ac-source-yasnippet
-          ac-source-dictionary
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
 (defun ac-settings-4-html ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
-(defun ac-settings-4-tcl ()
   (setq ac-sources
         '(ac-source-yasnippet
           ac-source-abbrev
@@ -207,14 +177,10 @@
    (am-add-hooks hook fun))
  `(('c-mode-hook      'ac-settings-4-c)
    ('c++-mode-hook    'ac-settings-4-cpp)
-   ('java-mode-hook   'ac-settings-4-java)
    ('text-mode-hook   'ac-settings-4-text)
    ('eshell-mode-hook 'ac-settings-4-eshell)
-   ('ruby-mode-hook   'ac-settings-4-ruby)
-   ('racer-mode-hook  'ac-racer-setup)
    ('html-mode-hook   'ac-settings-4-html)
-   ('awk-mode-hook    'ac-settings-4-awk)
-   ('tcl-mode-hook    'ac-settings-4-tcl)))
+   ('awk-mode-hook    'ac-settings-4-awk)))
 
 
 (provide 'auto-complete-settings)
