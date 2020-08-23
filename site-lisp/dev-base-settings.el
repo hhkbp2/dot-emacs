@@ -35,9 +35,6 @@
     shell-mode
     ;; awk
     awk-mode
-    ;; ruby
-    ruby-mode
-    enh-ruby-mode
     ;; python
     python-mode
     ;; erlang
@@ -73,7 +70,6 @@
   '(emacs-lisp-mode
     lisp-mode
     scheme-mode
-    clojure-mode
     slime-repl-mode
     joxa-mode)
   "A list of lisp modes.")
@@ -96,9 +92,6 @@
     shell-mode-hook
     ;; awk
     awk-mode-hook
-    ;; ruby
-    ruby-mode-hook
-    enh-ruby-mode-hook
     ;; python
     python-mode-hook
     ;; erlang
@@ -134,7 +127,6 @@
   '(emacs-lisp-mode-hook
     lisp-mode-hook
     scheme-mode-hook
-    clojure-mode-hook
     slime-repl-mode-hook
     joxa-mode-hook)
   "A list of lisp mode hooks.")

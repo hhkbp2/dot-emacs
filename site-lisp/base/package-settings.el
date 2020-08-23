@@ -60,8 +60,6 @@
 
     python-mode
 
-    enh-ruby-mode
-
     go-mode
     go-autocomplete
 

@@ -100,9 +100,6 @@
 
 (require 'erlang-mode-settings)
 
-(require 'clojure-mode-settings)
-
-(require 'ruby-mode-settings)
 (require 'python-mode-settings)
 
 (require 'go-mode-settings)
@@ -122,7 +119,6 @@
 (require 'protobuf-mode-settings)
 
 (require 'markdown-mode-settings)
-(require 'scss-mode-settings)
 
 
 ;; 高亮光标处单词

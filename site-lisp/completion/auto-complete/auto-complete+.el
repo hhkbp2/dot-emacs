@@ -69,17 +69,14 @@
   '(emacs-lisp-mode
     common-lisp-mode scheme-mode scheme-interaction-mode
     lisp-mode lisp-interaction-mode
-    c-mode c++-mode java-mode
+    c-mode c++-mode
     autoconf-mode makefile-automake-mode makefile-gmake-mode makefile-mode
     sh-mode shell-mode awk-mode
-    python-mode perl-mode cperl-mode  ruby-mode
-    erlang-mode joxa-mode kapok-mode
+    python-mode erlang-mode joxa-mode kapok-mode
     latex-mode LaTeX-mode
     xml-mode sgml-mode html-mode fundamental-mode
-    conf-javaprop-mode conf-unix-mode conf-mode change-log-mode
-    org-mode svn-log-edit-mode text-mode snippet-mode
-    javascript-mode js2-mode php-mode css-mode
-    tcl-mode fortran-mode f90-mode ada-mode)
+    conf-unix-mode conf-mode change-log-mode
+    org-mode text-mode snippet-mode)
   "Major modes function `auto-complete-mode' can run on."
   :type '(list symbol)
   :group 'auto-complete+)
