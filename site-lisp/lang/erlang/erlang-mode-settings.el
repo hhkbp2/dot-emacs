@@ -5,17 +5,6 @@
 ;;; Code:
 
 
-(use-package distel
-  :defer t
-  :bind
-  (:map erlang-shell-mode-map
-        ("\C-\M-i" . erl-complete)
-        ("\M-?" . erl-complete)
-        ("\M-." . erl-find-source-under-point)
-        ("\M-," . erl-find-source-unwind)
-        ("\M-*" . erl-find-source-unwind))
-  )
-
 (use-package erlang
   :defer t
   :mode
@@ -27,9 +16,6 @@
    ("\\.config$" . erlang-mode))
   :config
   (progn
-    (require 'distel)
-    (distel-setup)
-
     ;; when starting an Erlang shell in Emacs, default in the node name
     (setq inferior-erlang-machine-options '("-sname" "emacs"))
 

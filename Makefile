@@ -2,7 +2,7 @@
 #
 # Author: Dylan.Wen <hhkbp2@gmail.com>
 # Created: Sep 15, 2012
-# Time-stamp: <2016-03-21 15:55>
+# Time-stamp: <2020-08-23 15:48>
 #
 
 QUIET     := @
@@ -35,18 +35,8 @@ notice:
 
 
 .PHONY : site-init
-site-init: init-packages link-dot-emacs
-
-.PHONY : init-packages
-init-packages:
-	$(QUIET) cd import && tar -xzf distel-4.03.tar.gz
+site-init: link-dot-emacs
 
 link-dot-emacs:
 	$(QUIET) $(call link-dot-emacs-if-needs)
-
-
-
-.PHONY : site-clean
-site-clean:
-	$(QUIET) cd import && $(RM) distel-4.03
 
