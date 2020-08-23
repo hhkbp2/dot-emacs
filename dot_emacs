@@ -117,8 +117,6 @@
 
 (require 'keybinding-settings)
 
-(require 'google-this-settings)
-
 (require 'server-settings)
 
 ;;; system dependent loading
