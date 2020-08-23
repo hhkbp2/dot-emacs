@@ -31,8 +31,6 @@
     ;; shell, term and shell script
     sh-mode
     shell-mode
-    ;; awk
-    awk-mode
     ;; python
     python-mode
     ;; erlang
@@ -82,8 +80,6 @@
     ;; shell, term and shell script
     sh-mode-hook
     shell-mode-hook
-    ;; awk
-    awk-mode-hook
     ;; python
     python-mode-hook
     ;; erlang

@@ -2,7 +2,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2020-08-23 16:21>
+;; Time-stamp: <2020-08-23 16:59>
 
 ;;; Commentary:
 
@@ -163,15 +163,6 @@
           ac-source-files-in-current-dir
           ac-source-filename)))
 
-(defun ac-settings-4-awk ()
-  (setq ac-sources
-        '(ac-source-yasnippet
-          ac-source-abbrev
-          ac-source-words-in-buffer
-          ac-source-words-in-same-mode-buffers
-          ac-source-files-in-current-dir
-          ac-source-filename)))
-
 (apply-args-list-to-fun
  (lambda (hook fun)
    (am-add-hooks hook fun))
@@ -179,8 +170,7 @@
    ('c++-mode-hook    'ac-settings-4-cpp)
    ('text-mode-hook   'ac-settings-4-text)
    ('eshell-mode-hook 'ac-settings-4-eshell)
-   ('html-mode-hook   'ac-settings-4-html)
-   ('awk-mode-hook    'ac-settings-4-awk)))
+   ('html-mode-hook   'ac-settings-4-html)))
 
 
 (provide 'auto-complete-settings)

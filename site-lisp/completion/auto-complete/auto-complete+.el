@@ -71,7 +71,7 @@
     lisp-mode lisp-interaction-mode
     c-mode c++-mode
     autoconf-mode makefile-automake-mode makefile-gmake-mode makefile-mode
-    sh-mode shell-mode awk-mode
+    sh-mode shell-mode
     python-mode erlang-mode joxa-mode kapok-mode
     latex-mode LaTeX-mode
     xml-mode sgml-mode html-mode fundamental-mode

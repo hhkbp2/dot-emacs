@@ -110,7 +110,6 @@
 
 (require 'sh-mode-settings)
 (require 'shell-mode-settings)
-(require 'awk-mode-settings)
 (require 'multi-term-settings)
 
 (require 'markdown-mode-settings)
