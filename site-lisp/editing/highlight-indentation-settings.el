@@ -29,8 +29,7 @@
     (dolist (mode-hook '(c-mode-common-hook
                          python-mode-hook
                          erlang-mode-hook
-                         html-mode-hook
-                         conf-mode-hook))
+                         html-mode-hook))
       (add-hook mode-hook
                 (lambda()
                   (highlight-indentation-current-column-mode)))))

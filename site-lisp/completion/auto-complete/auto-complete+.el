@@ -75,8 +75,7 @@
     python-mode erlang-mode joxa-mode kapok-mode
     latex-mode LaTeX-mode
     xml-mode sgml-mode html-mode fundamental-mode
-    conf-unix-mode conf-mode change-log-mode
-    org-mode text-mode snippet-mode)
+    change-log-mode org-mode text-mode snippet-mode)
   "Major modes function `auto-complete-mode' can run on."
   :type '(list symbol)
   :group 'auto-complete+)

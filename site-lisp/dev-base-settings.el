@@ -54,8 +54,6 @@
     markdown-mode
     ;; sql
     sql-mode
-    ;; conf-mode
-    conf-mode
     ;; text
     text-mode
     )
@@ -102,8 +100,6 @@
     html-mode-hook
     ;; markdown
     markdown-mode-hook
-    ;; conf-mode
-    conf-mode-hook
     ;; text
     test-mode-hook
     )

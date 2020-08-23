@@ -109,14 +109,9 @@
 (require 'makefile-mode-settings)
 
 (require 'sh-mode-settings)
-(require 'awk-mode-settings)
-(require 'conf-mode-settings)
-
 (require 'shell-mode-settings)
+(require 'awk-mode-settings)
 (require 'multi-term-settings)
-
-(require 'thrift-mode-settings)
-(require 'protobuf-mode-settings)
 
 (require 'markdown-mode-settings)
 

@@ -5,9 +5,6 @@
 
 ;;; Code:
 
-(defconst dw-python-dev-dir (expand-file-name "~/pro/python")
-  "Personal development code directory of python.")
-
 (defconst dw-python-path (expand-file-name
                           "~/local/lib/python2.7/site-packages/")
   "Personal PYTHONPATH for addtional libraries.")
