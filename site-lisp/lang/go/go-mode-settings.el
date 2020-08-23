@@ -12,15 +12,6 @@
   :defer t
   :config
   (progn
-    ;; set GOPATH for TiDB source files using advice
-    (defadvice gofmt (before gofmt-prepare-gopath activate)
-      "Detect GOPATH and set it before running `gofmt'."
-      (go-set-project))
-
-    (defadvice gofmt (after gofmt-reset-gopath activate)
-      "Reset GOPATH to the value it had before running `gofmt'."
-      (go-reset-gopath))
-
     ;; run goimports before saving golang buffer
     ;; non `go-mode' buffer would be intact
     (setq gofmt-command "goimports")
