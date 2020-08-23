@@ -154,9 +154,6 @@
 ;; neotree
 (require 'neotree-settings)
 
-;; global
-(require 'gtags-settings)
-
 ;; 所有的自动补全的配置
 (require 'yasnippet-settings)
 (require 'auto-complete-settings-all)

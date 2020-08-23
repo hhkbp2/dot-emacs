@@ -237,17 +237,6 @@ Optional `dir' specifies the directory where the file locates."
         (expand-file-name dir-name))))
 
 
-(defun dw-get-real-dir (prefix-list)
-  "Return gtags root directory on office machine."
-  (when prefix-list
-    (let* ((prefix (first prefix-list))
-           (dir (expand-file-name
-                 (concat (user-login-name) "/rep/trunk") prefix)))
-      (if (file-real-directory-p dir)
-          dir
-        (dw-get-real-dir (rest prefix-list))))))
-
-
 (defun read-file (file)
   "Read the content of a file into a String."
   (when (file-readable-p file)
