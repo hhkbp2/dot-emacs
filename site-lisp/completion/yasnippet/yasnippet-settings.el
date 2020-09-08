@@ -12,12 +12,21 @@
     (when (string-match (concat "^" root) bfn)
       (yas/load-snippet-buffer))))
 
+
+(defvar dw-yas-snippets-dir
+  (concat (current-directory) "snippets/")
+
+  "Directory of snippets for `yasnippet'.
+Defined before loading `yasnippet' so as to preserve current directory
+since the loading is defered.")
+
+
 (use-package yasnippet
   :defer t
   :ensure t
   :config
   (progn
-    (setq yas/root-directory (concat (current-directory) "snippets/"))
+    (setq yas/root-directory dw-yas-snippets-dir)
 
     (add-hook 'after-save-hook 'yasnippet-reload-after-save)
 

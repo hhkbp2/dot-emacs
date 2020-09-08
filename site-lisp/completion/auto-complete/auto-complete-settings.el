@@ -2,7 +2,7 @@
 ;; -*- Emacs-Lisp -*-
 
 ;; A loan from ahei
-;; Time-stamp: <2020-08-23 16:59>
+;; Time-stamp: <2020-09-09 00:36>
 
 ;;; Commentary:
 
@@ -35,12 +35,20 @@
    ("M-j"        ac-complete)))
 
 
+(defvar auto-complete-dict-dir
+  (concat (current-directory) "dict/")
+
+  "Directory of dict for `auto-complete'.
+Defined before loading `auto-complete' so as to preserve current directory
+since the loading is defered.")
+
+
 (defun auto-complete-settings ()
   "Settings for `auto-complete'."
   (setq help-xref-following nil)
 
   (add-to-list 'ac-dictionary-directories
-               (concat (current-directory) "dict/"))
+               auto-complete-dict-dir)
 
   (setq ac-auto-show-menu t
         ac-auto-show-menu-immediately-on-auto-complete t
