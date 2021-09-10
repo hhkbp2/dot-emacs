@@ -5,6 +5,7 @@
 ;;; Code:
 
 (require 'my-subdirs)
+(require 'use-package)
 
 
 ;; HACK: DO NOT copy package-selected-packages to init/custom file forcibly.
