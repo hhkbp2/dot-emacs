@@ -6,7 +6,7 @@
 ;;; Code:
 
 
-(use-package smartparens
+(use-package smartparens-config
   :defer t
   :ensure t
   :init

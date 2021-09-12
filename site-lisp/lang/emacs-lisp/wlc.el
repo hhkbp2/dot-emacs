@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2017-05-07 11:14>
+;; Time-stamp: <2021-09-13 00:48>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -56,16 +56,11 @@
 ;;   (or smartly)" in Lisp.  Any comment or suggestion on enhancing this
 ;;   feature is appreciated.
 ;;
-;; 3. automatically complete the right part of pairs
-;;   A piece of configure code to use skeleton.el library to complete the
-;;   right part of pairs in Lisp, such as `', (), {} automatically when
-;;   the left part of it is input.
-;;
-;; 4. show matching parentheses on point (cursor)
+;; 3. show matching parentheses on point (cursor)
 ;;   A piece of configure code to use paren.el library to highlight
 ;;   the matching parentheses on insert point (cursor).
 ;;
-;; 5. additional highlighting
+;; 4. additional highlighting
 ;;   currently support addtional highlight on elisp keywords,
 ;;   built-in functions.
 ;;
@@ -82,9 +77,6 @@
 
 ;; require `font-lock' to utilize face property in `wlc/fast-in-literal'
 (require 'font-lock)
-
-;; require `skeleton' to complete the pairs
-(require 'skeleton)
 
 ;; require `paren' to show matching parentheses on point
 (require 'paren)
