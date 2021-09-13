@@ -6,7 +6,7 @@
 ;;; Code:
 
 
-(use-package smartparens-config
+(use-package smartparens
   :defer t
   :ensure t
   :init
@@ -15,6 +15,7 @@
     (show-smartparens-global-mode t))
   :config
   (progn
+    (require 'smartparens-config)
     (require 'smartparens-face-settings))
   )
 
