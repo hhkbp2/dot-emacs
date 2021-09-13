@@ -81,8 +81,9 @@
   ;; load `color-theme' settings
   (require 'color-theme-settings)
   ;; load my favorite color theme
-  (require 'color-theme-darkmate)
-  (color-theme-darkmate)
+  (add-to-list 'custom-theme-load-path
+               (concat (current-directory) "../theme"))
+  (load-theme 'darkmate t)
   )
 
 (appearance-settings)
