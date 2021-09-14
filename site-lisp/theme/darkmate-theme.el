@@ -9,12 +9,14 @@
 ;;
 ;; Add the following codes to your .emacs file:
 ;;
+;; (add-to-list 'custom-theme-load-path directory-of-this-file)
 ;; (load-theme 'darkmate-theme t)
 ;;
-;; or use `use-package` macro to load the theme:;
+;; or use `use-package' macro to load the theme:
 ;;
 ;; (use-package darkmate-theme
 ;;   :config
+;;   (add-to-list 'custom-theme-load-path directory-of-this-file)
 ;;   (load-theme 'darkmate-theme t))
 ;;
 
