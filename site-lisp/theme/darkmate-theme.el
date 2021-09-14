@@ -190,7 +190,7 @@
      `(diredp-exec-priv ((,class (:foreground ,yellow :slant italic))))
      `(diredp-executable-tag ((,class (:foreground ,green))))
      `(diredp-file-name ((,class (:foreground ,white))))
-     ;;`(diredp-file-suffix)
+     `(diredp-file-suffix ((,class (:forergound ,white))))
      `(diredp-flag-mark ((,class (:foreground ,cyan))))
      `(diredp-flag-mark-line ((,class (:foreground ,cyan))))
      `(diredp-ignored-file-name ((,class (:foreground "color-249"))))
