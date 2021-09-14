@@ -10,7 +10,6 @@
   :ensure t
   :init
   (progn
-    (set-variable 'frame-background-mode 'dark)
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
   )
 

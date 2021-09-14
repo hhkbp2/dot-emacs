@@ -39,7 +39,7 @@
         (white    (if (true-color-p) "#eeeeee" "#eeeeee"))
         ;; gray -> dark
         (gray     (if (true-color-p) "#bbbbbb" "#bbbbbb"))
-        (asfalto  (if (true-color-p) "#555753" "#555753"))
+        (asfalto  (if (true-color-p) "#555753" "color-240"))
         (carbon   (if (true-color-p) "#232323" "#232323"))
         ;; green -> deep
         (senape   (if (true-color-p) "#acc900" "#acc900"))
@@ -61,9 +61,16 @@
         ;; orange -> deep
         (ambra    (if (true-color-p) "#ff9900" "#ff9900"))
         (orange   (if (true-color-p) "#ff6100" "#ff6100"))
-        ;;; generic
-        (cursor   white)
-        (border   "black")
+
+        ;;;basics
+        (link-fg  (if (true-color-p) "#5fafff" "#5fafff"))
+        (mode-line-bg (if (true-color-p) "#1a1a1a" "#9e9e9e"))
+        (mode-line-fg (if (true-color-p) "#999999" "#303030"))
+        (mode-line-buffer-id-bg (if (true-color-p) "#4d4d4d" "#585858"))
+        (mode-line-buffer-id-fg (if (true-color-p) cyan "#00afff"))
+        (mode-line-inactive-bg (if (true-color-p) "#333333" "#808080"))
+        (mode-line-inactive-fg (if (true-color-p) "#b3b3b3" "#3a3a3a"))
+
         ;;; linum
         (linum-bg (if (true-color-p) gray "color-250"))
         (linum-fg (if (true-color-p) asfalto "color-240"))
@@ -76,41 +83,48 @@
 ;;;;; basics
      ;; text appearance
      `(default ((,class (:background ,carbon :foreground ,white))))
-     ;;`(link)
-     ;;`(link-visited)
+     `(link ((,class (:foreground ,link-fg :underline t))))
+     `(link-visited ((,class (:foreground ,link-fg :underline t :slant italic))))
      ;;`(success)
      ;;`(warning)
      ;;`(error)
      ;;`(page-break-lines)
      ;; highlight parts of text temporarily for specific purposes
-     ;;`(highlight)
+     `(highlight ((,class (:background "#222222"))))
      `(isearch ((,class (:background ,yellow :foreground ,carbon))))
      `(isearch-fail ((,class (:background ,red :foreground "yellowgreen" :weight bold))))
      `(lazy-highlight ((,class (:background "paleturquoise4"))))
      `(query-replace ((,class (:background ,yellow :foreground ,carbon))))
      `(match ((,class (:background ,white :foreground ,carbon))))
-     ;;`(region)
-     ;;`(secondary-selection)
-     ;;`(trailing-whitespace)
-     ;;`(escape-glyph)
+     `(region ((,class (:background ,asfalto))))
+     `(secondary-selection ((,class (:background ,gray :foreground ,white))))
+     `(trailing-whitespace ((,class (:background "white"))))
+     `(escape-glyph ((,class (:foreground "cyan"))))
      ;;`(homoglyph)
-     ;;`(nobreak-space)
+     `(nobreak-space ((,class (:foreground "cyan" :underline t))))
      ;;`(nobreak-hyphen)
      ;; appearance of parts of the Emacs frame
-     ;; `(mode-line)
-     ;; `(mode-line-inactive)
-     ;; `(mode-line-highlight)
-     ;; `(mode-line-buffer-id)
-     ;; `(header-line)
+
+     ;; mode-line
+     `(mode-line ((,class (:background ,mode-line-bg :foreground ,mode-line-fg :weight semi-bold :box (:line-width -1 :color "#7f7f7f")))))
+     `(mode-line-inactive ((,class (:background ,mode-line-inactive-bg :foreground ,mode-line-inactive-fg :box (:line-width -1 :color "#666666")))))
+     `(mode-line-buffer-id ((,class (:background ,mode-line-buffer-id-bg :foreground ,mode-line-buffer-id-fg :weight bold))))
+     `(mode-line-emphasis ((,class (:weight bold))))
+     `(mode-line-highlight ((,class (:inverse-video t))))
+     `(modeline-mousable ((,class (:background ,mode-line-bg :foreground "white"))))
+     `(modeline-mousable-minor-mode ((,class (:background ,mode-line-bg :foreground "white"))))
+
+     `(header-line ((,class (:background "#333333" :foreground "#e5e5e5" :weight semi-bold))))
      ;; `(header-line-highlight)
      ;; `(tab-line)
-     ;; `(vertical-border ((,class (:background ,border))))
-     ;; `(minibuffer-prompt)
-     ;; `(fringe)
-     ;; `(cursor ((,class (:background ,cursor))))
+     ;;`(border) ;; not included because it's not listed in standard faces docs
+     `(vertical-border ((,class (:background "black"))))
+     `(minibuffer-prompt ((,class (:foreground ,yellow :weight semi-bold))))
+     `(fringe ((,class (:background "#1a1a1a"))))
+     `(cursor ((,class (:background ,white))))
      ;; `(tooltip)
      ;; `(mouse)
-     ;; `(shadow)
+     `(shadow ((,class (:foreground "#b3b3b3"))))
      ;; control the appearance of parts of the Emacs frame, but only on
      ;; text terminals, or when Emacs is built on X with no toolkit support
      ;; `(scroll-bar)
@@ -358,6 +372,9 @@
     (custom-theme-set-variables
      name
 
+;;;;; frame
+     ;;`(frame-background-mode 'dark)
+
 ;;;;; ansi-color-names
      `(ansi-color-name-vector [,carbon ,red ,green ,yellow ,aque ,magenta ,cyan ,white])
 
@@ -378,8 +395,7 @@
                                ("XXX+"        . ,red)
                                ("\\?\\?\\?+"  . ,red)))
      )
-    )
-  )
+    ))
 
 (create-darkmate-theme 'darkmate)
 

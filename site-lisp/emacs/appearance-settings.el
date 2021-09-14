@@ -6,7 +6,6 @@
 
 
 (require 'font-lock-settings)
-(require 'basic-faces-settings)
 (require 'frame-settings)
 
 
@@ -74,9 +73,6 @@
 
   ;; 加载font-lock配置
   (font-lock-settings)
-
-  ;; 设置背景景色为暗色以配合主题
-  ;;(custom-set-variables '(frame-background-mode (quote dark)))
 
   ;; load my favorite color theme
   (add-to-list 'custom-theme-load-path
