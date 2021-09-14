@@ -113,8 +113,6 @@
      `(mode-line-buffer-id ((,class (:background ,mode-line-buffer-id-bg :foreground ,mode-line-buffer-id-fg :weight bold))))
      `(mode-line-emphasis ((,class (:weight bold))))
      `(mode-line-highlight ((,class (:inverse-video t))))
-     `(modeline-mousable ((,class (:background ,mode-line-bg :foreground "white"))))
-     `(modeline-mousable-minor-mode ((,class (:background ,mode-line-bg :foreground "white"))))
 
      `(header-line ((,class (:background "#333333" :foreground "#e5e5e5" :weight semi-bold))))
      ;; `(header-line-highlight)
