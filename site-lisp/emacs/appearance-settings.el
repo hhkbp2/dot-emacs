@@ -78,8 +78,6 @@
   ;; 设置背景景色为暗色以配合主题
   ;;(custom-set-variables '(frame-background-mode (quote dark)))
 
-  ;; load `color-theme' settings
-  (require 'color-theme-settings)
   ;; load my favorite color theme
   (add-to-list 'custom-theme-load-path
                (concat (current-directory) "../theme"))

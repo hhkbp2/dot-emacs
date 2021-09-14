@@ -25,7 +25,7 @@
                Man-mode-hook
 
                text-mode-hook diff-mode-hook
-               color-theme-mode-hook hs-hide-hook
+               hs-hide-hook
 
                html-mode-hook
 
