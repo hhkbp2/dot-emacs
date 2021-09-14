@@ -14,7 +14,7 @@
   (progn
     ;; run goimports before saving golang buffer
     ;; non `go-mode' buffer would be intact
-    (setq gofmt-command "goimports")
+    (setq gofmt-command "gofumpt")
     (add-hook 'before-save-hook 'gofmt-before-save)
 
     ;; key bindings
