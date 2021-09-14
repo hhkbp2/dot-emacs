@@ -15,8 +15,6 @@
   (progn
     (require 'ido-complete-space-or-hyphen)
     (require 'ido-ubiquitous)
-    ;; load face settings
-    (require 'ido-face-settings)
 
 
     (setq ido-save-directory-list-file "~/.emacs.d/ido.last")

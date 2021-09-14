@@ -77,8 +77,6 @@
   :defer t
   :config
   (progn
-    (require 'isearch-face-settings)
-
     ;; 搜索时不区分大小写
     (setq-default case-fold-search t))
   :bind

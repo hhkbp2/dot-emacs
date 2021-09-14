@@ -64,6 +64,12 @@
         ;;; generic
         (cursor   white)
         (border   "black")
+        ;;; linum
+        (linum-bg (if (true-color-p) gray "color-250"))
+        (linum-fg (if (true-color-p) asfalto "color-240"))
+        ;;; linum-relative-current-line-face
+        (linum-relative-bg (if (true-color-p) "#e5e5e5" "color-254"))
+        (linum-relative-fg (if (true-color-p) asfalto "color-240"))
         )
     (custom-theme-set-faces
      name
@@ -78,10 +84,11 @@
      ;;`(page-break-lines)
      ;; highlight parts of text temporarily for specific purposes
      ;;`(highlight)
-     ;;`(isearch)
+     `(isearch ((,class (:background ,yellow :foreground ,carbon))))
+     `(isearch-fail ((,class (:background ,red :foreground "yellowgreen" :weight bold))))
+     `(lazy-highlight ((,class (:background "paleturquoise4"))))
      `(query-replace ((,class (:background ,yellow :foreground ,carbon))))
      `(match ((,class (:background ,white :foreground ,carbon))))
-     ;;`(lazy-highlight)
      ;;`(region)
      ;;`(secondary-selection)
      ;;`(trailing-whitespace)
@@ -137,6 +144,28 @@
      ;; `(completions-common-part)
      ;; `(completions-first-difference)
 
+;;;;; ido
+     `(ido-first-match ((t (:weight bold))))
+     `(ido-only-match ((,class (:foreground ,green))))
+     `(ido-subdir ((,class (:foreground ,violet :weight bold))))
+     ;;`(ido-virtual)
+     ;;`(ido-indicator)
+     ;;`(ido-incomplete-regexp)
+
+;;;;; helm
+;;;;; helm-core
+     `(helm-source-header ((,class (:foreground ,purple :weight bold))))
+     ;;`(helm-visible-mark)
+     ;; helm-header
+     ;; helm-candidate-number
+     ;; helm-candidate-number-suspended
+     `(helm-selection ((,class (:background "black"))))
+     ;; helm-separator
+     ;; helm-action
+     ;; helm-prefarg
+     ;; helm-match
+     ;; helm-header-line-left-margin
+
 ;;;;; dired
      `(dired-directory ((,class (:foreground ,violet :weight bold))))
      `(dired-flagged ((,class (:foreground ,magenta :weight bold))))
@@ -147,6 +176,38 @@
      `(dired-perm-write ((,class (:foreground ,green :slant italic))))
      `(dired-symlink ((,class (:foreground ,purple))))
      `(dired-warning ((,class (:foreground ,red :weight bold))))
+
+;;;;; dired+
+     ;;`(diredp-autofile-name)
+     ;;`(diredp-compressed-file-name)
+     `(diredp-compressed-file-suffix ((,class (:foreground ,yellow))))
+     `(diredp-date-time ((,class (:foreground ,green :slant italic))))
+     `(diredp-deletion ((,class (:foreground ,red :weight bold))))
+     `(diredp-deletion-file-name ((,class (:foreground ,red :weight bold))))
+     `(diredp-dir-heading ((,class (:foreground ,purple :weight bold))))
+     `(diredp-dir-name ((,class (:foreground ,violet :weight bold))))
+     `(diredp-dir-priv ((,class (:foreground ,violet :weight bold))))
+     `(diredp-exec-priv ((,class (:foreground ,yellow :slant italic))))
+     `(diredp-executable-tag ((,class (:foreground ,green))))
+     `(diredp-file-name ((,class (:foreground ,white))))
+     ;;`(diredp-file-suffix)
+     `(diredp-flag-mark ((,class (:foreground ,cyan))))
+     `(diredp-flag-mark-line ((,class (:foreground ,cyan))))
+     `(diredp-ignored-file-name ((,class (:foreground "color-249"))))
+     ;;`(diredp-link-priv)
+     ;;`(diredp-mode-line-marked)
+     ;;`(diredp-mode-line-flagged)
+     ;;`(diredp-no-priv)
+     ;;`(diredp-number)
+     ;;`(diredp-other-priv)
+     ;;`(diredp-rare-priv)
+     ;;`(diredp-read-priv)
+     `(diredp-symlink ((,class (:foreground ,purple))))
+     ;;`(diredp-tagged-autofile-name)
+     `(diredp-write-priv ((,class (:foreground ,fuschsia))))
+
+;;;;; dired-lis
+     ;;`(dired-lis-mode-line-face)
 
 ;;;;; popup
      ;; popup-enu-selection-face
@@ -201,11 +262,53 @@
      ;; `(outline-7)
      ;; `(outline-8)
 
+;;;;; rainbow-delimiters
+     `(rainbow-delimiters-unmatched-face ((,class (:background "red" :weight bold :inverse-video t))))
+     ;;`(rainbow-delimiters-mismatched-face)
+     `(rainbow-delimiters-depth-1-face ((,class (:foreground "gray60"))))
+     `(rainbow-delimiters-depth-2-face ((,class (:foreground "orchid"))))
+     `(rainbow-delimiters-depth-3-face ((,class (:foreground "dodger blue"))))
+     `(rainbow-delimiters-depth-4-face ((,class (:foreground "sky blue"))))
+     `(rainbow-delimiters-depth-5-face ((,class (:foreground "lime green"))))
+     `(rainbow-delimiters-depth-6-face ((,class (:foreground "lawn green"))))
+     `(rainbow-delimiters-depth-7-face ((,class (:foreground "gold"))))
+     `(rainbow-delimiters-depth-8-face ((,class (:foreground "sandy brown"))))
+     `(rainbow-delimiters-depth-9-face ((,class (:foreground "tomato"))))
+
+;;;;; smartparens
+     ;;`(sp-pair-overlay-face)
+     ;;`(sp-wrap-overlay-face)
+     ;;`(sp-wrap-overlay-opening-pair)
+     ;;`(sp-wrap-overlay-closing-pair)
+     ;;`(sp-wrap-tag-overlay-face)
+     `(sp-show-pair-match-face ((,class (:background ,purple :foreground ,white :weight bold))))
+     `(sp-show-pair-mismatch-face ((,class (:background ,red :foreground ,white :weight bold))))
+     ;;`(sp-show-pair-enclosing)
+
+;;;;; whitespace
+     `(whitespace-space ((,class (:background "gray22" :foreground ,magenta))))
+     `(whitespace-hspace ((,class (:background "gray22" :forgeground ,magenta))))
+     `(whitespace-tab ((,class (:background "gray30" :foreground ,magenta))))
+     `(whitespace-space-before-tab ((,class (:background "DarkOrange" :foreground ,magenta))))
+     `(whitespace-space-after-tab ((,class (:background "gray22" :foreground ,magenta))))
+     `(whitespace-newline ((,class (:background "darkgray"))))
+     `(whitespace-trailing ((,class (:background "gray30"))))
+     `(whitespace-line ((,class (:background "gray22" :foreground ,violet))))
+     `(whitespace-indentation ((,class (:background "gray40" :foreground ,magenta))))
+     `(whitespace-big-indent ((,class (:background "gray40" :foreground ,magenta))))
+     `(whitespace-empty ((,class (:background "gray22" :foreground ,magenta))))
+
 ;;;;;; development
 
 ;;;;; lisp
 ;;;;; eldoc
      ;; `(eldoc-highlight-function-argument)
+
+;;;;; makefile-mode
+     `(makefile-space ((,class (:background ,magenta))))
+     `(makefile-targets ((,class (:foreground ,cyan :weight semi-bold))))
+     `(makefile-shell ((,class (:foreground "wheat" :weight book))))
+     `(makefile-makepp-perl ((,class (:background "DarkBlue"))))
 
 ;;;;; auto-complete
      ;; `(ac-completion-face)
@@ -233,6 +336,22 @@
 ;;;;; yas
      ;; yas--field-debug-face
      ;; yas-field-highlight-face
+
+;;;;; linum
+     `(linum ((,class (:background ,linum-bg :foreground ,linum-fg))))
+;;;;; linum-relative
+     `(linum-relative-current-line-face ((,class (:background ,linum-relative-bg :foreground ,linum-relative-fg :weight semi-bold))))
+
+;;;;; tools
+
+;;;;; calendar
+     `(calender-today ((,class (:background "black" :foreground ,ambra :underline t))))
+     `(diary ((,class (:foreground "yellow1"))))
+     `(holiday ((,class (:background "gray30" :foreground ,senape :slant italic))))
+
+;;;;; cal-china-x
+     `(cal-china-x-general-holiday-face ((,class (:background "green"))))
+     `(cal-china-x-important-holiday-face ((,class (:background "red"))))
 
      )
 

@@ -9,7 +9,6 @@
   :defer t
   :config
   (progn
-    (require 'calendar-face-settings)
     (require 'cal-china-x-settings)
     (require 'dw-functionals)
 

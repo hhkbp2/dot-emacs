@@ -17,8 +17,6 @@
   :defer t
   :config
   (progn
-    (require 'linum-face-settings)
-
     (linum-relative-on))
   )
 
@@ -38,8 +36,6 @@
   (progn
     (require 'linum+)
     ;;(require 'linum-relative)
-    ;; load face settings
-    (require 'linum-face-settings)
     )
   )
 

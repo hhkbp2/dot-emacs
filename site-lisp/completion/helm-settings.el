@@ -12,7 +12,6 @@
     (require 'helm-config)
     (require 'helm-swoop)
     (require 'helm-files)
-    (require 'helm-face-settings)
     (require 'helm-descbinds)
     (require 'helm-describe-modes)
 

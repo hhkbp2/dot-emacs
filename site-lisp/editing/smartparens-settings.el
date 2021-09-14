@@ -16,7 +16,7 @@
   :config
   (progn
     (require 'smartparens-config)
-    (require 'smartparens-face-settings))
+    )
   )
 
 (provide 'smartparens-settings)
