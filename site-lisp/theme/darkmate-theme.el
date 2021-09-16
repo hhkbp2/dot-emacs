@@ -221,7 +221,7 @@
      `(diredp-write-priv ((,class (:foreground ,fuschsia))))
 
 ;;;;; dired-lis
-     ;;`(dired-lis-mode-line-face)
+     `(dired-lis-mode-line-face ((,class (nil))))
 
 ;;;;; popup
      ;; popup-enu-selection-face
