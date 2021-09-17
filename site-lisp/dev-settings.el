@@ -97,6 +97,7 @@
 
 (require 'wlc-settings)
 (require 'rainbow-delimiters-settings)
+(require 'rainbow-mode-settings)
 
 (require 'erlang-mode-settings)
 
