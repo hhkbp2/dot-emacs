@@ -77,7 +77,7 @@
   ;; load my favorite color theme
   (add-to-list 'custom-theme-load-path
                (concat (current-directory) "../theme"))
-  (load-theme 'darkmate t)
+  (load-theme 'gnome-adwaita t)
   )
 
 (appearance-settings)
