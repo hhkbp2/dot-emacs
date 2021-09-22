@@ -10,6 +10,10 @@
   :ensure t
   :config
   (require 'dev-base-settings)
+
+  (setq rainbow-x-colors nil
+        rainbow-ansi-colors nil)
+
   (dolist (mode-hook `(css-mode-hook
                        html-mode-hook
                        ,@dev-mode-hook-list-lisp))
