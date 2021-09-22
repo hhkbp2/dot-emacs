@@ -66,14 +66,14 @@
          (steel-blue     (if (true-color-p) "#00bbff" "#00bbff"))
          (blue           (if (true-color-p) "#3584e4" "color-68"))
          (dodger-blue    (if (true-color-p) "#0066cc" "color-26"))
-         (deep-blue      (if (true-color-p) "#00578e" "#00578e"))
+         (deep-blue      (if (true-color-p) "#00578e" "color-24"))
 
          ;; green
          (green          (if (true-color-p) "#35e43d" "color-77"))
          (olive-green    (if (true-color-p) "#9cbb43" "#9cbb43"))
          (sea-green      (if (true-color-p) "#4cb64a" "#4cb64a"))
          (chartreuse     (if (true-color-p) "#4e9a06" "#4e9a06"))
-         (dark-green     (if (true-color-p) "#2f8b58" "2f8b58"))
+         (dark-green     (if (true-color-p) "#2f8b58" "color-29"))
 
          ;; yellow
          (wheat          (if (true-color-p) "#feffbf" "#feffbf"))
