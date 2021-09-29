@@ -26,7 +26,7 @@ since the loading is defered.")
   :ensure t
   :config
   (progn
-    (setq yas/root-directory dw-yas-snippets-dir)
+    (add-to-list 'yas-snippet-dirs dw-yas-snippets-dir)
 
     (add-hook 'after-save-hook 'yasnippet-reload-after-save)
 
