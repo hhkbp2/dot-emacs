@@ -37,7 +37,7 @@
    (= (tty-display-color-cells) 16777216)))
 
 (defun create-adwaita-theme (name)
-  (let* ((class '((class color) (min-colors 88)))
+  (let* ((class '((class color) (min-colors 256)))
          ;;; basics
          ;; black and white
          (absolute-black (if (true-color-p) "#000000" "color-0"))
@@ -58,35 +58,35 @@
          ;; while deep-gray is so dark that it's only used for decoration
 
          ;; purple
-         (violet         (if (true-color-p) "#9435e4" "#9435e4"))
-         (purple         (if (true-color-p) "#6102b1" "#6102b1"))
+         (violet         (if (true-color-p) "#9435e4" "color-98"))
+         (purple         (if (true-color-p) "#6102b1" "color-55"))
 
          ;; blue
-         (sky-blue       (if (true-color-p) "#6799cc" "#6799cc"))
-         (steel-blue     (if (true-color-p) "#00bbff" "#00bbff"))
-         (blue           (if (true-color-p) "#3584e4" "color-68"))
+         (sky-blue       (if (true-color-p) "#6799cc" "color-68"))
+         (steel-blue     (if (true-color-p) "#00bbff" "color-39"))
+         (blue           (if (true-color-p) "#3584e4" "color-32"))
          (dodger-blue    (if (true-color-p) "#0066cc" "color-26"))
          (deep-blue      (if (true-color-p) "#00578e" "color-24"))
 
          ;; green
          (green          (if (true-color-p) "#35e43d" "color-77"))
-         (olive-green    (if (true-color-p) "#9cbb43" "#9cbb43"))
-         (sea-green      (if (true-color-p) "#4cb64a" "#4cb64a"))
-         (chartreuse     (if (true-color-p) "#4e9a06" "#4e9a06"))
+         (olive-green    (if (true-color-p) "#9cbb43" "color-143"))
+         (sea-green      (if (true-color-p) "#4cb64a" "color-71"))
+         (chartreuse     (if (true-color-p) "#4e9a06" "color-64"))
          (dark-green     (if (true-color-p) "#2f8b58" "color-29"))
 
          ;; yellow
-         (wheat          (if (true-color-p) "#feffbf" "#feffbf"))
+         (wheat          (if (true-color-p) "#feffbf" "color-229"))
          (yellow         (if (true-color-p) "#dce435" "color-185"))
-         (gold           (if (true-color-p) "#f8d00e" "#f8d00e"))
-         (orange         (if (true-color-p) "#ce5c00" "#ce5c00"))
+         (gold           (if (true-color-p) "#f8d00e" "color-220"))
+         (orange         (if (true-color-p) "#ce5c00" "color-166"))
 
          ;; red
-         (pink           (if (true-color-p) "#ff7092" "#ff7092"))
-         (hot-pink       (if (true-color-p) "#f74d97" "#f74d97"))
+         (pink           (if (true-color-p) "#ff7092" "color-204"))
+         (hot-pink       (if (true-color-p) "#f74d97" "color-206"))
          (indian-red     (if (true-color-p) "#e43d35" "color-167"))
-         (wine-red       (if (true-color-p) "#b50000" "#b50000"))
-         (dark-red       (if (true-color-p) "#a52a2a" "#a52a2a"))
+         (wine-red       (if (true-color-p) "#b50000" "color-160"))
+         (dark-red       (if (true-color-p) "#a52a2a" "color-88"))
 
          ;; basics
          (fg black)
@@ -163,7 +163,7 @@
 ;;;;; font-lock
      `(font-lock-builtin-face ((,class (:foreground ,violet))))
      `(font-lock-comment-delimiter-face ((,class (:foreground ,deep-blue))))
-     `(font-lock-comment-face  ((,class (:foreground ,deep-blue))))
+     `(font-lock-comment-face  ((,class (:foreground ,deep-blue :slant italic))))
      `(font-lock-constant-face ((,class (:foreground ,hot-pink))))
      `(font-lock-doc-face ((,class (:foreground ,chartreuse))))
      `(font-lock-function-name-face ((,class (:foreground ,dodger-blue :bold t))))
@@ -302,7 +302,7 @@
      ;; `(outline-8)
 
 ;;;;; rainbow-delimiters
-     `(rainbow-delimiters-unmatched-face ((,class (:background ,wine-red :weight bold :inverse-video t))))
+     `(rainbow-delimiters-unmatched-face ((,class (:background ,wine-red :foreground ,white :weight bold))))
      ;;`(rainbow-delimiters-mismatched-face)
      `(rainbow-delimiters-depth-1-face ((,class (:foreground ,purple))))
      `(rainbow-delimiters-depth-2-face ((,class (:foreground ,deep-blue))))
