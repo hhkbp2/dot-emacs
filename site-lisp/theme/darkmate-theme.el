@@ -35,43 +35,43 @@
    (= (tty-display-color-cells) 16777216)))
 
 (defun create-darkmate-theme (name)
-  (let* ((class '((class color) (min-colors 88)))
+  (let* ((class '((class color) (min-colors 256)))
         ;;; color pelette
         ;; white
-        (white    (if (true-color-p) "#eeeeee" "#eeeeee"))
+        (white    (if (true-color-p) "#eeeeee" "color-255"))
         ;; gray -> dark
-        (gray     (if (true-color-p) "#bbbbbb" "#bbbbbb"))
+        (gray     (if (true-color-p) "#bbbbbb" "color-250"))
         (asfalto  (if (true-color-p) "#555753" "color-240"))
-        (carbon   (if (true-color-p) "#232323" "#232323"))
+        (carbon   (if (true-color-p) "#232323" "color-235"))
         ;; green -> deep
-        (senape   (if (true-color-p) "#acc900" "#acc900"))
-        (lime     (if (true-color-p) "#96ff00" "#96ff00"))
-        (green    (if (true-color-p) "#00c900" "#00c900"))
+        (senape   (if (true-color-p) "#acc900" "color-148"))
+        (lime     (if (true-color-p) "#96ff00" "color-118"))
+        (green    (if (true-color-p) "#00c900" "color-40"))
         ;; green -> blue
-        (alga     (if (true-color-p) "#00c99b" "#00c99b"))
-        (aque     (if (true-color-p) "#00d8ff" "#00d8ff"))
-        (cyan     (if (true-color-p) "#009cff" "#009cff"))
+        (alga     (if (true-color-p) "#00c99b" "color-43"))
+        (aque     (if (true-color-p) "#00d8ff" "color-45"))
+        (cyan     (if (true-color-p) "#009cff" "color-39"))
         ;; purple
-        (violet   (if (true-color-p) "#9e91ff" "#9e91ff"))
-        (purple   (if (true-color-p) "#bb66ff" "#bb66ff"))
+        (violet   (if (true-color-p) "#9e91ff" "color-141"))
+        (purple   (if (true-color-p) "#bb66ff" "color-135"))
         ;; pink -> deep red
-        (magenta  (if (true-color-p) "#ff79d9" "#ff79d9"))
-        (fuschsia (if (true-color-p) "#ff44cc" "#ff44cc"))
-        (red      (if (true-color-p) "#ff2f6a" "#ff2f6a"))
+        (magenta  (if (true-color-p) "#ff79d9" "color-212"))
+        (fuschsia (if (true-color-p) "#ff44cc" "color-206"))
+        (red      (if (true-color-p) "#ff2f6a" "color-197"))
         ;; yellow
-        (yellow   (if (true-color-p) "#fce94f" "#fce94f"))
+        (yellow   (if (true-color-p) "#fce94f" "color-221"))
         ;; orange -> deep
-        (ambra    (if (true-color-p) "#ff9900" "#ff9900"))
-        (orange   (if (true-color-p) "#ff6100" "#ff6100"))
+        (ambra    (if (true-color-p) "#ff9900" "color-208"))
+        (orange   (if (true-color-p) "#ff6100" "color-202"))
 
         ;;;basics
-        (link-fg  (if (true-color-p) "#5fafff" "#5fafff"))
-        (mode-line-bg (if (true-color-p) "#1a1a1a" "#9e9e9e"))
-        (mode-line-fg (if (true-color-p) "#999999" "#303030"))
-        (mode-line-buffer-id-bg (if (true-color-p) "#4d4d4d" "#585858"))
-        (mode-line-buffer-id-fg (if (true-color-p) cyan "#00afff"))
-        (mode-line-inactive-bg (if (true-color-p) "#333333" "#808080"))
-        (mode-line-inactive-fg (if (true-color-p) "#b3b3b3" "#3a3a3a"))
+        (link-fg  (if (true-color-p) "#5fafff" "color-75"))
+        (mode-line-bg (if (true-color-p) "#1a1a1a" "color-247"))
+        (mode-line-fg (if (true-color-p) "#999999" "color-236"))
+        (mode-line-buffer-id-bg (if (true-color-p) "#4d4d4d" "color-240"))
+        (mode-line-buffer-id-fg (if (true-color-p) cyan "color-39"))
+        (mode-line-inactive-bg (if (true-color-p) "#333333" "color-244"))
+        (mode-line-inactive-fg (if (true-color-p) "#b3b3b3" "color-237"))
 
         ;;; linum
         (linum-bg (if (true-color-p) gray "color-250"))
