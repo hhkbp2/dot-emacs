@@ -278,8 +278,19 @@
 ;;;;; highlight-current-line
      `(highlight-current-line-face ((,class (:background ,light-gray))))
 
+;;;;; symbol-overlay
+     `(symbol-overlay-default-face ((,class (:background ,mid-gray))))
+     ;; symbol-overlay-face-1
+     ;; symbol-overlay-face-2
+     ;; symbol-overlay-face-3
+     ;; symbol-overlay-face-4
+     ;; symbol-overlay-face-5
+     ;; symbol-overlay-face-6
+     ;; symbol-overlay-face-7
+     ;; symbol-overlay-face-8
+
 ;;;;; highlight-symbol
-     `(highlight-symbol-face ((,class (:background ,sky-blue))))
+     `(highlight-symbol-face ((,class (:background ,mid-gray))))
 
 ;;;;; hi-lock
      ;; `(hi-black-b)

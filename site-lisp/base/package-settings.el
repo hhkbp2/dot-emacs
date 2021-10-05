@@ -46,7 +46,7 @@
     yasnippet
     flycheck
     highlight-indentation
-    highlight-symbol
+    symbol-overlay
     highlight-tail
 
     exec-path-from-shell

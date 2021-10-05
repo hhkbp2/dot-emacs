@@ -117,12 +117,12 @@
 
 
 ;; 高亮光标处单词
-(require 'highlight-symbol-settings)
+(require 'symbol-overlay-settings)
 
-(defun dw-highlight-symbol-settings ()
+(defun dev-symbol-overlay-settings ()
   (dolist (mode-hook dev-mode-hook-list)
-    (add-hook mode-hook 'highlight-symbol-mode-on)))
-(dw-highlight-symbol-settings)
+    (add-hook mode-hook 'symbol-overlay-mode-enable)))
+(dev-symbol-overlay-settings)
 
 ;; 高亮最新做的修改
 ;;(require 'highlight-tail-settings)
