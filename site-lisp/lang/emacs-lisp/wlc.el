@@ -4,7 +4,7 @@
 ;; Copyright (C) 2011 Dylan.Wen
 
 ;; Author: Dylan.Wen <hhkbp2@gmail.com>
-;; Time-stamp: <2021-09-13 00:48>
+;; Time-stamp: <2021-10-07 18:21>
 
 ;; This file is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -137,7 +137,7 @@ save-restriction\\|eval-when-compile\\|prog1\\|unwind-protect\\|\
 save-window-excursion\\|eval-and-compile\\|with-output-to-temp-buffer\\|\
 with-no-warnings\\|save-current-buffer\\|track-mouse\\|prog2\\|count-loop\
 \\)\\_>"
-     1 'wlc/built-in-sfrom-face)
+     1 'wlc/built-in-sform-face)
 
     ;; built-in functions that donot need argument
     ("([ \t\n]*\\(\
@@ -752,7 +752,7 @@ Refer to `wlc/maximum-decoration-on' for its usage."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Faces
 
-(defface wlc/built-in-sfrom-face
+(defface wlc/built-in-sform-face
   '((t :inherit font-lock-keyword-face))
 
   "Face to use for highlighting elisp built-in special form in font-lock mode."
