@@ -357,6 +357,15 @@
 ;;;;; eldoc
      ;; `(eldoc-highlight-function-argument)
 
+;;;;; elisp
+;;;;; wlc
+     `(wlc/built-in-sform-face ((,class (:inherit font-lock-keyword-face))))
+     `(wlc/built-in-function-nonarg-face ((,class (:inherit font-lock-builtin-face))))
+     `(wlc/built-in-function-arg-face ((,class (:inherit font-lock-builtin-face))))
+     `(wlc/built-in-command-face ((,class (:inherit font-lock-builtin-face))))
+     `(wlc/built-in-macro-face ((,class (:inherit font-lock-preprocessor-face))))
+     `(wlc/built-in-variable-face ((,class (:inherit font-lock-builtin-face))))
+
 ;;;;; makefile-mode
      ;; `(makefile-space ((,class (:background ,magenta))))
      ;; `(makefile-targets ((,class (:foreground ,cyan :weight semi-bold))))
