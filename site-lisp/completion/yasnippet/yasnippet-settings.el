@@ -7,11 +7,11 @@
 
 ;;;###autoload
 (defun yasnippet-reload-after-save ()
-  (let* ((bfn (expand-file-name (buffer-file-name)))
-         (root (expand-file-name yas/root-directory)))
-    (when (string-match (concat "^" root) bfn)
-      (yas/load-snippet-buffer))))
-
+  (let ((bfn (expand-file-name (buffer-file-name))))
+    (some (lambda (dir)
+            (when (string-match dir bfn)
+              (yas-load-snippet-buffer 'yasnippet)))
+          yas-snippet-dirs)))
 
 (defvar dw-yas-snippets-dir
   (concat (current-directory) "snippets/")
@@ -25,12 +25,11 @@ since the loading is defered.")
   :defer t
   :ensure t
   :config
-  (progn
-    (add-to-list 'yas-snippet-dirs dw-yas-snippets-dir)
+  (setq yas-snippet-dirs (list dw-yas-snippets-dir))
+  (add-hook 'snippet-mode-hook (lambda ()
+                                 (add-hook 'after-save-hook 'yasnippet-reload-after-save nil 'local)))
 
-    (add-hook 'after-save-hook 'yasnippet-reload-after-save)
-
-    (yas/global-mode 1))
+  (yas/global-mode 1)
   )
 
 (provide 'yasnippet-settings)
