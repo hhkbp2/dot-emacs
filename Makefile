@@ -2,11 +2,11 @@
 #
 # Author: Dylan.Wen <hhkbp2@gmail.com>
 # Created: Sep 15, 2012
-# Time-stamp: <2020-08-23 15:48>
+# Time-stamp: <2021-10-17 03:13>
 #
 
-QUIET     := @
-#QUIET      := $(empty) $(empty)
+QUIET     ?= @
+#QUIET     ?= $(empty) $(empty)
 
 RM        := rm -rf
 
@@ -14,15 +14,15 @@ RM        := rm -rf
 all:
 
 
-# (call link-dot-emacs-if-needs)
-define link-dot-emacs-if-needs
-  if [ -f "${HOME}/.emacs" ] && [ ! -h "${HOME}/.emacs" ] ; then \
-      echo "~/.emacs exists as a file!" > /dev/stderr && \
+# $(call link-file source dest)
+define link-file
+  if [ -f "$2" ] || [ -L "$2" ] ; then \
+      echo "$2 already exists!" > /dev/stderr && \
       exit 1; \
   else \
-      ln -sf $(PWD)/dot_emacs "${HOME}/.emacs" && \
-      echo "link dot_emacs to ~/.emacs done."; \
-  fi;
+      ln -sf "$1" "$2" && \
+      echo "link $1 to $2 done."; \
+  fi
 endef
 
 
@@ -35,8 +35,15 @@ notice:
 
 
 .PHONY : site-init
-site-init: link-dot-emacs
+site-init: link-early-init link-init
 
-link-dot-emacs:
-	$(QUIET) $(call link-dot-emacs-if-needs)
+link-init:
+	$(QUIET) $(call link-file,$(PWD)/dot_emacs,${HOME}/.emacs)
 
+link-early-init:
+	$(QUIET) $(call link-file,$(PWD)/early-init.el,${HOME}/.emacs.d/early-init.el)
+
+# only for test
+.PHONY : remove-links
+remove-links:
+	$(QUIET) $(RM) "${HOME}/.emacs" "${HOME}/.emacs.d/early-init.el"
