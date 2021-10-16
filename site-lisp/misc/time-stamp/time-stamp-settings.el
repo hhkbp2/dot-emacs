@@ -15,7 +15,7 @@
   :config
   (progn
     ;; set time-stamp format
-    (setq time-stamp-format "%04y-%02m-%02d %02H:%02M"))
+    (setq time-stamp-format "%Y-%02m-%02d %02H:%02M"))
   )
 
 (provide 'time-stamp-settings)
