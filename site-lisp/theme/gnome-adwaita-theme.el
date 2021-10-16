@@ -132,9 +132,9 @@
      ;; appearance of parts of the Emacs frame
 
      ;; mode-line
-     `(mode-line ((,class (:background ,white :foreground ,black :weight semi-bold :box (:line-width -1 :style released-button)))))
+     `(mode-line ((,class (:background ,mid-gray :foreground ,black :weight semi-bold :box (:line-width -1 :style released-button)))))
      `(mode-line-inactive ((,class (:background ,absolute-white :foreground ,mid-gray))))
-     `(mode-line-buffer-id ((,class (:background ,mid-gray :foreground ,black :weight bold))))
+     `(mode-line-buffer-id ((,class (:weight bold))))
 
      `(mode-line-emphasis ((,class (:weight bold))))
      `(mode-line-highlight ((,class (:inverse-video t))))
