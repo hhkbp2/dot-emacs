@@ -101,6 +101,9 @@
          (ansi-magenta      (if (true-color-p) "#e435dc" "color-170"))
          (ansi-cyan         (if (true-color-p) "#35dce4" "color-80"))
          (ansi-white        white)
+
+         ;; extra variables
+         (slant             (if (true-color-p) 'italic     'normal))
          )
 
     (custom-theme-set-faces
@@ -110,7 +113,7 @@
      ;; text appearance
      `(default ((,class (:background ,bg :foreground ,fg))));
      `(link ((,class (:foreground ,dodger-blue :underline t))));
-     `(link-visited ((,class (:foreground ,sky-blue :underline t :slant italic))));
+     `(link-visited ((,class (:foreground ,sky-blue :underline t :slant ,slant))));
      `(success ((,class (:foreground ,chartreuse :bold t))))
      `(warning ((,class (:foreground ,orange))))
      `(error ((,class (:foreground ,wine-red))))
@@ -163,7 +166,7 @@
 ;;;;; font-lock
      `(font-lock-builtin-face ((,class (:foreground ,violet))))
      `(font-lock-comment-delimiter-face ((,class (:foreground ,deep-blue))))
-     `(font-lock-comment-face  ((,class (:foreground ,deep-blue :slant italic))))
+     `(font-lock-comment-face  ((,class (:foreground ,deep-blue :slant ,slant))))
      `(font-lock-constant-face ((,class (:foreground ,hot-pink))))
      `(font-lock-doc-face ((,class (:foreground ,chartreuse))))
      `(font-lock-function-name-face ((,class (:foreground ,dodger-blue :bold t))))
