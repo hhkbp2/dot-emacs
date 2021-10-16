@@ -11,6 +11,8 @@
 (proclaim '(inline last1 single append1 conc1 mklist))
 (proclaim '(optimize speed))
 
+(require 'cl-macs)
+
 ;;;; chapter 4
 
 ;;; figure 4.1
@@ -88,18 +90,18 @@
           (values (car lst) val)
         (find2 fn (cdr lst))))))
 
-(defun before (x y lst &key (test #'eql))
+(cl-defun before (x y lst &key (test #'eql))
   (and lst
        (lexical-let ((first (car lst)))
          (cond ((funcall test y first) nil)
                ((funcall test x first) lst)
                (t (before x y (cdr lst) :test test))))))
 
-(defun after (x y lst &key (test #'eql))
+(cl-defun after (x y lst &key (test #'eql))
   (let ((rest (before y x lst :test test)))
     (and rest (member x rest :test test))))
 
-(defun duplicate (obj lst &key (test #'eql))
+(cl-defun duplicate (obj lst &key (test #'eql))
   (member obj (cdr (member obj lst :test test))
           :test test))
 
@@ -155,7 +157,7 @@
 (defun map1-n (fn n)
   (mapa-b fn 1 n))
 
-(defun mapa-b (fn a b &optional (step 1))
+(cl-defun mapa-b (fn a b &optional (step 1))
   (do ((i a (+ i step))
        (result nil))
       ((> i b) (nreverse result))
