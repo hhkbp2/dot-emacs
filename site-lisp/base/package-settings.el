@@ -4,6 +4,17 @@
 
 ;;; Code:
 
+
+;; After loading the init file and abbrev file(if there is any),
+;; emacs 24 will run some code like these to load installed packages.
+;; It's done by default after version 27.
+(when (and (>= emacs-major-version 24)
+           (< emacs-major-version 27))
+  (require 'package)
+  (package-initialize))
+;; And then variable `package-archives' will be set to the default value
+;; '(("gnu" . "http://elpa.gnu.org/packages/"))
+
 (require 'my-subdirs)
 (require 'use-package)
 
@@ -17,16 +28,6 @@
   (unless after-init-time
     (add-hook 'after-init-hook #'package--save-selected-packages)))
 (advice-add 'package--save-selected-packages :override #'my-save-selected-packages)
-
-
-;; After loading the init file and abbrev file(if there is any),
-;; emacs 24 will run some code like these to load installed packages.
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize))
-;; And then variable `package-archives' will be set to the default value
-;; '(("gnu" . "http://elpa.gnu.org/packages/"))
-
 
 (defvar dw-package-addition-sources
   '(("marmalade" . "http://marmalade-repo.org/packages/")

@@ -8,14 +8,11 @@
 ;; 每节(section)开始于以3个分号开始的行
 
 
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
-
-(require 'cl)
+;;(package-initialize)
 
 
 ;; path utils
@@ -52,8 +49,6 @@
 
 (require 'package-settings)
 (dw-package-check-all-installed)
-
-(require 'use-package)
 
 ;; 一些基本的小函数
 (require 'ahei-misc)
