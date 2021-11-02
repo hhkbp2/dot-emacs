@@ -280,14 +280,14 @@
 
 ;;;;; symbol-overlay
      `(symbol-overlay-default-face ((,class (:background ,mid-gray))))
-     ;; symbol-overlay-face-1
-     ;; symbol-overlay-face-2
-     ;; symbol-overlay-face-3
-     ;; symbol-overlay-face-4
-     ;; symbol-overlay-face-5
-     ;; symbol-overlay-face-6
-     ;; symbol-overlay-face-7
-     ;; symbol-overlay-face-8
+     `(symbol-overlay-face-1 ((,class (:background ,steel-blue))))
+     `(symbol-overlay-face-2 ((,class (:background ,blue))))
+     `(symbol-overlay-face-3 ((,class (:background ,green))))
+     `(symbol-overlay-face-4 ((,class (:background ,olive-green))))
+     `(symbol-overlay-face-5 ((,class (:background ,wheat))))
+     `(symbol-overlay-face-6 ((,class (:background ,yellow))))
+     `(symbol-overlay-face-7 ((,class (:background ,gold))))
+     `(symbol-overlay-face-8 ((,class (:background ,pink))))
 
 ;;;;; highlight-symbol
      `(highlight-symbol-face ((,class (:background ,mid-gray))))
