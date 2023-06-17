@@ -13,8 +13,8 @@
 
 (defconst dw-favor-zh-font-list
   '("霞鹜文楷等宽"
-    "思源宋体"
-    "思源黑体")
+    "终端更纱黑体-简 Nerd"
+    )
   "Personal favor font list for language zh in descendent order.")
 
 (setq dw-font-pairs
@@ -24,19 +24,13 @@
            (("Monego Nerd Font Fix" . "霞鹜文楷等宽") .
             ;; font-spec parameters, rescale ratio
             (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-           (("Monego Nerd Font Fix" . "思源宋体") .
-            ;; font-spec parameters, rescale ratio
-            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-           (("Monego Nerd Font Fix" . "思源黑体") .
+           (("Monego Nerd Font Fix" . "终端更纱黑体-简 Nerd") .
             ;; font-spec parameters, rescale ratio
             (((:size 14) . 1.0) . ((:size 16) . 1.0)))
            (("JetBrainsMonoNL Nerd Font Mono" . "霞鹜文楷等宽") .
             ;; font-spec parameters, rescale ratio
             (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-           (("JetBrainsMonoNL Nerd Font Mono" . "思源宋体") .
-            ;; font-spec parameters, rescale ratio
-            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-           (("JetBrainsMonoNL Nerd Font Mono" . "思源黑体") .
+           (("JetBrainsMonoNL Nerd Font Mono" . "终端更纱黑体-简 Nerd") .
             ;; font-spec parameters, rescale ratio
             (((:size 14) . 1.0) . ((:size 16) . 1.0)))
            ))
@@ -45,21 +39,15 @@
            (("Monego Nerd Font Fix" . "霞鹜文楷等宽") .
             ;; font-spec parameters, rescale ratio
             (((:size 18) . 1.0) . ((:size 22) . 1.0)))
-           (("Monego Nerd Font Fix" . "思源宋体") .
+           (("Monego Nerd Font Fix" . "终端更纱黑体-简 Nerd") .
             ;; font-spec parameters, rescale ratio
-            (((:size 18) . 1.0) . ((:size 18) . 1.25)))
-           (("Monego Nerd Font Fix" . "思源黑体") .
-            ;; font-spec parameters, rescale ratio
-            (((:size 18) . 1.0) . ((:size 18) . 1.25)))
+            (((:size 18) . 1.0) . ((:size 22) . 1.0)))
            (("JetBrainsMonoNL Nerd Font Mono" . "霞鹜文楷等宽") .
             ;; font-spec parameters, rescale ratio
             (((:size 18) . 1.0) . ((:size 22) . 1.0)))
-           (("JetBrainsMonoNL Nerd Font Mono" . "思源宋体") .
+           (("JetBrainsMonoNL Nerd Font Mono" . "终端更纱黑体-简 Nerd") .
             ;; font-spec parameters, rescale ratio
-            (((:size 18) . 1.0) . ((:size 18) . 1.25)))
-           (("JetBrainsMonoNL Nerd Font Mono" . "思源黑体") .
-            ;; font-spec parameters, rescale ratio
-            (((:size 18) . 1.0) . ((:size 18) . 1.25)))
+            (((:size 18) . 1.0) . ((:size 22) . 1.0)))
            ))
         )
       )
