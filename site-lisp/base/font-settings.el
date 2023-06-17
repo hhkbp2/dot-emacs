@@ -6,29 +6,35 @@
 
 
 (defconst dw-favor-en-font-list
-  '("Monaco Nerd Font"
-    "Monaco"
-    "Menlo"
+  '("Monego Nerd Font Fix"
+    "JetBrainsMonoNL Nerd Font Mono"
     )
   "Personal favor font list for language en in descendent order.")
 
 (defconst dw-favor-zh-font-list
-  '("思源宋体"
+  '("霞鹜文楷等宽"
+    "思源宋体"
     "思源黑体")
   "Personal favor font list for language zh in descendent order.")
 
 (setq dw-font-pairs
       '(
-        (("Monaco Nerd Font" . "思源宋体") .
-         ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 14) . 1.4)))
-        (("Monaco Nerd Font" . "思源黑体") .
+        (("Monego Nerd Font Fix" . "霞鹜文楷等宽") .
          ;; font-spec parameters, rescale ratio
          (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        (("Monaco" . "思源宋体") .
+        (("Monego Nerd Font Fix" . "思源宋体") .
          ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 14) . 1.4)))
-        (("Monaco" . "思源黑体") .
+         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+        (("Monego Nerd Font Fix" . "思源黑体") .
+         ;; font-spec parameters, rescale ratio
+         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+        (("JetBrainsMonoNL Nerd Font Mono" . "霞鹜文楷等宽") .
+         ;; font-spec parameters, rescale ratio
+         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+        (("JetBrainsMonoNL Nerd Font Mono" . "思源宋体") .
+         ;; font-spec parameters, rescale ratio
+         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+        (("JetBrainsMonoNL Nerd Font Mono" . "思源黑体") .
          ;; font-spec parameters, rescale ratio
          (((:size 14) . 1.0) . ((:size 16) . 1.0)))
         ))
