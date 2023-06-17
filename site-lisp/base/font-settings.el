@@ -18,26 +18,51 @@
   "Personal favor font list for language zh in descendent order.")
 
 (setq dw-font-pairs
-      '(
-        (("Monego Nerd Font Fix" . "霞鹜文楷等宽") .
-         ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        (("Monego Nerd Font Fix" . "思源宋体") .
-         ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        (("Monego Nerd Font Fix" . "思源黑体") .
-         ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        (("JetBrainsMonoNL Nerd Font Mono" . "霞鹜文楷等宽") .
-         ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        (("JetBrainsMonoNL Nerd Font Mono" . "思源宋体") .
-         ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        (("JetBrainsMonoNL Nerd Font Mono" . "思源黑体") .
-         ;; font-spec parameters, rescale ratio
-         (((:size 14) . 1.0) . ((:size 16) . 1.0)))
-        ))
+      (case system-type
+        (`darwin
+         '(
+           (("Monego Nerd Font Fix" . "霞鹜文楷等宽") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+           (("Monego Nerd Font Fix" . "思源宋体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+           (("Monego Nerd Font Fix" . "思源黑体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+           (("JetBrainsMonoNL Nerd Font Mono" . "霞鹜文楷等宽") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+           (("JetBrainsMonoNL Nerd Font Mono" . "思源宋体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+           (("JetBrainsMonoNL Nerd Font Mono" . "思源黑体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+           ))
+        (`gnu/linux
+         '(
+           (("Monego Nerd Font Fix" . "霞鹜文楷等宽") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 18) . 1.0) . ((:size 22) . 1.0)))
+           (("Monego Nerd Font Fix" . "思源宋体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 18) . 1.0) . ((:size 18) . 1.25)))
+           (("Monego Nerd Font Fix" . "思源黑体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 18) . 1.0) . ((:size 18) . 1.25)))
+           (("JetBrainsMonoNL Nerd Font Mono" . "霞鹜文楷等宽") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 18) . 1.0) . ((:size 22) . 1.0)))
+           (("JetBrainsMonoNL Nerd Font Mono" . "思源宋体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 18) . 1.0) . ((:size 18) . 1.25)))
+           (("JetBrainsMonoNL Nerd Font Mono" . "思源黑体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 18) . 1.0) . ((:size 18) . 1.25)))
+           ))
+        )
+      )
 
 
 (defun dw-font-exsits-p (font-name-pattern)
