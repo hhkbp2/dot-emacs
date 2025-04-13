@@ -60,7 +60,7 @@
 (require 'undo-tree-settings)
 
 (require 'isearch-settings)
-(require 'linum-settings)
+(require 'line-number-settings)
 
 (require 'mode-line-settings)
 
