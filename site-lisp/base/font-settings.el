@@ -13,6 +13,7 @@
 
 (defconst dw-favor-zh-font-list
   '("霞鹜文楷等宽"
+    "京華老宋体"
     "终端更纱黑体-简 Nerd"
     )
   "Personal favor font list for language zh in descendent order.")
@@ -22,6 +23,9 @@
         (`darwin
          '(
            (("Monego Nerd Font Fix" . "霞鹜文楷等宽") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 14) . 1.0) . ((:size 16) . 1.0)))
+           (("Monego Nerd Font Fix" . "京華老宋体") .
             ;; font-spec parameters, rescale ratio
             (((:size 14) . 1.0) . ((:size 16) . 1.0)))
            (("Monego Nerd Font Fix" . "终端更纱黑体-简 Nerd") .
@@ -39,6 +43,9 @@
            (("Monego Nerd Font Fix" . "霞鹜文楷等宽") .
             ;; font-spec parameters, rescale ratio
             (((:size 18) . 1.0) . ((:size 22) . 1.0)))
+           (("Monego Nerd Font Fix" . "京華老宋体") .
+            ;; font-spec parameters, rescale ratio
+            (((:size 18) . 1.0) . ((:size 20) . 1.0)))
            (("Monego Nerd Font Fix" . "终端更纱黑体-简 Nerd") .
             ;; font-spec parameters, rescale ratio
             (((:size 18) . 1.0) . ((:size 22) . 1.0)))
