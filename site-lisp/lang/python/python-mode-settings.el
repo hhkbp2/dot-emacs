@@ -5,16 +5,6 @@
 
 ;;; Code:
 
-(defconst dw-python-path (expand-file-name
-                          "~/local/lib/python2.7/site-packages/")
-  "Personal PYTHONPATH for addtional libraries.")
-
-(defun dw-prepare-pypath ()
-  (let ((pypath (getenv "PYTHONPATH")))
-    (if (or (null pypath) (string= "" pypath))
-        (setenv "PYTHONPATH" dw-python-path)
-      (if (not (search dw-python-path pypath))
-          (setenv "PYTHONPATH" (concat dw-python-path ":" pypath))))))
 
 (use-package python-mode
   :defer t
@@ -22,10 +12,6 @@
   :config
   (progn
     (require 'whitespace)
-
-    (when (eq system-type 'darwin)
-      ;; prepare PYTHONPATH for mac emacs as app started on dock
-      (dw-prepare-pypath))
 
     ;; set tab width
     (setq tab-width 4)
